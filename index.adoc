@@ -17,7 +17,7 @@ Máster en Tecnologías y Aplicaciones en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
 
-image::images/di.png[]
+image::Docs/Tema1/images/di.png[]
 
 // NO CAMBIAR!! (Entrar en modo no numerado de apartados)
 :numbered!: 
@@ -43,4 +43,4 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 ## Contenidos
 
 * Tema 1
-** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/index.html[Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud]
+** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema%201/index.html[Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud]
