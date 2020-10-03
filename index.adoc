@@ -1,0 +1,46 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:doctype: book
+:linkattrs:
+
+////
+Nombre y título del trabajo
+////
+# Cloud Computing
+Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+
+
+image::images/di.png[]
+
+// NO CAMBIAR!! (Entrar en modo no numerado de apartados)
+:numbered!: 
+
+
+[abstract]
+== Resumen
+////
+COLOCA A CONTINUACION EL RESUMEN
+////
+Aute nulla esse proident laborum. Magna enim ad non incididunt. Ipsum voluptate aute in do nisi duis tempor velit ullamco dolor aliqua nulla proident anim. Duis dolore duis culpa duis eiusmod exercitation duis et. Est ad veniam aliqua id id irure do consequat.
+
+////
+COLOCA A CONTINUACION LOS OBJETIVOS
+////
+.Objetivos
+* Ob1
+* Ob2
+
+// Entrar en modo numerado de apartados
+:numbered:
+
+## Contenidos
+
+* Tema 1
+** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/index.html[Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud]
