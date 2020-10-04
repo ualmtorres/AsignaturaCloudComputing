@@ -40,7 +40,13 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 // Entrar en modo numerado de apartados
 :numbered:
 
+## Introducción
+
+Las aplicaciones comerciales se trasladan a la _Nube_. Esto está ocurriendo más rápido que nunca: el paso de los modelos de software tradicionales a Internet ha adquirido un mayor impulso con el desarrollo del _Cloud Computing_ o Computación en Nube. Se trata de la nueva forma de utilizar las tecnologías de la información y las comunicaciones empleando técnicas ya existentes de una forma innovadora y, sobre todo, a una nueva escala, permitiendo el uso de recursos de hardware, software, almacenamiento, servicios y comunicaciones que se encuentran distribuidos geográficamente y a los que se accede a través de redes públicas, de forma dinámica, cuando se necesita, mientras se necesita y abonando una tarifa sobre lo que se consume.
+Los numerosos proveedores de servicios en la nube proporcionan acceso a recursos informáticos y servicios adicionales de valor añadido que acercan la oferta del proveedor a las necesidades de su cliente. Gracias a un grupo creciente de proveedores de servicios en la nube, la computación en la nube es cada vez más importante como mecanismo para que los desarrolladores desplieguen fácilmente sus aplicaciones.
+
 ## Contenidos
 
-* Tema 1
-** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/index.html[Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud]
+* Antes de comenzar
+** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/PrimerosPasosCoursera.html[Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud]
+** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/ActivacionCuentaGoogleCloud.html[Activación de cuenta Google Cloud Platform]
