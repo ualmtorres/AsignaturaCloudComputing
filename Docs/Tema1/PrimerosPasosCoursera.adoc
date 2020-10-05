@@ -46,10 +46,10 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 Dentro de las actividades no presenciales de la asignatura Cloud Computing del Máster en Tecnologías y Aplicaciones en Ingeniería Informática de la UAL se va a seguir el https://www.coursera.org/programs/ace-track-907-s-3pm27[Google Associate Engineer Track]. Está formado por los cursos siguientes:
 
 * https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=h9LqVq-lEeauxBIk_RF-8A&productType=course&showMiniModal=true[Google Cloud Platform Fundamentals: Core Infrastructure]
-* https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=sK6edjzPEees8grTZvuQjA&productType=course&showMiniModal=true[Google Cloud Platform Fundamentals: Core Infrastructure]
+* https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=sK6edjzPEees8grTZvuQjA&productType=course&showMiniModal=true[Essential Google Cloud Infrastructure: Foundation]
 * https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=9xG8yUo7EeeJdBL3H0RODg&productType=course&showMiniModal=true[Essential Google Cloud Infrastructure: Core Services]
-* https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=Hdkvqa-VEeemsBI74hnnzA&productType=course&showMiniModal=true[Reliable Google Cloud Infrastructure: Design and Process]
 * https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=G4Fvqko8Eee4pw7hxA2o1A&productType=course&showMiniModal=true[Elastic Google Cloud Infrastructure: Scaling and Automation]
+* https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=Hdkvqa-VEeemsBI74hnnzA&productType=course&showMiniModal=true[Reliable Google Cloud Infrastructure: Design and Process]
 
 Los cursos se siguen a través de la plataforma https://www.coursera.org/[Coursera] y se complementan con laboratorios prácticos que se siguen a través de https://www.qwiklabs.com[Quiklabs].
 
