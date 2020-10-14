@@ -17,7 +17,7 @@ Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informá
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
 
-image::Tema1/images/di.png[]
+image::images/di.png[]
 
 // NO CAMBIAR!! (Entrar en modo no numerado de apartados)
 :numbered!: 
@@ -46,7 +46,7 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 
 ### Semana 1
 
-image::Tema1/images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
+image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
 
 * Introducing Google Cloud Platform
 * Getting Started with Google Cloud Platform
@@ -54,7 +54,7 @@ image::Tema1/images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=
 
 ### Semana 2
 
-image::Tema1/images/EssentialGoogleCloudInfrastructureFoundation.png[width=33%] 
+image::images/EssentialGoogleCloudInfrastructureFoundation.png[width=33%] 
 
 * Introduction
 * Module 1: Introduction to GCP
@@ -62,22 +62,22 @@ image::Tema1/images/EssentialGoogleCloudInfrastructureFoundation.png[width=33%]
 
 ### Semana 3
 
-image::Tema1/images/EssentialGoogleCloudInfrastructureFoundation.png[width=33%] 
+image::images/EssentialGoogleCloudInfrastructureFoundation.png[width=33%] 
 
 * Module 3: Virtual Machines
 
-image::Tema1/images/EssentialGoogleCloudInfrastructureCoreServices.png[width=33%]
+image::images/EssentialGoogleCloudInfrastructureCoreServices.png[width=33%]
 
 * Introduction
 * Module 1: Cloud IAM
 
 ### Semana 4
 
-image::Tema1/images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
+image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
 
 * Storage in the Cloud
 
-image::Tema1/images/EssentialGoogleCloudInfrastructureCoreServices.png[width=33%]
+image::images/EssentialGoogleCloudInfrastructureCoreServices.png[width=33%]
 
 * Module 2: Storage and Database Services
 * Module 3: Resource Management
@@ -85,7 +85,7 @@ image::Tema1/images/EssentialGoogleCloudInfrastructureCoreServices.png[width=33%
 
 ### Semana 5
 
-image::Tema1/images/ElasticGoogleCloudInfrastructureScalingAndAutomation.png[width=33%]
+image::images/ElasticGoogleCloudInfrastructureScalingAndAutomation.png[width=33%]
 
 * Introduction
 * Module 1: Interconnecting Networks
@@ -95,7 +95,7 @@ image::Tema1/images/ElasticGoogleCloudInfrastructureScalingAndAutomation.png[wid
 
 ### Semana 6
 
-image::Tema1/images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
+image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
 
 * Containers in the Cloud
 * Applications in the Cloud
@@ -105,7 +105,7 @@ image::Tema1/images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=
 
 ### Semana 7
 
-image::Tema1/images/ReliableGoogleCloudInfrastructureDesignAndProcess.png[width=33%]
+image::images/ReliableGoogleCloudInfrastructureDesignAndProcess.png[width=33%]
 
 * Introduction
 * Defining Services

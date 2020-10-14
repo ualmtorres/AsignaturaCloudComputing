@@ -1,0 +1,45 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:doctype: book
+:linkattrs:
+
+////
+Nombre y título del trabajo
+////
+# Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine
+Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+
+
+image::Tema1/images/di.png[]
+
+## Planificación
+
+
+.Planificación de las sesiones
+[width="100%",options="header"]
+|====================
+| Sesión | Fecha | Presencial | Enlace 
+| 01 | 20 de octubre | Sí |  
+| 02| - | No |  
+| 03| 27 de octubre | Sí |  
+| 04 | - | No |  
+| 05 | 3 de noviembre | Sí |  
+| 06 | - | No |  
+| 07 | 10 de noviembre | Sí |  
+| 08 | - | No |  
+| 09 | 17 de noviembre | Sí |  
+| 10 | - | No |  
+| 11 | 24 de noviembre | Sí |  
+| 12 | - | No |  
+| 13 | 1 de diciembre | Sí |  
+| 14 | - | No |  
+| 15 | 15 de diciembre | Sí |  
+| Entrega | - | No |  
+|====================

@@ -17,7 +17,7 @@ Máster en Tecnologías y Aplicaciones en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
 
-image::Docs/Tema1/images/di.png[]
+image::Docs/Tema0/images/di.png[]
 
 // NO CAMBIAR!! (Entrar en modo no numerado de apartados)
 :numbered!: 
@@ -48,7 +48,7 @@ Los numerosos proveedores de servicios en la nube proporcionan acceso a recursos
 ## Contenidos
 
 * Antes de comenzar
-** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/PrimerosPasosCoursera.html[Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud]
-** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/ActivacionCuentaGoogleCloud.html[Activación de cuenta Google Cloud Platform]
-** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/ResumenProgramaEspecializadoGCE.html[Resumen del Programa Especializado: Architecting with Google Compute Engine]
-** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionProgramaGCE.html[Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine]
+** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PrimerosPasosCoursera.html[Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud]
+** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaGoogleCloud.html[Activación de cuenta Google Cloud Platform]
+** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html[Resumen del Programa Especializado: Architecting with Google Compute Engine]
+** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html[Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine]
