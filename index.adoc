@@ -50,3 +50,5 @@ Los numerosos proveedores de servicios en la nube proporcionan acceso a recursos
 * Antes de comenzar
 ** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/PrimerosPasosCoursera.html[Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud]
 ** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/ActivacionCuentaGoogleCloud.html[Activación de cuenta Google Cloud Platform]
+** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/ResumenProgramaEspecializadoGCE.html[Resumen del Programa Especializado: Architecting with Google Compute Engine]
+** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionProgramaGCE.html[Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine]
