@@ -1,0 +1,282 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:doctype: book
+:linkattrs:
+
+////
+Nombre y título del trabajo
+////
+# Resumen del Programa Especializado: Architecting with Google Compute Engine
+Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+
+
+image::images/di.png[]
+
+// NO CAMBIAR!! (Entrar en modo no numerado de apartados)
+:numbered!: 
+
+
+[abstract]
+== Resumen
+////
+COLOCA A CONTINUACION EL RESUMEN
+////
+
+El programa especializado _Architecting with Google Compute Engine_ ofrece una forma de completar de forma práctica y con tecnología globalmente aceptada en la industria los conocimientos en Cloud Computing. El programa consta de 5 cursos que sientan las bases para la configuración, despliegue y mantenimiento de soluciones cloud con tolerancia a fallos y alta disponibilidad.
+
+////
+COLOCA A CONTINUACION LOS OBJETIVOS
+////
+.Objetivos
+* Conocer el programa especializado _Architecting with Google Compute Engine_
+
+// Entrar en modo numerado de apartados
+:numbered:
+
+## Introducción
+
+El programa _Architecting with Google Compute Engine_ propociona los conocimientos necesarios para avanzar en tu carrera y formación para la preparación a la reconocidacertificación _Google Cloud Associate Cloud Engineer_.
+
+image::images/Banner-GoogleCloudTrack.png[]
+
+Acceso al https://www.coursera.org/programs/ace-track-907-s-3pm27[programa especializado de Architecting with Google Compute Engine]
+
+## Programa de cursos
+
+.Cursos del programa 
+[width="100%",options="header,footer"]
+|====================
+| Curso |  Duración
+| 1. Google Cloud Platform Fundamentals: Core Infrastructure |  2 semanas
+| 2. Essential Cloud Infrastructure: Foundation |  1 semana
+| 3. Essential Cloud Infrastructure: Core Services |  1 semana
+| 4. Elastic Cloud Infrastructure: Scaling and Automation |  1 semana
+| 5. Reliable Cloud Infrastructure: Design and Process |  2 semanas
+|====================
+
+### Google Cloud Platform Fundamentals: Core Infrastructure
+
+This course introduces you to important concepts and terminology for working with Google Cloud Platform (GCP). You learn about, and compare, many of the computing and storage services available in Google Cloud Platform, including Google App Engine, Google Compute Engine, Google Kubernetes Engine, Google Cloud Storage, Google Cloud SQL, and BigQuery. You learn about important resource and policy management tools, such as the Google Cloud Resource Manager hierarchy and Google Cloud Identity and Access Management. Hands-on labs give you foundational skills for working with GCP.
+
+image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[]
+
+#### Introducing Google Cloud Platform
+
+Google Cloud Platform offers four main kinds of services: Compute, Storage, Big Data, and Machine Learning. This course focuses mostly on the first two, together with Google Virtual Private Cloud (VPC) networking. This module orients learners to the basics of Google Cloud Platform. It traces the evolution of cloud computing and explains what is unique about Google's approach to it. The module introduces the key structural concepts of regions and zones.
+
+14 videos , 2 readings, 3 quizzes
+
+#### Getting Started with Google Cloud Platform
+
+GCP customers use projects to organize the resources they use. They use Google Cloud Identity and Access Management, also called “IAM,” to control who can do what with those resources. They use any of several technologies to connect with GCP. This module covers each of these topics, and it introduces a service called Cloud Launcher that is an easy way to get started with GCP.
+
+8 videos
+
+#### Virtual Machines in the Cloud
+
+Compute Engine lets you run virtual machines on Google’s global infrastructure. This module covers how Compute Engine works, with a focus on Google virtual networking.
+
+5 videos
+
+#### Storage in the Cloud
+
+Every application needs to store data. Different applications and workloads require different storage and database solutions. This module describes and differentiates among GCP's core storage options: Cloud Storage, Cloud SQL, Cloud Spanner, Cloud Datastore, and Google Bigtable.
+
+8 videos
+
+#### Containers in the Cloud
+
+Containers are simple and interoperable, and they enable seamless, fine-grained scaling. Kubernetes is an orchestration layer for containers. Kubernetes Engine is Kubernetes as a service, a scalable managed offering that runs on Google’s infrastructure. You direct the creation of a cluster, and Kubernetes Engine schedules your containers into the cluster and manages them automatically, based on requirements you define. This module explains how Kubernetes Engine works and how it helps deploy applications in containers.
+
+5 videos
+
+#### Applications in the Cloud
+
+App Engine is a Platform-as-a-Service ("PaaS") offering. The App Engine platform manages the hardware and networking infrastructure required to run your code. App Engine provides built-in services that many web applications need. This module describes how App Engine works.
+
+5 videos
+
+#### Developing, Deploying and Monitoring in the Cloud
+
+Popular tools for development, deployment, and monitoring just work in GCP. Customers also have options for tools in each of these three areas that are tightly integrated with GCP. This module covers those tools.
+
+4 videos
+
+#### Big Data and Machine Learning in the Cloud
+
+GCP's big-data and machine learning offerings are intended to help customers get the most out of data. These tools are intended to be simple and practical to embed in your applications. This module describes the available big-data and machine learning services and explains the usefulness of each.
+
+8 videos
+
+#### Summary and Review
+
+This module reviews the GCP services covered in this course and reminds learners of the differences among them. The module compares GCP compute services, GCP storage services, and important Google VPC networking capabilities.
+
+### Essential Google Cloud Infrastructure: Foundation
+
+This accelerated on-demand course introduces participants to the comprehensive and flexible infrastructure and platform services provided by Google Cloud with a focus on Compute Engine. Through a combination of video lectures, demos, and hands-on labs, participants explore and deploy solution elements, including infrastructure components such as networks, virtual machines and applications services. You will learn how to use the Google Cloud through the console and Cloud Shell. You'll also learn about the role of a cloud architect, approaches to infrastructure design, and virtual networking configuration with Virtual Private Cloud (VPC), Projects, Networks, Subnetworks, IP addresses, Routes, and Firewall rules.
+
+image::images/EssentialGoogleCloudInfrastructureFoundation.png[]
+
+#### Introduction
+
+In this module we introduce the Architecting with Google Compute Engine course series. This course series is defined for cloud solution architects, DevOps engineers, and anyone who's interested in using GCP, to create new solutions or to integrate existing systems, application environments, and infrastructure with a focus on Compute Engine.
+
+1 video , 2 readings
+
+#### Module 1: Introduction to GCP
+
+In this module, we will provide you with an introduction to GCP by building on what you learned about the GCP infrastructure from the course introduction.
+
+9 videos
+
+#### Module 2: Virtual Networks
+
+In this module, we start by introducing Virtual Private Cloud (VPC) which is Google’s managed networking functionality for your Cloud Platform resources. Then we dissect networking into its fundamental components, which are projects, networks, subnetworks, IP addresses, routes and firewall rules, along with network pricing.
+
+15 videos
+
+#### Module 3: Virtual Machines
+
+In this module, we cover virtual machine instances, or VMs. First we'll start with the basics of Compute Engine, followed by a quick little lab to get you more familiar with creating virtual machines. Then, we’ll look at the different CPU and memory options that enable you to create different configurations.Next, we will look at images and the different disk options available with Compute Engine. After that, we will discuss very common Compute Engine actions that you might encounter in your day-to-day job. This will be followed by an in-depth lab that explores many of the features and services covered in this module.
+
+16 videos , 1 reading, 3 quizzes
+
+### Essential Google Cloud Infrastructure: Core Services
+
+This accelerated on-demand course introduces participants to the comprehensive and flexible infrastructure and platform services provided by Google Cloud with a focus on Compute Engine. Through a combination of video lectures, demos, and hands-on labs, participants explore and deploy solution elements, including infrastructure components such as networks, systems and applications services. This course also covers deploying practical solutions including customer-supplied encryption keys, security and access management, quotas and billing, and resource monitoring.
+
+image::images/EssentialGoogleCloudInfrastructureCoreServices.png[]
+
+#### Introduction
+
+In this module we introduce the Architecting with Google Compute Engine course series. This course series is defined for cloud solution architects, DevOps engineers, and anyone who's interested in using GCP, to create new solutions or to integrate existing systems, application environments, and infrastructure with a focus on Compute Engine.
+
+1 video , 2 readings
+
+#### Module 1: Cloud IAM
+
+In this module, we cover Cloud Identity and Access Management (or Cloud IAM). Cloud IAM is a sophisticated system built on top of email-like address names, job-type roles, and granular permissions. If you're familiar with IAM from other implementations, look for the differences that Google has implemented to make IAM easier to administer and more secure.
+
+12 videos
+
+#### Module 2: Storage and Database Services
+
+In this module, we cover storage and database services in GCP. Every application needs to store data, whether it's business data, media to be streamed, or sensor data from devices.
+
+13 videos
+
+#### Module 3: Resource Management
+
+In this module, we will cover Resource Management. Resources in GCP are billable, so managing them means controlling cost. There are several methods in place for controlling access to the resources, and there are quotas that limit consumption.
+
+9 videos
+
+#### Module 4: Resource Monitoring
+
+In this module, we’ll give you an overview of the resource monitoring options in GCP. The features covered in this module rely on Stackdriver, a service that provides monitoring, logging, and diagnostics for your applications.
+
+### Elastic Google Cloud Infrastructure: Scaling and Automation
+
+This accelerated on-demand course introduces participants to the comprehensive and flexible infrastructure and platform services provided by Google Cloud. Through a combination of video lectures, demos, and hands-on labs, participants explore and deploy solution elements, including securely interconnecting networks, load balancing, autoscaling, infrastructure automation and managed services.
+
+image::images/ElasticGoogleCloudInfrastructureScalingAndAutomation.png[]
+
+#### Introduction
+
+In this module we introduce the Architecting with Google Compute Engine course series. This course series is defined for cloud solution architects, DevOps engineers, and anyone who's interested in using GCP, to create new solutions or to integrate existing systems, application environments, and infrastructure with a focus on Compute Engine.
+
+1 video , 2 readings
+
+#### Module 1: Interconnecting Networks
+
+In this module, we’ll focus on GCP’s hybrid connectivity products, which are Cloud VPN, Cloud Interconnect, and Peering. We’ll also look at options for sharing VPC networks within GCP.
+
+11 videos
+
+#### Module 2: Load Balancing and Autoscaling
+
+In this module, we will cover the different types of load balancers that are available in GCP. We will also go over managed instance groups and their autoscaling configurations, which can be used by these load balancing configurations.
+
+16 videos
+
+#### Module 3: Infrastructure Automation
+
+In this module, we cover how to use Deployment Manager to automate the deployment of infrastructure and how to use GCP Marketplace to launch infrastructure solutions. You will use Deployment Manager or Terraform to deploy a VPC network, a firewall rule, and VM instances in the lab of this module.
+
+8 videos
+
+#### Module 4: Managed Services
+
+In this module, we give you an overview of BigQuery, Cloud Dataflow, Cloud Dataprep by Trifacta, and Cloud Dataproc. Now all of these services are for data analytics purposes, and since that’s not the focus of this course series, there won’t be any labs in this module. Instead, we’ll have a quick demo to illustrate how easy it is to use a managed service.
+
+8 videos , 1 reading, 1 quiz
+
+### Reliable Google Cloud Infrastructure: Design and Process
+
+This course equips students to build highly reliable and efficient solutions on Google Cloud using proven design patterns. It is a continuation of the Architecting with Google Compute Engine or Architecting with Google Kubernetes Engine courses and assumes hands-on experience with the technologies covered in either of those courses. Through a combination of presentations, design activities, and hands-on labs, participants learn to define and balance business and technical requirements to design Google Cloud deployments that are highly reliable, highly available, secure, and cost-effective.
+
+image::images/ReliableGoogleCloudInfrastructureDesignAndProcess.png[]
+
+#### Introduction
+
+Welcome to the Reliable Google Cloud Infrastructure: Design and Process course. Learn about the course structure and it's content.
+
+3 videos , 1 reading
+
+#### Defining Services
+
+9 videos
+
+#### Microservice Design and Architecture
+
+In this module, we introduce application architecture and microservice design
+
+11 videos
+
+#### DevOps Automation
+
+This module introduces DevOps automation, a key factor in achieving consistency, reliability, and speed of deployment.
+
+7 videos
+
+#### Choosing Storage Solutions
+
+In this module, we discuss Google Cloud storage and data solutions and how to select the most suitable one to meet your business and technical requirements.
+
+8 videos
+
+#### Google Cloud and Hybrid Network Architecture
+
+In this module, we discuss Google Cloud network architectures, including hybrid architectures.
+
+9 videos
+
+#### Deploying Applications to Google Cloud
+
+In this module, we discuss the different options of deploying applications to Google Cloud. Google Cloud offers many possible deployment platforms, and the choice is not always immediately obvious.
+
+6 videos
+
+#### Designing Reliable Systems
+
+In this module, we talk about how to design reliable systems.
+
+9 videos
+
+#### Security
+
+In this module, we cover security. Google has been operating securely in the cloud for 20 years. There is a strong belief that security empowers innovation. The approach of the cloud architect should be that security should be put first; everything else will follow from this.
+
+9 videos
+
+#### Maintenance and Monitoring
+
+10 videos , 2 readings, 2 quizzes
