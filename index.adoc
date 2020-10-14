@@ -53,4 +53,4 @@ Los numerosos proveedores de servicios en la nube proporcionan acceso a recursos
 ** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html[Resumen del Programa Especializado: Architecting with Google Compute Engine]
 ** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html[Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine]
 
-* https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Planificacion.html[Planificación]
+* https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionCC.html[Planificación]
