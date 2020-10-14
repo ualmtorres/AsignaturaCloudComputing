@@ -42,6 +42,11 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 
 ## Planificación recomendada
 
+[NOTE]
+====
+Para evitar acumulación de trabajo en la fecha de vencimiento se recomienda ir entregando cada actividad en su semana y así resolver las dudas planteadas en las clases presenciales.
+====
+
 :numbered!: 
 
 ### Semana 1
@@ -118,6 +123,3 @@ image::images/ReliableGoogleCloudInfrastructureDesignAndProcess.png[width=33%]
 * Security
 * Maintenance and Monitoring
 
-### Semana 8
-
-* Entrega final de actividades. Para evitar acumulación de trabajo en la fecha de vencimiento se recomienda ir entregando cada actividad en su semana y así resolver las dudas planteadas en las clases presenciales.

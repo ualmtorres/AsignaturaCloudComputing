@@ -17,7 +17,7 @@ Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informá
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
 
-image::Tema1/images/di.png[]
+image::Tema0/images/di.png[]
 
 ## Planificación
 
@@ -27,19 +27,19 @@ image::Tema1/images/di.png[]
 |====================
 | Sesión | Fecha | Presencial | Enlace 
 | 01 | 20 de octubre | Sí |  
-| 02| - | No |  
+| 02| - | No | https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionProgramaGCE.html#truesemana-1[GCE Semana 1]
 | 03| 27 de octubre | Sí |  
-| 04 | - | No |  
+| 04 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionProgramaGCE.html#truesemana-2[GCE Semana 2]
 | 05 | 3 de noviembre | Sí |  
-| 06 | - | No |  
+| 06 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionProgramaGCE.html#truesemana-3[GCE Semana 3]
 | 07 | 10 de noviembre | Sí |  
-| 08 | - | No |  
+| 08 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionProgramaGCE.html#truesemana-4[GCE Semana 4]
 | 09 | 17 de noviembre | Sí |  
-| 10 | - | No |  
+| 10 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionProgramaGCE.html#truesemana-5[GCE Semana 5]
 | 11 | 24 de noviembre | Sí |  
-| 12 | - | No |  
+| 12 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionProgramaGCE.html#truesemana-6[GCE Semana 6]
 | 13 | 1 de diciembre | Sí |  
-| 14 | - | No |  
+| 14 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionProgramaGCE.html#truesemana-7[GCE Semana 7]
 | 15 | 15 de diciembre | Sí |  
-| Entrega | - | No |  
+| Entrega | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/PlanificacionProgramaGCE.html#truesemana-8[GCE Semana 8]
 |====================

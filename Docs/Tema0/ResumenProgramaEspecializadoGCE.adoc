@@ -65,7 +65,7 @@ Acceso al https://www.coursera.org/programs/ace-track-907-s-3pm27[programa espec
 
 This course introduces you to important concepts and terminology for working with Google Cloud Platform (GCP). You learn about, and compare, many of the computing and storage services available in Google Cloud Platform, including Google App Engine, Google Compute Engine, Google Kubernetes Engine, Google Cloud Storage, Google Cloud SQL, and BigQuery. You learn about important resource and policy management tools, such as the Google Cloud Resource Manager hierarchy and Google Cloud Identity and Access Management. Hands-on labs give you foundational skills for working with GCP.
 
-image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[]
+image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
 
 #### Introducing Google Cloud Platform
 
@@ -123,7 +123,7 @@ This module reviews the GCP services covered in this course and reminds learners
 
 This accelerated on-demand course introduces participants to the comprehensive and flexible infrastructure and platform services provided by Google Cloud with a focus on Compute Engine. Through a combination of video lectures, demos, and hands-on labs, participants explore and deploy solution elements, including infrastructure components such as networks, virtual machines and applications services. You will learn how to use the Google Cloud through the console and Cloud Shell. You'll also learn about the role of a cloud architect, approaches to infrastructure design, and virtual networking configuration with Virtual Private Cloud (VPC), Projects, Networks, Subnetworks, IP addresses, Routes, and Firewall rules.
 
-image::images/EssentialGoogleCloudInfrastructureFoundation.png[]
+image::images/EssentialGoogleCloudInfrastructureFoundation.png[width=33%]
 
 #### Introduction
 
@@ -153,7 +153,7 @@ In this module, we cover virtual machine instances, or VMs. First we'll start wi
 
 This accelerated on-demand course introduces participants to the comprehensive and flexible infrastructure and platform services provided by Google Cloud with a focus on Compute Engine. Through a combination of video lectures, demos, and hands-on labs, participants explore and deploy solution elements, including infrastructure components such as networks, systems and applications services. This course also covers deploying practical solutions including customer-supplied encryption keys, security and access management, quotas and billing, and resource monitoring.
 
-image::images/EssentialGoogleCloudInfrastructureCoreServices.png[]
+image::images/EssentialGoogleCloudInfrastructureCoreServices.png[width=33%]
 
 #### Introduction
 
@@ -187,7 +187,7 @@ In this module, we’ll give you an overview of the resource monitoring options 
 
 This accelerated on-demand course introduces participants to the comprehensive and flexible infrastructure and platform services provided by Google Cloud. Through a combination of video lectures, demos, and hands-on labs, participants explore and deploy solution elements, including securely interconnecting networks, load balancing, autoscaling, infrastructure automation and managed services.
 
-image::images/ElasticGoogleCloudInfrastructureScalingAndAutomation.png[]
+image::images/ElasticGoogleCloudInfrastructureScalingAndAutomation.png[width=33%]
 
 #### Introduction
 
@@ -223,7 +223,7 @@ In this module, we give you an overview of BigQuery, Cloud Dataflow, Cloud Datap
 
 This course equips students to build highly reliable and efficient solutions on Google Cloud using proven design patterns. It is a continuation of the Architecting with Google Compute Engine or Architecting with Google Kubernetes Engine courses and assumes hands-on experience with the technologies covered in either of those courses. Through a combination of presentations, design activities, and hands-on labs, participants learn to define and balance business and technical requirements to design Google Cloud deployments that are highly reliable, highly available, secure, and cost-effective.
 
-image::images/ReliableGoogleCloudInfrastructureDesignAndProcess.png[]
+image::images/ReliableGoogleCloudInfrastructureDesignAndProcess.png[width=33%]
 
 #### Introduction
 
