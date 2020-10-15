@@ -84,4 +84,3 @@ Al entrar por primera vez en la Consola de Google Cloud aparecerá un banner inf
 Para la activación de esta prueba de 300$ es necesaria una tarjeta de crédito y *no es necesaria para la asignatura*. La asignatura se desarrollará con el cupón académico de 50$ obtenido con la cuenta Inlumine de la UAL a través del enlace disponible en Aula Virtual.
 ====
 ****
-

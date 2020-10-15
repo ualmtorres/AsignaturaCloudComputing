@@ -1,0 +1,71 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:doctype: book
+:linkattrs:
+
+////
+Nombre y título del trabajo
+////
+# Activación de cuenta OpenStack-DI
+Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+
+
+image::images/di.png[]
+
+// NO CAMBIAR!! (Entrar en modo no numerado de apartados)
+:numbered!: 
+
+[abstract]
+== Resumen
+////
+COLOCA A CONTINUACION EL RESUMEN
+////
+En este tutorial se indica cómo acceder a la cuenta de OpenStack-DI, el cloud privado del Departamento de Informática de la UAL. Se indica cómo cambiar la contraseña, el acceso a tutoriales sobre la introducción a su uso y el acceso VPN.
+
+////
+COLOCA A CONTINUACION LOS OBJETIVOS
+////
+.Objetivos
+* Acceder a OpenStack-DI.
+* Cambiar la contraseña en OpenStack-DI.
+* Conocer los recursos de consulta y formación de OpenStack-DI.
+
+// Entrar en modo numerado de apartados
+:numbered:
+
+## Acceso a OpenStack-DI
+
+https://openstack.di.ual.es/horizon/[OpenStack-DI] es la plataforma que ofrece Infraestructura como servicio en https://cloud.di.ual.es/[Cloud-DI], un cloud privado del Departamento de Informática de la UAL que proporciona Infraestructura como servicio.
+
+.Credenciales de acceso
+****
+* `domain: default`
+* `login`: Tu login de Campus virtual (sólo el nombre de usuario `[line-through]##@inlumine.ual.es##`)
+* `password`: el recibido por email en Aula Virtual
+
+[IMPORTANT]
+====
+Tras iniciar sesión https://ualmtorres.github.io/OpenStackDI/#truecambio-de-la-contrase-a[cambia inmediantamente la contraseña suministrada]
+====
+****
+
+image::images/OpenStackDI.png[]
+
+## Recursos para aprender a usar OpenStack-DI
+
+Poco a poco nos familiariaremos con OpenStack-DI a través de los recursos que se ofrecen de forma gratuita. Consulta el https://ualmtorres.github.io/OpenStackDI/[tutorial de OpenStack-DI] disponible en la https://cloud.di.ual.es/[página de inicio de Cloud-DI] y en el curso online abierto (entrar como invitado) https://moodle.di.ual.es/course/view.php?id=5[Introducción al uso de OpenStack] disponible en https://moodle.di.ual.es/[Moodle-DI].
+
+[NOTE]
+====
+El acceso a todos los recursos de Cloud-DI está limitado a la red de la UAL. Por tanto, el acceso desde fuera de la UAL se tendrá que realizar mediante VPN.
+
+* El STIC de la UAL ofrece un https://vpn.ual.es[servicio de configuración de VPN].
+* El ámbito de los nombres DNS usados en Cloud-DI se limita a la red de la UAL. Es necesario añadir un servidor DNS de la UAL (p.e. `150.214.156.2`) en la configuración de red del equipo desde que se realiza el acceso a Cloud-DI.
+====
