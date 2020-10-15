@@ -1,0 +1,75 @@
+////
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:keywords: Selenium end-to-end testing
+:doctype: book
+:icons: font
+
+////
+/// activar btn:
+////
+:experimental:
+
+:source-highlighter: rouge
+:rouge-linenums-mode: inline
+
+// :highlightjsdir: ./highlight
+
+:figure-caption: Fig.
+:imagesdir: images
+
+////
+Nombre y título del trabajo
+////
+= Añadir alertas de consumo (budgets) en Google Cloud
+Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+José Joaquín Cañadas <jjcanada@ual.es> y Manuel Torres <mtorres@ual.es>
+
+// Entrar en modo no numerado de apartados
+:numbered!: 
+
+[abstract]
+////
+COLOCA A CONTINUACIÓN EL RESUMEN
+////
+
+== Introducción
+
+En Google Cloud Platform, un presupuesto (budget) es el crédito estimado que se prevé  gastar cada mes. Aunque un presupuesto no limita el consumo en ese mes, podremos definir alertas para enviar emails a los administradores y usuarios de la cuenta de facturación cuando los cargos superen cierto porcentaje del presupuesto mensual. Esto te ayudará a controlar tu gasto.
+
+Un presupuesto puede ser un importe concreto o basarse en el gasto previo. El gasto del presupuesto se cambia a 0,00 $ el primer día de cada mes.
+
+== Pasos
+
+. En Facturación, Presupuestos y  Alertas, Crear Presupuesto:
+
+.Creacion de un budget (prespuesto)
+image::budget-add-gcp.png[role="thumb", align="center"]
+
+[start=2]
+. Añade la información del presupuesto: 
+* Introduce el nombre cc2021-mes, para indicar que es el presupuesto mensual de la asignatura cc2021.
+* Selecciona tu cuenta de facturación.
+* Añade un importe específico para el presupuesto mensual, que establecemos en: *12 $*
+* Deja los porcentajes predeterminados, para recibir emails cuando se haya consumido el 50, 90 y 100% del presupuesto mensual. 
+
+.Datos de un budget (prespuesto)
+image::budget-create-gcp.png[role="thumb", align="center"]
+
+== Informe de gasto
+
+Esta herramienta muestra gráficas de evolución del gasto en nuestra cuenta de facturación. Más adelante, cuando vayamos gastando crédito, la consultaremos para ver cómo evoluciona nuestro gasto. 
+
+.Informe de gasto
+image::informe-gasto-gcp.png[role="thumb", align="center"]
+
+****
+Más información
+
+* https://cloud.google.com/billing/docs/how-to/reports?hl=es[Consulta los informes de facturación y las tendencias de costos]
+****
+

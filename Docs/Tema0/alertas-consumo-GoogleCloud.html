@@ -7,7 +7,7 @@
 <meta name="generator" content="Asciidoctor 2.0.10">
 <meta name="keywords" content="Selenium end-to-end testing">
 <meta name="author" content="Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática">
-<title>Azure Tips. Añadir alertas de consumo (budgets) en Azure</title>
+<title>Añadir alertas de consumo (budgets) en Google Cloud</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -441,7 +441,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-right">
 <div id="header">
-<h1>Azure Tips. Añadir alertas de consumo (budgets) en Azure</h1>
+<h1>Añadir alertas de consumo (budgets) en Google Cloud</h1>
 <div class="details">
 <span id="author" class="author">Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática</span><br>
 <span id="revdate">José Joaquín Cañadas &lt;jjcanada@ual.es&gt; y Manuel Torres &lt;mtorres@ual.es&gt;</span>
@@ -451,6 +451,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_introducción">Introducción</a></li>
 <li><a href="#_pasos">Pasos</a></li>
+<li><a href="#_informe_de_gasto">Informe de gasto</a></li>
 </ul>
 </div>
 </div>
@@ -459,48 +460,71 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_introducción">Introducción</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>En este tutorial se indica cómo añadir alertas de consumo para recibir un email cuando tu consumo de crédito Azure supere un determinado gasto. Esto te ayudará a controlar tu gasto.</p>
+<p>En Google Cloud Platform, un presupuesto (budget) es el crédito estimado que se prevé  gastar cada mes. Aunque un presupuesto no limita el consumo en ese mes, podremos definir alertas para enviar emails a los administradores y usuarios de la cuenta de facturación cuando los cargos superen cierto porcentaje del presupuesto mensual. Esto te ayudará a controlar tu gasto.</p>
+</div>
+<div class="paragraph">
+<p>Un presupuesto puede ser un importe concreto o basarse en el gasto previo. El gasto del presupuesto se cambia a 0,00 $ el primer día de cada mes.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_pasos">Pasos</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>En Azure el concepto de presupuesto (budget) y alertas es similar.
-. Entra en tus suscripciones, elige tu suscripción, y en Budgets, Add:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>En Facturación, Presupuestos y  Alertas, Crear Presupuesto:</p>
+</li>
+</ol>
 </div>
 <div class="imageblock text-center thumb">
 <div class="content">
-<img src="images/budget-add.png" alt="budget add">
+<img src="images/budget-add-gcp.png" alt="budget add gcp">
 </div>
 <div class="title">Fig. 1. Creacion de un budget (prespuesto)</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
-<p>Añade la información del presupuesto, así como los porcentajes de las alertas, y los emails que deseas que sean notificados (el del profesor, y el tuyo propio).</p>
+<p>Añade la información del presupuesto:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Introduce el nombre cc2021-mes, para indicar que es el presupuesto mensual de la asignatura cc2021.</p>
+</li>
+<li>
+<p>Selecciona tu cuenta de facturación.</p>
+</li>
+<li>
+<p>Añade un importe específico para el presupuesto mensual, que establecemos en: <strong>12 $</strong></p>
+</li>
+<li>
+<p>Deja los porcentajes predeterminados, para recibir emails cuando se haya consumido el 50, 90 y 100% del presupuesto mensual.</p>
+</li>
+</ul>
+</div>
 </li>
 </ol>
 </div>
 <div class="imageblock text-center thumb">
 <div class="content">
-<img src="images/budget-create.png" alt="budget create">
+<img src="images/budget-create-gcp.png" alt="budget create gcp">
 </div>
 <div class="title">Fig. 2. Datos de un budget (prespuesto)</div>
 </div>
-<div class="olist arabic">
-<ol class="arabic" start="3">
-<li>
-<p>El presupuesto se ha creado. Cuando alcances el porcentaje de gasto mensual recibirás un email avisando.</p>
-</li>
-</ol>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_informe_de_gasto">Informe de gasto</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Esta herramienta muestra gráficas de evolución del gasto en nuestra cuenta de facturación. Más adelante, cuando vayamos gastando crédito, la consultaremos para ver cómo evoluciona nuestro gasto.</p>
 </div>
 <div class="imageblock text-center thumb">
 <div class="content">
-<img src="images/budget-listed.png" alt="budget listed">
+<img src="images/informe-gasto-gcp.png" alt="informe gasto gcp">
 </div>
-<div class="title">Fig. 3. Lista de budgets (prespuestos)</div>
+<div class="title">Fig. 3. Informe de gasto</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -510,7 +534,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://docs.microsoft.com/es-es/azure/cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending">Uso de alertas de costes para supervisar el uso y el gasto</a></p>
+<p><a href="https://cloud.google.com/billing/docs/how-to/reports?hl=es">Consulta los informes de facturación y las tendencias de costos</a></p>
 </li>
 </ul>
 </div>
@@ -521,7 +545,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-15 21:43:03 +0200
+Last updated 2020-10-15 21:52:01 +0200
 </div>
 </div>
 </body>
