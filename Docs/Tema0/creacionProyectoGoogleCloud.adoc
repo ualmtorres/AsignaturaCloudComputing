@@ -1,0 +1,83 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:doctype: book
+:linkattrs:
+
+
+:figure-caption: Fig.
+:imagesdir: images
+
+
+////
+Nombre y título del trabajo
+////
+# Creación de un proyecto en Google Cloud Platform
+Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+
+// NO CAMBIAR!! (Entrar en modo no numerado de apartados)
+:numbered!: 
+
+[abstract]
+== Resumen
+////
+COLOCA A CONTINUACION EL RESUMEN
+////
+El primer paso a realizar en Google Cloud Platform es la creación de un proyecto. En GCP todos los servicios están agrupados dentro de proyectos. Dependiendo del tipo de servicio, en cada proyecto puede haber varios servicios de ese mismo tipo, como las máquinas virtuales de Compute Engine, o bien estar limitados a solamente un servicio de ese tipo, como App Engine. 
+
+////
+COLOCA A CONTINUACION LOS OBJETIVOS
+////
+.Objetivos
+* Crear un proyecto en Google Cloud.
+* Dar permisos al profesor para acceder al proyecto.
+
+// Entrar en modo numerado de apartados
+:numbered:
+
+## Pasos
+
+. Accede a la consola de Google Cloud: https://console.cloud.google.com
+. Selecciona la organización `inlumine.ual.es`, y Nuevo Proyecto
+
+.Nuevo proyecto
+image::proyecto-gcp-nuevo.png[role="thumb", align="center"]
+
+[start=3]
+. Da un nombre al nuevo proyecto: el nombre del primer proyecto debe denominarse `cc2021-abc123`¸ donde:
+* `cc2021` corresponde a la asignatura Cloud Computing curso 2019-20
+* `abc123` debe ser *sustituido* por su nombre de usuario de la UAL
+
+.Datos del nuevo proyecto
+image::proyecto-gcp-datos.png[role="thumb", align="center"]
+
+Enhorabuena! El proyecto se ha creado. 
+
+== Dar acceso al profesor al proyecto
+
+A continuación, debes dar permisos de `Propietario` al profesor de la asignatura, para que  tenga acceso y pueda supervisar tu trabajo: Haz click en el menu hamburguesa, IAM y administración, IAM.
+
+.Acceso de usuarios al proyecto
+image::proyecto-gcp-iam.png[role="thumb", align="center"]
+
+.Añadir usuario al proyecto
+image::proyecto-gcp-iam-add.png[role="thumb", align="center"]
+
+Añadir al profesor: mtorres@ual.es
+Y asignarle el acceso a nivel de Proyecto, Propietario (owner)
+
+.Añadir usuario _owner_ al proyecto
+image::proyecto-gcp-iam-add-owner.png[role="thumb", align="center"]
+
+Se ha añadido al profesor. Aparece con un icono de aviso a la espera de confirmación por parte del profesor, el cual habrá recibido un email de confirmación. 
+
+****
+Más información: En el curso https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html#trueessential-google-cloud-infrastructure-core-services[Essential Google Cloud Infrastructure: Core Services] de Coursera aprenderás más sobre IAM y permisos de usuarios  en Google Cloud. 
+****
+
