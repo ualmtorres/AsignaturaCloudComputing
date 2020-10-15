@@ -50,7 +50,7 @@ Para realizar la activación del cupón académico personal de 50$ para la asign
 
 [NOTE]
 ====
-Si no dispones todavía de cuenta personal de correo en la UAL `xxxxxx@inlumine.ual.es`, puedes creártela entrando en https://campus.ual.es/[Campus Virtual], y selecionando `Solicitud Alta en Campus`. 
+Si no dispones todavía de cuenta personal de correo en la UAL `xxxxxx@inlumine.ual.es`, puedes creártela entrando en https://campus.ual.es/[Campus Virtual], y seleccionando `Solicitud Alta en Campus`. 
 
 image::images/SolicitudAltaEnCampus.png[]
 ====
