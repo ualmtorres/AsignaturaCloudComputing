@@ -78,6 +78,6 @@ image::proyecto-gcp-iam-add-owner.png[role="thumb", align="center"]
 Se ha añadido al profesor. Aparece con un icono de aviso a la espera de confirmación por parte del profesor, el cual habrá recibido un email de confirmación. 
 
 ****
-Más información: En el curso https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html#trueessential-google-cloud-infrastructure-core-services[Essential Google Cloud Infrastructure: Core Services] de Coursera aprenderás más sobre IAM y permisos de usuarios  en Google Cloud. 
+Más información: En el curso online https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html#trueessential-google-cloud-infrastructure-core-services[Essential Google Cloud Infrastructure: Core Services] aprenderás más sobre IAM y permisos de usuarios en Google Cloud. 
 ****
 

@@ -48,6 +48,9 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 .Cambiar nombre de cuenta de facturación
 image::cuenta-facturacion-cambiar-nombre.png[role="thumb", align="center"]
 
+.Introducir el nuevo nombre de cuenta de facturación
+image::cuenta-facturacion-cambiar-nombre-entrada.png[role="thumb", align="center"]
+
 [start=2]
 . A continuación, damos permisos de "Administrador de Cuenta de facturación" al profesor: `mtorres@ual.es`:
 En la misma pantalla de Facturación, Mostrar panel de información, Añadir miembros: mtorres@ual.es, Seleccionar un rol: Facturación > Administrador de Cuenta de facturación
@@ -59,6 +62,13 @@ image::cuenta-facturacion-añadir-owner.png[role="thumb", align="center"]
 image::cuenta-facturacion-añadir-owner-admin.png[role="thumb", align="center"]
 
 Guardar!
+
+****
+Más información:
+
+* https://cloud.google.com/billing/docs/concepts?hl=es[Información general sobre los conceptos de facturación de Cloud]
+
+****
 
 
 
