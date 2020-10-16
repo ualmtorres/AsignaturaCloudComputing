@@ -1,0 +1,74 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:doctype: book
+:linkattrs:
+
+
+:figure-caption: Fig.
+:imagesdir: images
+
+
+////
+Nombre y título del trabajo
+////
+# Dar permisos al profesor en la cuenta de facturación en GCP
+Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+
+// NO CAMBIAR!! (Entrar en modo no numerado de apartados)
+:numbered!: 
+
+[abstract]
+== Resumen
+////
+COLOCA A CONTINUACION EL RESUMEN
+////
+En GCP, la cuenta de facturación es la que contiene el crédito para usar en servicios cloud. Cada estudiante tiene una cuenta de facturación con *50$* creada en un tutorial anterior. El objetivo de este documento es que el profesor tenga acceso a la cuenta de facturación de cada estudiante, para poder supervisar el crédito disponible y evitar gastos innecesarios.
+
+////
+COLOCA A CONTINUACION LOS OBJETIVOS
+////
+.Objetivos
+* Cambiar el nombre a la cuenta de facturación
+* Dar permisos sobre la cuenta de facturación.
+
+// Entrar en modo numerado de apartados
+:numbered:
+
+## Pasos
+
+. Todas las cuentas de facturación obtenidas a partir del cupón académico tienen el mismo nombre. Lo primero que vamos a hacer es cambiar el nombre de la cuenta de facturación: En *Facturación*, *Gestión de Cuentas*, *Cambiar Nombre* Cuenta Facturación:
+
+.Cambiar nombre de cuenta de facturación
+image::cuenta-facturacion-cambiar-nombre.png[role="thumb", align="center"]
+
+.Introducir el nuevo nombre de cuenta de facturación
+image::cuenta-facturacion-cambiar-nombre-entrada.png[role="thumb", align="center"]
+
+[start=2]
+. A continuación, damos permisos de "Administrador de Cuenta de facturación" al profesor: `mtorres@ual.es`:
+En la misma pantalla de Facturación, Mostrar panel de información, Añadir miembros: mtorres@ual.es, Seleccionar un rol: Facturación > Administrador de Cuenta de facturación
+
+.Añadir usuario a la cuenta de facturación
+image::cuenta-facturacion-añadir-owner.png[role="thumb", align="center"]
+
+.Asignar el permiso de propietario en la  cuenta de facturación
+image::cuenta-facturacion-añadir-owner-admin.png[role="thumb", align="center"]
+
+Guardar!
+
+****
+Más información:
+
+* https://cloud.google.com/billing/docs/concepts?hl=es[Información general sobre los conceptos de facturación de Cloud]
+
+****
+
+
+
