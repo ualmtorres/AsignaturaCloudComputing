@@ -153,6 +153,10 @@ image::Docs/Tema0/images/GraficoDeContribucionesGitHub.png[]
 
 ****
 
+## Encuesta inicial
+
+Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/bPdTzKQFUxmYh2M8A[pequeña encuesta] que permita valorar tus conocimientos iniciales y adaptar el desarrollo de la asignatura.
+
 ## Antes de comenzar
 
 * Programa _Associate Cloud Engineer_
@@ -177,6 +181,8 @@ image::Docs/Tema0/images/GraficoDeContribucionesGitHub.png[]
 ** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaOpenStackDI.html[Activación de cuenta OpenStack-DI]
 
 ## Recursos
+
+* link:Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf[Tema 1. Modelos de servicio con Computación en la Nube (PDF)]
 
 ## Trabajo autónomo
 
