@@ -176,4 +176,14 @@ image::Docs/Tema0/images/GraficoDeContribucionesGitHub.png[]
 * OpenStack-DI
 ** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaOpenStackDI.html[Activación de cuenta OpenStack-DI]
 
+## Recursos
+
+## Trabajo autónomo
+
+* link:Labs/Lab01/index.html[Lab 01. Creación de máquinas virtuales en OpenStack-DI] 
+
+
+## Actividades no presenciales
+
+https://www.coursera.org/programs/ace-track-907-s-3pm27[Google Associate Engineer Track]
 

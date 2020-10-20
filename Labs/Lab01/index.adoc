@@ -1,0 +1,135 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:doctype: book
+:linkattrs:
+
+////
+Nombre y título del trabajo
+////
+# Lab 01 Cloud Computing. Creación de máquinas virtuales en OpenStack-DI
+Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+
+
+image::../../Docs/Tema0/images/di.png[]
+
+// NO CAMBIAR!! (Entrar en modo no numerado de apartados)
+:numbered!: 
+
+
+[abstract]
+== Resumen
+////
+COLOCA A CONTINUACION EL RESUMEN
+////
+En este laboratorio se trabaja el modelo de Infraestructura como servicio. Se crearán máquinas virtuales y se pratica sobre el almacenamiento virtual.
+
+////
+COLOCA A CONTINUACION LOS OBJETIVOS
+////
+.Objetivos
+* Usar los grupos de seguridad para el control de acceso
+* Crear una máquina virtual Windows y acceder a ella por RDP
+* Crear una máquina virtual Linux y acceder a ella por SSH
+* Crear un volumen
+* Conectar un volumen a una máquina virtual
+* Transferir volúmenes entre proyectos
+
+.Prerrequisitos
+****
+* Acceso al proyecto personal en https://openstack.di.ual.es/horizon[OpenStack-DI]. Revisa tu email en Aula virtual para conocer las credenciales de acceso
+* Los usuarios de Windows deben tener instalada una herramienta para acceso SSH (p.e. Git Bash, Putty). Los usuarios de Linux y Mac usarán la terminal y no tendrán que instalar nada.
+****
+
+// Entrar en modo numerado de apartados
+:numbered:
+
+## Recursos
+
+Puedes aprender a usar OpenStack-DI siguiendo el https://ualmtorres.github.io/OpenStackDI/[Tutorial HTML sobre OpenStack] o bien en forma de videos donde se dan las explicaciones con mayor detalle:
+
+. https://www.youtube.com/watch?v=HJ5Twdygss0&list=PLoS04oY1FHPP54bnjbp7Iy31ncqhvc41X&index=1[Introducción a OpenStack]
+. https://www.youtube.com/watch?v=cG1tftocgiE&list=PLoS04oY1FHPP54bnjbp7Iy31ncqhvc41X&index=3[Red externa vs Red privada
+]
+. https://www.youtube.com/watch?v=SsoJ5zzEtEc&list=PLoS04oY1FHPP54bnjbp7Iy31ncqhvc41X&index=4[Inicializar infraestructura de red]
+. https://www.youtube.com/watch?v=52Zb6pfpRyM[Claves SSH]
+. https://www.youtube.com/watch?v=OE43E0g0tLQ&t=1s[Generación de claves SSH en Windows]
+. https://www.youtube.com/watch?v=98pwEL_akyI&list=PLoS04oY1FHPP54bnjbp7Iy31ncqhvc41X&index=5[Creación de par de claves SSH en Mac y Linux]
+. https://www.youtube.com/watch?v=cc2338HnI_0[Crear máquina virtual Linux]
+. https://www.youtube.com/watch?v=8MxNP_303Y4[Crear máquina virtual Windows]
+. https://www.youtube.com/watch?v=_mCcmQpEyNQ[Grupos de seguridad]
+. https://www.youtube.com/watch?v=0Mt870-u2Gk[Añadir claves públicas a máquinas virtuales Linux]
+. https://www.youtube.com/watch?v=GpB48xg4ixg[Crear volúmenes en Ubuntu]
+
+## Actividades
+
+### Configuración de la infraestructura de red del proyecto personal
+
+. Crear una red con el nombre de usuario de Campus virtual (sin el `@inlumine.ual.es`) seguido de `-net`. En el caso de `mtorres`, la red tendría el nombre de `mtorres-net`.
+. Crear una subred con el nombre de usuario de Campus virtual (sin el `@inlumine.ual.es`) seguido de `-subnet`. En el caso de `mtorres`, la red tendría el nombre de `mtorres-subnet`.
+    * El rango de direcciones de red será `10.0.0.0/24`.
+    * El servidor DNS será uno de la UAL: `150.214.156.2`.
+. Crear un router con el nombre de usuario de Campus virtual (sin el `@inlumine.ual.es`) seguido de `-router`. En el caso de `mtorres`, la red tendría el nombre de `mtorres-router`. El router se conectará inicialmente a la red externa (`ext-net`). Después, añadir una segunda interfaz de red al router para conectarlo a la subred de cada uno.
+
+### Creación de una máquina virtual Windows Server 2012
+
+. Lanzar una instancia (máquina virtual) seleccionando una imagen disponible de Windows (Windows Server 2012 R2).
+
++
+[IMPORTANT]
+====
+En el paso del Asistente de OpenStack para la creación de una nueva instancia especificar que **No cree un nuevo volumen para la nueva instancia**.
+====
+
++
+. Configurar el grupo de seguridad `default` y añadir la regla del puerto `RDP` (3389) para que se pueda acceder a ella por escritorio remoto.
+. Seleccionar el _Sabor_ (Tamaño) de la instancia: `large` (4 vCPU, 8 GB de RAM y 80 GB de disco).
+. Asignar una IP flotante a la instancia creada.
+. Acceder a la instancia con el cliente de escritorio remoto usando su IP flotante.
+. Adjuntar en la actividad disponible en Aula Virtual la dirección IP flotante de la instancia creada.
+
+[NOTE]
+====
+Las credenciales de acceso se encuentran en el foro general de Aula virtual.
+====
+
+[TIP]
+====
+Puedes consultar en cualquier momento el estado de la consola y el log de arranque de la instancia. En el menú desplegable de la instancia selecciona `Consola` o `Ver log` para acceder a la consola o ver el log, respectivamente. 
+====
+
+### Creación de una máquina virtual Ubuntu 18.04 LTS
+
+. Crear un par de claves SSH si no se dispone de una y subir la clave pública a la cuenta de OpenStack (Menú `Proyecto | Compute | Pares de claves | Importar par de claves`).
+. Lanzar una instancia (máquina virtual) seleccionando una imagen disponible de Ubuntu 18.04 LTS.
+
++
+[IMPORTANT]
+====
+En el paso del Asistente de OpenStack para la creación de una nueva instancia especificar que **No cree un nuevo volumen para la nueva instancia**.
+====
+
++
+. Configurar el grupo de seguridad `default` y añadir la regla del puerto `SSH` (22) para que se pueda acceder a ella por SSH. 
+. Seleccionar el _Sabor_ (Tamaño) de la instancia: `medium` (2 vCPU, 4 GB RAM y 40 GB de disco).
+. Asignar una IP flotante a la instancia creada.
+. Accedee a la instancia creada mediante una terminal indicando su IP flotante.
+. Editar el archivo `/home/ubuntu/.ssh/authorized_keys` y añadir la clave pública del profesor, disponible en el foro general de la asignatura en Aula virtual.
+. Adjuntar en la actividad disponible en Aula Virtual la dirección IP flotante de la instancia creada.
+
+### Uso de volúmenes de almacenamiento de bloques
+
+. Crear un volumen de 1 GB con el nombre de usuario de Campus virtual (sin el `@inlumine.ual.es`) seguido de `-volume`. En el caso de `mtorres`, el volumen tendría el nombre de `mtorres-volume`.
+. Conectar el volumen a la instancia creada en la actividad anterior.
+. Formatear el volumen como EXT4.
+. Montar el volumen en la instancia (p.e. en `/mnt`).
+. Crear un archivo con el nombre de usuario de Campus virtual y extensión `.txt`. En el caso de `mtorres`, la archivo se denominaría `mtorres.txt`. Incluir en el contenido del archivo el nombre completo de cada uno.
+. Desmontar y desconectar el volumen de la instancia.
+. Crear una transfencia de volumen y adjuntar el archivo a la actividad en Aula Virtual.
+
