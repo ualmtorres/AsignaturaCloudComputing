@@ -182,7 +182,18 @@ Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/bPdTzK
 
 ## Recursos
 
+### Temas
+
 * link:Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf[Tema 1. Modelos de servicio con Computación en la Nube (PDF)]
+
+### Sesiones de clase
+
+Mientras se formaliza la matrícula definitiva y teneis acceso a Aula virtual, podeis usar estos enlaces provisionales:
+
+* https://eu.bbcollab.com/guest/a7e5426ef2564fde8ed5b31390e7ae81[Sala de videoconferencia]
+* https://eu-lti.bbcollab.com/recording/ad2c79adf3764f238329ef6c0f8a836a[Grabación 2020-10-20]
+
+
 
 ## Trabajo autónomo
 
