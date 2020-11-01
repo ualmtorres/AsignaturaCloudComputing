@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5.dev">
 <meta name="author" content="Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática">
-<title>Creación de una base de datos MySQL en Google Cloud Platform</title>
+<title>Platform as a Service. Casos de uso en Heroku y App Engine</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -421,7 +421,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-right">
 <div id="header">
-<h1>Creación de una base de datos MySQL en Google Cloud Platform</h1>
+<h1>Platform as a Service. Casos de uso en Heroku y App Engine</h1>
 <div class="details">
 <span id="author" class="author">Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática</span><br>
 <span id="revdate">José Joaquín Cañadas y Manuel Torres &lt;jjcanada@ual.es&gt; &lt;mtorres@ual.es&gt;</span>
@@ -431,13 +431,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#trueresumen">Resumen</a></li>
 <li><a href="#trueintroducci-n">1. Introducción</a></li>
-<li><a href="#truemodo-iaas">2. Modo IaaS</a>
+<li><a href="#trueheroku">2. Heroku</a>
 <ul class="sectlevel2">
-<li><a href="#truecrear-instancia-mysql">2.1. Crear instancia MySQL</a></li>
-<li><a href="#truecrear-instancia-php">2.2. Crear instancia PHP</a></li>
+<li><a href="#trueregistro-en-el-plan-gratuito-de-heroku">2.1. Registro en el plan gratuito de Heroku</a></li>
 </ul>
 </li>
-<li><a href="#trueapp-engine">3. App Engine</a></li>
+<li><a href="#truedespliegue-de-una-aplicaci-n-php-con-despliegue-continuo">3. Despliegue de una aplicación PHP con despliegue continuo</a>
+<ul class="sectlevel2">
+<li><a href="#truecreaci-n-de-un-fork-de-la-aplicaci-n">3.1. Creación de un fork de la aplicación</a></li>
+<li><a href="#truedespliegue-autom-tico">3.2. Despliegue automático</a></li>
+<li><a href="#trueroll-back">3.3. Roll back</a></li>
+<li><a href="#trueotras-opciones-de-inter-s">3.4. Otras opciones de interés</a></li>
+</ul>
+</li>
+<li><a href="#trueapp-engine">4. App Engine</a>
+<ul class="sectlevel2">
+<li><a href="#truecreaci-n-de-la-aplicaci-n-en-app-engine-en-modo-manual">4.1. Creación de la aplicación en App Engine en modo manual</a></li>
+<li><a href="#truedespliegue-continuo">4.2. Despliegue continuo</a></li>
+<li><a href="#truecrear-instancia-mysql">4.3. Crear instancia MySQL</a></li>
+<li><a href="#truecrear-instancia-php">4.4. Crear instancia PHP</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -445,45 +459,525 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="trueresumen"><a class="anchor" href="#trueresumen"></a>Resumen</h2>
 <div class="sectionbody">
-<div class="ulist">
+<div class="paragraph">
 <div class="title">Objetivos</div>
-<ul>
-<li>
-<p>Crear una instancia MySQL a la medida de las necesidades</p>
-</li>
-<li>
-<p>Configurar las conexiones permitidas a la instancia MySQL</p>
-</li>
-<li>
-<p>Crear un segmento en Cloud Storage</p>
-</li>
-<li>
-<p>Añadir archivos a un segmento Cloud Storage mediante la API de Cloud Storage</p>
-</li>
-<li>
-<p>Usar el cliente MySQL de Cloud Shell</p>
-</li>
-<li>
-<p>Crear una máquina virtual</p>
-</li>
-<li>
-<p>Realizar una conexión SSH a la máquina virtual</p>
-</li>
-</ul>
+<p>*</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="trueintroducci-n"><a class="anchor" href="#trueintroducci-n"></a>1. Introducción</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Dentro de los modelos de servicio de cloud computing, en PaaS (Plataform as a Service) el proveedor ofrece un entorno o plataforma en el que los usuarios pueden crear y distribuir aplicaciones sin preocuparse de la infraestructura. Es el proveedor el que proporciona el Sistema operativo, software, librerías, gestión de certificados SSL y demás, todo en su sin preocuparnos de las actualizaciones. Es el proveedor el que se encarga de su mantenimiento. De esta forma, <strong>el modo PaaS permite a los desarrolladores centrarse en el desarrollo. Es ideal para realizar pruebas y crear prototipos de nuevas aplicaciones</strong></p>
+</div>
+<div class="paragraph">
+<p>Además los proveedores PaaS suelen ofrecer gran cantidad de servicios que pueden ser consumidos desde las aplicaciones (bases de datos, herramientas de monitorización y logging, almacenamiento, despliegue continuo, y un largo etcétera).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>En el modo IaaS (Infraestructure as a Service) el proveedor proporciona almacenamiento, redes, máquinas virtuales y otros servicios virtuales. Es el usuario el encargado del matenenimiento del sistema operativo y todo el software, paquetes y librerías que se instalen sobre él</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="truemodo-iaas"><a class="anchor" href="#truemodo-iaas"></a>2. Modo IaaS</h2>
+<h2 id="trueheroku"><a class="anchor" href="#trueheroku"></a>2. Heroku</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.heroku.com/platform">Heroku</a> es un PaaS basado en un sistema de contenedores con servicios de datos integrados (Postgres como motor de bases de datos relacionales, Redis como base de datos clave valor para mejorar el rendimiento, Apache Kafka para gestionar datos en streaming).</p>
+</div>
+<div class="paragraph">
+<p>Actualmente Heroku ofrece plaforma para desarrollo en:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Node.js</p>
+</li>
+<li>
+<p>Ruby</p>
+</li>
+<li>
+<p>Java</p>
+</li>
+<li>
+<p>PHP</p>
+</li>
+<li>
+<p>Python</p>
+</li>
+<li>
+<p>Go</p>
+</li>
+<li>
+<p>Scala</p>
+</li>
+<li>
+<p>Clojure</p>
+</li>
+</ul>
+</div>
 <div class="sect2">
-<h3 id="truecrear-instancia-mysql"><a class="anchor" href="#truecrear-instancia-mysql"></a>2.1. Crear instancia MySQL</h3>
+<h3 id="trueregistro-en-el-plan-gratuito-de-heroku"><a class="anchor" href="#trueregistro-en-el-plan-gratuito-de-heroku"></a>2.1. Registro en el plan gratuito de Heroku</h3>
+<div class="paragraph">
+<p>Heroku ofrece varios planes comerciales y uno gratuito. El gratuito es útil para pruebas de concepto y ofrece despliegue desde GitHub con despliegue continuo, lo que lo convierte en una opción muy atractiva para usarlo aquí.</p>
+</div>
+<div class="paragraph">
+<p>Regístrate con una cuenta de email. Tras iniciar sesión se accede a una pantalla de bienvenida donde se puede crear una aplicación de forma sencilla y se ofrecen tutoriales sobre el desarollo de aplicaciones en los lenguajes soportados.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/HerokuInicio.png" alt="HerokuInicio.png">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truedespliegue-de-una-aplicaci-n-php-con-despliegue-continuo"><a class="anchor" href="#truedespliegue-de-una-aplicaci-n-php-con-despliegue-continuo"></a>3. Despliegue de una aplicación PHP con despliegue continuo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A continuación vamos a ver cómo desplegar una aplicación PHP desde un repositorio GitHub activando la opción de despliegue continuo. El despliegue continuo permitirá la actualización de la aplicación de forma desastitida tras una subida de cambios (a una rama) a un repositorio.</p>
+</div>
+<div class="sect2">
+<h3 id="truecreaci-n-de-un-fork-de-la-aplicaci-n"><a class="anchor" href="#truecreaci-n-de-un-fork-de-la-aplicaci-n"></a>3.1. Creación de un fork de la aplicación</h3>
+<div class="paragraph">
+<p>Desde tu cuenta de usuario GitHub, crea un fork del <a href="https://github.com/ualmtorres/diariostic">repositorio GitHub de la aplicación de ejemplo</a>.</p>
+</div>
+<div class="paragraph">
+<p>Se trata de una aplicación muy sencilla, con el único fin de servir como prueba de concepto de como el modelo PaaS facilita centrarse en el desarrollo, haciendo transparente al equipo de desarrollo la gestión de la plataforma subyacente (en este caso intérprete PHP, servidor web, librerías, almacenamiento y otros detalles de infraestructura).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/diariostic.png" alt="diariostic.png">
+</div>
+</div>
+<div class="paragraph">
+<p>En la pantalla inicial (dashboard) de Heroku seleccionar <code>Create new app</code> o selecciona el la opción <code>New | Create new app</code>. Asignar un nombre a la aplicación (p.e. <code>diariostic</code> seguido del login de campus virtual), elegir una región de despliegue y seleccionar <code>Create app</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>El nombre elegido para la aplicación ha de ser único ya que es el que usará para componer el nombre DNS de la aplicación.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Como método de despliegue se usará GitHub. Para ello es necesario conectar con la cuenta de GitHub donde está el repositorio. Una vez establecida la conexión entre la cuenta Heroku y la cuenta GitHub, busca el repositorio de la aplicación seleccionando el botón <code>Search</code> y seleccionando el repositorio. Una vez encontrado, pulsar el botón <code>Connect</code>. La aplicación Heroku quedará conectada al repositorio GitHub. El resultado debe ser como el de la figura siguiente.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/HerokuDiarioSticConnected.png" alt="HerokuDiarioSticConnected.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Para activar la opción de despliegue automático tras efectuar <code>push</code> en la rama indicada del repositorio, pulsar le botón <code>Enable Automatic Deploys</code> y dejar seleccionada la rama <code>master</code> del repositorio.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/HerokuActivacionDespliegueAutomatico.png" alt="HerokuActivacionDespliegueAutomatico.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Una vez activado el despliegue automático tras hacer <code>push</code> a la rama seleccionada, pulsar <code>Deploy Branch</code> y dejar la rama selccionada. Esto creará el primer despliegue de la aplicación.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/HerokuDespliegueInicial.png" alt="HerokuDespliegueInicial.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Unos instantes después la aplicación quedará desplegada y se podrá ver pulsando el botón <code>View</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/diariostic.png" alt="diariostic.png">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truedespliegue-autom-tico"><a class="anchor" href="#truedespliegue-autom-tico"></a>3.2. Despliegue automático</h3>
+<div class="paragraph">
+<p>Realizar un <code>push</code> sobre el repositorio editando directamente el archivo <code>secciones/portada.php</code> cambiando el título por <code>Portada actualizada</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php" data-lang="php">&lt;?php
+
+$portada = [
+"titulo" =&gt; "Portada actualizada", <i class="conum" data-value="1"></i><b>(1)</b>
+"autor" =&gt; "mtorres",
+"resumen" =&gt; "Resumen de la portada",
+];
+?&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Cambiar el título</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Añade un mensaje al commit (p.e. <code>Cambio del título de la portada</code>) y realiza el commit.</p>
+</div>
+<div class="paragraph">
+<p>Tras unos instantes la aplicación quedará actualizada de forma automática con el nuevo título de la portada.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/diariosticActualizado.png" alt="diariosticActualizado.png">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueroll-back"><a class="anchor" href="#trueroll-back"></a>3.3. Roll back</h3>
+<div class="paragraph">
+<p>Es posible volver a estados anteriores de la aplicación. Por ejemplo, tras desplegar un cambio comprobamos que la aplicación no funciona correctamente y se necesita volver atrás mientras se resuelve el problema.</p>
+</div>
+<div class="paragraph">
+<p>La pestaña <code>Activity</code> de la aplicación contiene una lista de toda la actividad llevada a cabo en la aplicación (despliegue de commits, operaciones de build, &#8230;&#8203;).</p>
+</div>
+<div class="paragraph">
+<p>Los despliegues se pueden reconocer porque tienen asociado el hash del commit que tomaron como base. En ellos se muestra un enlace con <code>Roll back to here</code>. Pulsar sobre el que aparece en el primer commit.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/HerokuRollback.png" alt="HerokuRollback.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Aparecerá un cuadro de mensaje pidiendo la confirmación para volver a la versión anterior. Pulsar <code>Rollback</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/HerokuRollbackConfirmacion.png" alt="HerokuRollbackConfirmacion.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Se creará una nueva versión, que aparecerá en el registro de actividad y la aplicación volverá a su estado original tras unos instantes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/diariostic.png" alt="diariostic.png">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueotras-opciones-de-inter-s"><a class="anchor" href="#trueotras-opciones-de-inter-s"></a>3.4. Otras opciones de interés</h3>
+<div class="paragraph">
+<p>Se pueden activar opciones y funcionalidades muy interesantes en la aplicación, como monitorización, gestión de logs, y demás. Todas ellas se pueden añadir desde la pestaña <code>Resources</code> pulsando sobre <code>Find more add-ons</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/HerokuAddons.png" alt="HerokuAddons.png">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>La activación de Add-ons, aunque tengan una opción gratuita, exigen actualizar la cuenta de Heroku introduciendo una tarjeta de crédito. <strong>Esto no es necesario para la asignatura</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Heroku Dynos</div>
+<div class="paragraph">
+<p>La plataforma Heroku usa contenedores para ejecutar las aplicaciones lo que permite su escalado. A estos contenedores Heroku los denomina <em>Dynos</em>. La suscripción gratuita admite poco tráfico y no permite el escalado. Es posible cambiar el tipo de <em>Dyno</em> a otras opciones que ofrezcan mayor rendimiento en aplicaciones de alta demanda.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/HerokuDynoTypes.png" alt="HerokuDynoTypes.png">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueapp-engine"><a class="anchor" href="#trueapp-engine"></a>4. App Engine</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Google App Engine es el PaaS de Google. Permite el desarrollo de aplicaciones en una plataforma totalmente gestionada por Google. Actualmente App Engine ofrece plaforma para desarrollo en:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Node.js</p>
+</li>
+<li>
+<p>Ruby</p>
+</li>
+<li>
+<p>Java</p>
+</li>
+<li>
+<p>C#</p>
+</li>
+<li>
+<p>PHP</p>
+</li>
+<li>
+<p>Python</p>
+</li>
+<li>
+<p>Go</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Google App Engine permite el escalado de aplicaciones y distribución por todas las regiones sin tener que preocuparnos de la infraestructura. Se trata de un despligue sin configuración de servidor lo que supone gran agilidad.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>En el Menú de navegación, seleccionar <code>App Engine</code>. Aparecerá una pantalla de bienvenida. Pulsar <code>Crear Aplicación</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AppEngineBienvenida.png" alt="AppEngineBienvenida.png">
+</div>
+</div>
+</li>
+<li>
+<p>Indicar la región de despliegue. Elegiremos <code>europe-west</code> y pulsaremos sobre <code>Crear aplicación</code>.</p>
+</li>
+<li>
+<p>Seleccionar el lenguaje en el que está creada la aplicación para que Google App Engine prepare la plataforma de ejecución de la aplicación. En este caso elegiremos PHP.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AppEngineSeleccionarLenguaje.png" alt="AppEngineSeleccionarLenguaje.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Tras unos instantes se informa que la aplicación se ha creado con éxito.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AppEngineAppCreada.png" alt="AppEngineAppCreada.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Se nos ofrecen recursos para la documentación de App Engine en el lenguaje usado y ejemplos de código en GitHub. A la derecha tenemos los comandos que hay que ejecutar en Cloud Shell y que ejecutaremos en unos instantes. Por ahora, saldremos del asistente pulsando <code>LO HARÉ MAS ADELANTE</code>.</p>
+</div>
+</li>
+<li>
+<p>Abrir Cloud Shell</p>
+</li>
+<li>
+<p>Clonar el repositorio de la aplicación</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">$ git clone https://github.com/ualmtorres/diariostic.git</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Crear el descriptor <code>app.yaml</code> en la carpeta del código de la aplicación</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">$ cd diariostic
+$ wget https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e app.yaml</code></pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">El descriptor <code>app.yaml</code></div>
+<div class="paragraph">
+<p>La configuración de las aplicaciones de App Engine se realiza mediante un archivo denominado <code>app.yaml</code>. En este archivo se especifican, entre otros, el entorno de ejecución, los controladores para atender las peticiones de la aplicación y los archivos estáticos (p.e. imágenes).</p>
+</div>
+<div class="paragraph">
+<p>+
+A continuación se muestra un ejemplo de archivo <a href="https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e"><code>app.yaml</code></a>.</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml" data-lang="yaml">runtime: php55 <i class="conum" data-value="1"></i><b>(1)</b>
+api_version: 1
+handlers:
+- url: / <i class="conum" data-value="2"></i><b>(2)</b>
+  script: index.php
+# Serve images as static resources.
+- url: /(.+\.(gif|png|jpg))$ <i class="conum" data-value="3"></i><b>(3)</b>
+  static_files: \1
+  upload: .+\.(gif|png|jpg)$
+  application_readable: true
+# Serve php scripts.
+- url: /(.+\.php)$
+  script: \1</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Entorno de ejecución</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Controlador principal para servir la aplicación</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Controlador para servir archivos estáticos</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Ver la aplicación en modo de prueba</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">$ php - S localhost:8080</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Abrir <code>Vista previa web</code></p>
+</li>
+<li>
+<p>Inicializar en Cloud Shell el SDK de Google Cloud</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">$ gcloud init</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para poder usar el SDK de Google Cloud en Cloud Shell, Google Cloud nos advierte que necesita incluir nuestras credenciales en Cloud Shell. Pulsaremos <code>Autorizar</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CloudShellAutorizar.png" alt="CloudShellAutorizar.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Nos pedirá confirmación de despliegue sobre el descriptor (<code>app.yaml</code>) a usar, el origen (carpeta donde se colocó el repositorio) y el proyecto de destino. Tras confirmar, informará que se ha inicializado el Google Cloud SDK y  comenzará el despliegue. La aplicación quedará almacenada en Google Cloud Storage.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">descriptor:      [/home/mtorres/diariostic/app.yaml]
+source:          [/home/mtorres/diariostic]
+target project:  [cloud-computing-mtorres]
+target service:  [default]
+target version:  [20201101t062114]
+target url:      [https://cloud-computing-mtorres.ew.r.appspot.com]
+
+Do you want to continue (Y/n)?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unos instantes más tarde podremos ver la aplicación ejecutando <code>gcloud app browse</code>. Esto nos proporcionará una URL para acceder a la aplicación si no hay un navegador predeterminado y se obtendrá un resultado como el de la figura.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AppEngineDiarioStic.png" alt="AppEngineDiarioStic.png">
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>La apliación estará disponible en el Panel de control` en el el bloque de <code>App Engine</code> del Menú de navegación. Mostrará las aplicaciones desplegadas en App Engine con un resumen del tráfico, resumen de las instancias desplegadas, estado de facturación, carga actual, errores y otra información de interés. No se perderán datos, se guardará su estado y posteriormente se podrá volver a habilitar.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AppEnginePanelDeControl.png" alt="AppEnginePanelDeControl.png">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Para evitar gastos inncesarios en el cupón de la cuenta de la asignatura, una vez hechas las pruebas inhabilitar la aplicación desde el menú <code>Configuración</code> de App Engine.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AppEngineInhabilitarApp.png" alt="AppEngineInhabilitarApp.png">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="truecreaci-n-de-la-aplicaci-n-en-app-engine-en-modo-manual"><a class="anchor" href="#truecreaci-n-de-la-aplicaci-n-en-app-engine-en-modo-manual"></a>4.1. Creación de la aplicación en App Engine en modo manual</h3>
+<div class="paragraph">
+<p>En lugar de crear la aplicación desde el bloque App Engine del Menú de navegación es posible crear la aplicación directamente desde Cloud Shell con <code>gcloud init</code>.</p>
+</div>
+<div class="paragraph">
+<p>Previamente, se habrá descargado el repositorio de código de la aplicación y se habrá incluido el descriptor de despliegue (<code>app.yaml</code>) en el directorio del código de la aplicación.</p>
+</div>
+<div class="paragraph">
+<p>Para poder usar el SDK de Google Cloud en Cloud Shell, Google Cloud nos advierte que necesita incluir nuestras credenciales en Cloud Shell.</p>
+</div>
+<div class="paragraph">
+<p>Como no se ha creado proyecto App Engine para la aplicación, nos pedirá si queremos crear proyecto nuevo o meter en existente. El valor introducido de tomará como ID del proyecto y no podrá ser cambiado posteriormente.</p>
+</div>
+<div class="paragraph">
+<p>Después se desplegará con <code>gcloud app deploy</code>. Habrá que indicar una región de despliegue. Seleccionar <code>europe-west</code>.</p>
+</div>
+<div class="paragraph">
+<p>Nos pedirá confirmación de despliegue sobre el descriptor (<code>app.yaml</code>) a usar, el origen (carpeta donde se colocó el repositorio) y el proyecto de destino. Tras confirmar, comenzará el despliegue y lo almacenará en Google Cloud Storage.</p>
+</div>
+<div class="paragraph">
+<p>Para poder construir la aplicación es necesario que el proyecto tengan configurados permisos de acceso a la API de Cloud Build. Se nos pedirá que demos permiso a través de un enlace de activación de Cloud Build API en el proyecto. Se llegará a una pantalla como la siguiente.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/GoogleCloudHabilitarCloudBuildAPI.png" alt="GoogleCloudHabilitarCloudBuildAPI.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Pulsar sobre <code>Habilitar</code>. A continuación, pedirá que se indique una cuenta donde vincular la facturación. Indicar la cuenta del cupón de la asignatura.</p>
+</div>
+<div class="paragraph">
+<p>Una vez configurado el acceso a la API de Cloud Build, volver a Cloud Shell y volver a desplegar con <code>gcloud app deploy</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truedespliegue-continuo"><a class="anchor" href="#truedespliegue-continuo"></a>4.2. Despliegue continuo</h3>
+<div class="paragraph">
+<p>El despliegue automático en App Engine no es tan directo como en Heroku. Para más información, consultar la <a href="https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories">documentación oficial</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecrear-instancia-mysql"><a class="anchor" href="#truecrear-instancia-mysql"></a>4.3. Crear instancia MySQL</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -513,7 +1007,7 @@ mysql -u root -psecret --execute="GRANT ALL ON SG.* TO root@'%' IDENTIFIED BY 's
 </div>
 </div>
 <div class="sect2">
-<h3 id="truecrear-instancia-php"><a class="anchor" href="#truecrear-instancia-php"></a>2.2. Crear instancia PHP</h3>
+<h3 id="truecrear-instancia-php"><a class="anchor" href="#truecrear-instancia-php"></a>4.4. Crear instancia PHP</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
@@ -534,56 +1028,10 @@ git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp</code></pr
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="trueapp-engine"><a class="anchor" href="#trueapp-engine"></a>3. App Engine</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Abrir Cloud Shell</p>
-</div>
-<div class="paragraph">
-<p>git clone
-cd diariostic</p>
-</div>
-<div class="paragraph">
-<p>Crear archivo app.yaml
-<a href="https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e" class="bare">https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e</a></p>
-</div>
-<div class="paragraph">
-<p>php - S localhost:8080
-Abrir <code>Vista previa web</code></p>
-</div>
-<div class="paragraph">
-<p>Autorizar</p>
-</div>
-<div class="paragraph">
-<p>Google Cloud nos advierte que necesita incluir nuestras credenciales en Cloud Shell. Pulsaremos <code>Autorizar</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/CloudShellAutorizar.png" alt="CloudShellAutorizar.png">
-</div>
-</div>
-<div class="paragraph">
-<p>gcloud init
-gcloud app deploy</p>
-</div>
-<div class="paragraph">
-<p>Abrir la URL</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DiarioSTIC.png" alt="DiarioSTIC.png">
-</div>
-</div>
-<div class="paragraph">
-<p>Despliegue continuo: <a href="https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories" class="bare">https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories</a></p>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-27 15:29:04 CET
+Last updated 2020-11-01 08:01:54 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

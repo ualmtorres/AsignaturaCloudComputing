@@ -15,7 +15,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 ////
 Nombre y título del trabajo
 ////
-# Creación de una base de datos MySQL en Google Cloud Platform
+# Platform as a Service. Casos de uso en Heroku y App Engine
 Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
@@ -33,20 +33,316 @@ COLOCA A CONTINUACION EL RESUMEN
 COLOCA A CONTINUACION LOS OBJETIVOS
 ////
 .Objetivos
-* Crear una instancia MySQL a la medida de las necesidades
-* Configurar las conexiones permitidas a la instancia MySQL
-* Crear un segmento en Cloud Storage 
-* Añadir archivos a un segmento Cloud Storage mediante la API de Cloud Storage
-* Usar el cliente MySQL de Cloud Shell
-* Crear una máquina virtual
-* Realizar una conexión SSH a la máquina virtual
+* 
 
 // Entrar en modo numerado de apartados
 :numbered:
 
 ## Introducción
 
-## Modo IaaS
+Dentro de los modelos de servicio de cloud computing, en PaaS (Plataform as a Service) el proveedor ofrece un entorno o plataforma en el que los usuarios pueden crear y distribuir aplicaciones sin preocuparse de la infraestructura. Es el proveedor el que proporciona el Sistema operativo, software, librerías, gestión de certificados SSL y demás, todo en su sin preocuparnos de las actualizaciones. Es el proveedor el que se encarga de su mantenimiento. De esta forma, **el modo PaaS permite a los desarrolladores centrarse en el desarrollo. Es ideal para realizar pruebas y crear prototipos de nuevas aplicaciones**
+
+Además los proveedores PaaS suelen ofrecer gran cantidad de servicios que pueden ser consumidos desde las aplicaciones (bases de datos, herramientas de monitorización y logging, almacenamiento, despliegue continuo, y un largo etcétera).
+
+[NOTE]
+====
+En el modo IaaS (Infraestructure as a Service) el proveedor proporciona almacenamiento, redes, máquinas virtuales y otros servicios virtuales. Es el usuario el encargado del matenenimiento del sistema operativo y todo el software, paquetes y librerías que se instalen sobre él
+====
+
+## Heroku 
+
+https://www.heroku.com/platform[Heroku] es un PaaS basado en un sistema de contenedores con servicios de datos integrados (Postgres como motor de bases de datos relacionales, Redis como base de datos clave valor para mejorar el rendimiento, Apache Kafka para gestionar datos en streaming).
+
+Actualmente Heroku ofrece plaforma para desarrollo en:
+
+* Node.js
+* Ruby
+* Java
+* PHP
+* Python
+* Go
+* Scala
+* Clojure
+
+### Registro en el plan gratuito de Heroku
+
+Heroku ofrece varios planes comerciales y uno gratuito. El gratuito es útil para pruebas de concepto y ofrece despliegue desde GitHub con despliegue continuo, lo que lo convierte en una opción muy atractiva para usarlo aquí.
+
+Regístrate con una cuenta de email. Tras iniciar sesión se accede a una pantalla de bienvenida donde se puede crear una aplicación de forma sencilla y se ofrecen tutoriales sobre el desarollo de aplicaciones en los lenguajes soportados.
+
+image::images/HerokuInicio.png[]
+
+## Despliegue de una aplicación PHP con despliegue continuo
+
+A continuación vamos a ver cómo desplegar una aplicación PHP desde un repositorio GitHub activando la opción de despliegue continuo. El despliegue continuo permitirá la actualización de la aplicación de forma desastitida tras una subida de cambios (a una rama) a un repositorio.
+
+### Creación de un fork de la aplicación
+
+Desde tu cuenta de usuario GitHub, crea un fork del https://github.com/ualmtorres/diariostic[repositorio GitHub de la aplicación de ejemplo].
+
+Se trata de una aplicación muy sencilla, con el único fin de servir como prueba de concepto de como el modelo PaaS facilita centrarse en el desarrollo, haciendo transparente al equipo de desarrollo la gestión de la plataforma subyacente (en este caso intérprete PHP, servidor web, librerías, almacenamiento y otros detalles de infraestructura).
+
+image::images/diariostic.png[]
+
+En la pantalla inicial (dashboard) de Heroku seleccionar `Create new app` o selecciona el la opción `New | Create new app`. Asignar un nombre a la aplicación (p.e. `diariostic` seguido del login de campus virtual), elegir una región de despliegue y seleccionar `Create app`.
+
+[NOTE]
+====
+El nombre elegido para la aplicación ha de ser único ya que es el que usará para componer el nombre DNS de la aplicación.
+====
+
+Como método de despliegue se usará GitHub. Para ello es necesario conectar con la cuenta de GitHub donde está el repositorio. Una vez establecida la conexión entre la cuenta Heroku y la cuenta GitHub, busca el repositorio de la aplicación seleccionando el botón `Search` y seleccionando el repositorio. Una vez encontrado, pulsar el botón `Connect`. La aplicación Heroku quedará conectada al repositorio GitHub. El resultado debe ser como el de la figura siguiente.
+
+image::images/HerokuDiarioSticConnected.png[]
+
+Para activar la opción de despliegue automático tras efectuar `push` en la rama indicada del repositorio, pulsar le botón `Enable Automatic Deploys` y dejar seleccionada la rama `master` del repositorio.
+
+image::images/HerokuActivacionDespliegueAutomatico.png[]
+
+Una vez activado el despliegue automático tras hacer `push` a la rama seleccionada, pulsar `Deploy Branch` y dejar la rama selccionada. Esto creará el primer despliegue de la aplicación.
+
+image::images/HerokuDespliegueInicial.png[]
+
+Unos instantes después la aplicación quedará desplegada y se podrá ver pulsando el botón `View`.
+
+image::images/diariostic.png[]
+
+### Despliegue automático
+
+Realizar un `push` sobre el repositorio editando directamente el archivo `secciones/portada.php` cambiando el título por `Portada actualizada`.
+
+[source, php]
+----
+<?php
+
+$portada = [
+"titulo" => "Portada actualizada", <1>
+"autor" => "mtorres",
+"resumen" => "Resumen de la portada",
+];
+?>
+----
+<1> Cambiar el título
+
+Añade un mensaje al commit (p.e. `Cambio del título de la portada`) y realiza el commit.
+
+Tras unos instantes la aplicación quedará actualizada de forma automática con el nuevo título de la portada.
+
+image::images/diariosticActualizado.png[]
+
+### Roll back
+
+Es posible volver a estados anteriores de la aplicación. Por ejemplo, tras desplegar un cambio comprobamos que la aplicación no funciona correctamente y se necesita volver atrás mientras se resuelve el problema.
+
+La pestaña `Activity` de la aplicación contiene una lista de toda la actividad llevada a cabo en la aplicación (despliegue de commits, operaciones de build, ...). 
+
+Los despliegues se pueden reconocer porque tienen asociado el hash del commit que tomaron como base. En ellos se muestra un enlace con `Roll back to here`. Pulsar sobre el que aparece en el primer commit.
+
+image::images/HerokuRollback.png[]
+
+Aparecerá un cuadro de mensaje pidiendo la confirmación para volver a la versión anterior. Pulsar `Rollback`.
+
+image::images/HerokuRollbackConfirmacion.png[]
+
+Se creará una nueva versión, que aparecerá en el registro de actividad y la aplicación volverá a su estado original tras unos instantes.
+
+image::images/diariostic.png[]
+
+### Otras opciones de interés
+
+Se pueden activar opciones y funcionalidades muy interesantes en la aplicación, como monitorización, gestión de logs, y demás. Todas ellas se pueden añadir desde la pestaña `Resources` pulsando sobre `Find more add-ons`.
+
+image::images/HerokuAddons.png[]
+
+[IMPORTANT]
+====
+La activación de Add-ons, aunque tengan una opción gratuita, exigen actualizar la cuenta de Heroku introduciendo una tarjeta de crédito. **Esto no es necesario para la asignatura**.
+====
+
+.Heroku Dynos
+****
+La plataforma Heroku usa contenedores para ejecutar las aplicaciones lo que permite su escalado. A estos contenedores Heroku los denomina _Dynos_. La suscripción gratuita admite poco tráfico y no permite el escalado. Es posible cambiar el tipo de _Dyno_ a otras opciones que ofrezcan mayor rendimiento en aplicaciones de alta demanda.
+
+image::images/HerokuDynoTypes.png[]
+****
+
+## App Engine
+
+Google App Engine es el PaaS de Google. Permite el desarrollo de aplicaciones en una plataforma totalmente gestionada por Google. Actualmente App Engine ofrece plaforma para desarrollo en:
+
+* Node.js
+* Ruby
+* Java
+* C#
+* PHP
+* Python
+* Go
+
+Google App Engine permite el escalado de aplicaciones y distribución por todas las regiones sin tener que preocuparnos de la infraestructura. Se trata de un despligue sin configuración de servidor lo que supone gran agilidad.
+
+. En el Menú de navegación, seleccionar `App Engine`. Aparecerá una pantalla de bienvenida. Pulsar `Crear Aplicación`.
+
++
+image::images/AppEngineBienvenida.png[]
+
+. Indicar la región de despliegue. Elegiremos `europe-west` y pulsaremos sobre `Crear aplicación`.
+
+. Seleccionar el lenguaje en el que está creada la aplicación para que Google App Engine prepare la plataforma de ejecución de la aplicación. En este caso elegiremos PHP.
+
++
+image::images/AppEngineSeleccionarLenguaje.png[]
+
++
+Tras unos instantes se informa que la aplicación se ha creado con éxito. 
+
++
+image::images/AppEngineAppCreada.png[]
+
++
+Se nos ofrecen recursos para la documentación de App Engine en el lenguaje usado y ejemplos de código en GitHub. A la derecha tenemos los comandos que hay que ejecutar en Cloud Shell y que ejecutaremos en unos instantes. Por ahora, saldremos del asistente pulsando `LO HARÉ MAS ADELANTE`.
+
+. Abrir Cloud Shell
+
+. Clonar el repositorio de la aplicación
+
++
+[source, bash]
+----
+$ git clone https://github.com/ualmtorres/diariostic.git
+----
+
++
+. Crear el descriptor `app.yaml` en la carpeta del código de la aplicación
+
++
+[source, bash]
+----
+$ cd diariostic
+$ wget https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e app.yaml
+----
+
++
+.El descriptor `app.yaml`
+****
+La configuración de las aplicaciones de App Engine se realiza mediante un archivo denominado `app.yaml`. En este archivo se especifican, entre otros, el entorno de ejecución, los controladores para atender las peticiones de la aplicación y los archivos estáticos (p.e. imágenes). 
+
++
+A continuación se muestra un ejemplo de archivo https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e[`app.yaml`].
+
++
+[source, yaml]
+----
+runtime: php55 <1>
+api_version: 1
+handlers:
+- url: / <2>
+  script: index.php
+# Serve images as static resources.
+- url: /(.+\.(gif|png|jpg))$ <3>
+  static_files: \1
+  upload: .+\.(gif|png|jpg)$
+  application_readable: true
+# Serve php scripts.
+- url: /(.+\.php)$
+  script: \1
+----
+<1> Entorno de ejecución
+<2> Controlador principal para servir la aplicación
+<3> Controlador para servir archivos estáticos
+
++
+[NOTE]
+====
+Hay que indicar cómo se gestionan cada una de las rutas de la aplicación en cuanto a código, imágenes, CSS, JavaScript. Esto se realiza mediante elementos `url` en el elemento `handlers`. 
+
+Más información en la https://cloud.google.com/appengine/docs/standard/python/config/appref?hl=es[documentación oficial].
+====
+****
+
++
+. Ver la aplicación en modo de prueba
+
++
+[source, bash]
+----
+$ php - S localhost:8080
+----
+
++
+. Abrir `Vista previa web`
+
+. Inicializar en Cloud Shell el SDK de Google Cloud
+
++
+[source, bash]
+----
+$ gcloud init
+----
+
++
+Para poder usar el SDK de Google Cloud en Cloud Shell, Google Cloud nos advierte que necesita incluir nuestras credenciales en Cloud Shell. Pulsaremos `Autorizar`.
+
++
+image::images/CloudShellAutorizar.png[]
+
++
+Nos pedirá confirmación de despliegue sobre el descriptor (`app.yaml`) a usar, el origen (carpeta donde se colocó el repositorio) y el proyecto de destino. Tras confirmar, informará que se ha inicializado el Google Cloud SDK y  comenzará el despliegue. La aplicación quedará almacenada en Google Cloud Storage.
+
++
+[source, bash]
+----
+descriptor:      [/home/mtorres/diariostic/app.yaml]
+source:          [/home/mtorres/diariostic]
+target project:  [cloud-computing-mtorres]
+target service:  [default]
+target version:  [20201101t062114]
+target url:      [https://cloud-computing-mtorres.ew.r.appspot.com]
+
+Do you want to continue (Y/n)?
+----
+
++
+Unos instantes más tarde podremos ver la aplicación ejecutando `gcloud app browse`. Esto nos proporcionará una URL para acceder a la aplicación si no hay un navegador predeterminado y se obtendrá un resultado como el de la figura.
+
++
+image::images/AppEngineDiarioStic.png[]
+
+La apliación estará disponible en el Panel de control` en el el bloque de `App Engine` del Menú de navegación. Mostrará las aplicaciones desplegadas en App Engine con un resumen del tráfico, resumen de las instancias desplegadas, estado de facturación, carga actual, errores y otra información de interés. No se perderán datos, se guardará su estado y posteriormente se podrá volver a habilitar.
+
+image::images/AppEnginePanelDeControl.png[]
+
+[IMPORTANT]
+====
+Para evitar gastos inncesarios en el cupón de la cuenta de la asignatura, una vez hechas las pruebas inhabilitar la aplicación desde el menú `Configuración` de App Engine.
+
+image::images/AppEngineInhabilitarApp.png[]
+====
+
+### Creación de la aplicación en App Engine en modo manual
+
+En lugar de crear la aplicación desde el bloque App Engine del Menú de navegación es posible crear la aplicación directamente desde Cloud Shell con `gcloud init`.
+
+Previamente, se habrá descargado el repositorio de código de la aplicación y se habrá incluido el descriptor de despliegue (`app.yaml`) en el directorio del código de la aplicación.
+
+Para poder usar el SDK de Google Cloud en Cloud Shell, Google Cloud nos advierte que necesita incluir nuestras credenciales en Cloud Shell.
+
+Como no se ha creado proyecto App Engine para la aplicación, nos pedirá si queremos crear proyecto nuevo o meter en existente. El valor introducido de tomará como ID del proyecto y no podrá ser cambiado posteriormente.
+
+Después se desplegará con `gcloud app deploy`. Habrá que indicar una región de despliegue. Seleccionar `europe-west`.
+
+Nos pedirá confirmación de despliegue sobre el descriptor (`app.yaml`) a usar, el origen (carpeta donde se colocó el repositorio) y el proyecto de destino. Tras confirmar, comenzará el despliegue y lo almacenará en Google Cloud Storage.
+
+Para poder construir la aplicación es necesario que el proyecto tengan configurados permisos de acceso a la API de Cloud Build. Se nos pedirá que demos permiso a través de un enlace de activación de Cloud Build API en el proyecto. Se llegará a una pantalla como la siguiente.
+
+image::images/GoogleCloudHabilitarCloudBuildAPI.png[]
+
+Pulsar sobre `Habilitar`. A continuación, pedirá que se indique una cuenta donde vincular la facturación. Indicar la cuenta del cupón de la asignatura.
+
+Una vez configurado el acceso a la API de Cloud Build, volver a Cloud Shell y volver a desplegar con `gcloud app deploy`.
+
+### Despliegue continuo
+
+El despliegue automático en App Engine no es tan directo como en Heroku. Para más información, consultar la https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories[documentación oficial].
 
 ### Crear instancia MySQL
 
@@ -85,35 +381,3 @@ git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp
 ----
 
 git clone https://github.com/ualmtorres/diariostic.git /var/www/html/diariostic
-
-
-## App Engine
-
-Abrir Cloud Shell
-
-git clone 
-cd diariostic
-
-Crear archivo app.yaml
-https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e
-
-
-php - S localhost:8080
-Abrir `Vista previa web`
-
-Autorizar
-
-Google Cloud nos advierte que necesita incluir nuestras credenciales en Cloud Shell. Pulsaremos `Autorizar`.
-
-image::images/CloudShellAutorizar.png[]
-
-gcloud init
-gcloud app deploy
-
-Abrir la URL
-
-image::images/DiarioSTIC.png[]
-
-Despliegue continuo: https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories
-
-
