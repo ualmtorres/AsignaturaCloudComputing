@@ -333,6 +333,7 @@ sudo apt-get install default-mysql-client <1>
 ----
 <1> Debian Buster usa el paquete `default-mysql-client` como cliente MySQL
 
++
 A continuación se siguen los mismos pasos que se siguieron para crear la base de datos desde Cloud Shell (descargar el script y ejecutarlo con el cliente MySQL).
 
 +
