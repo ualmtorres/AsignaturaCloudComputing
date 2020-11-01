@@ -126,13 +126,13 @@ image::images/MySQLConexiones.png[]
 . Configurar la máscara de red a `0.0.0.0/0` que representa cualquier dirección IP.
 
 +
-image::images/MySQLAñadirRed.png[]
+image::images/MySQLAnadirRed.png[]
 
 +
 . Pulsar `Listo`. Aparecerá la red añadida.
 
 +
-image::images/MySQLRedAñadida.png[]
+image::images/MySQLRedAnadida.png[]
 
 +
 . Guardar los cambios.

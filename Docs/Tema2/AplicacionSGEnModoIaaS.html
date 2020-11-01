@@ -440,7 +440,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueposibles-soluciones-a-posibles-problemas">3.4. Posibles soluciones a posibles problemas</a></li>
 </ul>
 </li>
-<li><a href="#truedespliegue-en-google-cloud">4. Despliegue en Google Cloud</a></li>
+<li><a href="#truedespliegue-en-google-cloud">4. Despliegue en Google Cloud</a>
+<ul class="sectlevel2">
+<li><a href="#truerequisitos-previos-2">4.1. Requisitos previos</a></li>
+<li><a href="#truecrear-instancia-mysql-2">4.2. Crear instancia MySQL</a></li>
+<li><a href="#truecrear-instancia-php-2">4.3. Crear instancia PHP</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -458,19 +464,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="trueresumen"><a class="anchor" href="#trueresumen"></a>Resumen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>En este tutorial se muestra uno de los ejemplos básicos y habituales de desarrollo de aplicaciones en entoenos cloud. Se trata de crear una instancia dedicada a la base de datos y otra instancia dedicada a la aplicación. Se verá también la importancia del uso de variables de entorno y los ejemplos se ilustrarán en OpenStack-DI y Google Cloud.</p>
+<p>En este tutorial se muestra uno de los ejemplos básicos y habituales de desarrollo de aplicaciones en entornos cloud. Se trata de crear una instancia dedicada a la base de datos y otra instancia dedicada a la aplicación. Se verá también la importancia del uso de variables de entorno y los ejemplos se ilustrarán en OpenStack-DI y Google Cloud.</p>
 </div>
 <div class="ulist">
 <div class="title">Objetivos</div>
 <ul>
 <li>
-<p>Crear instancias con scripts de configuración incial</p>
+<p>Crear instancias con scripts de configuración incial.</p>
 </li>
 <li>
-<p>Crear soluciones con varias máquinas virtuales</p>
+<p>Crear soluciones que usen varias máquinas virtuales.</p>
 </li>
 <li>
-<p>Usar variables de entorno para evitar exponer datos sensibles</p>
+<p>Usar variables de entorno para evitar exponer datos sensibles.</p>
 </li>
 </ul>
 </div>
@@ -586,7 +592,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>En el paso <code>Par de claves</code> debe estar seleccionada la clave pública SSH subida a OpenStack-DI. Esta clave será inyectada a la instancia en el momento de su creación y permitirá que nos conectemos a ella desde un cliente SSH donde esté la clave privada SSH que empareje con ella.</p>
 </li>
 <li>
-<p>En el paso <code>Configuración</code> se puede pasar un script que configure la instancia de forma automática tras su creación. En este caso incluiremos este <a href="https://gist.github.com/ualmtorres/8a148ed5e5bcd469bfea37ac07c09824">script de instalación de MySQL en Ubuntu</a> con el password que se indique en la variable de entorno e inicializará una base de datos denominada SG (<em>Sporting Goods</em>) a partir de este <a href="https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql">script de inicialización de la base de datos de artículos deportivos</a>.</p>
+<p>En el paso <code>Configuración</code> se puede pasar un script que configure la instancia de forma automática tras su creación. En este caso incluiremos este <a href="https://gist.github.com/ualmtorres/8a148ed5e5bcd469bfea37ac07c09824">script de instalación de MySQL en Ubuntu</a> con el password que se indica  e inicializará una base de datos denominada SG (<em>Sporting Goods</em>) a partir de este <a href="https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql">script de inicialización de la base de datos de artículos deportivos</a>.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Script de instalación de MySQL e inicialización con la base de datos SG</div>
@@ -658,7 +664,7 @@ mysql -u root -psecret --execute="GRANT ALL ON SG.* TO root@'%' IDENTIFIED BY 's
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A pesar de que la instancia esté en estado <code>Ejecutando</code> tardará algunos minutos en estar disponible. OpenStack establece el estado ejecutando cuando ha iniciado la máquina virtual. Sin embargo, OpenStack está ajeno al proceso de configuración mediante el script de inicialización. Puedes consultar su evolución en el desplegable de la derecha de la máquina virtual seleccionado <code>Ver log</code> y luego pulsando <code>Ver log completo</code></p>
+<p>A pesar de que la instancia esté en estado <code>Ejecutando</code> tardará algunos minutos en estar disponible. OpenStack establece el estado <code>Ejecutando</code> cuando ha iniciado la máquina virtual. Sin embargo, OpenStack está ajeno al proceso de configuración mediante el script de inicialización. Puedes consultar su evolución en el desplegable de la derecha de la máquina virtual seleccionado <code>Ver log</code> y luego pulsando <code>Ver log completo</code></p>
 </div>
 </td>
 </tr>
@@ -755,7 +761,7 @@ git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp <i class="
 </div>
 </div>
 <div class="paragraph">
-<p>La aplicación no muestra datos porque las credenciales de acceso a la base de datos no están configuradas en el repositorio. En el repositorio están configuradas mediante variables de entorno.</p>
+<p>La aplicación no muestra datos porque las credenciales de acceso a la base de datos no están configuradas en el repositorio que se ha clonado. En el repositorio están configuradas mediante variables de entorno.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -773,7 +779,7 @@ git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp <i class="
 <p>Es una buena práctica no introducir credenciales ni valores sensibles en el código. Esos valores podrían quedar expuestos en el historial de versiones del repositorio.</p>
 </div>
 <div class="paragraph">
-<p>Una forma de hacer esto es mediante el uso de variables de entorno. Así los valores no quedan expuestos en el código y en función de donde se esté ejecutando (producción, desarrollo, &#8230;&#8203;) se configurarán las variables de entorno con los valores adecuados para su correcto funcionamiento.</p>
+<p>Una forma de hacer esto es mediante el uso de variables de entorno. Así, los valores no quedan expuestos en el código y en función de donde se esté ejecutando (producción, desarrollo, &#8230;&#8203;) se configurarán las variables de entorno con los valores adecuados para cada entorno.</p>
 </div>
 </td>
 </tr>
@@ -785,7 +791,7 @@ git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp <i class="
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Obtener la dirección IP fija de la máquina virtual <code>mysql</code>. En el ejemplo de la figura sería <code>10.0.0.17</code></p>
+<p>Obtener la dirección IP fija de la máquina virtual <code>mysql</code>. En el ejemplo de la figura sería <code>10.0.0.17</code>. Lbasea comunicación entre la máquina virtual de la aplicación y la de la base de datos se realizará por la red del proyecto. No es necesario crear una IP pública para la máquina virtual de MySQL por este motivo.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/SGAppDireccionesIP.png" alt="SGAppDireccionesIP.png">
@@ -830,10 +836,10 @@ export MYSQL_PASSWORD=secret</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Ante problemas con la base de datos (no se sabe si se ha instalado correctamente, no se ha creado la base de datos SG, &#8230;&#8203;), asignar una dirección IP flotante, iniciar sesión SSH y ver el estado de la base de datos con el cliente <code>mysql</code>.</p>
+<p>Ante problemas con la base de datos (no se sabe si se ha instalado correctamente, no se ha creado la base de datos SG, &#8230;&#8203;), asignar una dirección IP flotante, iniciar sesión SSH y ver el estado de la base de datos con el cliente <code>mysql</code> de la propia máquina virtual.</p>
 </li>
 <li>
-<p>Para saber si la base de datos SG es accesible desde fuera, instalar el cliente <code>sudo apt-get install mysql-client</code> en la máquina virtual <code>sgApp</code> y probar la conexión con <code>mysql -h &lt;ip-mysql&gt; -u root -p</code>.</p>
+<p>Para saber si la base de datos SG es accesible desde fuera, instalar el cliente en la máquina virtual <code>sgApp</code> con <code>sudo apt-get install mysql-client</code> y probar la conexión con <code>mysql -h &lt;ip-mysql&gt; -u root -p</code>.</p>
 </li>
 <li>
 <p>Revisar los grupos de seguridad para que los puertos 80 (HTTP) y 22 (SSH) estén abiertos al exterior.</p>
@@ -853,14 +859,167 @@ export MYSQL_PASSWORD=secret</code></pre>
 <h2 id="truedespliegue-en-google-cloud"><a class="anchor" href="#truedespliegue-en-google-cloud"></a>4. Despliegue en Google Cloud</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To Do</p>
+<p>Compute Engine propociona IaaS en Google Cloud. Veamos cómo hacer en Google Cloud el mismo despliegue de la sección anterior (base de datos SG en MySQL y otra máquina virtual con la aplicación que interactúa con la base de datos).</p>
+</div>
+<div class="sect2">
+<h3 id="truerequisitos-previos-2"><a class="anchor" href="#truerequisitos-previos-2"></a>4.1. Requisitos previos</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Cuenta creada en Google Cloud</p>
+</li>
+<li>
+<p>Proyecto creado para la asignatura</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecrear-instancia-mysql-2"><a class="anchor" href="#truecrear-instancia-mysql-2"></a>4.2. Crear instancia MySQL</h3>
+<div class="paragraph">
+<p>Seguir el tutorial <a href="CreacionBDMySQLGoogleCloud.html">Creación de una base de datos MySQL en Google Cloud Platform</a> para preparar una instancia MySQL inicializada con la base de datos SG y que sea accesible desde Internet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecrear-instancia-php-2"><a class="anchor" href="#truecrear-instancia-php-2"></a>4.3. Crear instancia PHP</h3>
+<div class="paragraph">
+<p>En este apartado crearemos una máquina virtual configurada con lo necesario para servir la aplicación SG. Se trata de configurar un servidor Apache, PHP y clonar el repositorio donde se encuentra la aplicación.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>En el Menú de navegación, en la sección <code>COMPUTE</code> seleccionar <code>Compute Engine | Instancias de VM</code>.</p>
+</li>
+<li>
+<p>En la barra de herramientas pulsar sobre <code>Crear instancia</code>.</p>
+</li>
+<li>
+<p>Asignarle el nombre <code>sg-app</code> dejando la región y la zona predeterminadas.</p>
+</li>
+<li>
+<p>En la sección <code>Configuración de la máquina</code> seleccionar la <code>N1</code> en el desplegable <code>Serie</code> y <code>g1-small</code> (1 vCPU y 1.7 GB de RAM) en la lista desplegable <code>Tipo de máquina</code>.</p>
+</li>
+<li>
+<p>En la sección <code>Disco de arranque</code> cambiar la imagen a <code>Ubuntu 16.04 LTS</code> y mantener el disco en 10 GB de tamaño.</p>
+</li>
+<li>
+<p>En la sección <code>Cortafuegos</code> seleccionar la casilla de verificación <code>Permitir el tráfico HTTP</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/GoogleCloudCrearSGApp.png" alt="GoogleCloudCrearSGApp.png">
+</div>
+</div>
+</li>
+<li>
+<p>Desplegar <code>Administración, seguridad, discos, redes, único propietario</code></p>
+</li>
+<li>
+<p>En la pestaña <code>Administración</code>, en el apartado <code>Secuencia de comandos de inicio</code> incluir el script siguiente:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+apt-get update <i class="conum" data-value="1"></i><b>(1)</b>
+apt-get install -y apache2 <i class="conum" data-value="2"></i><b>(2)</b>
+sudo apt-get install -y php libapache2-mod-php php-mysql php-mcrypt <i class="conum" data-value="3"></i><b>(3)</b>
+sed -i 's/#extension=php_mysqli.dll/extension=php_mysqli.dll/g' /etc/php/7.0/apache2/php.ini <i class="conum" data-value="4"></i><b>(4)</b>
+git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Actualización del repositorio de paquetes</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Instalación de Apache</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Instalación de PHP y los paquetes necesarios</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Activar MySQLi en PHP</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Clonar el repositorio que contiene el código de la aplicación</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Unos instantes después la instancia estará creada y tendrá una IP externa. Al hacer clic sobre la IP externa aparecerá la página de inicio de Apache.</p>
+</div>
+<div class="paragraph">
+<p>Al añadir <code>/SGApp</code> a la dirección IP en el navegador se mostrará la aplicación pero sin datos.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/GoogleCloudSGAppSinDatos.png" alt="GoogleCloudSGAppSinDatos.png">
+</div>
+</div>
+<div class="paragraph">
+<p>La aplicación no muestra datos porque las credenciales de acceso a la base de datos no están configuradas en el repositorio que hemos clonado. En el repositorio están configuradas mediante variables de entorno.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php" data-lang="php">$conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para configurar las variables de entorno en la máquina virtual de la aplicación (<code>sg-app</code>) hay que seguir los pasos siguientes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Obtener la dirección IP pública de MySQL (En el tutorial MySQL se configuró con una IP pública y acceso desde cuaqluier IP). Está disponible en el Menú de navegación, sección <code>BASES DE DATOS | SQL</code>. En el ejemplo de la figura sería <code>34.122.xxx.xxx</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/GoogleCloudIPMySQL.png" alt="GoogleCloudIPMySQL.png">
+</div>
+</div>
+</li>
+<li>
+<p>Iniciar sesión SSH en la máquina virtual <code>sg-app</code> disponible en <code>Compute Engine | Instancias de VM</code> del Menú de navegación. Editar el archivo <code>/etc/apache2/envvars</code> para configurar las variables de entorno para la configuración de cada uno (los valores mostrados aquí son propios a la configuración de host, usuario y contraseña seguidos en el tutorial)</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">...
+export MYSQL_HOST=34.122.xxx.xxx
+export MYSQL_USER=xxx
+export MYSQL_PASSWORD=xxx</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Reiniciar el servidor Apache</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">$ sudo service apache2 restart</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>El resultado final debe ser algo así.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/GoogleCloudSGApp.png" alt="GoogleCloudSGApp.png">
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-01 19:27:59 CET
+Last updated 2020-11-01 21:29:34 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

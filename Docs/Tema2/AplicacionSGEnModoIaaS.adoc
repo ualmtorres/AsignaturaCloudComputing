@@ -26,15 +26,15 @@ image::../Tema0/images/di.png[]
 
 [abstract]
 == Resumen
-En este tutorial se muestra uno de los ejemplos básicos y habituales de desarrollo de aplicaciones en entoenos cloud. Se trata de crear una instancia dedicada a la base de datos y otra instancia dedicada a la aplicación. Se verá también la importancia del uso de variables de entorno y los ejemplos se ilustrarán en OpenStack-DI y Google Cloud.
+En este tutorial se muestra uno de los ejemplos básicos y habituales de desarrollo de aplicaciones en entornos cloud. Se trata de crear una instancia dedicada a la base de datos y otra instancia dedicada a la aplicación. Se verá también la importancia del uso de variables de entorno y los ejemplos se ilustrarán en OpenStack-DI y Google Cloud.
 
 ////
 COLOCA A CONTINUACION LOS OBJETIVOS
 ////
 .Objetivos
-* Crear instancias con scripts de configuración incial
-* Crear soluciones con varias máquinas virtuales
-* Usar variables de entorno para evitar exponer datos sensibles
+* Crear instancias con scripts de configuración incial.
+* Crear soluciones que usen varias máquinas virtuales.
+* Usar variables de entorno para evitar exponer datos sensibles.
 
 
 // Entrar en modo numerado de apartados
@@ -86,7 +86,7 @@ Las zonas de disponibilidad en OpenStack permiten agrupar los servidores físico
 . Saltar el paso `Network ports`.
 . En el paso `Grupos de seguridad` debe estar seleccionado `default`. Usaremos este grupo para definir las reglas de acceso a las máquinas virtuales creadas. Otra opción es tener grupos de seguridad diferentes para cada configuración de puertos de cada máquina virtual evitando tener abiertos puertos innecesarios y haciendo un control más fino.
 . En el paso `Par de claves` debe estar seleccionada la clave pública SSH subida a OpenStack-DI. Esta clave será inyectada a la instancia en el momento de su creación y permitirá que nos conectemos a ella desde un cliente SSH donde esté la clave privada SSH que empareje con ella.
-. En el paso `Configuración` se puede pasar un script que configure la instancia de forma automática tras su creación. En este caso incluiremos este https://gist.github.com/ualmtorres/8a148ed5e5bcd469bfea37ac07c09824[script de instalación de MySQL en Ubuntu] con el password que se indique en la variable de entorno e inicializará una base de datos denominada SG (_Sporting Goods_) a partir de este https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql[script de inicialización de la base de datos de artículos deportivos].
+. En el paso `Configuración` se puede pasar un script que configure la instancia de forma automática tras su creación. En este caso incluiremos este https://gist.github.com/ualmtorres/8a148ed5e5bcd469bfea37ac07c09824[script de instalación de MySQL en Ubuntu] con el password que se indica  e inicializará una base de datos denominada SG (_Sporting Goods_) a partir de este https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql[script de inicialización de la base de datos de artículos deportivos].
 
 +
 .Script de instalación de MySQL e inicialización con la base de datos SG
@@ -122,7 +122,7 @@ Se está usando el password `secret`. Cambiarlo por cualquier otro.
 +
 [NOTE]
 ====
-A pesar de que la instancia esté en estado `Ejecutando` tardará algunos minutos en estar disponible. OpenStack establece el estado ejecutando cuando ha iniciado la máquina virtual. Sin embargo, OpenStack está ajeno al proceso de configuración mediante el script de inicialización. Puedes consultar su evolución en el desplegable de la derecha de la máquina virtual seleccionado `Ver log` y luego pulsando `Ver log completo`
+A pesar de que la instancia esté en estado `Ejecutando` tardará algunos minutos en estar disponible. OpenStack establece el estado `Ejecutando` cuando ha iniciado la máquina virtual. Sin embargo, OpenStack está ajeno al proceso de configuración mediante el script de inicialización. Puedes consultar su evolución en el desplegable de la derecha de la máquina virtual seleccionado `Ver log` y luego pulsando `Ver log completo`
 ====
 
 La instancia con MySQL estará creada y configurada. Por ahora no la probaremos. La probaremos más adelante desde otra máquina para comprobar que la base de datos SG admite conexiones desde fuera.
@@ -166,7 +166,7 @@ Asignar una dirección IP flotante y abrir la aplicación en `http://<ip>/SGApp`
 
 image::images/SGAppSinDatos.png[]
 
-La aplicación no muestra datos porque las credenciales de acceso a la base de datos no están configuradas en el repositorio. En el repositorio están configuradas mediante variables de entorno. 
+La aplicación no muestra datos porque las credenciales de acceso a la base de datos no están configuradas en el repositorio que se ha clonado. En el repositorio están configuradas mediante variables de entorno. 
 
 [source, php]
 ----
@@ -177,12 +177,12 @@ $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('M
 ====
 Es una buena práctica no introducir credenciales ni valores sensibles en el código. Esos valores podrían quedar expuestos en el historial de versiones del repositorio. 
 
-Una forma de hacer esto es mediante el uso de variables de entorno. Así los valores no quedan expuestos en el código y en función de donde se esté ejecutando (producción, desarrollo, ...) se configurarán las variables de entorno con los valores adecuados para su correcto funcionamiento.
+Una forma de hacer esto es mediante el uso de variables de entorno. Así, los valores no quedan expuestos en el código y en función de donde se esté ejecutando (producción, desarrollo, ...) se configurarán las variables de entorno con los valores adecuados para cada entorno.
 ====
 
 Para configurar las variables de entorno en la máquina virtual de la aplicación (`sgapp`) hay que seguir los pasos siguientes:
 
-. Obtener la dirección IP fija de la máquina virtual `mysql`. En el ejemplo de la figura sería `10.0.0.17`
+. Obtener la dirección IP fija de la máquina virtual `mysql`. En el ejemplo de la figura sería `10.0.0.17`. Lbasea comunicación entre la máquina virtual de la aplicación y la de la base de datos se realizará por la red del proyecto. No es necesario crear una IP pública para la máquina virtual de MySQL por este motivo.
 
 +
 image::images/SGAppDireccionesIP.png[]
@@ -215,12 +215,99 @@ image::images/SGApp.png[]
 
 ### Posibles soluciones a posibles problemas
 
-* Ante problemas con la base de datos (no se sabe si se ha instalado correctamente, no se ha creado la base de datos SG, ...), asignar una dirección IP flotante, iniciar sesión SSH y ver el estado de la base de datos con el cliente `mysql`.
-* Para saber si la base de datos SG es accesible desde fuera, instalar el cliente `sudo apt-get install mysql-client` en la máquina virtual `sgApp` y probar la conexión con `mysql -h <ip-mysql> -u root -p`.
+* Ante problemas con la base de datos (no se sabe si se ha instalado correctamente, no se ha creado la base de datos SG, ...), asignar una dirección IP flotante, iniciar sesión SSH y ver el estado de la base de datos con el cliente `mysql` de la propia máquina virtual.
+* Para saber si la base de datos SG es accesible desde fuera, instalar el cliente en la máquina virtual `sgApp` con `sudo apt-get install mysql-client` y probar la conexión con `mysql -h <ip-mysql> -u root -p`.
 * Revisar los grupos de seguridad para que los puertos 80 (HTTP) y 22 (SSH) estén abiertos al exterior.
 * Revisar las credenciales en las variables de entorno de `/etc/apache2/envvars` y reiniciar Apache con `sudo service apache2 restart`.
 * Activar la presentación de errores PHP modificando el valor de `display_errors = On` en el archivo `/etc/php/7.0/apache2/php.ini` y reiniciando Apache después con `sudo service apache2 restart`.
 
 ## Despliegue en Google Cloud
 
-To Do
+Compute Engine propociona IaaS en Google Cloud. Veamos cómo hacer en Google Cloud el mismo despliegue de la sección anterior (base de datos SG en MySQL y otra máquina virtual con la aplicación que interactúa con la base de datos).
+
+### Requisitos previos
+
+* Cuenta creada en Google Cloud
+* Proyecto creado para la asignatura
+
+### Crear instancia MySQL
+
+Seguir el tutorial link:CreacionBDMySQLGoogleCloud.html[Creación de una base de datos MySQL en Google Cloud Platform] para preparar una instancia MySQL inicializada con la base de datos SG y que sea accesible desde Internet.
+
+### Crear instancia PHP
+
+En este apartado crearemos una máquina virtual configurada con lo necesario para servir la aplicación SG. Se trata de configurar un servidor Apache, PHP y clonar el repositorio donde se encuentra la aplicación.
+
+. En el Menú de navegación, en la sección `COMPUTE` seleccionar `Compute Engine | Instancias de VM`.  
+. En la barra de herramientas pulsar sobre `Crear instancia`.
+. Asignarle el nombre `sg-app` dejando la región y la zona predeterminadas.
+. En la sección `Configuración de la máquina` seleccionar la `N1` en el desplegable `Serie` y `g1-small` (1 vCPU y 1.7 GB de RAM) en la lista desplegable `Tipo de máquina`.
+. En la sección `Disco de arranque` cambiar la imagen a `Ubuntu 16.04 LTS` y mantener el disco en 10 GB de tamaño.
+. En la sección `Cortafuegos` seleccionar la casilla de verificación `Permitir el tráfico HTTP`.
+
++
+image::images/GoogleCloudCrearSGApp.png[]
+
+
+. Desplegar `Administración, seguridad, discos, redes, único propietario`
+. En la pestaña `Administración`, en el apartado `Secuencia de comandos de inicio` incluir el script siguiente:
+
+[source, bash]
+----
+#!/bin/bash
+apt-get update <1>
+apt-get install -y apache2 <2>
+sudo apt-get install -y php libapache2-mod-php php-mysql php-mcrypt <3>
+sed -i 's/#extension=php_mysqli.dll/extension=php_mysqli.dll/g' /etc/php/7.0/apache2/php.ini <4>
+git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp <5>
+----
+<1> Actualización del repositorio de paquetes
+<2> Instalación de Apache
+<3> Instalación de PHP y los paquetes necesarios
+<4> Activar MySQLi en PHP
+<5> Clonar el repositorio que contiene el código de la aplicación
+
+Unos instantes después la instancia estará creada y tendrá una IP externa. Al hacer clic sobre la IP externa aparecerá la página de inicio de Apache. 
+
+Al añadir `/SGApp` a la dirección IP en el navegador se mostrará la aplicación pero sin datos. 
+
+image::images/GoogleCloudSGAppSinDatos.png[]
+
+La aplicación no muestra datos porque las credenciales de acceso a la base de datos no están configuradas en el repositorio que hemos clonado. En el repositorio están configuradas mediante variables de entorno.
+
+[source, php]
+----
+$conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
+----
+
+Para configurar las variables de entorno en la máquina virtual de la aplicación (`sg-app`) hay que seguir los pasos siguientes:
+
+. Obtener la dirección IP pública de MySQL (En el tutorial MySQL se configuró con una IP pública y acceso desde cuaqluier IP). Está disponible en el Menú de navegación, sección `BASES DE DATOS | SQL`. En el ejemplo de la figura sería `34.122.xxx.xxx`
+
++
+image::images/GoogleCloudIPMySQL.png[]
+
++
+. Iniciar sesión SSH en la máquina virtual `sg-app` disponible en `Compute Engine | Instancias de VM` del Menú de navegación. Editar el archivo `/etc/apache2/envvars` para configurar las variables de entorno para la configuración de cada uno (los valores mostrados aquí son propios a la configuración de host, usuario y contraseña seguidos en el tutorial)
+
++
+[source, bash]
+----
+...
+export MYSQL_HOST=34.122.xxx.xxx
+export MYSQL_USER=xxx
+export MYSQL_PASSWORD=xxx
+----
+
++
+. Reiniciar el servidor Apache
+
++
+[source, bash]
+----
+$ sudo service apache2 restart
+----
+
+El resultado final debe ser algo así.
+
+image::images/GoogleCloudSGApp.png[]
