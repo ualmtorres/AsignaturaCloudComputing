@@ -448,20 +448,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#truecreaci-n-de-la-aplicaci-n-en-app-engine-en-modo-manual">4.1. Creación de la aplicación en App Engine en modo manual</a></li>
 <li><a href="#truedespliegue-continuo">4.2. Despliegue continuo</a></li>
-<li><a href="#truecrear-instancia-mysql">4.3. Crear instancia MySQL</a></li>
-<li><a href="#truecrear-instancia-php">4.4. Crear instancia PHP</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="../Tema0/images/di.png" alt="di.png">
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="trueresumen"><a class="anchor" href="#trueresumen"></a>Resumen</h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>El modelo PaaS (Platform as a Service) de cloud computing es un modelo muy cómodo para el desarrollo. En PaaS el proveedor cloud ofrece un entorno o plataforma en el que el equipo de desarrollo puede crear y distribuir aplicaciones sin preocuparse de la infraestructura. El proveedor se encarga del mantenimiento y actualización de la plataforma. Además, ofrece servicios complementarios como bases de datos, monitorización, logging permitiendo centrarse en el desarrollo y despreocupándose de la actualización de versiones del entorno de ejecución, librerías, parches de seguridad y demás.</p>
+</div>
+<div class="paragraph">
+<p>En este tutorial se realiza una introducción al modo PaaS y se ilustra su funcionamiento desplegando una aplicación sencilla en Heroku y Google App Engine.</p>
+</div>
+<div class="ulist">
 <div class="title">Objetivos</div>
-<p>*</p>
+<ul>
+<li>
+<p>Conocer las ventajas que propociona PaaS.</p>
+</li>
+<li>
+<p>Distinguir los modelos IaaS y PaaS.</p>
+</li>
+<li>
+<p>Aprender a desplegar aplicaciones en Heroku.</p>
+</li>
+<li>
+<p>Utilizar las opciones de despliegue automático y <em>roll back</em> de Heroku.</p>
+</li>
+<li>
+<p>Aprender a desplegar aplicaciones en Google App Engine.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -814,11 +843,7 @@ $ wget https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e app.y
 <p>La configuración de las aplicaciones de App Engine se realiza mediante un archivo denominado <code>app.yaml</code>. En este archivo se especifican, entre otros, el entorno de ejecución, los controladores para atender las peticiones de la aplicación y los archivos estáticos (p.e. imágenes).</p>
 </div>
 <div class="paragraph">
-<p>+
-A continuación se muestra un ejemplo de archivo <a href="https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e"><code>app.yaml</code></a>.</p>
-</div>
-<div class="paragraph">
-<p>+</p>
+<p>A continuación se muestra un ejemplo de archivo <a href="https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e"><code>app.yaml</code></a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -850,6 +875,23 @@ handlers:
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
 <td>Controlador para servir archivos estáticos</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Hay que indicar cómo se gestionan cada una de las rutas de la aplicación en cuanto a código, imágenes, CSS, JavaScript. Esto se realiza mediante elementos <code>url</code> en el elemento <code>handlers</code>.</p>
+</div>
+<div class="paragraph">
+<p>Más información en la <a href="https://cloud.google.com/appengine/docs/standard/python/config/appref?hl=es">documentación oficial</a>.</p>
+</div>
+</td>
 </tr>
 </table>
 </div>
@@ -909,7 +951,7 @@ Do you want to continue (Y/n)?</code></pre>
 </ol>
 </div>
 <div class="paragraph">
-<p>La apliación estará disponible en el Panel de control` en el el bloque de <code>App Engine</code> del Menú de navegación. Mostrará las aplicaciones desplegadas en App Engine con un resumen del tráfico, resumen de las instancias desplegadas, estado de facturación, carga actual, errores y otra información de interés. No se perderán datos, se guardará su estado y posteriormente se podrá volver a habilitar.</p>
+<p>La aplicación estará disponible en el <code>Panel de control</code> en el el bloque de <code>App Engine</code> del Menú de navegación. Mostrará las aplicaciones desplegadas en App Engine con un resumen del tráfico, resumen de las instancias desplegadas, estado de facturación, carga actual, errores y otra información de interés. No se perderán datos, se guardará su estado y posteriormente se podrá volver a habilitar.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -976,62 +1018,12 @@ Do you want to continue (Y/n)?</code></pre>
 <p>El despliegue automático en App Engine no es tan directo como en Heroku. Para más información, consultar la <a href="https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories">documentación oficial</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="truecrear-instancia-mysql"><a class="anchor" href="#truecrear-instancia-mysql"></a>4.3. Crear instancia MySQL</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Se está usando el password <code>secret</code>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
-apt-get update
-debconf-set-selections &lt;&lt;&lt; 'mysql-server mysql-server/root_password password secret'
-debconf-set-selections &lt;&lt;&lt; 'mysql-server mysql-server/root_password_again password secret'
-apt-get -y install mysql-server
-curl 'https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql' | mysql -u root -psecret
-sed -i 's/bind-address/#bind-address/g' /etc/mysql/mysql.conf.d/mysqld.cnf
-service mysql restart
-mysql -u root -psecret --execute="GRANT ALL ON SG.* TO root@'%' IDENTIFIED BY 'secret'; FLUSH PRIVILEGES";</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truecrear-instancia-php"><a class="anchor" href="#truecrear-instancia-php"></a>4.4. Crear instancia PHP</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
-apt-get update
-apt-get install -y apache2
-sudo apt-get install -y php libapache2-mod-php php-mcrypt
-sudo chgrp -R www-data /var/www
-sudo chmod -R 775 /var/www
-sudo chmod -R g+s /var/www
-sudo useradd -G www-data ubuntu
-sudo chown -R ubuntu /var/www/
-git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>git clone <a href="https://github.com/ualmtorres/diariostic.git" class="bare">https://github.com/ualmtorres/diariostic.git</a> /var/www/html/diariostic</p>
-</div>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-01 08:01:54 CET
+Last updated 2020-11-01 08:29:14 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

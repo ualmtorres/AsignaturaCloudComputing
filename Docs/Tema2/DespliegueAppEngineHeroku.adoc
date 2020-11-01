@@ -19,21 +19,26 @@ Nombre y título del trabajo
 Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
+image::../Tema0/images/di.png[]
+
 // NO CAMBIAR!! (Entrar en modo no numerado de apartados)
 :numbered!: 
 
 [abstract]
 == Resumen
-////
-COLOCA A CONTINUACION EL RESUMEN
-////
- 
+El modelo PaaS (Platform as a Service) de cloud computing es un modelo muy cómodo para el desarrollo. En PaaS el proveedor cloud ofrece un entorno o plataforma en el que el equipo de desarrollo puede crear y distribuir aplicaciones sin preocuparse de la infraestructura. El proveedor se encarga del mantenimiento y actualización de la plataforma. Además, ofrece servicios complementarios como bases de datos, monitorización, logging permitiendo centrarse en el desarrollo y despreocupándose de la actualización de versiones del entorno de ejecución, librerías, parches de seguridad y demás.
+
+En este tutorial se realiza una introducción al modo PaaS y se ilustra su funcionamiento desplegando una aplicación sencilla en Heroku y Google App Engine.
 
 ////
 COLOCA A CONTINUACION LOS OBJETIVOS
 ////
 .Objetivos
-* 
+* Conocer las ventajas que propociona PaaS.
+* Distinguir los modelos IaaS y PaaS.
+* Aprender a desplegar aplicaciones en Heroku.
+* Utilizar las opciones de despliegue automático y _roll back_ de Heroku.
+* Aprender a desplegar aplicaciones en Google App Engine.
 
 // Entrar en modo numerado de apartados
 :numbered:
@@ -226,10 +231,8 @@ $ wget https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e app.y
 ****
 La configuración de las aplicaciones de App Engine se realiza mediante un archivo denominado `app.yaml`. En este archivo se especifican, entre otros, el entorno de ejecución, los controladores para atender las peticiones de la aplicación y los archivos estáticos (p.e. imágenes). 
 
-+
 A continuación se muestra un ejemplo de archivo https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e[`app.yaml`].
 
-+
 [source, yaml]
 ----
 runtime: php55 <1>
@@ -250,7 +253,6 @@ handlers:
 <2> Controlador principal para servir la aplicación
 <3> Controlador para servir archivos estáticos
 
-+
 [NOTE]
 ====
 Hay que indicar cómo se gestionan cada una de las rutas de la aplicación en cuanto a código, imágenes, CSS, JavaScript. Esto se realiza mediante elementos `url` en el elemento `handlers`. 
@@ -307,7 +309,7 @@ Unos instantes más tarde podremos ver la aplicación ejecutando `gcloud app bro
 +
 image::images/AppEngineDiarioStic.png[]
 
-La apliación estará disponible en el Panel de control` en el el bloque de `App Engine` del Menú de navegación. Mostrará las aplicaciones desplegadas en App Engine con un resumen del tráfico, resumen de las instancias desplegadas, estado de facturación, carga actual, errores y otra información de interés. No se perderán datos, se guardará su estado y posteriormente se podrá volver a habilitar.
+La aplicación estará disponible en el `Panel de control` en el el bloque de `App Engine` del Menú de navegación. Mostrará las aplicaciones desplegadas en App Engine con un resumen del tráfico, resumen de las instancias desplegadas, estado de facturación, carga actual, errores y otra información de interés. No se perderán datos, se guardará su estado y posteriormente se podrá volver a habilitar.
 
 image::images/AppEnginePanelDeControl.png[]
 
@@ -344,40 +346,3 @@ Una vez configurado el acceso a la API de Cloud Build, volver a Cloud Shell y vo
 
 El despliegue automático en App Engine no es tan directo como en Heroku. Para más información, consultar la https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories[documentación oficial].
 
-### Crear instancia MySQL
-
-[NOTE]
-====
-Se está usando el password `secret`.
-====
-
-[source, bash]
-----
-#!/bin/bash
-apt-get update
-debconf-set-selections <<< 'mysql-server mysql-server/root_password password secret'
-debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password secret'
-apt-get -y install mysql-server
-curl 'https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql' | mysql -u root -psecret
-sed -i 's/bind-address/#bind-address/g' /etc/mysql/mysql.conf.d/mysqld.cnf
-service mysql restart
-mysql -u root -psecret --execute="GRANT ALL ON SG.* TO root@'%' IDENTIFIED BY 'secret'; FLUSH PRIVILEGES";
-----
-
-### Crear instancia PHP
-
-[source, bash]
-----
-#!/bin/bash
-apt-get update
-apt-get install -y apache2
-sudo apt-get install -y php libapache2-mod-php php-mcrypt
-sudo chgrp -R www-data /var/www
-sudo chmod -R 775 /var/www
-sudo chmod -R g+s /var/www
-sudo useradd -G www-data ubuntu
-sudo chown -R ubuntu /var/www/
-git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp
-----
-
-git clone https://github.com/ualmtorres/diariostic.git /var/www/html/diariostic
