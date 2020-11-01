@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5.dev">
-<meta name="author" content="Máster en Tecnologías y Aplicaciones en Ingeniería Informática">
-<title>Cloud Computing</title>
+<meta name="author" content="Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática">
+<title>Despliegue de una aplicación en modo IaaS</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -421,36 +421,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-right">
 <div id="header">
-<h1>Cloud Computing</h1>
+<h1>Despliegue de una aplicación en modo IaaS</h1>
 <div class="details">
-<span id="author" class="author">Máster en Tecnologías y Aplicaciones en Ingeniería Informática</span><br>
+<span id="author" class="author">Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática</span><br>
 <span id="revdate">José Joaquín Cañadas y Manuel Torres &lt;jjcanada@ual.es&gt; &lt;mtorres@ual.es&gt;</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Tabla de contenidos</div>
 <ul class="sectlevel1">
-<li><a href="#trueresumen">Resumen</a></li>
-<li><a href="#trueintroducci-n">1. Introducción</a></li>
-<li><a href="#truesobre-la-gu-a-docente">2. Sobre la Guía docente</a>
+<li><a href="#trueresumen">Resumen</a>
 <ul class="sectlevel2">
-<li><a href="#truemateria-con-la-que-se-relaciona-en-el-plan-de-estudios">2.1. Materia con la que se relaciona en el Plan de estudios:</a></li>
-<li><a href="#trueconocimientos-recomendables">2.2. Conocimientos recomendables</a></li>
+<li><a href="#truecrear-instancia-mysql">1.1. Crear instancia MySQL</a></li>
+<li><a href="#truecrear-instancia-php">1.2. Crear instancia PHP</a></li>
 </ul>
 </li>
-<li><a href="#truecontenidos">3. Contenidos</a></li>
-<li><a href="#truehorario-de-clase-y-de-tutori-as">4. Horario de clase y de tutorías</a></li>
-<li><a href="#trueco-mo-seguir-la-asignatura">5. Cómo seguir la asignatura</a></li>
-<li><a href="#truec-mo-superar-la-asignatura">6. Cómo superar la asignatura</a></li>
-<li><a href="#trueencuesta-inicial">7. Encuesta inicial</a></li>
-<li><a href="#trueantes-de-comenzar">8. Antes de comenzar</a></li>
-<li><a href="#truerecursos">9. Recursos</a>
-<ul class="sectlevel2">
-<li><a href="#truetemas">9.1. Temas</a></li>
-<li><a href="#truesesiones-de-clase">9.2. Sesiones de clase</a></li>
-</ul>
-</li>
-<li><a href="#truetrabajo-aut-nomo">10. Trabajo autónomo</a></li>
-<li><a href="#trueactividades-no-presenciales">11. Actividades no presenciales</a></li>
 </ul>
 </div>
 </div>
@@ -459,7 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="Docs/Tema0/images/di.png" alt="di.png">
+<img src="../Tema0/images/di.png" alt="di.png">
 </div>
 </div>
 </div>
@@ -468,536 +452,65 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="trueresumen"><a class="anchor" href="#trueresumen"></a>Resumen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>La asignatura Cloud Computing es una asignatura obligatoria del módulo de Tecnologías informáticas del <a href="https://www.ual.es/estudios/masteres/presentacion/7114">Máster oficial en Tecnologías y Aplicaciones en Ingeniería Informática</a> de la UAL. En la asignatura se hace una introducción al uso de los principales de modelos de Cloud Computing haciendo énfasis en IaaS (<em>Infrastructure as a Service</em>) y PaaS (<em>Platform as a Service</em>). Se trabajará el desarrollo basado en contenedores Docker para desplegar soluciones escalables en orquestadores de contenedores como Kubernetes.</p>
-</div>
-<div class="ulist">
 <div class="title">Objetivos</div>
-<ul>
-<li>
-<p>Resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con el cloud computing</p>
-</li>
-<li>
-<p>Resolver problemas en entornos nuevos o poco conocidos dentro de contextos más amplios y multidisciplinares, siendo capaces de integrar estos conocimientos en entornos de cloud computing</p>
-</li>
-<li>
-<p>Que el estudiante sea capaz de resolver problemas</p>
-</li>
-<li>
-<p>Modelar, diseñar, definir la arquitectura, implantar, gestionar, operar, administrar y mantener aplicaciones, redes, sistemas, servicios y contenidos informáticos en entornos cloud</p>
-</li>
-<li>
-<p>Comprender y aplicar el funcionamiento y organización de Internet, las tecnologías y protocolos de redes de nueva generación, los modelos de componentes, software intermediario y servicios del cloud computing</p>
-</li>
-<li>
-<p>Diseñar y evaluar sistemas operativos y servidores, y aplicaciones y sistemas basados en computación distribuida en el cloud computing</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueintroducci-n"><a class="anchor" href="#trueintroducci-n"></a>1. Introducción</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Las aplicaciones comerciales se trasladan a la <em>Nube</em>. Esto está ocurriendo más rápido que nunca: el paso de los modelos de software tradicionales a Internet ha adquirido un mayor impulso con el desarrollo del <em>Cloud Computing</em> o Computación en Nube. Se trata de la nueva forma de utilizar las tecnologías de la información y las comunicaciones empleando técnicas ya existentes de una forma innovadora y, sobre todo, a una nueva escala, permitiendo el uso de recursos de hardware, software, almacenamiento, servicios y comunicaciones que se encuentran distribuidos geográficamente y a los que se accede a través de redes públicas, de forma dinámica, cuando se necesita, mientras se necesita y abonando una tarifa sobre lo que se consume.</p>
-</div>
-<div class="paragraph">
-<p>Los numerosos proveedores de servicios en la nube proporcionan acceso a recursos informáticos y servicios adicionales de valor añadido que acercan la oferta del proveedor a las necesidades de su cliente. Gracias a un grupo creciente de proveedores de servicios en la nube, la computación en la nube es cada vez más importante como mecanismo para que los desarrolladores desplieguen fácilmente sus aplicaciones.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truesobre-la-gu-a-docente"><a class="anchor" href="#truesobre-la-gu-a-docente"></a>2. Sobre la Guía docente</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="truemateria-con-la-que-se-relaciona-en-el-plan-de-estudios"><a class="anchor" href="#truemateria-con-la-que-se-relaciona-en-el-plan-de-estudios"></a>2.1. Materia con la que se relaciona en el Plan de estudios:</h3>
-<div class="paragraph">
-<p>La asignatura Cloud Computing está directamente relacionada con las asignaturas siguientes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Especialidad Big Data</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Infraestructura Big Data (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Módulo de Desarrollo Web Móvil</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Computación en la Nube. Servicios y Aplicaciones (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Además, la asignatura Cloud Computing proporciona las bases para las asignaturas siguientes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Obligatorias</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integración de Tecnologías y Servicios Informáticos (1Q)</p>
-</li>
-<li>
-<p>Planificación de las TIC (1Q)</p>
-</li>
-<li>
-<p>Seguridad Informática (1Q)</p>
-</li>
-<li>
-<p>Desarrollo web/móvil (1Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Especialidad Big Data</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Análisis de grandes volúmenes de datos (2Q)</p>
-</li>
-<li>
-<p>Bases de datos a gran escala (2Q)</p>
-</li>
-<li>
-<p>Computación sobre datos masivos (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Especialidad IoT</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Infraestructuras en IoT (2Q)</p>
-</li>
-<li>
-<p>Aplicaciones de IoT (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Módulo de Desarrollo Web Móvil</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tecnologías y Recursos Web/Móvil (2Q)</p>
-</li>
-<li>
-<p>Desarrollo de Aplicaciones Híbridas (2Q)</p>
-</li>
-<li>
-<p>Desarrollo Web Basado en Servicios y Componentes (2Q)</p>
-</li>
-<li>
-<p>Programación Nativa en Dispositivos Móviles (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<p>*</p>
 </div>
 <div class="sect2">
-<h3 id="trueconocimientos-recomendables"><a class="anchor" href="#trueconocimientos-recomendables"></a>2.2. Conocimientos recomendables</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Linux</p>
-</li>
-<li>
-<p>Git</p>
-</li>
-<li>
-<p>Desarrollo web</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truecontenidos"><a class="anchor" href="#truecontenidos"></a>3. Contenidos</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Bloque 1 . Modelos de cloud computing</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tema 1. Modelos de servicio con Computación en la Nube</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Bloque 2 . Servicios y plataformas cloud</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tema 2. Infraestructura de cloud computing</p>
-</li>
-<li>
-<p>Tema 3. Plataformas como Servicio</p>
-</li>
-<li>
-<p>Tema 4. Servicios de Contenedores</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Bloque 3 . Desarrollo y despliegue de aplicaciones y servicios de cloud computing</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tema 5. Arquitecturas de aplicaciones cloud</p>
-</li>
-<li>
-<p>Tema 6. Despliegue de aplicaciones en la nube</p>
-</li>
-<li>
-<p>Tema 7. Servicios Avanzados de Cloud Computing</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<h3 id="truecrear-instancia-mysql"><a class="anchor" href="#truecrear-instancia-mysql"></a>1.1. Crear instancia MySQL</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p><a href="Docs/PlanificacionCC.html">Planificación de la asignatura</a></p>
+<p>Se está usando el password <code>secret</code>.</p>
 </div>
+</td>
+</tr>
+</table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="truehorario-de-clase-y-de-tutori-as"><a class="anchor" href="#truehorario-de-clase-y-de-tutori-as"></a>4. Horario de clase y de tutorías</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Clases: Aula 4 - CITE III</p>
-</li>
-<li>
-<p>Sesiones presenciales (<a href="Docs/PlanificacionCC.html">Planificación de la asignatura</a>)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>20 y 27 de octubre de 16h a 18h</p>
-</li>
-<li>
-<p>3, 10, 17 y 24 de noviembre de 16h a 18h</p>
-</li>
-<li>
-<p>1 y 15 de diciembre de 16h a 18h</p>
-</li>
-<li>
-<p>8 sesiones presenciales = 16 horas.</p>
-</li>
-<li>
-<p>7 sesiones no presenciales = 14 horas</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Profesor: Manuel Torres Gil</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tutorías: Lunes y Miércoles de 11h a 14h (cita previa y a través de Google Meet)</p>
-</li>
-<li>
-<p>Despacho: 2.19.5 CITE III (2a planta)</p>
-</li>
-<li>
-<p>email: <a href="mailto:mtorres@ual.es">mtorres@ual.es</a></p>
-</li>
-<li>
-<p>Twitter: <a href="https://twitter.com/ualmtorres">@ualmtorres</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueco-mo-seguir-la-asignatura"><a class="anchor" href="#trueco-mo-seguir-la-asignatura"></a>5. Cómo seguir la asignatura</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Material disponible en</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://aulavirtual.ual.es/webapps/blackboard/execute/launcher?type=Course&amp;id=_22698_1&amp;url=">Aula Virtual</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/">Repositorio GitHub</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Metodología docente</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Clases participativas</p>
-</li>
-<li>
-<p>Contenido práctico</p>
-</li>
-<li>
-<p>Elaboración de trabajos prácticos</p>
-</li>
-<li>
-<p>Actividades no presenciales: <a href="https://www.coursera.org/programs/ace-track-907-s-3pm27"> Google Associate Engineer Track</a></p>
-</li>
-<li>
-<p>Tutorías</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truec-mo-superar-la-asignatura"><a class="anchor" href="#truec-mo-superar-la-asignatura"></a>6. Cómo superar la asignatura</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Cada tema tiene una o varias actividades teórico/prácticas, que podrán ser tanto individuales como en equipo.</p>
-</li>
-<li>
-<p>Calificación final:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pruebas orales/escritas: 40%</p>
-</li>
-<li>
-<p>Ejercicios y proyectos presentados en <span class="line-through">aula virtual</span> servicios cloud: 50%</p>
-</li>
-<li>
-<p>Asistencia y participación activa en clase: 10%</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Para aprobar la asignatura es obligatorio haber presentado y superado:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>el examen</p>
-</li>
-<li>
-<p>los ejercicios y proyectos prácticos</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="sidebarblock">
+<div class="listingblock">
 <div class="content">
-<div class="title">Criterios e Instrumentos de evaluación</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Los ejercicios y proyectos prácticos deberán ser presentados en la fecha indicada utilizando el Aula Virtual y/o las herramientas y servicios cloud, como repositorios de código, proveedores cloud, servicios en la nube, etc., donde quedan registradas la acciones realizadas.</p>
-</li>
-<li>
-<p>También se hará seguimiento del gasto de cada estudiante en los servicios Cloud penalizando un uso ineficiente del cupón de gasto disponible.</p>
-</li>
-<li>
-<p>En las actividades en equipo, se tendrá en cuenta tanto el trabajo del equipo en su conjunto, como la aportación individual realizada por cada miembro del equipo.</p>
-</li>
-</ul>
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+apt-get update
+debconf-set-selections &lt;&lt;&lt; 'mysql-server mysql-server/root_password password secret'
+debconf-set-selections &lt;&lt;&lt; 'mysql-server mysql-server/root_password_again password secret'
+apt-get -y install mysql-server
+curl 'https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql' | mysql -u root -psecret
+sed -i 's/bind-address/#bind-address/g' /etc/mysql/mysql.conf.d/mysqld.cnf
+service mysql restart
+mysql -u root -psecret --execute="GRANT ALL ON SG.* TO root@'%' IDENTIFIED BY 'secret'; FLUSH PRIVILEGES";</code></pre>
 </div>
-<div class="imageblock">
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecrear-instancia-php"><a class="anchor" href="#truecrear-instancia-php"></a>1.2. Crear instancia PHP</h3>
+<div class="listingblock">
 <div class="content">
-<img src="Docs/Tema0/images/GraficoDeContribucionesGitHub.png" alt="GraficoDeContribucionesGitHub.png">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+apt-get update
+apt-get install -y apache2
+sudo apt-get install -y php libapache2-mod-php php-mcrypt
+sudo chgrp -R www-data /var/www
+sudo chmod -R 775 /var/www
+sudo chmod -R g+s /var/www
+sudo useradd -G www-data ubuntu
+sudo chown -R ubuntu /var/www/
+git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp</code></pre>
 </div>
-<div class="title">Figure 1. Ejemplo de gráfico de contribuciones</div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueencuesta-inicial"><a class="anchor" href="#trueencuesta-inicial"></a>7. Encuesta inicial</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Si eres alumno de la asignatura en la UAL completa esta <a href="https://forms.gle/bPdTzKQFUxmYh2M8A">pequeña encuesta</a> que permita valorar tus conocimientos iniciales y adaptar el desarrollo de la asignatura.</p>
+<p>git clone <a href="https://github.com/ualmtorres/diariostic.git" class="bare">https://github.com/ualmtorres/diariostic.git</a> /var/www/html/diariostic</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueantes-de-comenzar"><a class="anchor" href="#trueantes-de-comenzar"></a>8. Antes de comenzar</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Programa <em>Associate Cloud Engineer</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PrimerosPasosCoursera.html">Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html">Resumen del Programa Especializado: Architecting with Google Compute Engine</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html">Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Google Cloud</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaGoogleCloud.html">Activación de cuenta Google Cloud Platform</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/cuenta-facturacion-permisos-profesor.html">Dar permisos al profesor en la cuenta de facturación en GCP</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/creacionProyectoGoogleCloud.html">Creación de un proyecto en Google Cloud Platform</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/alertas-consumo-GoogleCloud.html">Añadir alertas de consumo (budgets) en Google Cloud</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Microsoft Azure</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="Docs/Tema0/Azure/crear-suscripcion-AzureParaEstudiantes.html">Creación de la suscripción Azure para Estudiantes</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/revisar-saldo-AzureParaEstudiantes.html">Revisar el saldo de la suscripción Azure para Estudiantes</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/agregar-administrador.html">Agregar o cambiar los administradores de la suscripción de Azure</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/mover-grupos-recursos-entre-suscripciones.html">Mover los grupos de recursos de una suscripción a otra</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/alertas-consumo-azure.html">Añadir alertas de consumo (budgets) en Azure</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>OpenStack-DI</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaOpenStackDI.html">Activación de cuenta OpenStack-DI</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truerecursos"><a class="anchor" href="#truerecursos"></a>9. Recursos</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="truetemas"><a class="anchor" href="#truetemas"></a>9.1. Temas</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf">Tema 1. Modelos de servicio con Computación en la Nube (PDF)</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema2/CreacionBDMySQLGoogleCloud.html">Creación de instancia MySQL en Google Cloud</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema2/AplicacionSGEnModoIaaS.html">Despliegue de una aplicación con base de datos en Modo IaaS</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema2/DespliegueAppEngineHeroku.html">Despliegue en Heroku y Google App Engine</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truesesiones-de-clase"><a class="anchor" href="#truesesiones-de-clase"></a>9.2. Sesiones de clase</h3>
-<div class="paragraph">
-<p>Mientras se formaliza la matrícula definitiva y teneis acceso a Aula virtual, podeis usar estos enlaces provisionales:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://eu.bbcollab.com/guest/a7e5426ef2564fde8ed5b31390e7ae81">Sala de videoconferencia</a></p>
-</li>
-<li>
-<p><a href="https://eu-lti.bbcollab.com/recording/ad2c79adf3764f238329ef6c0f8a836a">Grabación 2020-10-20</a></p>
-</li>
-<li>
-<p><a href="https://eu-lti.bbcollab.com/recording/0a3403a2c670434882afb505265f5862">Grabación 2020-10-27</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truetrabajo-aut-nomo"><a class="anchor" href="#truetrabajo-aut-nomo"></a>10. Trabajo autónomo</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="Labs/Lab01/index.html">Lab 01. Creación de máquinas virtuales en OpenStack-DI</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueactividades-no-presenciales"><a class="anchor" href="#trueactividades-no-presenciales"></a>11. Actividades no presenciales</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://www.coursera.org/programs/ace-track-907-s-3pm27">Google Associate Engineer Track</a></p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-01 08:24:01 CET
+Last updated 2020-11-01 08:26:03 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

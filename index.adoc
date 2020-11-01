@@ -186,7 +186,8 @@ Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/bPdTzK
 
 * link:Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf[Tema 1. Modelos de servicio con Computación en la Nube (PDF)]
 * link:Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Creación de instancia MySQL en Google Cloud]
-* link:Docs/Tema2/DespliegueAppEngineHeroku.html[Despliegue en AppEngine y Heroku]
+* link:Docs/Tema2/AplicacionSGEnModoIaaS.html[Despliegue de una aplicación con base de datos en Modo IaaS]
+* link:Docs/Tema2/DespliegueAppEngineHeroku.html[Despliegue en Heroku y Google App Engine]
 
 ### Sesiones de clase
 
