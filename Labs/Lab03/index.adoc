@@ -1,0 +1,114 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:doctype: book
+:linkattrs:
+
+////
+Nombre y título del trabajo
+////
+# Lab 03 Cloud Computing. Despliegue mixto en modo PaaS y en modo IaaS
+Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+
+
+image::../../Docs/Tema0/images/di.png[]
+
+// NO CAMBIAR!! (Entrar en modo no numerado de apartados)
+:numbered!: 
+
+
+[abstract]
+== Resumen
+////
+COLOCA A CONTINUACION EL RESUMEN
+////
+En este laboratorio se trabajan de forma combinada los modelos de Infraestructura como servicio y Plataforma como servicio. Se creará una base de datos MySQL en Google Cloud usando el modelo IaaS y se usará el modelo PaaS para desplegar en Heroku y Google App Engine una aplicación que interactúe con la base de datos MySQL.
+
+////
+COLOCA A CONTINUACION LOS OBJETIVOS
+////
+.Objetivos
+* Crear una base de datos MySQL usando el modelo IaaS.
+* Configurar variables de entorno en Heroku y Google App Engine.
+* Usar el modelo PaaS para desplegar aplicaciones en Heroku y Google App Engine a partir de un repositorio en GitHub.
+
+.Prerrequisitos
+****
+* Cuenta y proyecto creado en Google Cloud.
+* Cuenta creada en GitHub.
+* Cuenta creada en Heroku.
+****
+
+// Entrar en modo numerado de apartados
+:numbered:
+
+## Recursos
+
+* link:../../Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Creación de una instancia MySQL en Google Cloud]
+* link:../../Docs/Tema2/DespliegueAppEngineHeroku.html[Despliegue en Heroku y Google App Engine]
+* Apartado _Using the Heroku Dashboard_ de la https://devcenter.heroku.com/articles/config-vars#managing-config-vars[Guía de Heroku para la creación y configuración de variables de entorno] (_Config Vars_)
+* Apartado _Defining environment variables_ de la https://cloud.google.com/appengine/docs/flexible/python/reference/app-yaml#defining_environment_variables[Guía de configuración del archivo `app.yaml`]
+
+## Actividades
+
+La aplicación SG tiene un https://github.com/ualmtorres/SGApp.git[repositorio disponible en GitHub]. Se trata de una aplicación que muestra un catálogo de artículos deportivos. Los artículos están almacenados en una base de datos MySQL denominada SG.
+
+image::images/SGApp.png[]
+
+Como se muestra a continuación, la aplicación usa variables de entorno para almacenar los valores de dirección IP del host de la base de datos, usuario y contraseña.
+
+[source, php]
+----
+$conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
+----
+
+[NOTE]
+====
+Si aún no se dispone de la base de datos SG, seguir el tutorial link:../../Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Creación de una instancia MySQL en Google Cloud] para crear la base de datos SG.
+====
+
+### Desplegar la aplicación SG en Heroku
+
+Partiendo de que la base de datos SG está creada y disponible en Google Cloud, seguir los pasos siguientes:
+
+. Hacer un fork en GitHub del https://github.com/ualmtorres/SGApp.git[repositorio de la aplicación SG].
+. Seguir el apartado _Despliegue Heroku_ del tutorial link:../../Docs/Tema2/DespliegueAppEngineHeroku.html[Despliegue en Heroku y Google App Engine] y crear una aplicación nueva en Heroku para SG (puede ser necesario borrar alguna existente en función de la cuota disponible).
+. Consultar el apartado _Using the Heroku Dashboard_ de la https://devcenter.heroku.com/articles/config-vars#managing-config-vars[Guía de Heroku para la creación y configuración de variables de entorno] (_Config Vars_ en Heroku).
+. Definir en el proyecto Heroku las variables de entorno `MYSQL_HOST`, `MYSQL_USER` y `MYSQL_PASSWORD` con los valores correspondientes de la dirección IP pública de la base de datos MySQL de Google Cloud y sus credenciales de acceso.
+. Desplegar la aplicación SG.
+
+[IMPORTANT]
+====
+**Para la instancia MySQL en Google Cloud al finalizar la práctica para no malgastar el crédito del cupón de la asignatura en Google Cloud.** Se trata de detener la instancia MySQL, no de eliminarla. En otras actividades la volveremos a iniciar. Mientras tanto, debe quedar detenida.
+====
+
+### Desplegar la aplicación SG en Google App Engine
+
+Partiendo de que la base de datos SG está creada y disponible en Google Cloud, seguir los pasos siguientes:
+
+. Seguir el apartado _Despliegue en Google App Engine_ del tutorial link:../../Docs/Tema2/DespliegueAppEngineHeroku.html[Despliegue en Heroku y Google App Engine]
+. Clonar en Cloud Shell el https://github.com/ualmtorres/SGApp.git[repositorio de la aplicación SG].
+. Dentro del directorio de la aplicación SG en Cloud Shell crear el descriptor `app.yaml` siguiendo este https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e[ejemplo de descriptor `app.yaml`].
+. Consultar el apartado _Defining environment variables_ de la https://cloud.google.com/appengine/docs/flexible/python/reference/app-yaml#defining_environment_variables[Guía de configuración del archivo `app.yaml`] para ver cómo configurar variables de entorno en el descriptor `app.yaml`.
+. Añadir al descriptor `app.yaml` las variables de entorno `MYSQL_HOST`, `MYSQL_USER` y `MYSQL_PASSWORD` con los valores correspondientes de la dirección IP pública de la base de datos MySQL de Google Cloud y sus credenciales de acceso.
+
++
+[NOTE]
+====
+Usa el editor de Cloud Shell (botón `Abrir editor`) para editar de forma cómoda el archivo `app.yaml`. Respeta los espacios en el archivo y ten en cuenta que los valores de las variables de entorno se consideran cadenas en este caso y deben ir encerrados entre comillas simples.
+
+Para volver a la consola de Cloud Shell desde el editor pulsa el botón `Abrir terminal`.
+====
+
++
+. Desplegar la aplicación SG.
+
+## Detener los recursos iniciados
+
+**La instancia MySQL y la aplicación en App Engine consumen crédito del cupón de la asignatura mientras estén activas. Haz una parada de los recursos no necesarios para no malgastar el crédito del cupón de la asignatura en Google Cloud. Se trata de detenerlos, no de eliminarlos. En otras actividades los volveremos a iniciar. Mientras tanto, deben quedar detenidos.**
