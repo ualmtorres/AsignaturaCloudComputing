@@ -77,7 +77,7 @@ Regístrate con una cuenta de email. Tras iniciar sesión se accede a una pantal
 
 image::images/HerokuInicio.png[]
 
-## Despliegue de una aplicación PHP con despliegue continuo
+## Despliegue en Heroku
 
 A continuación vamos a ver cómo desplegar una aplicación PHP desde un repositorio GitHub activando la opción de despliegue continuo. El despliegue continuo permitirá la actualización de la aplicación de forma desastitida tras una subida de cambios (a una rama) a un repositorio.
 
@@ -171,7 +171,7 @@ La plataforma Heroku usa contenedores para ejecutar las aplicaciones lo que perm
 image::images/HerokuDynoTypes.png[]
 ****
 
-## App Engine
+## Despliegue en Google App Engine
 
 Google App Engine es el PaaS de Google. Permite el desarrollo de aplicaciones en una plataforma totalmente gestionada por Google. Actualmente App Engine ofrece plaforma para desarrollo en:
 
@@ -286,6 +286,15 @@ Para poder usar el SDK de Google Cloud en Cloud Shell, Google Cloud nos advierte
 
 +
 image::images/CloudShellAutorizar.png[]
+
++
+. Desplegar la aplicación
+
++
+[source, bash]
+----
+$ gcloud app deploy
+----
 
 +
 Nos pedirá confirmación de despliegue sobre el descriptor (`app.yaml`) a usar, el origen (carpeta donde se colocó el repositorio) y el proyecto de destino. Tras confirmar, informará que se ha inicializado el Google Cloud SDK y  comenzará el despliegue. La aplicación quedará almacenada en Google Cloud Storage.

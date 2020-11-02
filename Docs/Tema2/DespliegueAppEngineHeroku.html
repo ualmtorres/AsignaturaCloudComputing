@@ -436,7 +436,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueregistro-en-el-plan-gratuito-de-heroku">2.1. Registro en el plan gratuito de Heroku</a></li>
 </ul>
 </li>
-<li><a href="#truedespliegue-de-una-aplicaci-n-php-con-despliegue-continuo">3. Despliegue de una aplicación PHP con despliegue continuo</a>
+<li><a href="#truedespliegue-en-heroku">3. Despliegue en Heroku</a>
 <ul class="sectlevel2">
 <li><a href="#truecreaci-n-de-un-fork-de-la-aplicaci-n">3.1. Creación de un fork de la aplicación</a></li>
 <li><a href="#truedespliegue-autom-tico">3.2. Despliegue automático</a></li>
@@ -444,7 +444,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueotras-opciones-de-inter-s">3.4. Otras opciones de interés</a></li>
 </ul>
 </li>
-<li><a href="#trueapp-engine">4. App Engine</a>
+<li><a href="#truedespliegue-en-google-app-engine">4. Despliegue en Google App Engine</a>
 <ul class="sectlevel2">
 <li><a href="#truecreaci-n-de-la-aplicaci-n-en-app-engine-en-modo-manual">4.1. Creación de la aplicación en App Engine en modo manual</a></li>
 <li><a href="#truedespliegue-continuo">4.2. Despliegue continuo</a></li>
@@ -573,7 +573,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="truedespliegue-de-una-aplicaci-n-php-con-despliegue-continuo"><a class="anchor" href="#truedespliegue-de-una-aplicaci-n-php-con-despliegue-continuo"></a>3. Despliegue de una aplicación PHP con despliegue continuo</h2>
+<h2 id="truedespliegue-en-heroku"><a class="anchor" href="#truedespliegue-en-heroku"></a>3. Despliegue en Heroku</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A continuación vamos a ver cómo desplegar una aplicación PHP desde un repositorio GitHub activando la opción de despliegue continuo. El despliegue continuo permitirá la actualización de la aplicación de forma desastitida tras una subida de cambios (a una rama) a un repositorio.</p>
@@ -752,7 +752,7 @@ $portada = [
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueapp-engine"><a class="anchor" href="#trueapp-engine"></a>4. App Engine</h2>
+<h2 id="truedespliegue-en-google-app-engine"><a class="anchor" href="#truedespliegue-en-google-app-engine"></a>4. Despliegue en Google App Engine</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Google App Engine es el PaaS de Google. Permite el desarrollo de aplicaciones en una plataforma totalmente gestionada por Google. Actualmente App Engine ofrece plaforma para desarrollo en:</p>
@@ -924,6 +924,14 @@ handlers:
 <img src="images/CloudShellAutorizar.png" alt="CloudShellAutorizar.png">
 </div>
 </div>
+</li>
+<li>
+<p>Desplegar la aplicación</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">$ gcloud app deploy</code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>Nos pedirá confirmación de despliegue sobre el descriptor (<code>app.yaml</code>) a usar, el origen (carpeta donde se colocó el repositorio) y el proyecto de destino. Tras confirmar, informará que se ha inicializado el Google Cloud SDK y  comenzará el despliegue. La aplicación quedará almacenada en Google Cloud Storage.</p>
 </div>
@@ -1023,7 +1031,7 @@ Do you want to continue (Y/n)?</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-01 08:29:14 CET
+Last updated 2020-11-02 09:32:21 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
