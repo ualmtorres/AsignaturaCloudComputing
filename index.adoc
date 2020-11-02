@@ -201,7 +201,7 @@ Mientras se formaliza la matrícula definitiva y teneis acceso a Aula virtual, p
 ## Trabajo autónomo
 
 * link:Labs/Lab01/index.html[Lab 01. Creación de máquinas virtuales en OpenStack-DI] 
-
+* link:Labs/Lab03/index.html[Lab 03. Despliegue mixto en modo PaaS y en modo IaaS] 
 
 ## Actividades no presenciales
 
