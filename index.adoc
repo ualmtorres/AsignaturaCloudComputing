@@ -192,9 +192,9 @@ Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/bPdTzK
 * link:Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Tutorial: Creación de instancia MySQL en Google Cloud]
 * link:Docs/Tema2/AplicacionSGEnModoIaaS.html[Tutorial: Despliegue de una aplicación con base de datos en modo IaaS]
 
-### Tema 3.
+### Tema 3. Plataforma como servicio
 
-https://docs.google.com/presentation/d/10m4g9zfmX-J90lzsrZbYNimgI-iIzo_HXddLrOjSry0/edit?usp=sharing[Presentación: Plataforma como servicio]
+* https://docs.google.com/presentation/d/10m4g9zfmX-J90lzsrZbYNimgI-iIzo_HXddLrOjSry0/edit?usp=sharing[Presentación: Plataforma como servicio]
 * link:Docs/Tema2/DespliegueAppEngineHeroku.html[Tutorial: Despliegue en Heroku y Google App Engine]
 
 ### Sesiones de clase
@@ -204,6 +204,7 @@ Mientras se formaliza la matrícula definitiva y teneis acceso a Aula virtual, p
 * https://eu.bbcollab.com/guest/a7e5426ef2564fde8ed5b31390e7ae81[Sala de videoconferencia]
 * https://eu-lti.bbcollab.com/recording/ad2c79adf3764f238329ef6c0f8a836a[Grabación 2020-10-20]
 * https://eu-lti.bbcollab.com/recording/0a3403a2c670434882afb505265f5862[Grabación 2020-10-27]
+* https://eu-lti.bbcollab.com/recording/a599d2fff1014591865ddf6105ba5098[Grabación 2020-11-03]
 
 
 ## Trabajo autónomo
