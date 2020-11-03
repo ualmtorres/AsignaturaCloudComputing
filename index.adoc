@@ -182,12 +182,20 @@ Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/bPdTzK
 
 ## Recursos
 
-### Temas
+### Tema 1. Modelos de servicio con Computación en la Nube
 
-* link:Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf[Tema 1. Modelos de servicio con Computación en la Nube (PDF)]
-* link:Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Creación de instancia MySQL en Google Cloud]
-* link:Docs/Tema2/AplicacionSGEnModoIaaS.html[Despliegue de una aplicación con base de datos en modo IaaS]
-* link:Docs/Tema2/DespliegueAppEngineHeroku.html[Despliegue en Heroku y Google App Engine]
+* link:Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf[Presentación: Modelos de servicio con Computación en la Nube]
+
+### Tema 2. Infraestructura de Cloud Computing
+
+* https://docs.google.com/presentation/d/1Dod2suAnFwq8NSYfWs-ytr4hn2GUEL8yHmtj3yfBP_g/edit?usp=sharing[Presentación: Infraestructura de Cloud Computing]
+* link:Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Tutorial: Creación de instancia MySQL en Google Cloud]
+* link:Docs/Tema2/AplicacionSGEnModoIaaS.html[Tutorial: Despliegue de una aplicación con base de datos en modo IaaS]
+
+### Tema 3.
+
+https://docs.google.com/presentation/d/10m4g9zfmX-J90lzsrZbYNimgI-iIzo_HXddLrOjSry0/edit?usp=sharing[Presentación: Plataforma como servicio]
+* link:Docs/Tema2/DespliegueAppEngineHeroku.html[Tutorial: Despliegue en Heroku y Google App Engine]
 
 ### Sesiones de clase
 
