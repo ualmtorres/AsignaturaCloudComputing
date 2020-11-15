@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5.dev">
 <meta name="author" content="Máster en Tecnologías y Aplicaciones en Ingeniería Informática">
-<title>Cloud Computing</title>
+<title>Lab 05 Cloud Computing. Despliegue de contenedores en OpenStack-DI y en Google Cloud</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -421,7 +421,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-right">
 <div id="header">
-<h1>Cloud Computing</h1>
+<h1>Lab 05 Cloud Computing. Despliegue de contenedores en OpenStack-DI y en Google Cloud</h1>
 <div class="details">
 <span id="author" class="author">Máster en Tecnologías y Aplicaciones en Ingeniería Informática</span><br>
 <span id="revdate">José Joaquín Cañadas y Manuel Torres &lt;jjcanada@ual.es&gt; &lt;mtorres@ual.es&gt;</span>
@@ -430,30 +430,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Tabla de contenidos</div>
 <ul class="sectlevel1">
 <li><a href="#trueresumen">Resumen</a></li>
-<li><a href="#trueintroducci-n">1. Introducción</a></li>
-<li><a href="#truesobre-la-gu-a-docente">2. Sobre la Guía docente</a>
+<li><a href="#truerecursos">1. Recursos</a></li>
+<li><a href="#trueactividades">2. Actividades</a>
 <ul class="sectlevel2">
-<li><a href="#truemateria-con-la-que-se-relaciona-en-el-plan-de-estudios">2.1. Materia con la que se relaciona en el Plan de estudios:</a></li>
-<li><a href="#trueconocimientos-recomendables">2.2. Conocimientos recomendables</a></li>
+<li><a href="#truecreaci-n-de-imagen">2.1. Creación de imagen</a></li>
+<li><a href="#truecreaci-n-de-una-m-quina-virtual-en-openstack-di-con-un-contenedor-desplegado">2.2. Creación de una máquina virtual en OpenStack-DI con un contenedor desplegado</a></li>
+<li><a href="#truecreaci-n-de-una-m-quina-virtual-en-google-cloud-con-un-contenedor-desplegado">2.3. Creación de una máquina virtual en Google Cloud con un contenedor desplegado</a></li>
+<li><a href="#truedesplegar-un-contenedor-en-google-cloud-run">2.4. Desplegar un contenedor en Google Cloud Run</a></li>
 </ul>
 </li>
-<li><a href="#truecontenidos">3. Contenidos</a></li>
-<li><a href="#truehorario-de-clase-y-de-tutori-as">4. Horario de clase y de tutorías</a></li>
-<li><a href="#trueco-mo-seguir-la-asignatura">5. Cómo seguir la asignatura</a></li>
-<li><a href="#truec-mo-superar-la-asignatura">6. Cómo superar la asignatura</a></li>
-<li><a href="#trueencuesta-inicial">7. Encuesta inicial</a></li>
-<li><a href="#trueantes-de-comenzar">8. Antes de comenzar</a></li>
-<li><a href="#truerecursos">9. Recursos</a>
-<ul class="sectlevel2">
-<li><a href="#truetema-1-modelos-de-servicio-con-computaci-n-en-la-nube">9.1. Tema 1. Modelos de servicio con Computación en la Nube</a></li>
-<li><a href="#truetema-2-infraestructura-de-cloud-computing">9.2. Tema 2. Infraestructura de Cloud Computing</a></li>
-<li><a href="#truetema-3-plataforma-como-servicio">9.3. Tema 3. Plataforma como servicio</a></li>
-<li><a href="#truetema-4-servicios-de-contenedores">9.4. Tema 4. Servicios de contenedores</a></li>
-<li><a href="#truesesiones-de-clase">9.5. Sesiones de clase</a></li>
-</ul>
-</li>
-<li><a href="#truetrabajo-aut-nomo">10. Trabajo autónomo</a></li>
-<li><a href="#trueactividades-no-presenciales">11. Actividades no presenciales</a></li>
+<li><a href="#truedetener-los-recursos-iniciados">3. Detener los recursos iniciados</a></li>
 </ul>
 </div>
 </div>
@@ -462,7 +448,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="Docs/Tema0/images/di.png" alt="di.png">
+<img src="../../Docs/Tema0/images/di.png" alt="di.png">
 </div>
 </div>
 </div>
@@ -471,581 +457,528 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="trueresumen"><a class="anchor" href="#trueresumen"></a>Resumen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>La asignatura Cloud Computing es una asignatura obligatoria del módulo de Tecnologías informáticas del <a href="https://www.ual.es/estudios/masteres/presentacion/7114">Máster oficial en Tecnologías y Aplicaciones en Ingeniería Informática</a> de la UAL. En la asignatura se hace una introducción al uso de los principales de modelos de Cloud Computing haciendo énfasis en IaaS (<em>Infrastructure as a Service</em>) y PaaS (<em>Platform as a Service</em>). Se trabajará el desarrollo basado en contenedores Docker para desplegar soluciones escalables en orquestadores de contenedores como Kubernetes.</p>
+<p>En este laboratorio se trabaja el despliegue de aplicaciones basadas en contenedores en clouds diferentes. Se practicará creando una imagen de una aplicación y subiéndola a Docker Hub. Posteriormente, se preparará una máquina virtual con Docker en OpenStack y se desplegará la imagen de Docker Hub. Finalmente, se desplegará la misma imagen en una máquina virtual de Google Compute Engine y en Google Cloud Run.</p>
 </div>
 <div class="ulist">
 <div class="title">Objetivos</div>
 <ul>
 <li>
-<p>Resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con el cloud computing</p>
+<p>Crear imágenes propias</p>
 </li>
 <li>
-<p>Resolver problemas en entornos nuevos o poco conocidos dentro de contextos más amplios y multidisciplinares, siendo capaces de integrar estos conocimientos en entornos de cloud computing</p>
+<p>Subir imágenes a un registro de contenedores</p>
 </li>
 <li>
-<p>Que el estudiante sea capaz de resolver problemas</p>
+<p>Desplegar contenedores en máquinas virtuales</p>
 </li>
 <li>
-<p>Modelar, diseñar, definir la arquitectura, implantar, gestionar, operar, administrar y mantener aplicaciones, redes, sistemas, servicios y contenidos informáticos en entornos cloud</p>
+<p>Interactuar con el Google Container Registry</p>
 </li>
 <li>
-<p>Comprender y aplicar el funcionamiento y organización de Internet, las tecnologías y protocolos de redes de nueva generación, los modelos de componentes, software intermediario y servicios del cloud computing</p>
-</li>
-<li>
-<p>Diseñar y evaluar sistemas operativos y servidores, y aplicaciones y sistemas basados en computación distribuida en el cloud computing</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueintroducci-n"><a class="anchor" href="#trueintroducci-n"></a>1. Introducción</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Las aplicaciones comerciales se trasladan a la <em>Nube</em>. Esto está ocurriendo más rápido que nunca: el paso de los modelos de software tradicionales a Internet ha adquirido un mayor impulso con el desarrollo del <em>Cloud Computing</em> o Computación en Nube. Se trata de la nueva forma de utilizar las tecnologías de la información y las comunicaciones empleando técnicas ya existentes de una forma innovadora y, sobre todo, a una nueva escala, permitiendo el uso de recursos de hardware, software, almacenamiento, servicios y comunicaciones que se encuentran distribuidos geográficamente y a los que se accede a través de redes públicas, de forma dinámica, cuando se necesita, mientras se necesita y abonando una tarifa sobre lo que se consume.</p>
-</div>
-<div class="paragraph">
-<p>Los numerosos proveedores de servicios en la nube proporcionan acceso a recursos informáticos y servicios adicionales de valor añadido que acercan la oferta del proveedor a las necesidades de su cliente. Gracias a un grupo creciente de proveedores de servicios en la nube, la computación en la nube es cada vez más importante como mecanismo para que los desarrolladores desplieguen fácilmente sus aplicaciones.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truesobre-la-gu-a-docente"><a class="anchor" href="#truesobre-la-gu-a-docente"></a>2. Sobre la Guía docente</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="truemateria-con-la-que-se-relaciona-en-el-plan-de-estudios"><a class="anchor" href="#truemateria-con-la-que-se-relaciona-en-el-plan-de-estudios"></a>2.1. Materia con la que se relaciona en el Plan de estudios:</h3>
-<div class="paragraph">
-<p>La asignatura Cloud Computing está directamente relacionada con las asignaturas siguientes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Especialidad Big Data</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Infraestructura Big Data (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Módulo de Desarrollo Web Móvil</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Computación en la Nube. Servicios y Aplicaciones (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Además, la asignatura Cloud Computing proporciona las bases para las asignaturas siguientes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Obligatorias</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integración de Tecnologías y Servicios Informáticos (1Q)</p>
-</li>
-<li>
-<p>Planificación de las TIC (1Q)</p>
-</li>
-<li>
-<p>Seguridad Informática (1Q)</p>
-</li>
-<li>
-<p>Desarrollo web/móvil (1Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Especialidad Big Data</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Análisis de grandes volúmenes de datos (2Q)</p>
-</li>
-<li>
-<p>Bases de datos a gran escala (2Q)</p>
-</li>
-<li>
-<p>Computación sobre datos masivos (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Especialidad IoT</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Infraestructuras en IoT (2Q)</p>
-</li>
-<li>
-<p>Aplicaciones de IoT (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Módulo de Desarrollo Web Móvil</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tecnologías y Recursos Web/Móvil (2Q)</p>
-</li>
-<li>
-<p>Desarrollo de Aplicaciones Híbridas (2Q)</p>
-</li>
-<li>
-<p>Desarrollo Web Basado en Servicios y Componentes (2Q)</p>
-</li>
-<li>
-<p>Programación Nativa en Dispositivos Móviles (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueconocimientos-recomendables"><a class="anchor" href="#trueconocimientos-recomendables"></a>2.2. Conocimientos recomendables</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Linux</p>
-</li>
-<li>
-<p>Git</p>
-</li>
-<li>
-<p>Desarrollo web</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truecontenidos"><a class="anchor" href="#truecontenidos"></a>3. Contenidos</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Bloque 1 . Modelos de cloud computing</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tema 1. Modelos de servicio con Computación en la Nube</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Bloque 2 . Servicios y plataformas cloud</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tema 2. Infraestructura de cloud computing</p>
-</li>
-<li>
-<p>Tema 3. Plataformas como Servicio</p>
-</li>
-<li>
-<p>Tema 4. Servicios de Contenedores</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Bloque 3 . Desarrollo y despliegue de aplicaciones y servicios de cloud computing</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tema 5. Arquitecturas de aplicaciones cloud</p>
-</li>
-<li>
-<p>Tema 6. Despliegue de aplicaciones en la nube</p>
-</li>
-<li>
-<p>Tema 7. Servicios Avanzados de Cloud Computing</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="Docs/PlanificacionCC.html">Planificación de la asignatura</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truehorario-de-clase-y-de-tutori-as"><a class="anchor" href="#truehorario-de-clase-y-de-tutori-as"></a>4. Horario de clase y de tutorías</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Clases: Aula 4 - CITE III</p>
-</li>
-<li>
-<p>Sesiones presenciales (<a href="Docs/PlanificacionCC.html">Planificación de la asignatura</a>)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>20 y 27 de octubre de 16h a 18h</p>
-</li>
-<li>
-<p>3, 10, 17 y 24 de noviembre de 16h a 18h</p>
-</li>
-<li>
-<p>1 y 15 de diciembre de 16h a 18h</p>
-</li>
-<li>
-<p>8 sesiones presenciales = 16 horas.</p>
-</li>
-<li>
-<p>7 sesiones no presenciales = 14 horas</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Profesor: Manuel Torres Gil</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tutorías: Lunes y Miércoles de 11h a 14h (cita previa y a través de Google Meet)</p>
-</li>
-<li>
-<p>Despacho: 2.19.5 CITE III (2a planta)</p>
-</li>
-<li>
-<p>email: <a href="mailto:mtorres@ual.es">mtorres@ual.es</a></p>
-</li>
-<li>
-<p>Twitter: <a href="https://twitter.com/ualmtorres">@ualmtorres</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueco-mo-seguir-la-asignatura"><a class="anchor" href="#trueco-mo-seguir-la-asignatura"></a>5. Cómo seguir la asignatura</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Material disponible en</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://aulavirtual.ual.es/webapps/blackboard/execute/launcher?type=Course&amp;id=_22698_1&amp;url=">Aula Virtual</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/">Repositorio GitHub</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Metodología docente</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Clases participativas</p>
-</li>
-<li>
-<p>Contenido práctico</p>
-</li>
-<li>
-<p>Elaboración de trabajos prácticos</p>
-</li>
-<li>
-<p>Actividades no presenciales: <a href="https://www.coursera.org/programs/ace-track-907-s-3pm27"> Google Associate Engineer Track</a></p>
-</li>
-<li>
-<p>Tutorías</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truec-mo-superar-la-asignatura"><a class="anchor" href="#truec-mo-superar-la-asignatura"></a>6. Cómo superar la asignatura</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Cada tema tiene una o varias actividades teórico/prácticas, que podrán ser tanto individuales como en equipo.</p>
-</li>
-<li>
-<p>Calificación final:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pruebas orales/escritas: 40%</p>
-</li>
-<li>
-<p>Ejercicios y proyectos presentados en <span class="line-through">aula virtual</span> servicios cloud: 50%</p>
-</li>
-<li>
-<p>Asistencia y participación activa en clase: 10%</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Para aprobar la asignatura es obligatorio haber presentado y superado:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>el examen</p>
-</li>
-<li>
-<p>los ejercicios y proyectos prácticos</p>
-</li>
-</ul>
-</div>
+<p>Desplegar contenedores en Cloud Run</p>
 </li>
 </ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title">Criterios e Instrumentos de evaluación</div>
+<div class="title">Prerrequisitos</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Los ejercicios y proyectos prácticos deberán ser presentados en la fecha indicada utilizando el Aula Virtual y/o las herramientas y servicios cloud, como repositorios de código, proveedores cloud, servicios en la nube, etc., donde quedan registradas la acciones realizadas.</p>
+<p>Cuenta creada en Docker Hub.</p>
 </li>
 <li>
-<p>También se hará seguimiento del gasto de cada estudiante en los servicios Cloud penalizando un uso ineficiente del cupón de gasto disponible.</p>
+<p>Cuenta y proyecto creado en <a href="https://openstack.di.ual.es/horizon">OpenStack-DI</a>.</p>
 </li>
 <li>
-<p>En las actividades en equipo, se tendrá en cuenta tanto el trabajo del equipo en su conjunto, como la aportación individual realizada por cada miembro del equipo.</p>
+<p>Cuenta y proyecto creado en Google Cloud.</p>
+</li>
+<li>
+<p>Los usuarios de Windows deben tener instalada una herramienta para acceso SSH (p.e. Git Bash, Putty). Los usuarios de Linux y Mac usarán la terminal y no tendrán que instalar nada.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truerecursos"><a class="anchor" href="#truerecursos"></a>1. Recursos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Puedes aprender a usar Docker siguiendo el <a href="https://ualmtorres.github.io/usoBasicoDeDocker/">Tutorial Desarrollo de aplicaciones con Docker</a> o bien en forma de videos donde se dan las explicaciones con mayor detalle:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Introducción</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=rbxa9_y2KrM">Presentación</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=80JvMWs7-IY">Docker vs Máquinas virtuales</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=Ad814U_vN0E">Hello World</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=qiOLNs_9vcA">Crear contenedor</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=WDTeWRHJRiw">Workflow básico</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=o9Izg8c5V5s">Ejemplo de Dockerfile</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=yG5gP8m_Ga0">Comandos básicos</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Bind mounts</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=jHvt3-NKhoA">Introducción a los Bind mounts</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=yK22N8a-vpw">Ejemplo de Bind mount</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=SntpieE3h-Y">Bind mount con MySQL</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Imágenes</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=kIMtlYQ1I1g">Introducción al Dockerfile</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=ypjyt3oHtGo">Desarrollando para hacer el building</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=zIIpQlqfVDo">Creación del Dockerfile</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=PP1vFYSL0ss">Registros remotos</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Docker Compose</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=SQUr5RbgDiM">Introducción a Docker Compose</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=TgSfhA_WmRE">Flujo de trabajo en Docker Compose</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=Y5qEKVIllAI">Importancia de los nombres de los contenedores</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=828AcVmhBdE">Obtener nombre del proyecto</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=_Qds-2X3YHc">Esqueleto de base para aplicación con Docker Compose</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Desarrollo de una aplicación con Docker Compose</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=S6yLbIiAMxA">Desarrollo de la API</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=eDHUY4nMmcc">Construcción de la imagen de la API (1)</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=okw0qv74gkE">Construcción de la imagen de la API (2)</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=e4dApQ5LwHE">Desarrollo de la aplicación (1)</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=k7vMzUmeUhw">Desarrollo de la aplicación (2)</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=j68_ucJOw3E">Construir la imagen de la aplicación</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=stNs5UVc6BU">Despliegue a producción</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueactividades"><a class="anchor" href="#trueactividades"></a>2. Actividades</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="truecreaci-n-de-imagen"><a class="anchor" href="#truecreaci-n-de-imagen"></a>2.1. Creación de imagen</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clonar el <a href="https://github.com/ualmtorres/webEstaticaBasica">repositorio</a> con el proyecto de una web estática básica.</p>
+</li>
+<li>
+<p>Modificar el código del <code>index.html</code> añadiendo debajo del encabezado</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html" data-lang="html">&lt;h1 class="display-3"&gt;Web estática básica&lt;/h1&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>la línea siguiente</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html" data-lang="html">&lt;h2 class="display-6"&gt;Nombre Completo (&lt;usuarioUALSin@inlumine.ual.es&gt;)&lt;/h2&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>sustituyendo los valores por tu nombre completo y tu usuario UAL sin <code>@inlumine.ual.es</code>.</p>
+</div>
+</li>
+<li>
+<p>Modificar el <code>Dockerfile</code> para que:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Tome como base una imagen de Apache (<a href="https://hub.docker.com/_/httpd">httpd</a>)</p>
+</li>
+<li>
+<p>Añada el código de la aplicación al directorio donde Apache sirve su contenido (<code>/usr/local/apache2/htdocs/</code>)</p>
+</li>
+<li>
+<p>Cambie el punto de montaje del volumen a <code>/usr/local/apache2/htdocs/</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Crear una imagen Docker con el tag <code>&lt;usuarioDockerHub&gt;/web-estatica-basica:v0</code> (cambiando el usuario de Docker Hub por el valor correspondiente).</p>
+</li>
+<li>
+<p>Subir la imagen a Docker Hub</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecreaci-n-de-una-m-quina-virtual-en-openstack-di-con-un-contenedor-desplegado"><a class="anchor" href="#truecreaci-n-de-una-m-quina-virtual-en-openstack-di-con-un-contenedor-desplegado"></a>2.2. Creación de una máquina virtual en OpenStack-DI con un contenedor desplegado</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Lanzar una instancia (máquina virtual) seleccionando una imagen disponible de <strong>Ubuntu 16.04 LTS</strong>.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>En el paso del Asistente de OpenStack para la creación de una nueva instancia especificar que <strong>No cree un nuevo volumen para la nueva instancia</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Configurar el grupo de seguridad default y añadir las reglas del puerto <code>SSH</code> (22) para que se pueda acceder a ella por SSH y <code>HTTP</code> (80) para que se pueda acceder a ella por el puerto 80.</p>
+</li>
+<li>
+<p>Seleccionar el <em>Sabor</em> (Tamaño) de la instancia: <code>small</code> (1 vCPU, 2 GB RAM y 20 GB de disco).</p>
+</li>
+<li>
+<p>En <code>Configuración</code>, añadir en <code>Customization Script</code> el <a href="https://gist.githubusercontent.com/ualmtorres/dec19ebed2981459f8e5677979eb04c3/raw/21a2613cff7fc4eb11b96e2d373413affc87d8ef/docker.sh">script de instalación de Docker y Docker Compose</a>.</p>
+</li>
+<li>
+<p>Asignar una IP flotante a la instancia creada.</p>
+</li>
+<li>
+<p>Acceder a la instancia creada mediante una terminal indicando su IP flotante.</p>
+</li>
+<li>
+<p>Editar el archivo <code>/home/ubuntu/.ssh/authorized_keys</code> y añadir la clave pública del profesor, disponible en el foro general de la asignatura en Aula virtual.</p>
+</li>
+<li>
+<p>Ejecutar un contenedor en modo <em>dettached</em> con <code>docker run</code> a partir de la imagen de Docker Hub del ejercicio anterior haciendo que el contenedor se muestre en el puerto 80.</p>
+</li>
+<li>
+<p>Adjuntar en la actividad disponible en Aula Virtual la dirección IP flotante de la instancia creada.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Al acceder a la instancia desde un navegador debe mostrarse la web que está ejecutando el contenedor y mostrar un resultado similar al de esta figura.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="Docs/Tema0/images/GraficoDeContribucionesGitHub.png" alt="GraficoDeContribucionesGitHub.png">
+<img src="images/webEstaticaBasicaPersonalizada.png" alt="webEstaticaBasicaPersonalizada.png">
 </div>
-<div class="title">Figure 1. Ejemplo de gráfico de contribuciones</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecreaci-n-de-una-m-quina-virtual-en-google-cloud-con-un-contenedor-desplegado"><a class="anchor" href="#truecreaci-n-de-una-m-quina-virtual-en-google-cloud-con-un-contenedor-desplegado"></a>2.3. Creación de una máquina virtual en Google Cloud con un contenedor desplegado</h3>
+<div class="paragraph">
+<p>Google Cloud Compute Engine permite la creación de una instancia inicializada con una imagen Docker. Sigue los pasos siguientes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Crear en Google Cloud Compute Engine una nueva instancia de máquina virtual con las características siguientes:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Nombre: <code>web-estatica-basica</code></p>
+</li>
+<li>
+<p>Configuración de máquina</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Serie: <code>N1</code></p>
+</li>
+<li>
+<p>Tipo de máquina: <code>g1-small</code> (1 vCPU y 1.7 GB de RAM)</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Activar la casilla de verificación <code>Desplegar una imagen de contenedor en esta instancia de VM</code></p>
+</li>
+<li>
+<p>En <code>Imagen del contenedor</code> introducir el nombre completo de la imagen subida a Docker Hub en el ejercicio anterior (p.e. <code>ualmtorres/web-estatica-basica:v0</code>)</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Al activar el despliegue de una imagen de contenedor en la instancia, la imagen del disco de arranque pasa a ser una imagen optimizada para contenedores.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Activar la casilla de verificación <code>Permitir el tráfico HTTP</code></p>
+</li>
+<li>
+<p>Crear la instancia.</p>
+</li>
+<li>
+<p>Adjuntar en la actividad disponible en Aula Virtual la dirección IP de la instancia creada.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Transcurridos unos instantes, la instancia será creada y se desplegará la imagen seleccionada. Google Cloud le asignará una IP externa. Al pulsarla se mostrará la web desplegada en el contenedor con la personalización de nuestro nombre y usuario en la UAL.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/webEstaticaBasicaPersonalizada.png" alt="webEstaticaBasicaPersonalizada.png">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truedesplegar-un-contenedor-en-google-cloud-run"><a class="anchor" href="#truedesplegar-un-contenedor-en-google-cloud-run"></a>2.4. Desplegar un contenedor en Google Cloud Run</h3>
+<div class="paragraph">
+<p>Google Cloud Run es una plataforma gestionada para el despliegue y escalado de aplicaciones basadas en contenedores. Cloud Run aumenta o disminuye la infraestructura de forma elástica en función del tráfico en un modelo de pago por uso.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Subida de una imagen Docker a Google Container Registry</div>
+<div class="paragraph">
+<p>Google Cloud proporciona un registro de imágenes privado para cada proyecto. Cloud Run despliega imágenes que estén almacenadas en el registro de imágenes de un proyecto. Para ello, las imágenes deben estar etiquetadas de esta forma</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>gcr.io/&lt;proyecto&gt;/&lt;imagen&gt;:&lt;etiqueta&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Cloud Shell incorpora el CLI de Docker. Entonces, usaremos Cloud Shell para subir la imagen que tenemos en Docker Hub. Previamente habrá que descargarla a Cloud Shell. Seguir estos pasos:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Activar Cloud Shell (Habrá que autorizar a Cloud Shell para que pueda hacer llamadas a la API de Google Cloud).</p>
+</li>
+<li>
+<p>Descargar en Cloud Shell la imagen subida a Docker Hub en el primer ejercicio (p.e. <code>docker pull ualmtorres/web-estatica-basica:v0</code>)</p>
+</li>
+<li>
+<p>Etiquetar en Cloud Shell la imagen descargada de acuerdo con el criterio de Google Cloud Container Registry siguiendo esta sintaxis <code>docker tag &lt;imagen&gt; &lt;etiqueta-google-cloud-container-registry&gt;</code>. Por ejemplo:</p>
+<div class="literalblock">
+<div class="content">
+<pre>docker tag ualmtorres/web-estatica-basica:v0 gcr.io/&lt;proyecto&gt;/web-estatica-basica:v0</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Configurar el CLI de Docker para que use la herramienta de línea de comandos de <code>gcloud</code> a fin de autenticar las solicitudes a Container Registry. Esto permite que podamos usar el CLI de Docker asociado a Container Registry.</p>
+<div class="literalblock">
+<div class="content">
+<pre>gcloud auth configure-docker</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Subir la imagen al registro privado del proyecto con el id del proyecto adecuado</p>
+<div class="literalblock">
+<div class="content">
+<pre>docker push gcr.io/&lt;proyecto&gt;/web-estatica-basica:v0</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Una vez que la imagen ya está en el proyecto podrá ser usada desde diferentes productos de Google Cloud. En este caso usaremos Cloud Run.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Sigue los pasos siguientes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Seleccionar Cloud Run en la sección Compute del menú de navegación.</p>
+</li>
+<li>
+<p>En la barra de herramientas superior selecciona <code>Crear servicio</code>.</p>
+</li>
+<li>
+<p>Dejar Cloud Run` como plataforma de despliegue, elegir una región e introducir un nombre de servicio (p.e. <code>web-estatica-basica</code>)</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/CloudRun-ConfiguracionServicio.png" alt="CloudRun ConfiguracionServicio.png">
+</div>
+</div>
+</li>
+<li>
+<p>Pulsar <code>Seleccionar</code> para seleccionar la imagen subida al Container Registry.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/CloudRun-ConfigurarImagen.png" alt="CloudRun ConfigurarImagen.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Aparecerá un cuadro de diálogo para que indiquemos la versión exacta de la imagen que queremos desplegar. Container Registry mantiene un control de versiones sobre las imágenes. Seleccionar la versión deseada.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CloudRun-SeleccionarImagen.png" alt="CloudRun SeleccionarImagen.png">
+</div>
+</div>
+</li>
+<li>
+<p>Desplegar Configuración avanzada e introducir el puerto del contenedor al que se envían las peticiones</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/CloudRun-SeleccionarPuerto.png" alt="CloudRun SeleccionarPuerto.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Revisar los valores de capacidad de memoria, CPU, tiempos de espera y peticiones por contenedor. Estos valores son lo que se usarán para aumentar o reducir el número de instancias del contenedor en función de su carga. Prestar atención al número de
+instancias para el autoescalado.</p>
+</div>
+</li>
+<li>
+<p>Ir al paso siguiente</p>
+</li>
+<li>
+<p>Configurar las peticiones HTTP sin autenticar. Es la opción para webs y APIs públicas.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/CloudRun-ActivacionServicio.png" alt="CloudRun ActivacionServicio.png">
+</div>
+</div>
+</li>
+<li>
+<p>Crear el servicio</p>
+</li>
+<li>
+<p>Adjuntar en la actividad disponible en Aula Virtual la URL del servicio creado.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>El servicio ha quedado desplegado como un contenedor y está disponible en la URL indicada. Cloud Run muestra información de interés sobre el servicio creado incluyendo URL de la imagen, puertos, capacidad asignada, instancias para el autoescalado, y demás.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CloudRun-Resultado.png" alt="CloudRun Resultado.png">
+</div>
+</div>
+<div class="paragraph">
+<p>También proporciona gráficos con métricas de uso, registro de logs y otras opciones interesantes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Cada servicio de Cloud Run tiene un punto de conexión único y autoescala los contenedores desplegados. Además, a partir de dos imágenes desplegadas es posible gestionar el tráfico que se dirige a cada uno de los contenedores de cada versión.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>La figura siguiente ilustra la aplicación desplegada.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/webEstaticaBasicaPersonalizada.png" alt="webEstaticaBasicaPersonalizada.png">
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueencuesta-inicial"><a class="anchor" href="#trueencuesta-inicial"></a>7. Encuesta inicial</h2>
+<h2 id="truedetener-los-recursos-iniciados"><a class="anchor" href="#truedetener-los-recursos-iniciados"></a>3. Detener los recursos iniciados</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Si eres alumno de la asignatura en la UAL completa esta <a href="https://forms.gle/bPdTzKQFUxmYh2M8A">pequeña encuesta</a> que permita valorar tus conocimientos iniciales y adaptar el desarrollo de la asignatura.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueantes-de-comenzar"><a class="anchor" href="#trueantes-de-comenzar"></a>8. Antes de comenzar</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Programa <em>Associate Cloud Engineer</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PrimerosPasosCoursera.html">Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html">Resumen del Programa Especializado: Architecting with Google Compute Engine</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html">Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Google Cloud</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaGoogleCloud.html">Activación de cuenta Google Cloud Platform</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/cuenta-facturacion-permisos-profesor.html">Dar permisos al profesor en la cuenta de facturación en GCP</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/creacionProyectoGoogleCloud.html">Creación de un proyecto en Google Cloud Platform</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/alertas-consumo-GoogleCloud.html">Añadir alertas de consumo (budgets) en Google Cloud</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Microsoft Azure</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="Docs/Tema0/Azure/crear-suscripcion-AzureParaEstudiantes.html">Creación de la suscripción Azure para Estudiantes</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/revisar-saldo-AzureParaEstudiantes.html">Revisar el saldo de la suscripción Azure para Estudiantes</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/agregar-administrador.html">Agregar o cambiar los administradores de la suscripción de Azure</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/mover-grupos-recursos-entre-suscripciones.html">Mover los grupos de recursos de una suscripción a otra</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/alertas-consumo-azure.html">Añadir alertas de consumo (budgets) en Azure</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>OpenStack-DI</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaOpenStackDI.html">Activación de cuenta OpenStack-DI</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truerecursos"><a class="anchor" href="#truerecursos"></a>9. Recursos</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="truetema-1-modelos-de-servicio-con-computaci-n-en-la-nube"><a class="anchor" href="#truetema-1-modelos-de-servicio-con-computaci-n-en-la-nube"></a>9.1. Tema 1. Modelos de servicio con Computación en la Nube</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf">Presentación: Modelos de servicio con Computación en la Nube</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truetema-2-infraestructura-de-cloud-computing"><a class="anchor" href="#truetema-2-infraestructura-de-cloud-computing"></a>9.2. Tema 2. Infraestructura de Cloud Computing</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.google.com/presentation/d/1Dod2suAnFwq8NSYfWs-ytr4hn2GUEL8yHmtj3yfBP_g/edit?usp=sharing">Presentación: Infraestructura de Cloud Computing</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema2/CreacionBDMySQLGoogleCloud.html">Tutorial: Creación de instancia MySQL en Google Cloud</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema2/AplicacionSGEnModoIaaS.html">Tutorial: Despliegue de una aplicación con base de datos en modo IaaS</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truetema-3-plataforma-como-servicio"><a class="anchor" href="#truetema-3-plataforma-como-servicio"></a>9.3. Tema 3. Plataforma como servicio</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.google.com/presentation/d/10m4g9zfmX-J90lzsrZbYNimgI-iIzo_HXddLrOjSry0/edit?usp=sharing">Presentación: Plataforma como servicio</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema2/DespliegueAppEngineHeroku.html">Tutorial: Despliegue en Heroku y Google App Engine</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truetema-4-servicios-de-contenedores"><a class="anchor" href="#truetema-4-servicios-de-contenedores"></a>9.4. Tema 4. Servicios de contenedores</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.google.com/presentation/d/16tMEWtwg9cYlfRBRf-jTFj_bD6ug3cFt8CzuUWpr7QI/edit?usp=sharing">Presentación: Servicios de contenedores</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/usoBasicoDeDocker/">Tutorial: Desarrollo de aplicaciones con Docker</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truesesiones-de-clase"><a class="anchor" href="#truesesiones-de-clase"></a>9.5. Sesiones de clase</h3>
-<div class="paragraph">
-<p>Mientras se formaliza la matrícula definitiva y teneis acceso a Aula virtual, podeis usar estos enlaces provisionales:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://eu.bbcollab.com/guest/a7e5426ef2564fde8ed5b31390e7ae81">Sala de videoconferencia</a></p>
-</li>
-<li>
-<p><a href="https://eu-lti.bbcollab.com/recording/ad2c79adf3764f238329ef6c0f8a836a">Grabación 2020-10-20</a></p>
-</li>
-<li>
-<p><a href="https://eu-lti.bbcollab.com/recording/0a3403a2c670434882afb505265f5862">Grabación 2020-10-27</a></p>
-</li>
-<li>
-<p><a href="https://eu-lti.bbcollab.com/recording/a599d2fff1014591865ddf6105ba5098">Grabación 2020-11-03</a></p>
-</li>
-<li>
-<p><a href="https://eu-lti.bbcollab.com/recording/94afe09c313a495595eca9ebd0366785">Grabación 2020-11-10</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truetrabajo-aut-nomo"><a class="anchor" href="#truetrabajo-aut-nomo"></a>10. Trabajo autónomo</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="Labs/Lab01/index.html">Lab 01. Creación de máquinas virtuales en OpenStack-DI</a></p>
-</li>
-<li>
-<p><a href="Labs/Lab03/index.html">Lab 03. Despliegue mixto en modo PaaS y en modo IaaS</a></p>
-</li>
-<li>
-<p><a href="Labs/Lab03/index.html">Lab 05. Despliegue de contenedores en Google Cloud</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueactividades-no-presenciales"><a class="anchor" href="#trueactividades-no-presenciales"></a>11. Actividades no presenciales</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://www.coursera.org/programs/ace-track-907-s-3pm27">Google Associate Engineer Track</a></p>
+<p><strong>La instancia creada en Compute Engine y el contenedor desplegado en Cloud Run consumen crédito del cupón de la asignatura mientras estén activos. Haz una parada de los recursos no necesarios para no malgastar el crédito del cupón de la asignatura en Google Cloud. Se trata de detenerlos, no de eliminarlos. En otras actividades los volveremos a iniciar. Mientras tanto, deben quedar detenidos.</strong></p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-15 12:30:42 CET
+Last updated 2020-11-15 13:20:08 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
