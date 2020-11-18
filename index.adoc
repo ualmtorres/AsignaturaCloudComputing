@@ -211,13 +211,14 @@ Mientras se formaliza la matrícula definitiva y teneis acceso a Aula virtual, p
 * https://eu-lti.bbcollab.com/recording/0a3403a2c670434882afb505265f5862[Grabación 2020-10-27]
 * https://eu-lti.bbcollab.com/recording/a599d2fff1014591865ddf6105ba5098[Grabación 2020-11-03]
 * https://eu-lti.bbcollab.com/recording/94afe09c313a495595eca9ebd0366785[Grabación 2020-11-10]
+* https://eu-lti.bbcollab.com/recording/fb12d591231c484fa248285b1be5d99f[Grabación 2020-11-17]
 
 
 ## Trabajo autónomo
 
 * link:Labs/Lab01/index.html[Lab 01. Creación de máquinas virtuales en OpenStack-DI] 
 * link:Labs/Lab03/index.html[Lab 03. Despliegue mixto en modo PaaS y en modo IaaS] 
-* link:Labs/Lab05/index.html[Lab 05. Despliegue de contenedores en Google Cloud] 
+* link:Labs/Lab05/index.html[Lab 05. Despliegue de contenedores en OpenStack-DI y en Google Cloud] 
 
 ## Actividades no presenciales
 
