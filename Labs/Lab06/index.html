@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5.dev">
 <meta name="author" content="Máster en Tecnologías y Aplicaciones en Ingeniería Informática">
-<title>Cloud Computing</title>
+<title>Lab 06 Cloud Computing. Despliegue automatizado con Terraform</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -421,7 +421,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-right">
 <div id="header">
-<h1>Cloud Computing</h1>
+<h1>Lab 06 Cloud Computing. Despliegue automatizado con Terraform</h1>
 <div class="details">
 <span id="author" class="author">Máster en Tecnologías y Aplicaciones en Ingeniería Informática</span><br>
 <span id="revdate">José Joaquín Cañadas y Manuel Torres &lt;jjcanada@ual.es&gt; &lt;mtorres@ual.es&gt;</span>
@@ -430,31 +430,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Tabla de contenidos</div>
 <ul class="sectlevel1">
 <li><a href="#trueresumen">Resumen</a></li>
-<li><a href="#trueintroducci-n">1. Introducción</a></li>
-<li><a href="#truesobre-la-gu-a-docente">2. Sobre la Guía docente</a>
+<li><a href="#truerecursos">1. Recursos</a></li>
+<li><a href="#trueactividades">2. Actividades</a>
 <ul class="sectlevel2">
-<li><a href="#truemateria-con-la-que-se-relaciona-en-el-plan-de-estudios">2.1. Materia con la que se relaciona en el Plan de estudios:</a></li>
-<li><a href="#trueconocimientos-recomendables">2.2. Conocimientos recomendables</a></li>
+<li><a href="#truecreaci-n-e-inicializaci-n-del-bucket-en-google-storage">2.1. Creación e inicialización del bucket en Google Storage</a></li>
+<li><a href="#truecreaci-n-e-inicializaci-n-de-las-m-quinas-virtuales-en-openstack">2.2. Creación e inicialización de las máquinas virtuales en OpenStack</a></li>
 </ul>
 </li>
-<li><a href="#truecontenidos">3. Contenidos</a></li>
-<li><a href="#truehorario-de-clase-y-de-tutori-as">4. Horario de clase y de tutorías</a></li>
-<li><a href="#trueco-mo-seguir-la-asignatura">5. Cómo seguir la asignatura</a></li>
-<li><a href="#truec-mo-superar-la-asignatura">6. Cómo superar la asignatura</a></li>
-<li><a href="#trueencuesta-inicial">7. Encuesta inicial</a></li>
-<li><a href="#trueantes-de-comenzar">8. Antes de comenzar</a></li>
-<li><a href="#truerecursos">9. Recursos</a>
-<ul class="sectlevel2">
-<li><a href="#truetema-1-modelos-de-servicio-con-computaci-n-en-la-nube">9.1. Tema 1. Modelos de servicio con Computación en la Nube</a></li>
-<li><a href="#truetema-2-infraestructura-de-cloud-computing">9.2. Tema 2. Infraestructura de Cloud Computing</a></li>
-<li><a href="#truetema-3-plataforma-como-servicio">9.3. Tema 3. Plataforma como servicio</a></li>
-<li><a href="#truetema-4-servicios-de-contenedores">9.4. Tema 4. Servicios de contenedores</a></li>
-<li><a href="#truetema-5-infraestructura-como-c-digo">9.5. Tema 5. Infraestructura como código</a></li>
-<li><a href="#truesesiones-de-clase">9.6. Sesiones de clase</a></li>
-</ul>
-</li>
-<li><a href="#truetrabajo-aut-nomo">10. Trabajo autónomo</a></li>
-<li><a href="#trueactividades-no-presenciales">11. Actividades no presenciales</a></li>
 </ul>
 </div>
 </div>
@@ -463,7 +445,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="Docs/Tema0/images/di.png" alt="di.png">
+<img src="../../Docs/Tema0/images/di.png" alt="di.png">
 </div>
 </div>
 </div>
@@ -472,603 +454,323 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="trueresumen"><a class="anchor" href="#trueresumen"></a>Resumen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>La asignatura Cloud Computing es una asignatura obligatoria del módulo de Tecnologías informáticas del <a href="https://www.ual.es/estudios/masteres/presentacion/7114">Máster oficial en Tecnologías y Aplicaciones en Ingeniería Informática</a> de la UAL. En la asignatura se hace una introducción al uso de los principales de modelos de Cloud Computing haciendo énfasis en IaaS (<em>Infrastructure as a Service</em>) y PaaS (<em>Platform as a Service</em>). Se trabajará el desarrollo basado en contenedores Docker para desplegar soluciones escalables en orquestadores de contenedores como Kubernetes.</p>
+<p>En este laboratorio se trabaja el despliegue de infraestructura con Terraform en clouds diferentes. Se practicará creando infraestuctura en Google Storage. Posteriormente, se preparará una máquina virtual con MySQL en OpenStack y dos máquinas virtuales más con Docker también en OpenStack para el despliegue de una API y una aplicación, respectivamente.</p>
 </div>
 <div class="ulist">
 <div class="title">Objetivos</div>
 <ul>
 <li>
-<p>Resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con el cloud computing</p>
+<p>Trabajar con varios providers Terraform</p>
 </li>
 <li>
-<p>Resolver problemas en entornos nuevos o poco conocidos dentro de contextos más amplios y multidisciplinares, siendo capaces de integrar estos conocimientos en entornos de cloud computing</p>
+<p>Automatizar la creación e inicialización de infraestructura cloud</p>
 </li>
 <li>
-<p>Que el estudiante sea capaz de resolver problemas</p>
-</li>
-<li>
-<p>Modelar, diseñar, definir la arquitectura, implantar, gestionar, operar, administrar y mantener aplicaciones, redes, sistemas, servicios y contenidos informáticos en entornos cloud</p>
-</li>
-<li>
-<p>Comprender y aplicar el funcionamiento y organización de Internet, las tecnologías y protocolos de redes de nueva generación, los modelos de componentes, software intermediario y servicios del cloud computing</p>
-</li>
-<li>
-<p>Diseñar y evaluar sistemas operativos y servidores, y aplicaciones y sistemas basados en computación distribuida en el cloud computing</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueintroducci-n"><a class="anchor" href="#trueintroducci-n"></a>1. Introducción</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Las aplicaciones comerciales se trasladan a la <em>Nube</em>. Esto está ocurriendo más rápido que nunca: el paso de los modelos de software tradicionales a Internet ha adquirido un mayor impulso con el desarrollo del <em>Cloud Computing</em> o Computación en Nube. Se trata de la nueva forma de utilizar las tecnologías de la información y las comunicaciones empleando técnicas ya existentes de una forma innovadora y, sobre todo, a una nueva escala, permitiendo el uso de recursos de hardware, software, almacenamiento, servicios y comunicaciones que se encuentran distribuidos geográficamente y a los que se accede a través de redes públicas, de forma dinámica, cuando se necesita, mientras se necesita y abonando una tarifa sobre lo que se consume.</p>
-</div>
-<div class="paragraph">
-<p>Los numerosos proveedores de servicios en la nube proporcionan acceso a recursos informáticos y servicios adicionales de valor añadido que acercan la oferta del proveedor a las necesidades de su cliente. Gracias a un grupo creciente de proveedores de servicios en la nube, la computación en la nube es cada vez más importante como mecanismo para que los desarrolladores desplieguen fácilmente sus aplicaciones.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truesobre-la-gu-a-docente"><a class="anchor" href="#truesobre-la-gu-a-docente"></a>2. Sobre la Guía docente</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="truemateria-con-la-que-se-relaciona-en-el-plan-de-estudios"><a class="anchor" href="#truemateria-con-la-que-se-relaciona-en-el-plan-de-estudios"></a>2.1. Materia con la que se relaciona en el Plan de estudios:</h3>
-<div class="paragraph">
-<p>La asignatura Cloud Computing está directamente relacionada con las asignaturas siguientes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Especialidad Big Data</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Infraestructura Big Data (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Módulo de Desarrollo Web Móvil</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Computación en la Nube. Servicios y Aplicaciones (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Además, la asignatura Cloud Computing proporciona las bases para las asignaturas siguientes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Obligatorias</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integración de Tecnologías y Servicios Informáticos (1Q)</p>
-</li>
-<li>
-<p>Planificación de las TIC (1Q)</p>
-</li>
-<li>
-<p>Seguridad Informática (1Q)</p>
-</li>
-<li>
-<p>Desarrollo web/móvil (1Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Especialidad Big Data</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Análisis de grandes volúmenes de datos (2Q)</p>
-</li>
-<li>
-<p>Bases de datos a gran escala (2Q)</p>
-</li>
-<li>
-<p>Computación sobre datos masivos (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Especialidad IoT</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Infraestructuras en IoT (2Q)</p>
-</li>
-<li>
-<p>Aplicaciones de IoT (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Módulo de Desarrollo Web Móvil</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tecnologías y Recursos Web/Móvil (2Q)</p>
-</li>
-<li>
-<p>Desarrollo de Aplicaciones Híbridas (2Q)</p>
-</li>
-<li>
-<p>Desarrollo Web Basado en Servicios y Componentes (2Q)</p>
-</li>
-<li>
-<p>Programación Nativa en Dispositivos Móviles (2Q)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueconocimientos-recomendables"><a class="anchor" href="#trueconocimientos-recomendables"></a>2.2. Conocimientos recomendables</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Linux</p>
-</li>
-<li>
-<p>Git</p>
-</li>
-<li>
-<p>Desarrollo web</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truecontenidos"><a class="anchor" href="#truecontenidos"></a>3. Contenidos</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Bloque 1 . Modelos de cloud computing</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tema 1. Modelos de servicio con Computación en la Nube</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Bloque 2 . Servicios y plataformas cloud</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tema 2. Infraestructura de cloud computing</p>
-</li>
-<li>
-<p>Tema 3. Plataformas como Servicio</p>
-</li>
-<li>
-<p>Tema 4. Servicios de Contenedores</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Bloque 3 . Desarrollo y despliegue de aplicaciones y servicios de cloud computing</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tema 5. Arquitecturas de aplicaciones cloud</p>
-</li>
-<li>
-<p>Tema 6. Despliegue de aplicaciones en la nube</p>
-</li>
-<li>
-<p>Tema 7. Servicios Avanzados de Cloud Computing</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="Docs/PlanificacionCC.html">Planificación de la asignatura</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truehorario-de-clase-y-de-tutori-as"><a class="anchor" href="#truehorario-de-clase-y-de-tutori-as"></a>4. Horario de clase y de tutorías</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Clases: Aula 4 - CITE III</p>
-</li>
-<li>
-<p>Sesiones presenciales (<a href="Docs/PlanificacionCC.html">Planificación de la asignatura</a>)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>20 y 27 de octubre de 16h a 18h</p>
-</li>
-<li>
-<p>3, 10, 17 y 24 de noviembre de 16h a 18h</p>
-</li>
-<li>
-<p>1 y 15 de diciembre de 16h a 18h</p>
-</li>
-<li>
-<p>8 sesiones presenciales = 16 horas.</p>
-</li>
-<li>
-<p>7 sesiones no presenciales = 14 horas</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Profesor: Manuel Torres Gil</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tutorías: Lunes y Miércoles de 11h a 14h (cita previa y a través de Google Meet)</p>
-</li>
-<li>
-<p>Despacho: 2.19.5 CITE III (2a planta)</p>
-</li>
-<li>
-<p>email: <a href="mailto:mtorres@ual.es">mtorres@ual.es</a></p>
-</li>
-<li>
-<p>Twitter: <a href="https://twitter.com/ualmtorres">@ualmtorres</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueco-mo-seguir-la-asignatura"><a class="anchor" href="#trueco-mo-seguir-la-asignatura"></a>5. Cómo seguir la asignatura</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Material disponible en</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://aulavirtual.ual.es/webapps/blackboard/execute/launcher?type=Course&amp;id=_22698_1&amp;url=">Aula Virtual</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/">Repositorio GitHub</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Metodología docente</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Clases participativas</p>
-</li>
-<li>
-<p>Contenido práctico</p>
-</li>
-<li>
-<p>Elaboración de trabajos prácticos</p>
-</li>
-<li>
-<p>Actividades no presenciales: <a href="https://www.coursera.org/programs/ace-track-907-s-3pm27"> Google Associate Engineer Track</a></p>
-</li>
-<li>
-<p>Tutorías</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truec-mo-superar-la-asignatura"><a class="anchor" href="#truec-mo-superar-la-asignatura"></a>6. Cómo superar la asignatura</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Cada tema tiene una o varias actividades teórico/prácticas, que podrán ser tanto individuales como en equipo.</p>
-</li>
-<li>
-<p>Calificación final:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pruebas orales/escritas: 40%</p>
-</li>
-<li>
-<p>Ejercicios y proyectos presentados en <span class="line-through">aula virtual</span> servicios cloud: 50%</p>
-</li>
-<li>
-<p>Asistencia y participación activa en clase: 10%</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Para aprobar la asignatura es obligatorio haber presentado y superado:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>el examen</p>
-</li>
-<li>
-<p>los ejercicios y proyectos prácticos</p>
-</li>
-</ul>
-</div>
+<p>Organizar el código Terraform en módulos</p>
 </li>
 </ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title">Criterios e Instrumentos de evaluación</div>
+<div class="title">Prerrequisitos</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Los ejercicios y proyectos prácticos deberán ser presentados en la fecha indicada utilizando el Aula Virtual y/o las herramientas y servicios cloud, como repositorios de código, proveedores cloud, servicios en la nube, etc., donde quedan registradas la acciones realizadas.</p>
+<p>Cuenta y proyecto creado en <a href="https://openstack.di.ual.es/horizon">OpenStack-DI</a>.</p>
 </li>
 <li>
-<p>También se hará seguimiento del gasto de cada estudiante en los servicios Cloud penalizando un uso ineficiente del cupón de gasto disponible.</p>
-</li>
-<li>
-<p>En las actividades en equipo, se tendrá en cuenta tanto el trabajo del equipo en su conjunto, como la aportación individual realizada por cada miembro del equipo.</p>
+<p>Cuenta y proyecto creado en Google Cloud.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truerecursos"><a class="anchor" href="#truerecursos"></a>1. Recursos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Puedes aprender a usar Terraform siguiendo el <a href="https://ualmtorres.github.io/SeminarioTerraform//">Tutorial Despliegue de infraestructura cloud con Terraform</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueactividades"><a class="anchor" href="#trueactividades"></a>2. Actividades</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Se trata de realizar el siguiente despligue automatizado con Terraform:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>En Google Storage:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Crear un bucket inicializado con dos imágenes. Las imágenes serán públicas y se podrá acceder a ellas simplemente con su URL.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>En OpenStack:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Crear una máquina virtual inicializada con MySQL</p>
+</li>
+<li>
+<p>Crear una máquina virtual inicializada con Docker. En la inicialización también se desplegará un contenedor que ofrece una API sobre un catálogo de libros. Ofrece operaciones CRUD y ofrece la documentación en Swagger en <code>url/docs</code> para poder interactuar con la API. La API interactúa con la base de datos MySQL anterior.</p>
+</li>
+<li>
+<p>Crear una máquina virtual inicializada con Docker. En la inicialización también se desplegará un contenedor que ofrece una aplicación que muestra un catálogo de libros. Recupera los datos de los libros de la API anterior y la imagen de la portada del bucket creado en Google Storage.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>La aplicación tiene este aspecto.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="Docs/Tema0/images/GraficoDeContribucionesGitHub.png" alt="GraficoDeContribucionesGitHub.png">
-</div>
-<div class="title">Figure 1. Ejemplo de gráfico de contribuciones</div>
+<img src="images/book-catalog.png" alt="book catalog.png">
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueencuesta-inicial"><a class="anchor" href="#trueencuesta-inicial"></a>7. Encuesta inicial</h2>
-<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>Si eres alumno de la asignatura en la UAL completa esta <a href="https://forms.gle/bPdTzKQFUxmYh2M8A">pequeña encuesta</a> que permita valorar tus conocimientos iniciales y adaptar el desarrollo de la asignatura.</p>
+<p>Se deber tener a mano la clave JSON de Cuenta de servicio del proyecto Google Cloud (<a href="https://ualmtorres.github.io/SeminarioTerraform/#truecrear-una-clave-para-la-cuenta-de-servicio">más información</a>).</p>
 </div>
+</td>
+</tr>
+</table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="trueantes-de-comenzar"><a class="anchor" href="#trueantes-de-comenzar"></a>8. Antes de comenzar</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Programa <em>Associate Cloud Engineer</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PrimerosPasosCoursera.html">Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html">Resumen del Programa Especializado: Architecting with Google Compute Engine</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html">Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Google Cloud</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaGoogleCloud.html">Activación de cuenta Google Cloud Platform</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/cuenta-facturacion-permisos-profesor.html">Dar permisos al profesor en la cuenta de facturación en GCP</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/creacionProyectoGoogleCloud.html">Creación de un proyecto en Google Cloud Platform</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/alertas-consumo-GoogleCloud.html">Añadir alertas de consumo (budgets) en Google Cloud</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Microsoft Azure</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="Docs/Tema0/Azure/crear-suscripcion-AzureParaEstudiantes.html">Creación de la suscripción Azure para Estudiantes</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/revisar-saldo-AzureParaEstudiantes.html">Revisar el saldo de la suscripción Azure para Estudiantes</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/agregar-administrador.html">Agregar o cambiar los administradores de la suscripción de Azure</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/mover-grupos-recursos-entre-suscripciones.html">Mover los grupos de recursos de una suscripción a otra</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema0/Azure/alertas-consumo-azure.html">Añadir alertas de consumo (budgets) en Azure</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>OpenStack-DI</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaOpenStackDI.html">Activación de cuenta OpenStack-DI</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truerecursos"><a class="anchor" href="#truerecursos"></a>9. Recursos</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="truetema-1-modelos-de-servicio-con-computaci-n-en-la-nube"><a class="anchor" href="#truetema-1-modelos-de-servicio-con-computaci-n-en-la-nube"></a>9.1. Tema 1. Modelos de servicio con Computación en la Nube</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf">Presentación: Modelos de servicio con Computación en la Nube</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truetema-2-infraestructura-de-cloud-computing"><a class="anchor" href="#truetema-2-infraestructura-de-cloud-computing"></a>9.2. Tema 2. Infraestructura de Cloud Computing</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.google.com/presentation/d/1Dod2suAnFwq8NSYfWs-ytr4hn2GUEL8yHmtj3yfBP_g/edit?usp=sharing">Presentación: Infraestructura de Cloud Computing</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema2/CreacionBDMySQLGoogleCloud.html">Tutorial: Creación de instancia MySQL en Google Cloud</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema2/AplicacionSGEnModoIaaS.html">Tutorial: Despliegue de una aplicación con base de datos en modo IaaS</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truetema-3-plataforma-como-servicio"><a class="anchor" href="#truetema-3-plataforma-como-servicio"></a>9.3. Tema 3. Plataforma como servicio</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.google.com/presentation/d/10m4g9zfmX-J90lzsrZbYNimgI-iIzo_HXddLrOjSry0/edit?usp=sharing">Presentación: Plataforma como servicio</a></p>
-</li>
-<li>
-<p><a href="Docs/Tema2/DespliegueAppEngineHeroku.html">Tutorial: Despliegue en Heroku y Google App Engine</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truetema-4-servicios-de-contenedores"><a class="anchor" href="#truetema-4-servicios-de-contenedores"></a>9.4. Tema 4. Servicios de contenedores</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.google.com/presentation/d/16tMEWtwg9cYlfRBRf-jTFj_bD6ug3cFt8CzuUWpr7QI/edit?usp=sharing">Presentación: Servicios de contenedores</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/usoBasicoDeDocker/">Tutorial: Desarrollo de aplicaciones con Docker</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truetema-5-infraestructura-como-c-digo"><a class="anchor" href="#truetema-5-infraestructura-como-c-digo"></a>9.5. Tema 5. Infraestructura como código</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.google.com/presentation/d/14mS_1gA4afyKsEfPMAUFUVAIB7C008VldZWLnG27JFg/edit?usp=sharing">Presentación: Infraestructura como código</a></p>
-</li>
-<li>
-<p><a href="https://ualmtorres.github.io/SeminarioTerraform/">Tutorial: Despliegue de infraestructura con Terraform</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truesesiones-de-clase"><a class="anchor" href="#truesesiones-de-clase"></a>9.6. Sesiones de clase</h3>
 <div class="paragraph">
-<p>Mientras se formaliza la matrícula definitiva y teneis acceso a Aula virtual, podeis usar estos enlaces provisionales:</p>
+<p>Tomar como base el código de la carpeta <code>Mixto</code> del <a href="https://github.com/ualmtorres/terraform-examples">repositorio de ejemplos Terraform</a> de este laboratorio siguiendo estos pasos para configurar el ejercicio. Contiene:</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Organización de la configuración en dos módulos (<code>Google-Storage</code> y <code>OpenStack</code>). Los módulos están dentro de una carpeta <code>modules</code> para una mejor organización. Cada módulo configura infraestructura en el proveedor cloud correspondiente. Cada módulo contiene:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://eu.bbcollab.com/guest/a7e5426ef2564fde8ed5b31390e7ae81">Sala de videoconferencia</a></p>
+<p>Un archivo <code>providers.tf</code> (configuración del proveedor cloud).</p>
 </li>
 <li>
-<p><a href="https://eu-lti.bbcollab.com/recording/ad2c79adf3764f238329ef6c0f8a836a">Grabación 2020-10-20</a></p>
+<p>Un archivo <code>variables.tf</code> (configuración de variables)</p>
 </li>
 <li>
-<p><a href="https://eu-lti.bbcollab.com/recording/0a3403a2c670434882afb505265f5862">Grabación 2020-10-27</a></p>
+<p>Un archivo <code>main.tf</code> (configuración de los recursos del despliegue).</p>
 </li>
 <li>
-<p><a href="https://eu-lti.bbcollab.com/recording/a599d2fff1014591865ddf6105ba5098">Grabación 2020-11-03</a></p>
-</li>
-<li>
-<p><a href="https://eu-lti.bbcollab.com/recording/94afe09c313a495595eca9ebd0366785">Grabación 2020-11-10</a></p>
-</li>
-<li>
-<p><a href="https://eu-lti.bbcollab.com/recording/fb12d591231c484fa248285b1be5d99f">Grabación 2020-11-17</a></p>
-</li>
-<li>
-<p><a href="https://eu-lti.bbcollab.com/recording/2399c143e708437288eaa5254771a2a0">Grabación 2020-11-24</a></p>
+<p>El módulo <code>OpenStack</code> además tiene el archivo <code>versions.tf</code> para adaptar a la versión 0.13 de Terraform.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truetrabajo-aut-nomo"><a class="anchor" href="#truetrabajo-aut-nomo"></a>10. Trabajo autónomo</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="Labs/Lab01/index.html">Lab 01. Creación de máquinas virtuales en OpenStack-DI</a></p>
 </li>
 <li>
-<p><a href="Labs/Lab03/index.html">Lab 03. Despliegue mixto en modo PaaS y en modo IaaS</a></p>
+<p>Archivo <code>main.tf</code> con la llamada a los dos módulos anteriores.</p>
 </li>
 <li>
-<p><a href="Labs/Lab05/index.html">Lab 05. Despliegue de contenedores en OpenStack-DI y en Google Cloud</a></p>
+<p>Archivo <code>gcp-identity.json</code> cuyo contenido debe ser reemplazado por la clave JSON de una Cuenta de servicio del proyecto Google Cloud. Mantener el nombre del archivo <code>gcp-identity.json</code>.</p>
 </li>
 <li>
-<p><a href="Labs/Lab06/index.html">Lab 06. Despliegue automatizado con Terraform</a></p>
+<p>Archivo <code>install_mysql.sh</code> que instala un servidor MySQL en Ubuntu. El script inicializa una base de datos denominada <code>SG</code> de artículos deportivos, configura el acceso desde cualquier dirección IP y configura la clave de <code>root</code> a <code>my_password</code>.</p>
 </li>
-</ul>
+<li>
+<p>Archivo de plantilla <code>setup-api-docker.tpl</code> que instala Docker y lanza un contenedor con la API de la aplicación. En la plantilla hay que configurar la ejecución de un contenedor que propociona una API sobre los productos del catálogo de la base de datos.</p>
+</li>
+<li>
+<p>Archivo de plantilla <code>setup-app-docker.tpl</code> que instala Docker y lanza un contenedor con la aplicación. En la plantilla hay que configurar la ejecución de un contenedor que propociona la aplicación del catálogo de productos interactuando con la API.</p>
+</li>
+</ol>
 </div>
+<div class="sect2">
+<h3 id="truecreaci-n-e-inicializaci-n-del-bucket-en-google-storage"><a class="anchor" href="#truecreaci-n-e-inicializaci-n-del-bucket-en-google-storage"></a>2.1. Creación e inicialización del bucket en Google Storage</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Cambiar el contenido del archivo <code>gcp-identity.json</code> con el contenido del archivo JSON de clave de la cuenta de servicio del proyecto en Google Cloud.</p>
+</li>
+<li>
+<p>En <code>modules/Google-Storage</code> modificar:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>provider.tf</code> para configurar Google Cloud como provider</p>
+</li>
+<li>
+<p><code>variables.tf</code> con las variables indicadas</p>
+</li>
+<li>
+<p><code>main.tf</code> siguiendo las instrucciones de los recursos a crear.</p>
+</li>
+</ol>
 </div>
+</li>
+</ol>
 </div>
-<div class="sect1">
-<h2 id="trueactividades-no-presenciales"><a class="anchor" href="#trueactividades-no-presenciales"></a>11. Actividades no presenciales</h2>
-<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p><a href="https://www.coursera.org/programs/ace-track-907-s-3pm27">Google Associate Engineer Track</a></p>
+<p>Referencia de:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket"><code>google_storage_bucket</code></a></p>
+</li>
+<li>
+<p><a href="https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_object"><code>google_storage_bucket_object</code></a></p>
+</li>
+<li>
+<p><a href="https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_object_access_control"><code>google_storage_object_access_control</code></a></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecreaci-n-e-inicializaci-n-de-las-m-quinas-virtuales-en-openstack"><a class="anchor" href="#truecreaci-n-e-inicializaci-n-de-las-m-quinas-virtuales-en-openstack"></a>2.2. Creación e inicialización de las máquinas virtuales en OpenStack</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>En <code>modules/OpenStack</code> modificar:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>los arhivos de plantilla siguiendo las instrucciones indicadas en <code>YOUR CODE HERE</code>.</p>
+</li>
+<li>
+<p><code>provider.tf</code> para configurar OpenStack como provider</p>
+</li>
+<li>
+<p><code>variables.tf</code> con las variables indicadas</p>
+</li>
+<li>
+<p><code>main.tf</code> siguiendo las instrucciones de los recursos a crear.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Se recomienda partir de un proyecto nuevo propio e ir añadiendo paulatinamente fragmentos del código del repositorio de base e ir construyéndolo poco a poco:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Providers</p>
+</li>
+<li>
+<p>Creación del bucket</p>
+</li>
+<li>
+<p>Añadir las imágenes al bucket</p>
+</li>
+<li>
+<p>Crear la máquina virtual con MySQL</p>
+</li>
+<li>
+<p>Crear la máquina virtual con la API</p>
+</li>
+<li>
+<p>Crear la máquina virtual con la aplicación</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Carga de datos en la base de datos</div>
+<div class="paragraph">
+<p>Inicialmente la base de datos está vacía. El contenedor de la API contiene la documentación en Swagger y permite la interacción directa con la base de datos. Para cargar datos, abrir el método POST. Inicialmente muestra esta información sobre la creación de un nuevo libro.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/API-DocumentacionPOST.png" alt="API DocumentacionPOST.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Pulsar el botón <code>Try out</code> en la operación <code>POST</code>, sustituir los valores del Quijote de la Mancha de ejemplo por este valor JSON modificando el valor del <code>&lt;bucket-full-name&gt;</code> en <code>image_url</code> por su valor adecuado (p.e. <code>cc2021-mtorres-book-bucket</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{
+  "title": "Una historia de España",
+  "genre": "Historia",
+  "description": "Un relato ameno, personal, a ratos irónico, pero siempre único, de nuestra accidentada historia a través de los siglos. Una obra concebida por el autor para, en palabras suyas, «divertirme, releer y disfrutar; un pretexto para mirar atrás desde los tiempos remotos hasta el presente, reflexionar un poco sobre ello y contarlo por escrito de una manera poco ortodoxa.",
+  "author": "Arturo Pérez-Reverte",
+  "publisher": "Alfaguara",
+  "pages": 256,
+  "image_url": "https://storage.googleapis.com/&lt;bucket-full-name&gt;/una_historia_de_espana"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Al pulsar <code>Execute</code> se enviará la petición a la base de datos y se creará el libro.</p>
+</div>
+<div class="paragraph">
+<p>Repetir la operación para el libro</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{
+  "title": "El enigma de la habitación 622",
+  "genre": "Ficción contemporánea",
+  "description": "Vuelve el «principito de la literatura negra contemporánea, el niño mimado de la industria literaria» (GQ): el nuevo thriller de Joël Dicker es su novela más personal. ",
+  "author": "Joël Dicker",
+  "publisher": "Alfaguara",
+  "pages": 624,
+  "image_url": "https://storage.googleapis.com/&lt;bucket-full-name&gt;/el_enigma_de_la_habitacion_622"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Los libros almacenados se pueden recuperar con el endpoint <code>GET api/v1/books</code> pulsando sobre <code>Try out</code> y a continuación <code>Execute</code>. Devolverá algo así:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/API-GET.png" alt="API GET.png">
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-27 20:53:53 CET
+Last updated 2020-11-27 20:50:23 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
