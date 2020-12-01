@@ -207,6 +207,10 @@ Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/bPdTzK
 * https://docs.google.com/presentation/d/14mS_1gA4afyKsEfPMAUFUVAIB7C008VldZWLnG27JFg/edit?usp=sharing[Presentación: Infraestructura como código]
 * https://ualmtorres.github.io/SeminarioTerraform/[Tutorial: Despliegue de infraestructura con Terraform]
 
+### Tema 6. Despliegue de aplicaciones en la nube
+
+* https://ualmtorres.github.io/Kubernetes101/[Tutorial: Kubernetes 101]
+
 ### Sesiones de clase
 
 Mientras se formaliza la matrícula definitiva y teneis acceso a Aula virtual, podeis usar estos enlaces provisionales:
