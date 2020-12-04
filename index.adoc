@@ -209,6 +209,7 @@ Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/bPdTzK
 
 ### Tema 6. Despliegue de aplicaciones en la nube
 
+*https://docs.google.com/presentation/d/1WCl0AbED1v-yr_ID2HQwViOZ4qC80eW48NnEU7NTSkA/edit?usp=sharing[Presentación: Despliegue de aplicaciones en la nube]
 * https://ualmtorres.github.io/Kubernetes101/[Tutorial: Kubernetes 101]
 
 ### Sesiones de clase
