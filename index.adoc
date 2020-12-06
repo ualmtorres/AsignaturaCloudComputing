@@ -209,7 +209,7 @@ Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/bPdTzK
 
 ### Tema 6. Despliegue de aplicaciones en la nube
 
-*https://docs.google.com/presentation/d/1WCl0AbED1v-yr_ID2HQwViOZ4qC80eW48NnEU7NTSkA/edit?usp=sharing[Presentación: Despliegue de aplicaciones en la nube]
+* https://docs.google.com/presentation/d/1WCl0AbED1v-yr_ID2HQwViOZ4qC80eW48NnEU7NTSkA/edit?usp=sharing[Presentación: Despliegue de aplicaciones en la nube]
 * https://ualmtorres.github.io/Kubernetes101/[Tutorial: Kubernetes 101]
 
 ### Sesiones de clase
@@ -223,7 +223,7 @@ Mientras se formaliza la matrícula definitiva y teneis acceso a Aula virtual, p
 * https://eu-lti.bbcollab.com/recording/94afe09c313a495595eca9ebd0366785[Grabación 2020-11-10]
 * https://eu-lti.bbcollab.com/recording/fb12d591231c484fa248285b1be5d99f[Grabación 2020-11-17]
 * https://eu-lti.bbcollab.com/recording/2399c143e708437288eaa5254771a2a0[Grabación 2020-11-24]
-
+* https://eu-lti.bbcollab.com/recording/7c4b564c56f742b9bc1bd8fae6fb32c7[Grabación 2020-12-04]
 
 ## Trabajo autónomo
 
