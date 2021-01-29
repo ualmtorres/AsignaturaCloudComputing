@@ -122,7 +122,7 @@ Se recomienda partir de un proyecto nuevo propio e ir añadiendo paulatinamente 
 
 .Carga de datos en la base de datos
 ****
-Inicialmente la base de datos está vacía. El contenedor de la API contiene la documentación en Swagger y permite la interacción directa con la base de datos. Para cargar datos, abrir el método POST. Inicialmente muestra esta información sobre la creación de un nuevo libro.
+Inicialmente la base de datos está vacía. El contenedor de la API contiene la documentación en Swagger y permite la interacción directa con la base de datos. Se accede a Swagger desde `url/docs`. Para cargar datos, abrir el método POST. Inicialmente muestra esta información sobre la creación de un nuevo libro.
 
 image::images/API-DocumentacionPOST.png[]
 
