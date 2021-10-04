@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="generator" content="Asciidoctor 2.0.8.dev">
 <meta name="author" content="Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática">
 <title>Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -241,7 +241,7 @@ table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;pad
 pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
 pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
-.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
 .quoteblock blockquote{margin:0;padding:0;border:0}
 .quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
@@ -258,8 +258,7 @@ pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
 .quoteblock.abstract{margin:0 1em 1.25em;display:block}
 .quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
-.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
-.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
 .quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
 .quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
 table.tableblock{max-width:100%;border-collapse:separate}
@@ -436,6 +435,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="book toc2 toc-right">
 <div id="header">
@@ -447,11 +447,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Tabla de contenidos</div>
 <ul class="sectlevel1">
-<li><a href="#_resumen">Resumen</a></li>
-<li><a href="#_introducción">1. Introducción</a></li>
-<li><a href="#_coursera">2. Coursera</a></li>
-<li><a href="#_qwiklabs">3. Qwiklabs</a></li>
-<li><a href="#_acceso_a_los_cursos">4. Acceso a los cursos</a></li>
+<li><a href="#trueresumen">Resumen</a></li>
+<li><a href="#trueintroducción">1. Introducción</a></li>
+<li><a href="#truecoursera">2. Coursera</a></li>
+<li><a href="#trueqwiklabs">3. Qwiklabs</a></li>
+<li><a href="#trueacceso-a-los-cursos">4. Acceso a los cursos</a></li>
 </ul>
 </div>
 </div>
@@ -466,7 +466,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_resumen">Resumen</h2>
+<h2 id="trueresumen"><a class="anchor" href="#trueresumen"></a>Resumen</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Las actividades no presenciales de la asignatura Cloud Computing permiten acercarte al uso de los servicios de Google Cloud. Aquí se presenta el programa de cursos del Google Associate Engineer Track ofrecido a través de las plataformas Coursera y Qwiklabs.</p>
@@ -488,42 +488,42 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introducción">1. Introducción</h2>
+<h2 id="trueintroducción"><a class="anchor" href="#trueintroducción"></a>1. Introducción</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dentro de las actividades no presenciales de la asignatura Cloud Computing del Máster en Tecnologías y Aplicaciones en Ingeniería Informática de la UAL se va a seguir el <a href="https://www.coursera.org/programs/ace-track-907-s-3pm27">Google Associate Engineer Track</a>. Está formado por los cursos siguientes:</p>
+<p>Dentro de las actividades no presenciales de la asignatura Cloud Computing del Máster en Tecnologías y Aplicaciones en Ingeniería Informática de la UAL se va a seguir el <a href="https://www.coursera.org/programs/ace-track-1414-s-5uslk">Google Associate Engineer Track</a>. Está formado por los cursos siguientes:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&amp;collectionId=&amp;currentTab=CATALOG&amp;productId=h9LqVq-lEeauxBIk_RF-8A&amp;productType=course&amp;showMiniModal=true">Google Cloud Platform Fundamentals: Core Infrastructure</a></p>
+<p><a href="https://www.coursera.org/learn/gcp-fundamentals-es/home/welcome">Google Cloud Platform Fundamentals: Core Infrastructure</a></p>
 </li>
 <li>
-<p><a href="https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&amp;collectionId=&amp;currentTab=CATALOG&amp;productId=sK6edjzPEees8grTZvuQjA&amp;productType=course&amp;showMiniModal=true">Essential Google Cloud Infrastructure: Foundation</a></p>
+<p><a href="https://www.coursera.org/learn/gcp-infrastructure-foundation-es/home/welcome">Essential Google Cloud Infrastructure: Foundation</a></p>
 </li>
 <li>
-<p><a href="https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&amp;collectionId=&amp;currentTab=CATALOG&amp;productId=9xG8yUo7EeeJdBL3H0RODg&amp;productType=course&amp;showMiniModal=true">Essential Google Cloud Infrastructure: Core Services</a></p>
+<p><a href="https://www.coursera.org/learn/gcp-infrastructure-core-services-es/home/welcome">Essential Cloud Infrastructure: Core Services</a></p>
 </li>
 <li>
-<p><a href="https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&amp;collectionId=&amp;currentTab=CATALOG&amp;productId=G4Fvqko8Eee4pw7hxA2o1A&amp;productType=course&amp;showMiniModal=true">Elastic Google Cloud Infrastructure: Scaling and Automation</a></p>
+<p><a href="https://www.coursera.org/learn/gcp-infrastructure-scaling-automation-es/home/welcome">Elastic Google Cloud Infrastructure: Scaling and Automation</a></p>
 </li>
 <li>
-<p><a href="https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&amp;collectionId=&amp;currentTab=CATALOG&amp;productId=Hdkvqa-VEeemsBI74hnnzA&amp;productType=course&amp;showMiniModal=true">Reliable Google Cloud Infrastructure: Design and Process</a></p>
+<p><a href="https://www.coursera.org/learn/cloud-infrastructure-design-process-es/home/welcome">Reliable Google Cloud Infrastructure: Design and Process</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Los cursos se siguen a través de la plataforma <a href="https://www.coursera.org/">Coursera</a> y se complementan con laboratorios prácticos que se siguen a través de <a href="https://www.qwiklabs.com">Quiklabs</a>.</p>
+<p>Los cursos se siguen a través de la plataforma <a href="https://www.coursera.org/">Coursera</a> y se complementan con laboratorios prácticos que se siguen a través de <a href="https://www.qwiklabs.com">Quiklabs</a>. Previamente, tendrás que tener cuenta creada.</p>
 </div>
 <div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Estos cursos permiten la preparación para la certificación <a href="https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&amp;collectionId=&amp;currentTab=CATALOG&amp;productId=W6zo0XaPEemMiBJD8adJBg&amp;productType=course&amp;showMiniModal=true">Google Cloud Associate Cloud Engineer</a>. Los estudiantes de la asignatura tienen un cupón de descuento para la realización del examen.</p>
+<p>Estos cursos permiten la preparación para la certificación <a href="https://www.coursera.org/learn/preparing-cloud-associate-cloud-engineer-exam/home/welcome">Google Cloud Associate Cloud Engineer</a>. Los estudiantes de la asignatura tienen un cupón de descuento para la realización del examen.</p>
 </div>
 </td>
 </tr>
@@ -532,7 +532,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_coursera">2. Coursera</h2>
+<h2 id="truecoursera"><a class="anchor" href="#truecoursera"></a>2. Coursera</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Coursera es una plataforma de cursos online. En ella se alojan los cursos oficiales de Google Cloud Platform del programa de especialización Associate Cloud Engineer track que vamos a realizar en la asignatura dentro de las actividades no presenciales.</p>
@@ -548,7 +548,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_qwiklabs">3. Qwiklabs</h2>
+<h2 id="trueqwiklabs"><a class="anchor" href="#trueqwiklabs"></a>3. Qwiklabs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Qwiklabs una plataforma online de laboratorios prácticos (labs) que nos permite realizar las actividades prácticas incluidas en los cursos. Qwiklabs crea unas credenciales temporales de Google Cloud para realizar cada uno de los labs, que son válidas únicamente durante un tiempo limitado establecido para la realización del lab. Así, no tendremos que consumir crédito de nuestro cupón académico de 50$ (Más adelante veremos <a href="https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema1/ActivacionCuentaGoogleCloud.html">cómo activar el cupón en GCP</a>). Además, los resultados de realizar los labs en Qwiklabs se integran con el curso de Coursera, asignando la puntuación correspondiente.</p>
@@ -572,10 +572,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_acceso_a_los_cursos">4. Acceso a los cursos</h2>
+<h2 id="trueacceso-a-los-cursos"><a class="anchor" href="#trueacceso-a-los-cursos"></a>4. Acceso a los cursos</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Accede al <a href="https://www.coursera.org/programs/ace-track-907-s-3pm27">Google Associate Cloud Engineer Track</a> de Coursera. Tendrás acceso al programa con los 5 cursos:</p>
+<p>Accede al <a href="https://www.coursera.org/programs/ace-track-1414-s-5uslk">Google Associate Cloud Engineer Track</a> de Coursera. Tendrás acceso al programa con los 5 cursos:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -595,8 +595,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-04 19:25:39 +0200
+Last updated 2021-10-04 20:43:17 +0200
 </div>
 </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlighting()</script>
 </body>
 </html>

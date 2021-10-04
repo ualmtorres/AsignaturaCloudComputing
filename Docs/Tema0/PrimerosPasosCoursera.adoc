@@ -43,19 +43,19 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 
 ## Introducción
 
-Dentro de las actividades no presenciales de la asignatura Cloud Computing del Máster en Tecnologías y Aplicaciones en Ingeniería Informática de la UAL se va a seguir el https://www.coursera.org/programs/ace-track-907-s-3pm27[Google Associate Engineer Track]. Está formado por los cursos siguientes:
+Dentro de las actividades no presenciales de la asignatura Cloud Computing del Máster en Tecnologías y Aplicaciones en Ingeniería Informática de la UAL se va a seguir el https://www.coursera.org/programs/ace-track-1414-s-5uslk[Google Associate Engineer Track]. Está formado por los cursos siguientes:
 
-* https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=h9LqVq-lEeauxBIk_RF-8A&productType=course&showMiniModal=true[Google Cloud Platform Fundamentals: Core Infrastructure]
-* https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=sK6edjzPEees8grTZvuQjA&productType=course&showMiniModal=true[Essential Google Cloud Infrastructure: Foundation]
-* https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=9xG8yUo7EeeJdBL3H0RODg&productType=course&showMiniModal=true[Essential Google Cloud Infrastructure: Core Services]
-* https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=G4Fvqko8Eee4pw7hxA2o1A&productType=course&showMiniModal=true[Elastic Google Cloud Infrastructure: Scaling and Automation]
-* https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=Hdkvqa-VEeemsBI74hnnzA&productType=course&showMiniModal=true[Reliable Google Cloud Infrastructure: Design and Process]
+* https://www.coursera.org/learn/gcp-fundamentals-es/home/welcome[Google Cloud Platform Fundamentals: Core Infrastructure]
+* https://www.coursera.org/learn/gcp-infrastructure-foundation-es/home/welcome[Essential Google Cloud Infrastructure: Foundation]
+* https://www.coursera.org/learn/gcp-infrastructure-core-services-es/home/welcome[Essential Cloud Infrastructure: Core Services]
+* https://www.coursera.org/learn/gcp-infrastructure-scaling-automation-es/home/welcome[Elastic Google Cloud Infrastructure: Scaling and Automation]
+* https://www.coursera.org/learn/cloud-infrastructure-design-process-es/home/welcome[Reliable Google Cloud Infrastructure: Design and Process]
 
-Los cursos se siguen a través de la plataforma https://www.coursera.org/[Coursera] y se complementan con laboratorios prácticos que se siguen a través de https://www.qwiklabs.com[Quiklabs].
+Los cursos se siguen a través de la plataforma https://www.coursera.org/[Coursera] y se complementan con laboratorios prácticos que se siguen a través de https://www.qwiklabs.com[Quiklabs]. Previamente, tendrás que tener cuenta creada.
 
 [NOTE]
 ====
-Estos cursos permiten la preparación para la certificación https://www.coursera.org/programs/ace-track-907-s-3pm27?authProvider=ace-circuit&collectionId=&currentTab=CATALOG&productId=W6zo0XaPEemMiBJD8adJBg&productType=course&showMiniModal=true[Google Cloud Associate Cloud Engineer]. Los estudiantes de la asignatura tienen un cupón de descuento para la realización del examen.
+Estos cursos permiten la preparación para la certificación https://www.coursera.org/learn/preparing-cloud-associate-cloud-engineer-exam/home/welcome[Google Cloud Associate Cloud Engineer]. Los estudiantes de la asignatura tienen un cupón de descuento para la realización del examen.
 ====
 
 ## Coursera
@@ -81,7 +81,7 @@ image::images/QwiklabsCredit.png[]
 
 ## Acceso a los cursos 
 
-Accede al https://www.coursera.org/programs/ace-track-907-s-3pm27[Google Associate Cloud Engineer Track] de Coursera. Tendrás acceso al programa con los 5 cursos:
+Accede al https://www.coursera.org/programs/ace-track-1414-s-5uslk[Google Associate Cloud Engineer Track] de Coursera. Tendrás acceso al programa con los 5 cursos:
 
 image::images/GoogleAssociateCloudEngineerTrack.png[]
 

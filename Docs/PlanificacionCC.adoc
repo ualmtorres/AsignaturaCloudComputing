@@ -25,19 +25,19 @@ image::Tema0/images/di.png[]
 [width="100%",options="header"]
 |====================
 | Sesión | Fecha | Presencial | Enlace 
-| 01 | 20 de octubre | Sí |  
+| 01 | 06 de octubre | Sí |  
 | 02| - | No | https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-1[GCE Semana 1]
-| 03| 27 de octubre | Sí |  
+| 03| 13 de octubre | Sí |  
 | 04 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-2[GCE Semana 2]
-| 05 | 3 de noviembre | Sí |  
+| 05 | 20 de octubre | Sí |  
 | 06 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-3[GCE Semana 3]
-| 07 | 10 de noviembre | Sí |  
+| 07 | 27 de octubre | Sí |  
 | 08 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-4[GCE Semana 4]
-| 09 | 17 de noviembre | Sí |  
+| 09 | 3 de noviembre | Sí |  
 | 10 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-5[GCE Semana 5]
-| 11 | 24 de noviembre | Sí |  
+| 11 | 10 de noviembre | Sí |  
 | 12 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-6[GCE Semana 6]
-| 13 | 1 de diciembre | Sí |  
+| 13 | 17 de noviembre | Sí |  
 | 14 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-7[GCE Semana 7]
-| 15 | 15 de diciembre | Sí |  
+| 15 | 24 de noviembre | Sí |  
 |====================
