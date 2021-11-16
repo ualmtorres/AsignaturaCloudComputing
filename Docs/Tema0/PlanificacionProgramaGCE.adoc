@@ -53,28 +53,28 @@ Para evitar acumulación de trabajo en la fecha de vencimiento se recomienda ir 
 
 image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
 
-* Introducing Google Cloud Platform
-* Getting Started with Google Cloud Platform
-* Virtual Machines in the Cloud
+* Presentación de Google Cloud Platform
+* Introducción a Google Cloud Platform
+* Máquinas virtuales en la nube
 
 ### Semana 2
 
 image::images/EssentialGoogleCloudInfrastructureFoundation.png[width=33%] 
 
-* Introduction
-* Module 1: Introduction to GCP
-* Module 2: Virtual Networks |
+* Introducción
+* Módulo 1: Introducción a GCP
+* Módulo 2: Redes virtuales
 
 ### Semana 3
 
 image::images/EssentialGoogleCloudInfrastructureFoundation.png[width=33%] 
 
-* Module 3: Virtual Machines
+* Módulo 3: Máquinas virtuales
 
 image::images/EssentialGoogleCloudInfrastructureCoreServices.png[width=33%]
 
-* Introduction
-* Module 1: Cloud IAM
+* Introducción
+* Módulo 1: Cloud IAM
 
 ### Semana 4
 
@@ -84,42 +84,36 @@ image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
 
 image::images/EssentialGoogleCloudInfrastructureCoreServices.png[width=33%]
 
-* Module 2: Storage and Database Services
-* Module 3: Resource Management
-* Module 4: Resource Monitoring
+* Módulo 2: Servicios de almacenamiento y base de datos
+* Módulo 3: Administración de recursos
+* Módulo 4: Supervisión de recursos
 
 ### Semana 5
 
 image::images/ElasticGoogleCloudInfrastructureScalingAndAutomation.png[width=33%]
 
-* Introduction
-* Module 1: Interconnecting Networks
-* Module 2: Load Balancing and Autoscaling
-* Module 3: Infrastructure Automation
-* Module 4: Managed Services
+* Introducción
+* Módulo 1: Interconexión de redes
+* Módulo 2: Balanceo de cargas y ajuste de escala automático
+* Módulo 3: Automatización de la infraestructura
 
 ### Semana 6
 
 image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
 
-* Containers in the Cloud
-* Applications in the Cloud
-* Developing, Deploying and Monitoring in the Cloud
-* Big Data and Machine Learning in the Cloud
-* Summary and Review
+* Contenedores en la nube
+* Aplicaciones en la nube
+* Desarrollo, implementación y supervisión en la nube
+* Macrodatos y aprendizaje automático en la nube
+* Resumen y repaso
 
 ### Semana 7
 
 image::images/ReliableGoogleCloudInfrastructureDesignAndProcess.png[width=33%]
 
-* Introduction
-* Defining Services
-* Microservice Design and Architecture
-* DevOps Automation
-* Choosing Storage Solutions
-* Google Cloud and Hybrid Network Architecture
-* Deploying Applications to Google Cloud
-* Designing Reliable Systems
-* Security
-* Maintenance and Monitoring
+* Introducción
+* Cómo definir los servicios
+* Diseño y arquitectura de los microservicios
+* Automatización de DevOps
+
 
