@@ -223,7 +223,7 @@ $ git clone https://github.com/ualmtorres/diariostic.git
 [source, bash]
 ----
 $ cd diariostic
-$ wget https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e app.yaml
+$ https://gist.githubusercontent.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e/raw/d6b56d37d72c4f3f15eeecfdab2f84f42551eac4/app.yaml
 ----
 
 +
@@ -267,7 +267,7 @@ Más información en la https://cloud.google.com/appengine/docs/standard/python/
 +
 [source, bash]
 ----
-$ php - S localhost:8080
+$ php -S localhost:8080
 ----
 
 +
