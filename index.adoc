@@ -14,7 +14,7 @@ Nombre y título del trabajo
 ////
 # Cloud Computing
 Máster en Tecnologías y Aplicaciones en Ingeniería Informática
-José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+Manuel Torres, Francisco José García y José Joaquín Cañadas Martínez <mtorres@ual.es> <paco.garcia@ual.es> <jjcanada@ual.es)
 
 
 image::Docs/Tema0/images/di.png[]
@@ -105,22 +105,26 @@ link:Docs/PlanificacionCC.html[Planificación de la asignatura]
 
 ## Horario de clase y de tutorías
 
-* Clases: Aulas 14 y 19 - CITE III
+* Clases: Aula 5 - CITE III
 * Sesiones presenciales (link:Docs/PlanificacionCC.html[Planificación de la asignatura])
-** 6 y 13 de octubre de 16h a 18h. Aula 14 CITE III
-** 20 y 27 de octubre. 3, 10, 17 y 24 de noviembre de 16h a 18h. Aula 19 CITE IIII
+** Horario: 16h a 18h
 ** 8 sesiones presenciales = 16 horas.
 ** 7 sesiones no presenciales = 14 horas
-* Profesor: Manuel Torres Gil
-** Tutorías: Lunes y Miércoles de 11h a 14h (cita previa y a través de Google Meet)
-** Despacho: 2.19.5 CITE III (2a planta)
-** email: mailto:mtorres@ual.es[mtorres@ual.es]
-** Twitter: https://twitter.com/ualmtorres[@ualmtorres]
+* Profesores 
+** Manuel Torres Gil
+*** Tutorías: Lunes y Viernes de 11h a 14h (cita previa y a través de Google Meet)
+*** Despacho: 2.19.5 CITE III (2a planta)
+*** email: mailto:mtorres@ual.es[mtorres@ual.es]
+*** Twitter: https://twitter.com/ualmtorres[@ualmtorres]
+** Francico José García García
+*** Tutorías: Lunes, Martes y Miércoles de 16:30h a 18:30h (cita previa y a través de Google Meet)
+*** Despacho: Edificio Científico Técnico de Informática y Comunicaciones (CITIC)
+*** email: mailto:Paco.Garcia@ual.es[Paco.Garcia@ual.es]
 	
 ## Cómo seguir la asignatura
 
 * Material disponible en
-** https://aulavirtual.ual.es/webapps/blackboard/execute/launcher?type=Course&id=_3404_1&url=[Aula Virtual]
+** Aula Virtual UAL
 ** https://ualmtorres.github.io/AsignaturaCloudComputing/[Repositorio GitHub]
 
 * Metodología docente
@@ -152,7 +156,7 @@ image::Docs/Tema0/images/GraficoDeContribucionesGitHub.png[]
 
 ## Encuesta inicial
 
-Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/9EbYYYfBLhBJbHnP7[pequeña encuesta] que permita valorar tus conocimientos iniciales y adaptar el desarrollo de la asignatura.
+Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/xokV1ZMz3GS3PVr17[pequeña encuesta] que permita valorar tus conocimientos iniciales y adaptar el desarrollo de la asignatura.
 
 ## Antes de comenzar
 
@@ -175,32 +179,38 @@ Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/9EbYYY
 ### Tema 1. Modelos de servicio con Computación en la Nube
 
 * link:Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf[Presentación: Modelos de servicio con Computación en la Nube]
+* link:Docs/Tema1/Enlaces.html[Enlaces de interés]
 
 ### Tema 2. Infraestructura de Cloud Computing
 
 * https://docs.google.com/presentation/d/1Dod2suAnFwq8NSYfWs-ytr4hn2GUEL8yHmtj3yfBP_g/edit?usp=sharing[Presentación: Infraestructura de Cloud Computing]
 * link:Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Tutorial: Creación de instancia MySQL en Google Cloud]
 * link:Docs/Tema2/AplicacionSGEnModoIaaS.html[Tutorial: Despliegue de una aplicación con base de datos en modo IaaS]
+* link:Docs/Tema2/Enlaces.html[Enlaces de interés]
 
 ### Tema 3. Plataforma como servicio
 
 * https://docs.google.com/presentation/d/10m4g9zfmX-J90lzsrZbYNimgI-iIzo_HXddLrOjSry0/edit?usp=sharing[Presentación: Plataforma como servicio]
 * link:Docs/Tema2/DespliegueAppEngineHeroku.html[Tutorial: Despliegue en Heroku y Google App Engine]
+* link:Docs/Tema3/Enlaces.html[Enlaces de interés]
 
 ### Tema 4. Servicios de contenedores
 
 * https://docs.google.com/presentation/d/16tMEWtwg9cYlfRBRf-jTFj_bD6ug3cFt8CzuUWpr7QI/edit?usp=sharing[Presentación: Servicios de contenedores]
 * https://ualmtorres.github.io/usoBasicoDeDocker/[Tutorial: Desarrollo de aplicaciones con Docker]
+* link:Docs/Tema4/Enlaces.html[Enlaces de interés]
 
 ### Tema 5. Infraestructura como código
 
 * https://docs.google.com/presentation/d/14mS_1gA4afyKsEfPMAUFUVAIB7C008VldZWLnG27JFg/edit?usp=sharing[Presentación: Infraestructura como código]
 * https://ualmtorres.github.io/SeminarioTerraform/[Tutorial: Despliegue de infraestructura con Terraform]
+* link:Docs/Tema5/Enlaces.html[Enlaces de interés]
 
 ### Tema 6. Despliegue de aplicaciones en la nube
 
 * https://docs.google.com/presentation/d/1WCl0AbED1v-yr_ID2HQwViOZ4qC80eW48NnEU7NTSkA/edit?usp=sharing[Presentación: Despliegue de aplicaciones en la nube]
 * https://ualmtorres.github.io/Kubernetes101/[Tutorial: Kubernetes 101]
+* link:Docs/Tema6/Enlaces.html[Enlaces de interés]
 
 ## Trabajo autónomo
 

@@ -1,0 +1,25 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:doctype: book
+:linkattrs:
+
+////
+Nombre y título del trabajo
+////
+# Enlaces de interés sobre Despliegue de aplicaciones en la nube
+Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Manuel Torres y Francisco José García <mtorres@ual.es> <Paco.Garcia@ual.es>
+
+
+image::images/di.png[]
+
+## Enlaces de interés
+
+* link:https://kubernetes.io/es/docs/concepts/overview/what-is-kubernetes/[¿Qué es Kubernetes?]
+* link:https://www.atlassian.com/es/microservices/microservices-architecture/kubernetes-vs-docker[Comparación entre Kubernetes y Docker]
+* link:https://cloud.google.com/learn/what-is-kubernetes?hl=es[¿Qué es Kubernetes? (Google Cloud)]
+* link:https://www.youtube.com/playlist?list=PLoS04oY1FHPNdxLM1PM5_FqhwZqyD_AMQ[Contenedorización y despliegue en Kubernetes de una API en Laravel (Playlist)]

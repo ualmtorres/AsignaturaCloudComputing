@@ -52,8 +52,7 @@ image::cuenta-facturacion-cambiar-nombre.png[role="thumb", align="center"]
 image::cuenta-facturacion-cambiar-nombre-entrada.png[role="thumb", align="center"]
 
 [start=2]
-. A continuación, damos permisos de "Administrador de Cuenta de facturación" al profesor: `mtorres@ual.es`:
-En la misma pantalla de Facturación, Mostrar panel de información, Añadir miembros: mtorres@ual.es, Seleccionar un rol: Facturación > Administrador de Cuenta de facturación
+. A continuación, damos permisos de "Administrador de Cuenta de facturación" a los profesores: (p.e. `mtorres@ual.es Paco.Garcia@ual.es` en la misma pantalla de Facturación, Mostrar panel de información, Añadir miembros: (p.e. `mtorres@ual.es Paco.Garcia@ual.es`, Seleccionar un rol: Facturación > Administrador de Cuenta de facturación
 
 .Añadir usuario a la cuenta de facturación
 image::cuenta-facturacion-añadir-owner.png[role="thumb", align="center"]

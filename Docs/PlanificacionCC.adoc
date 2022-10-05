@@ -14,7 +14,7 @@ Nombre y título del trabajo
 ////
 # Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine
 Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
-José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+Manuel Torres y Francisco José García <mtorres@ual.es> <paco.garcia@ual.es>
 
 image::Tema0/images/di.png[]
 

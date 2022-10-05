@@ -1,0 +1,25 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:doctype: book
+:linkattrs:
+
+////
+Nombre y título del trabajo
+////
+# Enlaces de interés sobre Modelos de servicio con Computación en la Nube
+Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Manuel Torres y Francisco José García <mtorres@ual.es> <Paco.Garcia@ual.es>
+
+
+image::images/di.png[]
+
+## Enlaces de interés
+
+* link:https://www.dataversity.net/brief-history-cloud-computing/[A Brief History of Cloud Computing]
+* link:https://www.seasiainfotech.com/blog/history-and-evolution-cloud-computing/[History & Evolution of Cloud Computing: What to Expect in 2025]
+* link:https://www.ibm.com/cloud/blog/top-7-most-common-uses-of-cloud-computing[Top 7 Most Common Uses of Cloud Computing]
+* link:https://aws.amazon.com/es/types-of-cloud-computing/[Tipos de informática en la nube]
