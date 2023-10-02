@@ -52,7 +52,7 @@ image::budget-add-gcp.png[role="thumb", align="center"]
 
 [start=2]
 . Añade la información del presupuesto: 
-* Introduce el nombre cc2021-mes, para indicar que es el presupuesto mensual de la asignatura cc2021.
+* Introduce el nombre cc2024-mes, para indicar que es el presupuesto mensual de la asignatura cc2024.
 * Selecciona tu cuenta de facturación.
 * Añade un importe específico para el presupuesto mensual, que establecemos en: *12 $*
 * Deja los porcentajes predeterminados, para recibir emails cuando se haya consumido el 50, 90 y 100% del presupuesto mensual. 

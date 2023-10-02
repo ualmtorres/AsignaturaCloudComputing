@@ -12,9 +12,8 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 ////
 Nombre y título del trabajo
 ////
-# Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
-José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+# Planificación recomendada para seguir el Programa Especializado: Cloud Engineer Learning Path - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Manuel Torres y Francisco José García <mtorres@ual.es> <paco.garcia@ual.es>
 
 
 image::images/di.png[]
@@ -29,7 +28,7 @@ image::images/di.png[]
 COLOCA A CONTINUACION EL RESUMEN
 ////
 
-Planificación recomendada para seguir el programa especializado _Architecting with Google Compute Engine_ durante el desarrollo de la asignatura de Cloud Computing.
+Planificación recomendada para seguir el programa especializado _Cloud Engineer Learning Path_ durante el desarrollo de la asignatura de Cloud Computing.
 
 ////
 COLOCA A CONTINUACION LOS OBJETIVOS
@@ -109,11 +108,23 @@ image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
 
 ### Semana 7
 
-image::images/ReliableGoogleCloudInfrastructureDesignAndProcess.png[width=33%]
+image::images/GettingStartedWithGoogleKubernetesEngine.png[width=33%]
+
+* Introducción a contenedores y Kubernetes
+* Arquitectura de Kubernetes
+* Operqaciones en Kubernetes
+* Resumen
+
+image::images//GettingStartedWithTerraformForGoogleCloud.png[width=33%]
 
 * Introducción
-* Cómo definir los servicios
-* Diseño y arquitectura de los microservicios
-* Automatización de DevOps
+* Introducción a Terraform para Google Cloud
+* Escribiendo código de infraestructura para Google Cloud
+* Organización y reutilización de configuraciones con módulos Terraform
+* Introducción al estado de Terraform
 
+### Semana 8
 
+image::images/AutomatingInfrastructureOnGoogleCloudWithTerraform.png[width=33%]
+
+* Automatización de infraestructura en Google Cloud con Terraform

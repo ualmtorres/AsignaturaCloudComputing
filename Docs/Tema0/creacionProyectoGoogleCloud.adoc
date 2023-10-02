@@ -50,8 +50,8 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 image::proyecto-gcp-nuevo.png[role="thumb", align="center"]
 
 [start=3]
-. Da un nombre al nuevo proyecto: el nombre del primer proyecto debe denominarse `cc2021-abc123`¸ donde:
-* `cc2021` corresponde a la asignatura Cloud Computing curso 2019-20
+. Da un nombre al nuevo proyecto: el nombre del primer proyecto debe denominarse `cc2024-abc123`¸ donde:
+* `cc2024` corresponde a la asignatura Cloud Computing curso 2023-24
 * `abc123` debe ser *sustituido* por su nombre de usuario de la UAL
 
 .Datos del nuevo proyecto

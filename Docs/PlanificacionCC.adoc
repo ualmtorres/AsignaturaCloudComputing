@@ -12,7 +12,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 ////
 Nombre y título del trabajo
 ////
-# Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine
+# Planificación recomendada para seguir el Programa Especializado: Cloud Engineer Learning Path
 Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
 Manuel Torres y Francisco José García <mtorres@ual.es> <paco.garcia@ual.es>
 
@@ -20,24 +20,23 @@ image::Tema0/images/di.png[]
 
 ## Planificación
 
-
 .Planificación de las sesiones
 [width="100%",options="header"]
 |====================
 | Sesión | Fecha | Presencial | Enlace 
-| 01 | 06 de octubre | Sí |  
+| 01 | Semana 1 | Sí |  
 | 02| - | No | https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-1[GCE Semana 1]
-| 03| 13 de octubre | Sí |  
+| 03| Semana 2 | Sí |  
 | 04 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-2[GCE Semana 2]
-| 05 | 20 de octubre | Sí |  
+| 05 | Semana 3 | Sí |  
 | 06 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-3[GCE Semana 3]
-| 07 | 27 de octubre | Sí |  
+| 07 | Semana 4 | Sí |  
 | 08 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-4[GCE Semana 4]
-| 09 | 3 de noviembre | Sí |  
+| 09 | Semana 5 | Sí |  
 | 10 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-5[GCE Semana 5]
-| 11 | 10 de noviembre | Sí |  
+| 11 | Semana 6 | Sí |  
 | 12 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-6[GCE Semana 6]
-| 13 | 17 de noviembre | Sí |  
+| 13 | Semana 7 | Sí |  
 | 14 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-7[GCE Semana 7]
-| 15 | 24 de noviembre | Sí |  
+| 15 | Semana 8 | Sí |  
 |====================

@@ -42,13 +42,21 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 
 ## Acceso a OpenStack-DI
 
-https://openstack.di.ual.es/horizon/[OpenStack-DI] es la plataforma que ofrece Infraestructura como servicio en https://cloud.di.ual.es/[Cloud-DI], un cloud privado del Departamento de Informática de la UAL que proporciona Infraestructura como servicio.
+https://openstack.di.ual.es/horizon/[OpenStack-DI] es la plataforma que ofrece Infraestructura como servicio en el cloud privado del Departamento de Informática de la UAL.
+
+[NOTE]
+====
+*El acceso a todos los recursos de OpenStack-DI está limitado a la red de la UAL. Por tanto, el acceso desde fuera de la UAL se tendrá que realizar mediante VPN.*
+
+* El STIC de la UAL ofrece un https://vpn.ual.es[servicio de configuración de VPN].
+* El ámbito de los nombres DNS usados en OpenStack-DI se limita a la red de la UAL. Es necesario añadir un servidor DNS de la UAL (p.e. `150.214.156.2`) en la configuración de red del equipo desde que se realiza el acceso a OpenStack-DI.
+====
 
 .Credenciales de acceso
 ****
 * `domain: default`
-* `login`: Tu login de Campus virtual (sólo el nombre de usuario `[line-through]##@inlumine.ual.es##`)
-* `password`: el recibido por email en Aula Virtual
+* `login`: Tu login de Campus virtual (sólo el nombre de usuario `[line-through]##@inlumine.ual.es##`) seguido de guión y `TAII` (p.e. `mtg248-TAII`)
+* `password`: el que aparece en las instrucciones en Aula Virtual
 
 [IMPORTANT]
 ====
@@ -60,12 +68,4 @@ image::images/OpenStackDI.png[]
 
 ## Recursos para aprender a usar OpenStack-DI
 
-Poco a poco nos familiariaremos con OpenStack-DI a través de los recursos que se ofrecen de forma gratuita. Consulta el https://ualmtorres.github.io/OpenStackDI/[tutorial de OpenStack-DI] disponible en la https://cloud.di.ual.es/[página de inicio de Cloud-DI] y en el curso online abierto (entrar como invitado) https://moodle.di.ual.es/course/view.php?id=5[Introducción al uso de OpenStack] disponible en https://moodle.di.ual.es/[Moodle-DI].
-
-[NOTE]
-====
-El acceso a todos los recursos de Cloud-DI está limitado a la red de la UAL. Por tanto, el acceso desde fuera de la UAL se tendrá que realizar mediante VPN.
-
-* El STIC de la UAL ofrece un https://vpn.ual.es[servicio de configuración de VPN].
-* El ámbito de los nombres DNS usados en Cloud-DI se limita a la red de la UAL. Es necesario añadir un servidor DNS de la UAL (p.e. `150.214.156.2`) en la configuración de red del equipo desde que se realiza el acceso a Cloud-DI.
-====
+Poco a poco nos familiariaremos con OpenStack-DI a través de los recursos que se ofrecen de forma gratuita. Consulta el https://ualmtorres.github.io/OpenStackDI/[tutorial de OpenStack-DI]  y la https://www.youtube.com/playlist?list=PLoS04oY1FHPP54bnjbp7Iy31ncqhvc41X[lista de reproducción YouTube sobre OpenStack-DI].

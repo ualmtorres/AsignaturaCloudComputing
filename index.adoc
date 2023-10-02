@@ -13,8 +13,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Cloud Computing
-Máster en Tecnologías y Aplicaciones en Ingeniería Informática
-Manuel Torres, Francisco José García y José Joaquín Cañadas Martínez <mtorres@ual.es> <paco.garcia@ual.es> <jjcanada@ual.es)
+Máster en Tecnologías y Aplicaciones en Ingeniería Informática. Manuel Torres, Francisco José García y José Joaquín Cañadas Martínez <mtorres@ual.es> <paco.garcia@ual.es> <jjcanada@ual.es)
 
 
 image::Docs/Tema0/images/di.png[]
@@ -105,19 +104,19 @@ link:Docs/PlanificacionCC.html[Planificación de la asignatura]
 
 ## Horario de clase y de tutorías
 
-* Clases: Aula 5 - CITE III
+* Clases: Aula 14 - Aulario V (Aulas de Informática)
 * Sesiones presenciales (link:Docs/PlanificacionCC.html[Planificación de la asignatura])
 ** Horario: 16h a 18h
 ** 8 sesiones presenciales = 16 horas.
 ** 7 sesiones no presenciales = 14 horas
 * Profesores 
 ** Manuel Torres Gil
-*** Tutorías: Lunes y Viernes de 11h a 14h (cita previa y a través de Google Meet)
+*** Tutorías: Jueves y Viernes de 11h a 13h. Cita previa y a través de Google Meet
 *** Despacho: 2.19.5 CITE III (2a planta)
 *** email: mailto:mtorres@ual.es[mtorres@ual.es]
 *** Twitter: https://twitter.com/ualmtorres[@ualmtorres]
 ** Francico José García García
-*** Tutorías: Lunes, Martes y Miércoles de 16:30h a 18:30h (cita previa y a través de Google Meet)
+*** Tutorías: Martes de 18h a 20h.  Miércoles y Jueves de 17h a 19h. Cita previa y a través de Google Meet.
 *** Despacho: Edificio Científico Técnico de Informática y Comunicaciones (CITIC)
 *** email: mailto:Paco.Garcia@ual.es[Paco.Garcia@ual.es]
 	
@@ -131,7 +130,7 @@ link:Docs/PlanificacionCC.html[Planificación de la asignatura]
 ** Clases participativas
 ** Contenido práctico
 ** Elaboración de trabajos prácticos
-** Actividades no presenciales: https://www.coursera.org/programs/ace-track-1414-s-5uslk[Google Associate Engineer Track]
+** Actividades no presenciales: https://www.cloudskillsboost.google/journeys/11[Cloud Engineer Learning Path]
 ** Tutorías
 
 ## Cómo superar la asignatura
@@ -149,21 +148,18 @@ link:Docs/PlanificacionCC.html[Planificación de la asignatura]
 * También se hará seguimiento del gasto de cada estudiante en los servicios Cloud penalizando un uso ineficiente del cupón de gasto disponible.
 * En las actividades en equipo, se tendrá en cuenta tanto el trabajo del equipo en su conjunto, como la aportación individual realizada por cada miembro del equipo.
 
-.Ejemplo de gráfico de contribuciones
-image::Docs/Tema0/images/GraficoDeContribucionesGitHub.png[]
-
 ****
 
 ## Encuesta inicial
 
-Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/xokV1ZMz3GS3PVr17[pequeña encuesta] que permita valorar tus conocimientos iniciales y adaptar el desarrollo de la asignatura.
+Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/5GdbNQb3jdDkkhcQ7[pequeña encuesta] que permita valorar tus conocimientos iniciales y adaptar el desarrollo de la asignatura.
 
 ## Antes de comenzar
 
-* Programa _Associate Cloud Engineer_
-** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PrimerosPasosCoursera.html[Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud]
-** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html[Resumen del Programa Especializado: Architecting with Google Compute Engine]
-** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html[Planificación recomendada para seguir el Programa Especializado: Architecting with Google Compute Engine]
+* Programa _Cloud Engineer Learning Path_
+** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PrimerosPasosCoursera.html[Primeros pasos del Cloud Engineer Learning Path ofrecido por Google Cloud]
+** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html[Resumen del Programa Especializado: Cloud Engineer Learning Path]
+** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html[Planificación recomendada para seguir el Programa Especializado: Cloud Engineer Learning Path]
 
 * Google Cloud
 ** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaGoogleCloud.html[Activación de cuenta Google Cloud Platform]

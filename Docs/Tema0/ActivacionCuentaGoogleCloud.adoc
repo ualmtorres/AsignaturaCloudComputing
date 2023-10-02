@@ -55,7 +55,7 @@ Si no dispones todavía de cuenta personal de correo en la UAL `xxxxxx@inlumine.
 image::images/SolicitudAltaEnCampus.png[]
 ====
 
-En Aula Virtual tienes el enlace al `Student Coupon Retrieval Link` para activar tu cupón de 50$ en Google Cloud para la asignatura. Accederás a un formulario como el siguiente para introducir nombre, apellidos y email de la UAL.
+En Aula Virtual tienes el `Enlace de Activación del cupón de estudiante en Google Cloud Platform` para activar tu cupón de 50$ en Google Cloud para la asignatura. Accederás a un formulario como el siguiente para introducir nombre, apellidos y email de la UAL.
 
 image::images/GoogleCloudPlatformFormulario.png[]
 
