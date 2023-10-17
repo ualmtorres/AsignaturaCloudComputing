@@ -187,7 +187,7 @@ Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/5GdbNQ
 ### Tema 3. Plataforma como servicio
 
 * https://docs.google.com/presentation/d/10m4g9zfmX-J90lzsrZbYNimgI-iIzo_HXddLrOjSry0/edit?usp=sharing[Presentación: Plataforma como servicio]
-* link:Docs/Tema2/DespliegueAppEngineHeroku.html[Tutorial: Despliegue en Heroku y Google App Engine]
+* link:Docs/Tema2/DespliegueAppEngineVercel.html[Tutorial: Despliegue en Vercel y Google App Engine]
 * link:Docs/Tema3/Enlaces.html[Enlaces de interés]
 
 ### Tema 4. Servicios de contenedores

@@ -15,7 +15,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 ////
 Nombre y título del trabajo
 ////
-# Platform as a Service. Casos de uso en Heroku y App Engine
+# Platform as a Service. Casos de uso en Vercel y App Engine
 Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
@@ -28,7 +28,7 @@ image::../Tema0/images/di.png[]
 == Resumen
 El modelo PaaS (Platform as a Service) de cloud computing es un modelo muy cómodo para el desarrollo. En PaaS el proveedor cloud ofrece un entorno o plataforma en el que el equipo de desarrollo puede crear y distribuir aplicaciones sin preocuparse de la infraestructura. El proveedor se encarga del mantenimiento y actualización de la plataforma. Además, ofrece servicios complementarios como bases de datos, monitorización, logging permitiendo centrarse en el desarrollo y despreocupándose de la actualización de versiones del entorno de ejecución, librerías, parches de seguridad y demás.
 
-En este tutorial se realiza una introducción al modo PaaS y se ilustra su funcionamiento desplegando una aplicación sencilla en Heroku y Google App Engine.
+En este tutorial se realiza una introducción al modo PaaS y se ilustra su funcionamiento desplegando una aplicación sencilla en Vercel y Google App Engine.
 
 ////
 COLOCA A CONTINUACION LOS OBJETIVOS
@@ -36,8 +36,8 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 .Objetivos
 * Conocer las ventajas que propociona PaaS.
 * Distinguir los modelos IaaS y PaaS.
-* Aprender a desplegar aplicaciones en Heroku.
-* Utilizar las opciones de despliegue automático y _roll back_ de Heroku.
+* Aprender a desplegar aplicaciones en Vercel.
+* Utilizar las opciones de despliegue automático y _roll back_ de Vercel.
 * Aprender a desplegar aplicaciones en Google App Engine.
 
 // Entrar en modo numerado de apartados
@@ -54,30 +54,37 @@ Además los proveedores PaaS suelen ofrecer gran cantidad de servicios que puede
 En el modo IaaS (Infraestructure as a Service) el proveedor proporciona almacenamiento, redes, máquinas virtuales y otros servicios virtuales. Es el usuario el encargado del matenenimiento del sistema operativo y todo el software, paquetes y librerías que se instalen sobre él
 ====
 
-## Heroku 
+## Vercel
 
-https://www.heroku.com/platform[Heroku] es un PaaS basado en un sistema de contenedores con servicios de datos integrados (Postgres como motor de bases de datos relacionales, Redis como base de datos clave valor para mejorar el rendimiento, Apache Kafka para gestionar datos en streaming).
+https://vercel.com[Vercel] es un PaaS que permite el despliegue de aplicaciones estáticas (HTML, CSS, JavaScript) y aplicaciones de servidor (Node.js, Go, PHP, Python, Ruby, Java, Docker).
 
-Actualmente Heroku ofrece plaforma para desarrollo en:
+Actualmente Vercel ofrece plaforma para desarrollo en:
 
 * Node.js
-* Ruby
-* Java
-* PHP
-* Python
+* Edge
 * Go
-* Scala
-* Clojure
+* Python
+* Ruby
+* PHP
+* Bash
+* Deno
+* Rust
 
-### Registro en el plan gratuito de Heroku
+### Registro en el plan gratuito de Vercel
 
-Heroku ofrece varios planes comerciales y uno gratuito. El gratuito es útil para pruebas de concepto y ofrece despliegue desde GitHub con despliegue continuo, lo que lo convierte en una opción muy atractiva para usarlo aquí.
+Vercel ofrece varios planes comerciales y uno gratuito. El gratuito se llama `Hobby` y es útil para pruebas de concepto y entre otras cosas ofrece despliegue desde GitHub con despliegue continuo y bases de datos PostgreSQL. Por tanto, es una opción muy atractiva para usarlo aquí.
 
-Regístrate con una cuenta de email. Tras iniciar sesión se accede a una pantalla de bienvenida donde se puede crear una aplicación de forma sencilla y se ofrecen tutoriales sobre el desarollo de aplicaciones en los lenguajes soportados.
+Regístrate con una cuenta de email seleccionando `Sign up` en la esquina superior derecha. Lo primero que debes seleccionar es el tipo de plan. Selecciona `Hobby`, introduce tu numbre y pulsa `Continue`.
 
-image::images/HerokuInicio.png[]
+image::images/VercelInicio.png[]
 
-## Despliegue en Heroku
+A continuación, puedes utilizar una cuenta de GitHub o GitLab para registrarte o una dirección de email. Selecciona la opción que prefieras y completa el registro.
+
+Por último, se te pedirá que confirmes tu número de teléfono. Introduce tu número de teléfono y pulsa `Continue`. Recibirás un SMS con un código que deberás introducir en el campo `Code` y pulsar `Verify`.
+
+image::images/VercelVerificacion.png[]
+
+## Despliegue en Vercel
 
 A continuación vamos a ver cómo desplegar una aplicación PHP desde un repositorio GitHub activando la opción de despliegue continuo. El despliegue continuo permitirá la actualización de la aplicación de forma desastitida tras una subida de cambios (a una rama) a un repositorio.
 
@@ -87,34 +94,67 @@ Desde tu cuenta de usuario GitHub, crea un fork del https://github.com/ualmtorre
 
 Se trata de una aplicación muy sencilla, con el único fin de servir como prueba de concepto de como el modelo PaaS facilita centrarse en el desarrollo, haciendo transparente al equipo de desarrollo la gestión de la plataforma subyacente (en este caso intérprete PHP, servidor web, librerías, almacenamiento y otros detalles de infraestructura).
 
++
+.El descriptor `vercel.json`
+****
+La configuración de las aplicaciones de Vercel se realiza mediante un archivo denominado `vercel.json`. En este archivo se especifican, entre otros, el entorno de ejecución, los controladores para atender las peticiones de la aplicación y los archivos estáticos (p.e. imágenes). 
+
+A continuación se muestra un ejemplo de archivo `vercel.json`.
+
+[source, json]
+----
+{
+  "functions": {
+    "api/index.php": { <1>
+      "runtime": "vercel-php@0.6.0" <2>
+    }
+  },
+  "routes": [
+    { "src": "/(.*)",  "dest": "/api/index.php" } <3>
+  ]
+}
+----
+<1> Controlador principal para servir la aplicación
+<2> Entorno de ejecución
+<3> Asociación de rutas a controladores
+NOTE]
+====
+Hay que indicar cómo se gestionan cada una de las rutas de la aplicación en cuanto a código. Esto se realiza mediante elementos en el elemento `functions`. Estos deben de estar en la carpeta `api` de la aplicación.
+
+Más información en la https://vercel.com/docs/projects/project-configuration[documentación oficial].
+====
+****
+
 image::images/diariostic.png[]
 
-En la pantalla inicial (dashboard) de Heroku seleccionar `Create new app` o selecciona el la opción `New | Create new app`. Asignar un nombre a la aplicación (p.e. `diariostic` seguido del login de campus virtual), elegir una región de despliegue y seleccionar `Create app`.
+En la pantalla inicial (projects) de Vercel seleccionar `Import Git Repository | Continue with GitHub | Install`. 
+
+image::images/VercelNewProject.png[]
+
+Instala Vercel en tu cuenta de GitHub y selecciona el repositorio `diariostic` que acabas de hacer fork.
+
+image::images/VercelInstall.png[]
+
+A continuación, selecciona el repositorio `diariostic` y pulsa `Import`. La siguiente pantalla muestra información sobre la configuración del proyecto. En este caso solo hay que establecer un nombre para la aplicación y pulsar `Deploy`.
 
 [NOTE]
 ====
 El nombre elegido para la aplicación ha de ser único ya que es el que usará para componer el nombre DNS de la aplicación.
 ====
 
-Como método de despliegue se usará GitHub. Para ello es necesario conectar con la cuenta de GitHub donde está el repositorio. Una vez establecida la conexión entre la cuenta Heroku y la cuenta GitHub, busca el repositorio de la aplicación seleccionando el botón `Search` y seleccionando el repositorio. Una vez encontrado, pulsar el botón `Connect`. La aplicación Heroku quedará conectada al repositorio GitHub. El resultado debe ser como el de la figura siguiente.
+image::images/VercelConfigure.png[]
 
-image::images/HerokuDiarioSticConnected.png[]
+Tras realizar el despliegue, se mostrará una preview de la aplicación. Pulsar sobre ella para ver la aplicación desplegada.
 
-Para activar la opción de despliegue automático tras efectuar `push` en la rama indicada del repositorio, pulsar le botón `Enable Automatic Deploys` y dejar seleccionada la rama `master` del repositorio.
+image::images/VercelDeployed.png[]
 
-image::images/HerokuActivacionDespliegueAutomatico.png[]
+La opción de despliegue automático esta activa por defecto y permite actualizar la aplicación tras efectuar `push` en la rama indicada del repositorio. En este caso se trata de la rama `master` del repositorio.
 
-Una vez activado el despliegue automático tras hacer `push` a la rama seleccionada, pulsar `Deploy Branch` y dejar la rama selccionada. Esto creará el primer despliegue de la aplicación.
-
-image::images/HerokuDespliegueInicial.png[]
-
-Unos instantes después la aplicación quedará desplegada y se podrá ver pulsando el botón `View`.
-
-image::images/diariostic.png[]
+image::images/VercelAutomaticDeploy.png[]
 
 ### Despliegue automático
 
-Realizar un `push` sobre el repositorio editando directamente el archivo `secciones/portada.php` cambiando el título por `Portada actualizada`.
+Realizar un `push` sobre el repositorio editando directamente el archivo `src/secciones/portada.php` cambiando el título por `Portada actualizada`.
 
 [source, php]
 ----
@@ -139,15 +179,15 @@ image::images/diariosticActualizado.png[]
 
 Es posible volver a estados anteriores de la aplicación. Por ejemplo, tras desplegar un cambio comprobamos que la aplicación no funciona correctamente y se necesita volver atrás mientras se resuelve el problema.
 
-La pestaña `Activity` de la aplicación contiene una lista de toda la actividad llevada a cabo en la aplicación (despliegue de commits, operaciones de build, ...). 
+La pestaña `Deployments` de la aplicación contiene una lista de toda la actividad llevada a cabo en la aplicación (despliegue de commits, operaciones de build, ...). 
 
-Los despliegues se pueden reconocer porque tienen asociado el hash del commit que tomaron como base. En ellos se muestra un enlace con `Roll back to here`. Pulsar sobre el que aparece en el primer commit.
+Los despliegues se pueden reconocer porque tienen asociado el hash del commit que tomaron como base. En las opciones de los puntos suspensivos podemos encontrar la opción de `Instant Rollback`. Pulsar sobre el que aparece en el primer commit.
 
-image::images/HerokuRollback.png[]
+image::images/VercelRollback.png[]
 
-Aparecerá un cuadro de mensaje pidiendo la confirmación para volver a la versión anterior. Pulsar `Rollback`.
+Aparecerá un cuadro de mensaje pidiendo la confirmación para volver a la versión anterior. Pulsar `Continue`.
 
-image::images/HerokuRollbackConfirmacion.png[]
+image::images/VercellRollbackConfirmacion.png[]
 
 Se creará una nueva versión, que aparecerá en el registro de actividad y la aplicación volverá a su estado original tras unos instantes.
 
@@ -155,21 +195,15 @@ image::images/diariostic.png[]
 
 ### Otras opciones de interés
 
-Se pueden activar opciones y funcionalidades muy interesantes en la aplicación, como monitorización, gestión de logs, y demás. Todas ellas se pueden añadir desde la pestaña `Resources` pulsando sobre `Find more add-ons`.
+En las pestañas de la aplicación se pueden encontrar otras opciones de interés como Analytics, Speed Insights, Logs y sobre todo Storage.
 
-image::images/HerokuAddons.png[]
+En esta última se pueden crear diferentes bases de datos como KV, Postgres o almacenamiento de ficheros Blob.
 
-[IMPORTANT]
+[NOTE]
 ====
-La activación de Add-ons, aunque tengan una opción gratuita, exigen actualizar la cuenta de Heroku introduciendo una tarjeta de crédito. **Esto no es necesario para la asignatura**.
+Hay que tener en cuenta que el plan gratuito `Hobby` tiene limitaciones en cuanto a número de bases de datos y almacenamiento. Consultar la https://vercel.com/pricing[documentación oficial] para más información.
 ====
 
-.Heroku Dynos
-****
-La plataforma Heroku usa contenedores para ejecutar las aplicaciones lo que permite su escalado. A estos contenedores Heroku los denomina _Dynos_. La suscripción gratuita admite poco tráfico y no permite el escalado. Es posible cambiar el tipo de _Dyno_ a otras opciones que ofrezcan mayor rendimiento en aplicaciones de alta demanda.
-
-image::images/HerokuDynoTypes.png[]
-****
 
 ## Despliegue en Google App Engine
 
@@ -231,7 +265,7 @@ $ wget https://gist.githubusercontent.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec
 ****
 La configuración de las aplicaciones de App Engine se realiza mediante un archivo denominado `app.yaml`. En este archivo se especifican, entre otros, el entorno de ejecución, los controladores para atender las peticiones de la aplicación y los archivos estáticos (p.e. imágenes). 
 
-A continuación se muestra un ejemplo de archivo https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e[`app.yaml`].
+A continuación se muestra un ejemplo de archivo https://gist.githubusercontent.com/frangarcj/24a93fb35eaa6f6bdcbf6a0769ac36c8/raw/a6444a3408e2eda627b856601dc7b9ad27f292a6/app.yaml[`app.yaml`].
 
 [source, yaml]
 ----
@@ -239,7 +273,7 @@ runtime: php55 <1>
 api_version: 1
 handlers:
 - url: / <2>
-  script: index.php
+  script: api/index.php
 # Serve images as static resources.
 - url: /(.+\.(gif|png|jpg))$ <3>
   static_files: \1
@@ -267,7 +301,7 @@ Más información en la https://cloud.google.com/appengine/docs/standard/python/
 +
 [source, bash]
 ----
-$ php -S localhost:8080
+$ php -S localhost:8080 -t api
 ----
 
 +
@@ -353,5 +387,5 @@ Una vez configurado el acceso a la API de Cloud Build, volver a Cloud Shell y vo
 
 ### Despliegue continuo
 
-El despliegue automático en App Engine no es tan directo como en Heroku. Para más información, consultar la https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories[documentación oficial].
+El despliegue automático en App Engine no es tan directo como en Vercel. Para más información, consultar la https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories[documentación oficial].
 

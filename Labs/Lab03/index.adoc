@@ -28,21 +28,21 @@ image::../../Docs/Tema0/images/di.png[]
 ////
 COLOCA A CONTINUACION EL RESUMEN
 ////
-En este laboratorio se trabajan de forma combinada los modelos de Infraestructura como servicio y Plataforma como servicio. Se creará una base de datos MySQL en Google Cloud usando el modelo IaaS y se usará el modelo PaaS para desplegar en Heroku y Google App Engine una aplicación que interactúe con la base de datos MySQL.
+En este laboratorio se trabajan de forma combinada los modelos de Infraestructura como servicio y Plataforma como servicio. Se creará una base de datos MySQL en Google Cloud usando el modelo IaaS y se usará el modelo PaaS para desplegar en Vercel y Google App Engine una aplicación que interactúe con la base de datos MySQL.
 
 ////
 COLOCA A CONTINUACION LOS OBJETIVOS
 ////
 .Objetivos
 * Crear una base de datos MySQL usando el modelo IaaS.
-* Configurar variables de entorno en Heroku y Google App Engine.
-* Usar el modelo PaaS para desplegar aplicaciones en Heroku y Google App Engine a partir de un repositorio en GitHub.
+* Configurar variables de entorno en Vercel y Google App Engine.
+* Usar el modelo PaaS para desplegar aplicaciones en Vercel y Google App Engine a partir de un repositorio en GitHub.
 
 .Prerrequisitos
 ****
 * Cuenta y proyecto creado en Google Cloud.
 * Cuenta creada en GitHub.
-* Cuenta creada en Heroku.
+* Cuenta creada en Vercel.
 ****
 
 // Entrar en modo numerado de apartados
@@ -51,8 +51,8 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 ## Recursos
 
 * link:../../Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Creación de una instancia MySQL en Google Cloud]
-* link:../../Docs/Tema2/DespliegueAppEngineHeroku.html[Despliegue en Heroku y Google App Engine]
-* Apartado _Using the Heroku Dashboard_ de la https://devcenter.heroku.com/articles/config-vars#managing-config-vars[Guía de Heroku para la creación y configuración de variables de entorno] (_Config Vars_)
+* link:../../Docs/Tema2/DespliegueAppEngineVercel.html[Despliegue en Vercel y Google App Engine]
+* https://vercel.com/docs/projects/environment-variables[Guía de Vercel para la creación y configuración de variables de entorno]
 * Apartado _Defining environment variables_ de la https://cloud.google.com/appengine/docs/flexible/python/reference/app-yaml#defining_environment_variables[Guía de configuración del archivo `app.yaml`]
 
 ## Actividades
@@ -73,14 +73,14 @@ $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('M
 Si aún no se dispone de la base de datos SG, seguir el tutorial link:../../Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Creación de una instancia MySQL en Google Cloud] para crear la base de datos SG.
 ====
 
-### Desplegar la aplicación SG en Heroku
+### Desplegar la aplicación SG en Vercel
 
 Partiendo de que la base de datos SG está creada y disponible en Google Cloud, seguir los pasos siguientes:
 
 . Hacer un fork en GitHub del https://github.com/ualmtorres/SGApp.git[repositorio de la aplicación SG].
-. Seguir el apartado _Despliegue Heroku_ del tutorial link:../../Docs/Tema2/DespliegueAppEngineHeroku.html[Despliegue en Heroku y Google App Engine] y crear una aplicación nueva en Heroku para SG (puede ser necesario borrar alguna existente en función de la cuota disponible).
-. Consultar el apartado _Using the Heroku Dashboard_ de la https://devcenter.heroku.com/articles/config-vars#managing-config-vars[Guía de Heroku para la creación y configuración de variables de entorno] (_Config Vars_ en Heroku).
-. Definir en el proyecto Heroku las variables de entorno `MYSQL_HOST`, `MYSQL_USER` y `MYSQL_PASSWORD` con los valores correspondientes de la dirección IP pública de la base de datos MySQL de Google Cloud y sus credenciales de acceso.
+. Seguir el apartado _Despliegue Vercel_ del tutorial link:../../Docs/Tema2/DespliegueAppEngineVercel.html[Despliegue en Vercel y Google App Engine] y crear una aplicación nueva en Vercel para SG (puede ser necesario borrar alguna existente en función de la cuota disponible).
+. Consultar la https://vercel.com/docs/projects/environment-variables[Guía de Vercel para la creación y configuración de variables de entorno].
+. Definir en el proyecto Vercel las variables de entorno `MYSQL_HOST`, `MYSQL_USER` y `MYSQL_PASSWORD` con los valores correspondientes de la dirección IP pública de la base de datos MySQL de Google Cloud y sus credenciales de acceso.
 . Desplegar la aplicación SG.
 
 [IMPORTANT]
@@ -92,9 +92,9 @@ Partiendo de que la base de datos SG está creada y disponible en Google Cloud, 
 
 Partiendo de que la base de datos SG está creada y disponible en Google Cloud, seguir los pasos siguientes:
 
-. Seguir el apartado _Despliegue en Google App Engine_ del tutorial link:../../Docs/Tema2/DespliegueAppEngineHeroku.html[Despliegue en Heroku y Google App Engine]
+. Seguir el apartado _Despliegue en Google App Engine_ del tutorial link:../../Docs/Tema2/DespliegueAppEngineVercel.html[Despliegue en Vercel y Google App Engine]
 . Clonar en Cloud Shell el https://github.com/ualmtorres/SGApp.git[repositorio de la aplicación SG].
-. Dentro del directorio de la aplicación SG en Cloud Shell crear el descriptor `app.yaml` siguiendo este https://gist.github.com/ualmtorres/5f4c4f4502c9fc9f84c967a59ec4203e[ejemplo de descriptor `app.yaml`].
+. Dentro del directorio de la aplicación SG en Cloud Shell crear el descriptor `app.yaml` siguiendo este https://gist.githubusercontent.com/frangarcj/24a93fb35eaa6f6bdcbf6a0769ac36c8/raw/a6444a3408e2eda627b856601dc7b9ad27f292a6/app.yaml[ejemplo de descriptor `app.yaml`].
 . Consultar el apartado _Defining environment variables_ de la https://cloud.google.com/appengine/docs/flexible/python/reference/app-yaml#defining_environment_variables[Guía de configuración del archivo `app.yaml`] para ver cómo configurar variables de entorno en el descriptor `app.yaml`.
 . Añadir al descriptor `app.yaml` las variables de entorno `MYSQL_HOST`, `MYSQL_USER` y `MYSQL_PASSWORD` con los valores correspondientes de la dirección IP pública de la base de datos MySQL de Google Cloud y sus credenciales de acceso.
 
