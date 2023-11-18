@@ -94,7 +94,7 @@ Partiendo de que la base de datos SG está creada y disponible en Google Cloud, 
 
 . Seguir el apartado _Despliegue en Google App Engine_ del tutorial link:../../Docs/Tema2/DespliegueAppEngineVercel.html[Despliegue en Vercel y Google App Engine]
 . Clonar en Cloud Shell el https://github.com/ualmtorres/SGApp.git[repositorio de la aplicación SG].
-. Dentro del directorio de la aplicación SG en Cloud Shell crear el descriptor `app.yaml` siguiendo este https://gist.githubusercontent.com/frangarcj/24a93fb35eaa6f6bdcbf6a0769ac36c8/raw/a6444a3408e2eda627b856601dc7b9ad27f292a6/app.yaml[ejemplo de descriptor `app.yaml`].
+. Dentro del directorio de la aplicación SG en Cloud Shell crear el descriptor `app.yaml` siguiendo este https://gist.githubusercontent.com/frangarcj/24a93fb35eaa6f6bdcbf6a0769ac36c8/raw/d6d3cf0da17698b6de57ace4ae615c7bf508da4a/app.yaml[ejemplo de descriptor `app.yaml`].
 . Consultar el apartado _Defining environment variables_ de la https://cloud.google.com/appengine/docs/flexible/python/reference/app-yaml#defining_environment_variables[Guía de configuración del archivo `app.yaml`] para ver cómo configurar variables de entorno en el descriptor `app.yaml`.
 . Añadir al descriptor `app.yaml` las variables de entorno `MYSQL_HOST`, `MYSQL_USER` y `MYSQL_PASSWORD` con los valores correspondientes de la dirección IP pública de la base de datos MySQL de Google Cloud y sus credenciales de acceso.
 

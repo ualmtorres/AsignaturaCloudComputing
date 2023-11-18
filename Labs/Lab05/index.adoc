@@ -120,7 +120,7 @@ sustituyendo los valores por tu nombre completo y tu usuario UAL sin `@inlumine.
 
 ### Creación de una máquina virtual en OpenStack-DI con un contenedor desplegado
 
-. Lanzar una instancia (máquina virtual) seleccionando una imagen disponible de **Ubuntu 16.04 LTS**.
+. Lanzar una instancia (máquina virtual) seleccionando una imagen disponible de **Ubuntu 22.04.3 LTS (Jammy Jellyfish)**.
 
 +
 [IMPORTANT]
