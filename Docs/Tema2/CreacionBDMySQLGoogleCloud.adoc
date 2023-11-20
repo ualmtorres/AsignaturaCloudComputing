@@ -68,7 +68,7 @@ Cloud SQL también permite la migración desde una base de datos MySQL existente
 image::images/CloudSQLTipos.png[]
 
 +
-. En el cuadro de dialogo `Crear una instancia de MySQL` configurar valores para el `ID de instancia` (p.e. `sg`) y la contraseña de `root`
+. En el cuadro de dialogo `Crear una instancia de MySQL` configurar valores para el `ID de instancia` (p.e. `sg`) y la contraseña de `root`. Seleccionar MySQL 8.0 como versión de MySQL.
 
 +
 [IMPORTANT]
@@ -76,10 +76,13 @@ image::images/CloudSQLTipos.png[]
 Esta base de datos tendrá una IP pública y será accesible desde cualquier parte del mundo. Hay que tener especial cuidado al elegir la contraseña de `root` para evitar un acceso no deseado.
 ====
 
++
+. En `Elige una edición de Cloud SQL` seleccionar `Enterprise` y `Zona de pruebas`. 
+
 + 
 . Seleccionar `Mostrar opciones de configuración`.
 
-.. Desplegar `Tipo de máquina y almacenamiento`. Como es para una prueba, en `Tipo de máquina` elegir una máquina estándar (`db-n1-standard-1`) con 1 vCPU y 3.75 GB de RAM. 
+.. Desplegar `Tipo de máquina y almacenamiento`. Como es para una prueba, en `Formas de máquinas` elegir una máquina estándar (`Núcleo exclusivo`) con 1 vCPU y 3.75 GB de RAM. 
 .. En `Tipo de almacenamiento` dejar `SSD` con una capacidad de almacenamiento de `10 GB`. 
 .. Desactivar la opción `Habilitar los aumentos automáticos de almacenamiento` para evitar el creacimiento del almacenamiento.
 .. Dejar las opciones predeterminadas de `Copias de seguridad, recuperación y alta disponibilidad`.
@@ -95,8 +98,6 @@ image::images/CloudSQLOpcionesElegidas.png[]
 [IMPORTANT]
 ====
 Las opciones iniciales de Tipo de máquina y almacenamiento pueden ser muy elevadas para nuestras necesidades. Revisar que no sea una máquina virtual con 4 vCPU, 24 GB de RAM y 100 GB de SSD para datos como el de la figura. Hay que prestar atención a la configuración y ajustarla para no tener posteriormente sorpresas en la factuación.
-
-image::images/CloudSQLOpcionesIniciales.png[]
 ====
 
 +
