@@ -215,7 +215,15 @@ Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/5GdbNQ
 * link:Labs/Lab05/index.html[Lab 05. Despliegue de contenedores en OpenStack-DI y en Google Cloud] 
 * link:Labs/Lab06/index.html[Lab 06. Despliegue automatizado con Terraform] 
 
+.Actividades complementarias
+****
+Puedes profundizar en Kubernetes a través de estos recursos:
+
+* https://www.youtube.com/playlist?list=PLoS04oY1FHPNdxLM1PM5_FqhwZqyD_AMQ[Lista de reproducción en YouTube sobre Contenedorización y despliegue en Kubernetes de una API en Laravel]
+* https://ualmtorres.github.io/SeminarioKubernetesSidecars/[Uso de sidecars en Kubernetes]
+****
+
 ## Actividades no presenciales
 
-https://www.coursera.org/programs/ace-track-907-s-3pm27[Google Associate Engineer Track]
+https://www.cloudskillsboost.google/journeys/11[Programa _Cloud Engineer Learning Path]
 
