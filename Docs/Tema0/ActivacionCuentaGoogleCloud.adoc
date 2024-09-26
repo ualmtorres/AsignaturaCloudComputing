@@ -13,7 +13,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Activación de cuenta Google Cloud Platform
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Cloud Computing - Máster en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
 
@@ -55,7 +55,7 @@ Si no dispones todavía de cuenta personal de correo en la UAL `xxxxxx@inlumine.
 image::images/SolicitudAltaEnCampus.png[]
 ====
 
-En Aula Virtual tienes el `Enlace de Activación del cupón de estudiante en Google Cloud Platform` para activar tu cupón de 50$ en Google Cloud para la asignatura. Accederás a un formulario como el siguiente para introducir nombre, apellidos y email de la UAL.
+En Aula Virtual tienes (carpeta `Recursos complementarios`) el `Enlace de Activación del cupón de estudiante en Google Cloud Platform` en la carpeta para activar tu cupón de 50$ en Google Cloud para la asignatura. Accederás a un formulario como el siguiente para introducir nombre, apellidos y email de la UAL.
 
 image::images/GoogleCloudPlatformFormulario.png[]
 

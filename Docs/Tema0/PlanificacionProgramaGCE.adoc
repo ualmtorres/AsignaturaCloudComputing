@@ -12,7 +12,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 ////
 Nombre y título del trabajo
 ////
-# Planificación recomendada para seguir el Programa Especializado: Cloud Engineer Learning Path - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+# Planificación recomendada para seguir el Programa Especializado: Cloud Engineer Learning Path - Máster en Ingeniería Informática
 Manuel Torres y Francisco José García <mtorres@ual.es> <paco.garcia@ual.es>
 
 
@@ -28,7 +28,7 @@ image::images/di.png[]
 COLOCA A CONTINUACION EL RESUMEN
 ////
 
-Planificación recomendada para seguir el programa especializado _Cloud Engineer Learning Path_ durante el desarrollo de la asignatura de Cloud Computing.
+La ruta de aprendizaje de _Cloud Engineer Learning Path_ es un programa especializado que proporciona una introducción a Google Cloud Platform y sus servicios. Este programa especializado está diseñado para personas que desean aprender a diseñar, desarrollar y administrar soluciones en la nube en Google Cloud Platform. Para el desarrollo de esta ruta se usará el cupón activado en la cuenta de Google Cloud Platform Education proporcionado en la asignatura. Este documento proporciona una planificación recomendada para seguir el programa especializado _Cloud Engineer Learning Path_ durante el desarrollo de la asignatura de Cloud Computing.
 
 ////
 COLOCA A CONTINUACION LOS OBJETIVOS
@@ -43,7 +43,7 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 
 [NOTE]
 ====
-Para evitar acumulación de trabajo en la fecha de vencimiento se recomienda ir entregando cada actividad en su semana y así resolver las dudas planteadas en las clases presenciales.
+Para evitar acumulación de trabajo en la fecha de vencimiento se recomienda ir siguiendo cada actividad en su semana y así resolver las dudas planteadas en las clases presenciales.
 ====
 
 :numbered!: 
@@ -125,6 +125,6 @@ image::images//GettingStartedWithTerraformForGoogleCloud.png[width=33%]
 
 ### Semana 8
 
-image::images/AutomatingInfrastructureOnGoogleCloudWithTerraform.png[width=33%]
+image::images/BuildInfrastructureWithTerraform.png[width=33%]
 
-* Automatización de infraestructura en Google Cloud con Terraform
+* Creación de infraestructura en Google Cloud con Terraform

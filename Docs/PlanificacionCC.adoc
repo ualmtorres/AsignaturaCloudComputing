@@ -12,8 +12,8 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 ////
 Nombre y título del trabajo
 ////
-# Planificación recomendada para seguir el Programa Especializado: Cloud Engineer Learning Path
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+# Planificación de la asignatura
+Cloud Computing - Máster en Ingeniería Informática
 Manuel Torres y Francisco José García <mtorres@ual.es> <paco.garcia@ual.es>
 
 image::Tema0/images/di.png[]
@@ -23,20 +23,171 @@ image::Tema0/images/di.png[]
 .Planificación de las sesiones
 [width="100%",options="header"]
 |====================
-| Sesión | Fecha | Presencial | Enlace 
-| 01 | Semana 1 | Sí |  
+| Sesión | Fecha | Presencial | Contenido 
+| 01 | Semana 1 | Sí | https://ualmtorres.github.io/AsignaturaCloudComputing/#tema-1-modelos-de-servicio-con-computaci%C3%B3n-en-la-nube[Tema 1: Modelos de servicio con computación en la nube]
 | 02| - | No | https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-1[GCE Semana 1]
-| 03| Semana 2 | Sí |  
+| 03| Semana 2 | Sí | https://ualmtorres.github.io/AsignaturaCloudComputing/#tema-2-infraestructura-de-cloud-computing[Tema 2: Infraestructura de Cloud Computing]
 | 04 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-2[GCE Semana 2]
-| 05 | Semana 3 | Sí |  
+| 05 | Semana 3 | Sí | https://ualmtorres.github.io/AsignaturaCloudComputing/#tema-3-plataforma-como-servicio[Tema 3: Plataforma como servicio]
 | 06 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-3[GCE Semana 3]
-| 07 | Semana 4 | Sí |  
+| 07 | Semana 4 | Sí | https://ualmtorres.github.io/AsignaturaCloudComputing/#tema-4-servicios-de-contenedores[Tema 4: Servicios de contenedores]
 | 08 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-4[GCE Semana 4]
-| 09 | Semana 5 | Sí |  
+| 09 | Semana 5 | Sí | https://ualmtorres.github.io/AsignaturaCloudComputing/#tema-5-infraestructura-como-c%C3%B3digo[Tema 5: Infraestructura como código (1)]
 | 10 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-5[GCE Semana 5]
-| 11 | Semana 6 | Sí |  
+| 11 | Semana 6 | Sí | https://ualmtorres.github.io/AsignaturaCloudComputing/#tema-5-infraestructura-como-c%C3%B3digo[Tema 5: Infraestructura como código (2)]
 | 12 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-6[GCE Semana 6]
-| 13 | Semana 7 | Sí |  
+| 13 | Semana 7 | Sí | https://ualmtorres.github.io/AsignaturaCloudComputing/#tema-6-despliegue-de-aplicaciones-en-la-nube[Tema 6: Despliegue de aplicaciones en la nube (1)]
 | 14 | - | No |  https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html#truesemana-7[GCE Semana 7]
-| 15 | Semana 8 | Sí |  
+| 15 | Semana 8 | Sí | https://ualmtorres.github.io/AsignaturaCloudComputing/#tema-6-despliegue-de-aplicaciones-en-la-nube[Tema 6: Despliegue de aplicaciones en la nube (2)]
 |====================
+
+## Guía de estudio
+
+### Parte presencial
+
+* Tema 1. Modelos de servicio con Computación en la Nube
+
+** Objetivos
+*** Conocer la evolución de la computación en la nube
+*** Conocer los modelos de servicio de computación en la nube
+*** Conocer los principales proveedores y servicios de computación en la nube
+
+** Contenidos
+*** link:Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf[Presentación: Modelos de servicio con Computación en la Nube, windows=blank]
+*** link:Docs/Tema1/Enlaces.html[Enlaces de interés, windows=blank]
+
+** Actividades
+*** Sin actividades
+
+** Metodología
+*** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos.
+
+* Tema 2. Infraestructura de Cloud Computing
+
+** Objetivos
+*** Conocer los conceptos básicos de infraestructura de Cloud Computing
+*** Conocer los servicios de infraestructura de los principales proveedores de Cloud Computing
+*** Conocer los servicios de infraestructura de OpenStack
+*** Conocer los servicios de infraestructura de Google Cloud
+*** Realizar un despliegue de una aplicación con base de datos en modo IaaS
+
+** Contenidos
+*** https://docs.google.com/presentation/d/1Dod2suAnFwq8NSYfWs-ytr4hn2GUEL8yHmtj3yfBP_g/edit?usp=sharing[Presentación: Infraestructura de Cloud Computing, windows=blank]
+*** link:Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Tutorial: Creación de instancia MySQL en Google Cloud, windows=blank]
+*** link:Docs/Tema2/AplicacionSGEnModoIaaS.html[Tutorial: Despliegue de una aplicación con base de datos en modo IaaS, windows=blank]
+*** link:Docs/Tema2/Enlaces.html[Enlaces de interés, windows=blank]
+
+** Actividades
+*** link:Labs/Lab01/index.html[Lab 01. Creación de máquinas virtuales en OpenStack-DI, windows=blank] 
+
+** Metodología
+*** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos. 
+*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial. 
+*** Actividades de laboratorio para realizar de forma autónoma en forma de proyecto.
+
+* Tema 3. Plataforma como servicio
+
+** Objetivos
+*** Conocer los conceptos básicos de Plataforma como servicio
+*** Conocer los servicios de Plataforma como servicio de los principales proveedores de Cloud Computing
+*** Realizar un despliegue de una aplicación en modo PaaS
+
+** Contenidos
+*** https://docs.google.com/presentation/d/10m4g9zfmX-J90lzsrZbYNimgI-iIzo_HXddLrOjSry0/edit?usp=sharing[Presentación: Plataforma como servicio, windows=blank]
+*** link:Docs/Tema2/DespliegueAppEngineVercel.html[Tutorial: Despliegue en Vercel y Google App Engine, windows=blank]
+*** link:Docs/Tema3/Enlaces.html[Enlaces de interés, windows=blank]
+
+** Actividades
+*** link:Labs/Lab03/index.html[Lab 03. Despliegue mixto en modo PaaS y en modo IaaS, windows=blank] 
+
+** Metodología
+*** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos.
+*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial. 
+*** Actividades de laboratorio para realizar de forma autónoma en forma de proyecto.
+
+* Tema 4. Servicios de contenedores
+
+** Objetivos
+*** Conocer los conceptos básicos de contenedores
+*** Aprender a utilizar el almacenamiento con contenedores
+*** Crear imágenes de contenedores
+*** Crear despliegues de varios contenedores
+*** Realizar un despliegue de una aplicación con contenedores
+
+** Contenidos
+*** https://docs.google.com/presentation/d/16tMEWtwg9cYlfRBRf-jTFj_bD6ug3cFt8CzuUWpr7QI/edit?usp=sharing[Presentación: Servicios de contenedores, windows=blank]
+*** https://ualmtorres.github.io/usoBasicoDeDocker/[Tutorial: Desarrollo de aplicaciones con Docker, windows=blank]
+*** link:Docs/Tema4/Enlaces.html[Enlaces de interés, windows=blank]
+
+** Actividades
+*** link:Labs/Lab05/index.html[Lab 05. Despliegue de contenedores en OpenStack-DI y en Google Cloud, windows=blank] 
+
+** Metodología
+*** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos. 
+*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial. 
+*** Actividades de laboratorio para realizar de forma autónoma en forma de proyecto.
+
+* Tema 5. Infraestructura como código
+
+** Objetivos
+*** Conocer los conceptos básicos de infraestructura como código
+*** Conocer las prácticas DevOps
+*** Aprender a desplegar infraestructura con Terraform
+
+** Contenidos
+*** https://docs.google.com/presentation/d/14mS_1gA4afyKsEfPMAUFUVAIB7C008VldZWLnG27JFg/edit?usp=sharing[Presentación: Infraestructura como código]
+*** https://ualmtorres.github.io/SeminarioTerraform/[Tutorial: Despliegue de infraestructura con Terraform, windows=blank]
+*** link:Docs/Tema5/Enlaces.html[Enlaces de interés, windows=blank]
+
+** Actividades
+*** link:Labs/Lab06/index.html[Lab 06. Despliegue automatizado con Terraform, windows=blank] 
+
+** Metodología
+*** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos. 
+*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial. 
+*** Actividades de laboratorio para realizar de forma autónoma en forma de proyecto.
+
+* Tema 6. Despliegue de aplicaciones en la nube
+
+** Objetivos
+*** Conocer los conceptos básicos de despliegue de aplicaciones en la nube
+*** Presentar las ventajas de la escalabilidad y la alta disponibilidad
+*** Conocer los principales objetos de Kubernetes
+*** Aprender a utilizar almacenamiento persistente en Kubernetes
+*** Aprender a desplegar aplicaciones en Kubernetes
+
+** Contenidos
+*** https://docs.google.com/presentation/d/1WCl0AbED1v-yr_ID2HQwViOZ4qC80eW48NnEU7NTSkA/edit?usp=sharing[Presentación: Despliegue de aplicaciones en la nube]
+*** https://ualmtorres.github.io/Kubernetes101/[Tutorial: Kubernetes 101, windows=blank]
+*** link:Docs/Tema6/Enlaces.html[Enlaces de interés, windows=blank]
+
+** Actividades
+*** https://www.youtube.com/playlist?list=PLoS04oY1FHPNdxLM1PM5_FqhwZqyD_AMQ[Lista de reproducción en YouTube sobre Contenedorización y despliegue en Kubernetes de una API en Laravel, windows=blank]
+*** https://www.youtube.com/watch?v=7tnV3OLPazM[Tolerancia a fallos y escalabilidad con Docker Swarm, windows=blank]
+*** https://ualmtorres.github.io/SeminarioKubernetesSidecars/[Uso de sidecars en Kubernetes, windows=blank]
+
+** Metodología
+*** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos.
+*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial. 
+*** Actividades de laboratorio para realizar de forma autónoma en forma de proyecto.
+
+### Parte no presencial
+
+En la parte no presencial se propone la realización del  programa especializado _Cloud Engineer Learning Path_. Este programa ofrece una forma de completar de forma práctica y con tecnología globalmente aceptada en la industria los conocimientos en Cloud Computing. El programa consta de varios cursos que sientan las bases para la configuración, despliegue y mantenimiento de soluciones cloud con tolerancia a fallos y alta disponibilidad.
+
+* https://www.cloudskillsboost.google/paths/11/course_templates/60[Google Cloud Platform Fundamentals: Core Infrastructure]
+* https://www.cloudskillsboost.google/paths/11/course_templates/50[Essential Google Cloud Infrastructure: Foundation]
+* https://www.cloudskillsboost.google/paths/11/course_templates/49[Essential Cloud Infrastructure: Core Services]
+* https://www.cloudskillsboost.google/paths/11/course_templates/178[Elastic Google Cloud Infrastructure: Scaling and Automation]
+* https://www.cloudskillsboost.google/paths/11/course_templates/2[Getting Started with Google Kubernetes Engine]
+* https://www.cloudskillsboost.google/paths/11/course_templates/443[Getting Started with Terraform for Google Cloud]
+* https://www.cloudskillsboost.google/paths/11/course_templates/636[Build Infrastructure with Terraform on Google Cloud]
+
+El acceso a estos cursos se realiza con la cuenta inlumine de la UAL.
+
+En la sección <<Planificación>> se muestra la planificación propuesta para poder completar el programa _Cloud Engineer Learning Path_ en paralelo con las sesiones presenciales y el desarrollo de los laboratorios propuestos como trabajo autónomo de la asignatura Cloud Computing.
+
+[NOTE]
+====
+Estos cursos permiten la preparación para la certificación https://www.coursera.org/learn/preparing-cloud-associate-cloud-engineer-exam/home/welcome[Google Cloud Associate Cloud Engineer].
+====

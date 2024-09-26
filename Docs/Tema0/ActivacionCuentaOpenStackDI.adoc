@@ -13,7 +13,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Activación de cuenta OpenStack-DI
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Cloud Computing - Máster en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
 
@@ -48,14 +48,14 @@ https://openstack.di.ual.es/horizon/[OpenStack-DI] es la plataforma que ofrece I
 ====
 *El acceso a todos los recursos de OpenStack-DI está limitado a la red de la UAL. Por tanto, el acceso desde fuera de la UAL se tendrá que realizar mediante VPN.*
 
-* El STIC de la UAL ofrece un https://vpn.ual.es[servicio de configuración de VPN].
+* El ATIC de la UAL ofrece un https://vpn.ual.es[servicio de configuración de VPN].
 * El ámbito de los nombres DNS usados en OpenStack-DI se limita a la red de la UAL. Es necesario añadir un servidor DNS de la UAL (p.e. `150.214.156.2`) en la configuración de red del equipo desde que se realiza el acceso a OpenStack-DI.
 ====
 
 .Credenciales de acceso
 ****
 * `domain: default`
-* `login`: Tu login de Campus virtual (sólo el nombre de usuario `[line-through]##@inlumine.ual.es##`) seguido de guión y `TAII` (p.e. `mtg248-TAII`)
+* `login`: Tu login de Campus virtual (sólo el nombre de usuario `[line-through]##@inlumine.ual.es##`) seguido de guión y `MII` (p.e. `mtg248-MII`)
 * `password`: el que aparece en las instrucciones en Aula Virtual
 
 [IMPORTANT]

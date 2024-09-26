@@ -13,7 +13,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Resumen del Programa Especializado: Cloud Engineer Learning Path
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Cloud Computing - Máster en Ingeniería Informática
 Manuel Torres y Francisco José García <mtorres@ual.es> <paco.garcia@ual.es>
 
 
@@ -54,13 +54,13 @@ Acceso al https://www.cloudskillsboost.google/journeys/11[Cloud Engineer Learnin
 [width="100%",options="header"]
 |====================
 | Curso |  Duración
-| Google Cloud Platform Fundamentals: Core Infrastructure |  1 día
-| Essential Cloud Infrastructure: Foundation |  2 días
-| Essential Cloud Infrastructure: Core Services |  2 días
-| Elastic Cloud Infrastructure: Scaling and Automation |  2 días
-| Getting Started with Google Kubernetes Engine |  1 día
-| Getting Started with Terraform for Google Cloud | 1 día
-| Automating Infrastructure on Google Cloud with Terraform | 6 horas
+| Google Cloud Platform Fundamentals: Core Infrastructure |  5 horas
+| Essential Cloud Infrastructure: Foundation |  7 horas
+| Essential Cloud Infrastructure: Core Services |  8 horas
+| Elastic Cloud Infrastructure: Scaling and Automation |  7 horas
+| Getting Started with Google Kubernetes Engine |  8 horas
+| Getting Started with Terraform for Google Cloud | 16 horas
+| Build Infrastructure with Terraform on Google Cloud | 6 horas
 |====================
 
 ### Google Cloud Platform Fundamentals: Core Infrastructure

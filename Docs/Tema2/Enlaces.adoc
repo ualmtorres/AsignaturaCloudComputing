@@ -15,12 +15,12 @@ Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informá
 Manuel Torres y Francisco José García <mtorres@ual.es> <Paco.Garcia@ual.es>
 
 
-image::images/di.png[]
+image::../Tema0/images/di.png[]
 
 ## Enlaces de interés
 
-* link:https://cloud.google.com/learn/what-is-iaas?hl=es[¿Qué es IaaS? (Google)]
-* link:https://www.openstack.org/software/[What is OpenStack?]
-* link:https://azure.microsoft.com/es-es/resources/cloud-computing-dictionary/what-is-iaas/#overview[¿Qué es IaaS? (Microsoft Azure)]
+* link:https://cloud.google.com/learn/what-is-iaas?hl=es[¿Qué es IaaS? (Google), windows=blank]
+* link:https://www.openstack.org/software/[What is OpenStack?, windows=blank]
+* link:https://azure.microsoft.com/es-es/resources/cloud-computing-dictionary/what-is-iaas/#overview[¿Qué es IaaS? (Microsoft Azure), windows=blank]
 
 

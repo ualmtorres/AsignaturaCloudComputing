@@ -11,15 +11,15 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Enlaces de interés sobre Plataforma como servicio
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Cloud Computing - Máster en Ingeniería Informática
 Manuel Torres y Francisco José García <mtorres@ual.es> <Paco.Garcia@ual.es>
 
 
-image::images/di.png[]
+image::../Tema0/images/di.png[]
 
 ## Enlaces de interés
 
-* link:https://cloud.google.com/learn/what-is-iaas?hl=es[¿Qué es IaaS? (Google)]
+* link:https://cloud.google.com/learn/what-is-paas?hl=es_419[Qué es la plataforma como servicio (PaaS)? (Google)]
 * link:https://www.redhat.com/es/topics/cloud-computing/what-is-paas[¿Qué es una PaaS? (Red Hat)]
 * link:https://www.redhat.com/es/technologies/cloud-computing/openshift[Red Hat OpenShift]
 

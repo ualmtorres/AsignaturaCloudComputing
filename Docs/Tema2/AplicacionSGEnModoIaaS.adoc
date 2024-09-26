@@ -16,7 +16,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Despliegue de una aplicación en modo IaaS
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Cloud Computing - Máster en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
 image::../Tema0/images/di.png[]
@@ -62,7 +62,7 @@ https://openstack.di.ual.es/horizon[OpenStack-DI] ofrece Infraestructura como se
 ### Requisitos previos
 
 * Cuenta creada en OpenStack-DI
-* Proyecto OpenStack con la infraestructura básica de red configurada. https://ualmtorres.github.io/OpenStackSTIC/#truenetworking[(Tutorial Configuración de infraestructura básica de red]. En OpenStack-DI la red externa se denomina `ext-net`)
+* Proyecto OpenStack con la infraestructura básica de red configurada. https://ualmtorres.github.io/OpenStackSTIC/#truenetworking[(Tutorial Configuración de infraestructura básica de red]. En OpenStack-DI la red externa se denomina `externa`)
 * Disponer de un par de claves SSH. https://ualmtorres.github.io/OpenStackSTIC/#truegeneraci-n-de-claves-ssh[(Tutorial Generación de claves SSH)]
 * Tener las claves SSH registradas en OpenStack. https://ualmtorres.github.io/OpenStackSTIC/#trueregistra-tus-claves-ssh[(Tutorial Registro de claves SSH en OpenStack)]
 * Tener las reglas de seguridad configuradas (puerto 22 para SSH, 80 para Apache). https://ualmtorres.github.io/OpenStackSTIC/#trueconfiguraci-n-de-las-reglas-de-seguridad[(Tutorial Configuración de las reglas de seguridad)]

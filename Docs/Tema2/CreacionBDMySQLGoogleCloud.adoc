@@ -16,8 +16,10 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Creación de una base de datos MySQL en Google Cloud Platform
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Cloud Computing - Máster en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+
+image::images/di.png[]
 
 // NO CAMBIAR!! (Entrar en modo no numerado de apartados)
 :numbered!: 
@@ -297,7 +299,7 @@ image::images/InstanciasInicio.png[]
 . Asignar un nombre a la instancia (p.e. `basica`) dejando las opciones de región y zona predeterminadas.
 . Modificar la configuración de la máquina virtual indicando
 * Serie N1
-* Tipo de máquina `g1-small (1 vCPU y 1.7 GB RAM)
+* Tipo de máquina `g1-small (1 vCPU y 1.7 GB RAM)`
 
 +
 image::images/InstanciasCrearBasica.png[]

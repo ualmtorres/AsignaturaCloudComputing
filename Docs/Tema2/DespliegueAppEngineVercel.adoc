@@ -16,8 +16,8 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Platform as a Service. Casos de uso en Vercel y App Engine
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
-José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
+Cloud Computing - Máster en Ingeniería Informática
+Paco García y Manuel Torres <Paco.Garcia@ual.es> <mtorres@ual.es>
 
 image::../Tema0/images/di.png[]
 

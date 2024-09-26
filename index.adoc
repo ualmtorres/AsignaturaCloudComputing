@@ -13,7 +13,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Cloud Computing
-Máster en Tecnologías y Aplicaciones en Ingeniería Informática. Manuel Torres, Francisco José García y José Joaquín Cañadas Martínez <mtorres@ual.es> <paco.garcia@ual.es> <jjcanada@ual.es)
+Máster en Ingeniería Informática. Manuel Torres, Francisco José García y José Joaquín Cañadas Martínez <mtorres@ual.es> <paco.garcia@ual.es> <jjcanada@ual.es)
 
 
 image::Docs/Tema0/images/di.png[]
@@ -27,7 +27,7 @@ image::Docs/Tema0/images/di.png[]
 ////
 COLOCA A CONTINUACION EL RESUMEN
 ////
-La asignatura Cloud Computing es una asignatura obligatoria del módulo de Tecnologías informáticas del https://www.ual.es/estudios/masteres/presentacion/7114[Máster oficial en Tecnologías y Aplicaciones en Ingeniería Informática] de la UAL. En la asignatura se hace una introducción al uso de los principales de modelos de Cloud Computing haciendo énfasis en IaaS (_Infrastructure as a Service_) y PaaS (_Platform as a Service_). Se trabajará el desarrollo basado en contenedores Docker para desplegar soluciones escalables en orquestadores de contenedores como Kubernetes.
+La asignatura https://www.ual.es/estudios/masteres/presentacion/plandeestudios/asignatura/7132/71321104[Cloud Computing] es una asignatura obligatoria del módulo de Tecnologías informáticas del https://www.ual.es/estudios/masteres/presentacion/7132[Máster oficial en Ingeniería Informática, windows=blank]] de la UAL. En la asignatura se hace una introducción al uso de los principales de modelos de Cloud Computing haciendo énfasis en IaaS (_Infrastructure as a Service_) y PaaS (_Platform as a Service_). Se trabajará el desarrollo basado en contenedores Docker para desplegar soluciones escalables en orquestadores de contenedores como Kubernetes.
 
 ////
 COLOCA A CONTINUACION LOS OBJETIVOS
@@ -48,6 +48,8 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 Las aplicaciones comerciales se trasladan a la _Nube_. Esto está ocurriendo más rápido que nunca: el paso de los modelos de software tradicionales a Internet ha adquirido un mayor impulso con el desarrollo del _Cloud Computing_ o Computación en Nube. Se trata de la nueva forma de utilizar las tecnologías de la información y las comunicaciones empleando técnicas ya existentes de una forma innovadora y, sobre todo, a una nueva escala, permitiendo el uso de recursos de hardware, software, almacenamiento, servicios y comunicaciones que se encuentran distribuidos geográficamente y a los que se accede a través de redes públicas, de forma dinámica, cuando se necesita, mientras se necesita y abonando una tarifa sobre lo que se consume.
 
 Los numerosos proveedores de servicios en la nube proporcionan acceso a recursos informáticos y servicios adicionales de valor añadido que acercan la oferta del proveedor a las necesidades de su cliente. Gracias a un grupo creciente de proveedores de servicios en la nube, la computación en la nube es cada vez más importante como mecanismo para que los desarrolladores desplieguen fácilmente sus aplicaciones.
+
+Esta asignatura se imparte en formato semipresencial siguiendo con las recomendaciones de la UAL. Esto implica que las clases presenciales se complementan con actividades no presenciales que aparecen descritas en la planificación de la asignatura. Como herramientas de comunicación se utilizarán las propias de Aula virtual (calendario, anuncios, debate, ...) y Google Meet para las tutorías online.
 
 ## Sobre la Guía docente
 
@@ -104,21 +106,23 @@ link:Docs/PlanificacionCC.html[Planificación de la asignatura]
 
 ## Horario de clase y de tutorías
 
-* Clases: Aula 14 - Aulario V (Aulas de Informática)
+* Clases
+** Grupo docente: Aulario III - 12. Miércoles de 16h a 18h
+** Grupos de trabajo: Aulario V (Aulas de informática) - 1 y 11. Miércoles (Grupo A1) y Viernes (Grupo A2) de 18h a 20h
 * Sesiones presenciales (link:Docs/PlanificacionCC.html[Planificación de la asignatura])
-** Horario: 16h a 18h
 ** 8 sesiones presenciales = 16 horas.
 ** 7 sesiones no presenciales = 14 horas
 * Profesores 
 ** Manuel Torres Gil
-*** Tutorías: Jueves y Viernes de 11h a 13h. Cita previa y a través de Google Meet
+*** Tutorías: Martes y Miércoles de 10h a 13h. Cita previa y posibilidad de tutorías online a través de Google Meet
 *** Despacho: 2.19.5 CITE III (2a planta)
 *** email: mailto:mtorres@ual.es[mtorres@ual.es]
-*** Twitter: https://twitter.com/ualmtorres[@ualmtorres]
+*** https://www.ual.es/persona/505553515154565281[Enlace web de la UAL]
 ** Francico José García García
-*** Tutorías: Martes de 18h a 20h.  Miércoles y Jueves de 17h a 19h. Cita previa y a través de Google Meet.
-*** Despacho: Edificio Científico Técnico de Informática y Comunicaciones (CITIC)
+*** Tutorías: Martes y Jueves de 17h a 19h.  Miércoles de 18h a 20h. Cita previa y a través de Google Meet.
+*** Despacho: Edificio Científico Técnico de Informática y Comunicaciones (CITIC). Despacho 2.500
 *** email: mailto:Paco.Garcia@ual.es[Paco.Garcia@ual.es]
+*** https://www.ual.es/persona/555350545753515288[Enlace web de la UAL]
 	
 ## Cómo seguir la asignatura
 
@@ -130,7 +134,7 @@ link:Docs/PlanificacionCC.html[Planificación de la asignatura]
 ** Clases participativas
 ** Contenido práctico
 ** Elaboración de trabajos prácticos
-** Actividades no presenciales: https://www.cloudskillsboost.google/journeys/11[Cloud Engineer Learning Path]
+** Actividades no presenciales: https://www.cloudskillsboost.google/paths/11[Cloud Engineer Learning Path]
 ** Tutorías
 
 ## Cómo superar la asignatura
@@ -152,78 +156,79 @@ link:Docs/PlanificacionCC.html[Planificación de la asignatura]
 
 ## Encuesta inicial
 
-Si eres alumno de la asignatura en la UAL completa esta https://forms.gle/5GdbNQb3jdDkkhcQ7[pequeña encuesta] que permita valorar tus conocimientos iniciales y adaptar el desarrollo de la asignatura.
+Si eres alumno de la asignatura en la UAL completa esta https://docs.google.com/forms/d/e/1FAIpQLSd5VJVw7XZFGfxtomiAMbOZEXyjqvaLjh7ySw9blXRmfcoGTg/viewform[pequeña encuesta] que permita valorar tus conocimientos iniciales y adaptar el desarrollo de la asignatura.
 
 ## Antes de comenzar
 
 * Programa _Cloud Engineer Learning Path_
-** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PrimerosPasosCoursera.html[Primeros pasos del Cloud Engineer Learning Path ofrecido por Google Cloud]
-** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html[Resumen del Programa Especializado: Cloud Engineer Learning Path]
-** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html[Planificación recomendada para seguir el Programa Especializado: Cloud Engineer Learning Path]
+** https://www.cloudskillsboost.google/paths/11/course_templates/77[Primeros pasos del Cloud Engineer Learning Path ofrecido por Google Cloud, windows=blank]
+** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ResumenProgramaEspecializadoGCE.html[Resumen del Programa Especializado: Cloud Engineer Learning Path, windows=blank]
+** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/PlanificacionProgramaGCE.html[Planificación recomendada para seguir el Programa Especializado: Cloud Engineer Learning Path, windows=blank]
 
 * Google Cloud
-** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaGoogleCloud.html[Activación de cuenta Google Cloud Platform]
-** link:Docs/Tema0/cuenta-facturacion-permisos-profesor.html[Dar permisos al profesor en la cuenta de facturación en GCP]
-** link:Docs/Tema0/creacionProyectoGoogleCloud.html[Creación de un proyecto en Google Cloud Platform]
-** link:Docs/Tema0/alertas-consumo-GoogleCloud.html[Añadir alertas de consumo (budgets) en Google Cloud]
+** http://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaGoogleCloud.html[Activación de cuenta Google Cloud Platform, windows=blank]
+** link:Docs/Tema0/cuenta-facturacion-permisos-profesor.html[Dar permisos al profesor en la cuenta de facturación en GCP, windows=blank]
+** link:Docs/Tema0/creacionProyectoGoogleCloud.html[Creación de un proyecto en Google Cloud Platform, windows=blank]
+** link:Docs/Tema0/alertas-consumo-GoogleCloud.html[Añadir alertas de consumo (budgets) en Google Cloud, windows=blank]
 
 * OpenStack-DI
-** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaOpenStackDI.html[Activación de cuenta OpenStack-DI]
+** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaOpenStackDI.html[Activación de cuenta OpenStack-DI, windows=blank]
 
 ## Recursos
 
 ### Tema 1. Modelos de servicio con Computación en la Nube
 
-* link:Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf[Presentación: Modelos de servicio con Computación en la Nube]
-* link:Docs/Tema1/Enlaces.html[Enlaces de interés]
+* link:Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf[Presentación: Modelos de servicio con Computación en la Nube, windows=blank]
+* link:Docs/Tema1/Enlaces.html[Material complementario, windows=blank]
 
 ### Tema 2. Infraestructura de Cloud Computing
 
-* https://docs.google.com/presentation/d/1Dod2suAnFwq8NSYfWs-ytr4hn2GUEL8yHmtj3yfBP_g/edit?usp=sharing[Presentación: Infraestructura de Cloud Computing]
-* link:Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Tutorial: Creación de instancia MySQL en Google Cloud]
-* link:Docs/Tema2/AplicacionSGEnModoIaaS.html[Tutorial: Despliegue de una aplicación con base de datos en modo IaaS]
-* link:Docs/Tema2/Enlaces.html[Enlaces de interés]
+* https://docs.google.com/presentation/d/1Dod2suAnFwq8NSYfWs-ytr4hn2GUEL8yHmtj3yfBP_g/edit?usp=sharing[Presentación: Infraestructura de Cloud Computing, windows=blank]
+* link:Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Tutorial: Creación de instancia MySQL en Google Cloud, windows=blank]
+* link:Docs/Tema2/AplicacionSGEnModoIaaS.html[Tutorial: Despliegue de una aplicación con base de datos en modo IaaS, windows=blank]
+* link:Docs/Tema2/Enlaces.html[Material complementario, windows=blank]
 
 ### Tema 3. Plataforma como servicio
 
-* https://docs.google.com/presentation/d/10m4g9zfmX-J90lzsrZbYNimgI-iIzo_HXddLrOjSry0/edit?usp=sharing[Presentación: Plataforma como servicio]
-* link:Docs/Tema2/DespliegueAppEngineVercel.html[Tutorial: Despliegue en Vercel y Google App Engine]
-* link:Docs/Tema3/Enlaces.html[Enlaces de interés]
+* https://docs.google.com/presentation/d/10m4g9zfmX-J90lzsrZbYNimgI-iIzo_HXddLrOjSry0/edit?usp=sharing[Presentación: Plataforma como servicio, windows=blank]
+* link:Docs/Tema2/DespliegueAppEngineVercel.html[Tutorial: Despliegue en Vercel y Google App Engine, windows=blank]
+* link:Docs/Tema3/Enlaces.html[Material complementario, windows=blank]
 
 ### Tema 4. Servicios de contenedores
 
-* https://docs.google.com/presentation/d/16tMEWtwg9cYlfRBRf-jTFj_bD6ug3cFt8CzuUWpr7QI/edit?usp=sharing[Presentación: Servicios de contenedores]
-* https://ualmtorres.github.io/usoBasicoDeDocker/[Tutorial: Desarrollo de aplicaciones con Docker]
-* link:Docs/Tema4/Enlaces.html[Enlaces de interés]
+* https://docs.google.com/presentation/d/16tMEWtwg9cYlfRBRf-jTFj_bD6ug3cFt8CzuUWpr7QI/edit?usp=sharing[Presentación: Servicios de contenedores, windows=blank]
+* https://ualmtorres.github.io/usoBasicoDeDocker/[Tutorial: Desarrollo de aplicaciones con Docker, windows=blank]
+* link:Docs/Tema4/Enlaces.html[Material complementario, windows=blank]
 
 ### Tema 5. Infraestructura como código
 
 * https://docs.google.com/presentation/d/14mS_1gA4afyKsEfPMAUFUVAIB7C008VldZWLnG27JFg/edit?usp=sharing[Presentación: Infraestructura como código]
-* https://ualmtorres.github.io/SeminarioTerraform/[Tutorial: Despliegue de infraestructura con Terraform]
-* link:Docs/Tema5/Enlaces.html[Enlaces de interés]
+* https://ualmtorres.github.io/SeminarioTerraform/[Tutorial: Despliegue de infraestructura con Terraform, windows=blank]
+* link:Docs/Tema5/Enlaces.html[Material complementario, windows=blank]
 
 ### Tema 6. Despliegue de aplicaciones en la nube
 
 * https://docs.google.com/presentation/d/1WCl0AbED1v-yr_ID2HQwViOZ4qC80eW48NnEU7NTSkA/edit?usp=sharing[Presentación: Despliegue de aplicaciones en la nube]
-* https://ualmtorres.github.io/Kubernetes101/[Tutorial: Kubernetes 101]
-* link:Docs/Tema6/Enlaces.html[Enlaces de interés]
+* https://ualmtorres.github.io/Kubernetes101/[Tutorial: Kubernetes 101, windows=blank]
+* link:Docs/Tema6/Enlaces.html[Material complementario, windows=blank]
 
 ## Trabajo autónomo
 
-* link:Labs/Lab01/index.html[Lab 01. Creación de máquinas virtuales en OpenStack-DI] 
-* link:Labs/Lab03/index.html[Lab 03. Despliegue mixto en modo PaaS y en modo IaaS] 
-* link:Labs/Lab05/index.html[Lab 05. Despliegue de contenedores en OpenStack-DI y en Google Cloud] 
-* link:Labs/Lab06/index.html[Lab 06. Despliegue automatizado con Terraform] 
+* link:Labs/Lab01/index.html[Lab 01. Creación de máquinas virtuales en OpenStack-DI, windows=blank] 
+* link:Labs/Lab03/index.html[Lab 03. Despliegue mixto en modo PaaS y en modo IaaS, windows=blank] 
+* link:Labs/Lab05/index.html[Lab 05. Despliegue de contenedores en OpenStack-DI y en Google Cloud, windows=blank] 
+* link:Labs/Lab06/index.html[Lab 06. Despliegue automatizado con Terraform, windows=blank] 
 
 .Actividades complementarias
 ****
 Puedes profundizar en Kubernetes a través de estos recursos:
 
-* https://www.youtube.com/playlist?list=PLoS04oY1FHPNdxLM1PM5_FqhwZqyD_AMQ[Lista de reproducción en YouTube sobre Contenedorización y despliegue en Kubernetes de una API en Laravel]
-* https://ualmtorres.github.io/SeminarioKubernetesSidecars/[Uso de sidecars en Kubernetes]
+* https://www.youtube.com/playlist?list=PLoS04oY1FHPNdxLM1PM5_FqhwZqyD_AMQ[Lista de reproducción en YouTube sobre Contenedorización y despliegue en Kubernetes de una API en Laravel, windows=blank]
+* https://www.youtube.com/watch?v=7tnV3OLPazM[Tolerancia a fallos y escalabilidad con Docker Swarm, windows=blank]
+* https://ualmtorres.github.io/SeminarioKubernetesSidecars/[Uso de sidecars en Kubernetes, windows=blank]
 ****
 
 ## Actividades no presenciales
 
-https://www.cloudskillsboost.google/journeys/11[Programa _Cloud Engineer Learning Path]
+https://www.cloudskillsboost.google/paths/11[Programa Cloud Engineer Learning Path, windows=blank_]
 
