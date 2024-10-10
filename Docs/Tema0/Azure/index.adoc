@@ -29,7 +29,7 @@ Nombre y título del trabajo
 Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
 José Joaquín Cañadas <jjcanada@ual.es> y Manuel Torres <mtorres@ual.es>
 
-. link:crear-suscripcion-AzureParaEstudiantes.html[Creación de la suscripción Azure para Estudiantes]
+. link:CrearSuscripcionAzureParaEstudiantes.html[Creación de la suscripción Azure para Estudiantes]
 
 . link:revisar-saldo-AzureParaEstudiantes.html[Revisar el saldo de la suscripción Azure para Estudiantes]
 

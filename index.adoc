@@ -172,7 +172,7 @@ Si eres alumno de la asignatura en la UAL completa esta https://docs.google.com/
 ** link:Docs/Tema0/alertas-consumo-GoogleCloud.html[Añadir alertas de consumo (budgets) en Google Cloud, windows=blank]
 
 * Microsoft Azure
-** link:Tema0/ccrear-suscripcion-azure-para-estudiantes.html[Activación de cuenta Microsoft Azure, windows=blank]
+** link:Docs/Tema0/CrearSuscripcionAzureParaEstudiantes.html[Activación de cuenta Microsoft Azure, windows=blank]
 
 * OpenStack-DI
 ** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaOpenStackDI.html[Activación de cuenta OpenStack-DI, windows=blank]
