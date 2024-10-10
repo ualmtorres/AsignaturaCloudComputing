@@ -171,6 +171,9 @@ Si eres alumno de la asignatura en la UAL completa esta https://docs.google.com/
 ** link:Docs/Tema0/creacionProyectoGoogleCloud.html[Creación de un proyecto en Google Cloud Platform, windows=blank]
 ** link:Docs/Tema0/alertas-consumo-GoogleCloud.html[Añadir alertas de consumo (budgets) en Google Cloud, windows=blank]
 
+* Microsoft Azure
+** link:Tema0/ccrear-suscripcion-azure-para-estudiantes.html[Activación de cuenta Microsoft Azure, windows=blank]
+
 * OpenStack-DI
 ** https://ualmtorres.github.io/AsignaturaCloudComputing/Docs/Tema0/ActivacionCuentaOpenStackDI.html[Activación de cuenta OpenStack-DI, windows=blank]
 
@@ -185,6 +188,7 @@ Si eres alumno de la asignatura en la UAL completa esta https://docs.google.com/
 
 * https://docs.google.com/presentation/d/1Dod2suAnFwq8NSYfWs-ytr4hn2GUEL8yHmtj3yfBP_g/edit?usp=sharing[Presentación: Infraestructura de Cloud Computing, windows=blank]
 * link:Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Tutorial: Creación de instancia MySQL en Google Cloud, windows=blank]
+* link:Docs/Tema2/CreacionWebServerAzure.html[Tutorial: Creación de servidor web en Azure, windows=blank]
 * link:Docs/Tema2/AplicacionSGEnModoIaaS.html[Tutorial: Despliegue de una aplicación con base de datos en modo IaaS, windows=blank]
 * link:Docs/Tema2/Enlaces.html[Material complementario, windows=blank]
 
