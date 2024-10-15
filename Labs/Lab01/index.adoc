@@ -12,7 +12,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 ////
 Nombre y título del trabajo
 ////
-# Lab 01 Cloud Computing. Creación de máquinas virtuales en OpenStack-DI
+# Lab 01 Cloud Computing. Creación de máquinas virtuales en entornos cloud
 Máster en Tecnologías y Aplicaciones en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
@@ -34,8 +34,8 @@ En este laboratorio se trabaja el modelo de Infraestructura como servicio. Se cr
 COLOCA A CONTINUACION LOS OBJETIVOS
 ////
 .Objetivos
+* Usar distintos proveedores de servicios cloud para la creación de infraestructura cloud básica
 * Usar los grupos de seguridad para el control de acceso
-* Crear una máquina virtual Windows y acceder a ella por RDP
 * Crear una máquina virtual Linux y acceder a ella por SSH
 * Crear un volumen
 * Conectar un volumen a una máquina virtual
@@ -43,7 +43,8 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 
 .Prerrequisitos
 ****
-* Acceso al proyecto personal en https://openstack.di.ual.es/horizon[OpenStack-DI]. Revisa tu email en Aula virtual para conocer las credenciales de acceso
+* Acceso al proyecto personal en https://openstack.di.ual.es/horizon[OpenStack-DI]. Revisa los anuncios, los recursos complementarios y tu email en Aula virtual para conocer las credenciales de acceso.
+* Cupón activado en Google Cloud Platform (GCP) y Microsoft Azure y con crédito disponible.
 * Los usuarios de Windows deben tener instalada una herramienta para acceso SSH (p.e. Git Bash, Putty). Los usuarios de Linux y Mac usarán la terminal y no tendrán que instalar nada.
 ****
 
@@ -52,7 +53,11 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 
 ## Recursos
 
-Puedes aprender a usar OpenStack-DI siguiendo el https://ualmtorres.github.io/OpenStackDI/[Tutorial HTML sobre OpenStack] o bien en forma de videos donde se dan las explicaciones con mayor detalle:
+Para el desarrollo de este tutorial hay disponible una serie de recursos para la creación de máquinas virtuales en entornos cloud:
+
+### Recursos para OpenStack
+
+Puedes aprender a usar OpenStack siguiendo el https://ualmtorres.github.io/OpenStackDI/[Tutorial HTML sobre OpenStack] o bien en forma de videos donde se dan las explicaciones con mayor detalle:
 
 . https://www.youtube.com/watch?v=HJ5Twdygss0&list=PLoS04oY1FHPP54bnjbp7Iy31ncqhvc41X&index=1[Introducción a OpenStack]
 . https://www.youtube.com/watch?v=cG1tftocgiE&list=PLoS04oY1FHPP54bnjbp7Iy31ncqhvc41X&index=3[Red externa vs Red privada
@@ -67,9 +72,20 @@ Puedes aprender a usar OpenStack-DI siguiendo el https://ualmtorres.github.io/Op
 . https://www.youtube.com/watch?v=0Mt870-u2Gk[Añadir claves públicas a máquinas virtuales Linux]
 . https://www.youtube.com/watch?v=GpB48xg4ixg[Crear volúmenes en Ubuntu]
 
+### Recursos para Google Cloud Platform
+
+* link:../../Docs/Tema2/CreacionBDMySQLGoogleCloud.html[Tutorial: Creación de instancia MySQL en Google Cloud]
+
+### Recursos para Microsoft Azure
+
+* link:../../Docs/Tema2/CreacionWebServerAzure.html[Tutorial: Creación de servidor web en Azure]
+
+
 ## Actividades
 
-### Configuración de la infraestructura de red del proyecto personal
+### Creación de una máquina virtual en OpenStack
+
+#### Configuración de la infraestructura de red del proyecto personal
 
 . Crear una red con el nombre de usuario de Campus virtual (sin el `@inlumine.ual.es`) seguido de `-net`. En el caso de `mtorres`, la red tendría el nombre de `mtorres-net`.
 . Crear una subred con el nombre de usuario de Campus virtual (sin el `@inlumine.ual.es`) seguido de `-subnet`. En el caso de `mtorres`, la red tendría el nombre de `mtorres-subnet`.
@@ -78,7 +94,7 @@ Puedes aprender a usar OpenStack-DI siguiendo el https://ualmtorres.github.io/Op
 . Crear un router con el nombre de usuario de Campus virtual (sin el `@inlumine.ual.es`) seguido de `-router`. En el caso de `mtorres`, la red tendría el nombre de `mtorres-router`. El router se conectará inicialmente a la red externa (p.e. `ext-net`). Después, añadir una segunda interfaz de red al router para conectarlo a la subred de cada uno.
 
 ////
-### Creación de una máquina virtual Windows Server 2012
+#### Creación de una máquina virtual Windows Server 2012
 
 . Lanzar una instancia (máquina virtual) seleccionando una imagen disponible de Windows (Windows Server 2012 R2).
 
@@ -106,7 +122,7 @@ Puedes consultar en cualquier momento el estado de la consola y el log de arranq
 ====
 ////
 
-### Creación de una máquina virtual Ubuntu
+#### Creación de una máquina virtual Ubuntu
 
 . Crear un par de claves SSH si no se dispone de una y subir la clave pública a la cuenta de OpenStack (Menú `Proyecto | Compute | Pares de claves | Importar par de claves`).
 . Lanzar una instancia (máquina virtual) seleccionando una imagen disponible de Ubuntu 18.04 LTS.
@@ -125,7 +141,7 @@ En el paso del Asistente de OpenStack para la creación de una nueva instancia e
 . Editar el archivo `/home/ubuntu/.ssh/authorized_keys` y añadir la clave pública del profesor, disponible en el foro general de la asignatura en Aula virtual.
 . Adjuntar en la actividad disponible en Aula Virtual la dirección IP flotante de la instancia creada.
 
-### Uso de volúmenes de almacenamiento de bloques
+#### Uso de volúmenes de almacenamiento de bloques
 
 . Crear un volumen de 1 GB con el nombre de usuario de Campus virtual (sin el `@inlumine.ual.es`) seguido de `-volume`. En el caso de `mtorres`, el volumen tendría el nombre de `mtorres-volume`.
 . Conectar el volumen a la instancia creada en la actividad anterior.
@@ -133,5 +149,25 @@ En el paso del Asistente de OpenStack para la creación de una nueva instancia e
 . Montar el volumen en la instancia (p.e. en `/mnt`).
 . Crear un archivo con el nombre de usuario de Campus virtual y extensión `.txt`. En el caso de `mtorres`, la archivo se denominaría `mtorres.txt`. Incluir en el contenido del archivo el nombre completo de cada uno.
 . Desmontar y desconectar el volumen de la instancia.
-. Crear una transfencia de volumen y adjuntar el archivo a la actividad en Aula Virtual.
+. Crear una transfencia de volumen y adjuntar a la actividad en Aula Virtual el archivo generado en la transferencia de volumen.
+
+### Creación de una máquina virtual en Google Cloud Platform
+
+. Crear una instancia de máquina virtual Ubuntu en Google Cloud Platform
+. Acceder a la instancia mediante una terminal SSH (se puede usar la propia terminal de Google Cloud Platform)
+. Instalar un servidor web Apache
+. Clonar este https://github.com/cloudacademy/static-website-example.git[repositorio de ejemplo de web estática] y desplegarlo en la instancia en el directorio `/var/www/html`.
+. Configurar el firewall para permitir el tráfico HTTP.
+. Comprobar que la web está disponible en la dirección IP de la instancia.
+. Adjuntar en la actividad disponible en Aula Virtual la dirección IP de la instancia creada y una captura de pantalla de la web desplegada mostrando la dirección IP en la barra de direcciones.
+
+### Creación de una máquina virtual en Microsoft Azure
+
+. Crear una instancia de máquina virtual Ubuntu en Microsoft Azure
+. Acceder a la instancia mediante una terminal SSH (se puede usar la propia terminal de Google Cloud Platform)
+. Instalar un servidor web Apache
+. Clonar este https://github.com/cloudacademy/static-website-example.git[repositorio de ejemplo de web estática] y desplegarlo en la instancia en el directorio `/var/www/html`.
+. Configurar el firewall para permitir el tráfico HTTP.
+. Comprobar que la web está disponible en la dirección IP de la instancia.
+. Adjuntar en la actividad disponible en Aula Virtual la dirección IP de la instancia creada y una captura de pantalla de la web desplegada mostrando la dirección IP en la barra de direcciones.
 

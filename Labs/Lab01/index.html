@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.22">
 <meta name="author" content="Máster en Tecnologías y Aplicaciones en Ingeniería Informática">
-<title>Lab 01 Cloud Computing. Creación de máquinas virtuales en OpenStack-DI</title>
+<title>Lab 01 Cloud Computing. Creación de máquinas virtuales en entornos cloud</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,7 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-right">
 <div id="header">
-<h1>Lab 01 Cloud Computing. Creación de máquinas virtuales en OpenStack-DI</h1>
+<h1>Lab 01 Cloud Computing. Creación de máquinas virtuales en entornos cloud</h1>
 <div class="details">
 <span id="author" class="author">Máster en Tecnologías y Aplicaciones en Ingeniería Informática</span><br>
 <span id="revdate">José Joaquín Cañadas y Manuel Torres &lt;jjcanada@ual.es&gt; &lt;mtorres@ual.es&gt;</span>
@@ -446,12 +446,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Tabla de contenidos</div>
 <ul class="sectlevel1">
 <li><a href="#_resumen">Resumen</a></li>
-<li><a href="#_recursos">1. Recursos</a></li>
+<li><a href="#_recursos">1. Recursos</a>
+<ul class="sectlevel2">
+<li><a href="#_recursos_para_openstack">1.1. Recursos para OpenStack</a></li>
+<li><a href="#_recursos_para_google_cloud_platform">1.2. Recursos para Google Cloud Platform</a></li>
+<li><a href="#_recursos_para_microsoft_azure">1.3. Recursos para Microsoft Azure</a></li>
+</ul>
+</li>
 <li><a href="#_actividades">2. Actividades</a>
 <ul class="sectlevel2">
-<li><a href="#_configuración_de_la_infraestructura_de_red_del_proyecto_personal">2.1. Configuración de la infraestructura de red del proyecto personal</a></li>
-<li><a href="#_creación_de_una_máquina_virtual_ubuntu">2.2. Creación de una máquina virtual Ubuntu</a></li>
-<li><a href="#_uso_de_volúmenes_de_almacenamiento_de_bloques">2.3. Uso de volúmenes de almacenamiento de bloques</a></li>
+<li><a href="#_creación_de_una_máquina_virtual_en_openstack">2.1. Creación de una máquina virtual en OpenStack</a></li>
+<li><a href="#_creación_de_una_máquina_virtual_en_google_cloud_platform">2.2. Creación de una máquina virtual en Google Cloud Platform</a></li>
+<li><a href="#_creación_de_una_máquina_virtual_en_microsoft_azure">2.3. Creación de una máquina virtual en Microsoft Azure</a></li>
 </ul>
 </li>
 </ul>
@@ -477,10 +483,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Objetivos</div>
 <ul>
 <li>
-<p>Usar los grupos de seguridad para el control de acceso</p>
+<p>Usar distintos proveedores de servicios cloud para la creación de infraestructura cloud básica</p>
 </li>
 <li>
-<p>Crear una máquina virtual Windows y acceder a ella por RDP</p>
+<p>Usar los grupos de seguridad para el control de acceso</p>
 </li>
 <li>
 <p>Crear una máquina virtual Linux y acceder a ella por SSH</p>
@@ -502,7 +508,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Acceso al proyecto personal en <a href="https://openstack.di.ual.es/horizon">OpenStack-DI</a>. Revisa tu email en Aula virtual para conocer las credenciales de acceso</p>
+<p>Acceso al proyecto personal en <a href="https://openstack.di.ual.es/horizon">OpenStack-DI</a>. Revisa los anuncios, los recursos complementarios y tu email en Aula virtual para conocer las credenciales de acceso.</p>
+</li>
+<li>
+<p>Cupón activado en Google Cloud Platform (GCP) y Microsoft Azure y con crédito disponible.</p>
 </li>
 <li>
 <p>Los usuarios de Windows deben tener instalada una herramienta para acceso SSH (p.e. Git Bash, Putty). Los usuarios de Linux y Mac usarán la terminal y no tendrán que instalar nada.</p>
@@ -517,7 +526,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_recursos">1. Recursos</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Puedes aprender a usar OpenStack-DI siguiendo el <a href="https://ualmtorres.github.io/OpenStackDI/">Tutorial HTML sobre OpenStack</a> o bien en forma de videos donde se dan las explicaciones con mayor detalle:</p>
+<p>Para el desarrollo de este tutorial hay disponible una serie de recursos para la creación de máquinas virtuales en entornos cloud:</p>
+</div>
+<div class="sect2">
+<h3 id="_recursos_para_openstack">1.1. Recursos para OpenStack</h3>
+<div class="paragraph">
+<p>Puedes aprender a usar OpenStack siguiendo el <a href="https://ualmtorres.github.io/OpenStackDI/">Tutorial HTML sobre OpenStack</a> o bien en forma de videos donde se dan las explicaciones con mayor detalle:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -555,12 +569,35 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_recursos_para_google_cloud_platform">1.2. Recursos para Google Cloud Platform</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../Docs/Tema2/CreacionBDMySQLGoogleCloud.html">Tutorial: Creación de instancia MySQL en Google Cloud</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_recursos_para_microsoft_azure">1.3. Recursos para Microsoft Azure</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../Docs/Tema2/CreacionWebServerAzure.html">Tutorial: Creación de servidor web en Azure</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_actividades">2. Actividades</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_configuración_de_la_infraestructura_de_red_del_proyecto_personal">2.1. Configuración de la infraestructura de red del proyecto personal</h3>
+<h3 id="_creación_de_una_máquina_virtual_en_openstack">2.1. Creación de una máquina virtual en OpenStack</h3>
+<div class="sect3">
+<h4 id="_configuración_de_la_infraestructura_de_red_del_proyecto_personal">2.1.1. Configuración de la infraestructura de red del proyecto personal</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -585,8 +622,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_creación_de_una_máquina_virtual_ubuntu">2.2. Creación de una máquina virtual Ubuntu</h3>
+<div class="sect3">
+<h4 id="_creación_de_una_máquina_virtual_ubuntu">2.1.2. Creación de una máquina virtual Ubuntu</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -630,8 +667,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_uso_de_volúmenes_de_almacenamiento_de_bloques">2.3. Uso de volúmenes de almacenamiento de bloques</h3>
+<div class="sect3">
+<h4 id="_uso_de_volúmenes_de_almacenamiento_de_bloques">2.1.3. Uso de volúmenes de almacenamiento de bloques</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -653,7 +690,64 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Desmontar y desconectar el volumen de la instancia.</p>
 </li>
 <li>
-<p>Crear una transfencia de volumen y adjuntar el archivo a la actividad en Aula Virtual.</p>
+<p>Crear una transfencia de volumen y adjuntar a la actividad en Aula Virtual el archivo generado en la transferencia de volumen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_creación_de_una_máquina_virtual_en_google_cloud_platform">2.2. Creación de una máquina virtual en Google Cloud Platform</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Crear una instancia de máquina virtual Ubuntu en Google Cloud Platform</p>
+</li>
+<li>
+<p>Acceder a la instancia mediante una terminal SSH (se puede usar la propia terminal de Google Cloud Platform)</p>
+</li>
+<li>
+<p>Instalar un servidor web Apache</p>
+</li>
+<li>
+<p>Clonar este <a href="https://github.com/cloudacademy/static-website-example.git">repositorio de ejemplo de web estática</a> y desplegarlo en la instancia en el directorio <code>/var/www/html</code>.</p>
+</li>
+<li>
+<p>Configurar el firewall para permitir el tráfico HTTP.</p>
+</li>
+<li>
+<p>Comprobar que la web está disponible en la dirección IP de la instancia.</p>
+</li>
+<li>
+<p>Adjuntar en la actividad disponible en Aula Virtual la dirección IP de la instancia creada y una captura de pantalla de la web desplegada mostrando la dirección IP en la barra de direcciones.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_creación_de_una_máquina_virtual_en_microsoft_azure">2.3. Creación de una máquina virtual en Microsoft Azure</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Crear una instancia de máquina virtual Ubuntu en Microsoft Azure</p>
+</li>
+<li>
+<p>Acceder a la instancia mediante una terminal SSH (se puede usar la propia terminal de Google Cloud Platform)</p>
+</li>
+<li>
+<p>Instalar un servidor web Apache</p>
+</li>
+<li>
+<p>Clonar este <a href="https://github.com/cloudacademy/static-website-example.git">repositorio de ejemplo de web estática</a> y desplegarlo en la instancia en el directorio <code>/var/www/html</code>.</p>
+</li>
+<li>
+<p>Configurar el firewall para permitir el tráfico HTTP.</p>
+</li>
+<li>
+<p>Comprobar que la web está disponible en la dirección IP de la instancia.</p>
+</li>
+<li>
+<p>Adjuntar en la actividad disponible en Aula Virtual la dirección IP de la instancia creada y una captura de pantalla de la web desplegada mostrando la dirección IP en la barra de direcciones.</p>
 </li>
 </ol>
 </div>
@@ -663,7 +757,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-15 14:00:07 +0200
+Last updated 2024-10-15 14:28:15 +0200
 </div>
 </div>
 </body>
