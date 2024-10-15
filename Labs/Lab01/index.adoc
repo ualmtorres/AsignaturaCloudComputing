@@ -163,10 +163,11 @@ En el paso del Asistente de OpenStack para la creación de una nueva instancia e
 
 ### Creación de una máquina virtual en Microsoft Azure
 
-. Crear una instancia de máquina virtual Ubuntu en Microsoft Azure
-. Acceder a la instancia mediante una terminal SSH (se puede usar la propia terminal de Google Cloud Platform)
-. Instalar un servidor web Apache
-. Clonar este https://github.com/cloudacademy/static-website-example.git[repositorio de ejemplo de web estática] y desplegarlo en la instancia en el directorio `/var/www/html`.
+. Crear una instancia de máquina virtual en Microsoft Azure con:
+    . Ubuntu como sistema operativo
+    . Configurada al inicio con un script que:
+        . Instale un servidor web Apache
+        . Clone este https://github.com/cloudacademy/static-website-example.git[repositorio de ejemplo de web estática] en la instancia en el directorio `/var/www/html`.
 . Configurar el firewall para permitir el tráfico HTTP.
 . Comprobar que la web está disponible en la dirección IP de la instancia.
 . Adjuntar en la actividad disponible en Aula Virtual la dirección IP de la instancia creada y una captura de pantalla de la web desplegada mostrando la dirección IP en la barra de direcciones.
