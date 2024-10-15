@@ -218,7 +218,7 @@ Si eres alumno de la asignatura en la UAL completa esta https://docs.google.com/
 
 ## Trabajo autónomo
 
-* link:Labs/Lab01/index.html[Lab 01. Creación de máquinas virtuales en OpenStack-DI, windows=blank] 
+* link:Labs/Lab01/index.html[Lab 01. Creación de máquinas virtuales en entornos cloud, windows=blank] 
 * link:Labs/Lab03/index.html[Lab 03. Despliegue mixto en modo PaaS y en modo IaaS, windows=blank] 
 * link:Labs/Lab05/index.html[Lab 05. Despliegue de contenedores en OpenStack-DI y en Google Cloud, windows=blank] 
 * link:Labs/Lab06/index.html[Lab 06. Despliegue automatizado con Terraform, windows=blank] 
