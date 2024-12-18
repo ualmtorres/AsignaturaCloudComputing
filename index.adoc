@@ -181,7 +181,7 @@ Si eres alumno de la asignatura en la UAL completa esta https://docs.google.com/
 
 ### Tema 1. Modelos de servicio con Computación en la Nube
 
-* link:Docs/Tema1/01ModelosDeServicioConComputacionEnLaNube.pdf[Presentación: Modelos de servicio con Computación en la Nube, windows=blank]
+* link:https://docs.google.com/presentation/d/14_bGZqZGjY7SgPIy2HTgC_SJbeiQJfwQIqwGl4A8O34/edit?usp=sharing[Presentación: Modelos de servicio con Computación en la Nube, windows=blank]
 * link:Docs/Tema1/Enlaces.html[Material complementario, windows=blank]
 
 ### Tema 2. Infraestructura de Cloud Computing

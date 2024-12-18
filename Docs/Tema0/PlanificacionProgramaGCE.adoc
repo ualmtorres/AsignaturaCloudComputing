@@ -102,8 +102,6 @@ image::images/GoogleCloudPlatformFundamentalsCoreInfrastructure.png[width=33%]
 
 * Contenedores en la nube
 * Aplicaciones en la nube
-* Desarrollo, implementación y supervisión en la nube
-* Macrodatos y aprendizaje automático en la nube
 * Resumen y repaso
 
 ### Semana 7
