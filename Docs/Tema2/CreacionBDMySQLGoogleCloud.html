@@ -515,7 +515,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>En el Menú de navegación ir a la categoría <code>BASES DE DATOS</code> y seleccionar <code>SQL</code>. Esto permite crear bases de datos MySQL, PostgreSQL y SQL Server totalmente gestionadas. Google Cloud se encargará de las tareas de replicación, actualización de parches, y demás.</p>
+<p>En el Menú de navegación ir a la categoría <code>Cloud SQL</code> y seleccionar <code>Instancias</code>. Esto permite crear bases de datos MySQL, PostgreSQL y SQL Server totalmente gestionadas. Google Cloud se encargará de las tareas de replicación, actualización de parches, y demás.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/CloudSQLInicio.png" alt="CloudSQLInicio">
@@ -546,6 +546,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>En el cuadro de dialogo <code>Crear una instancia de MySQL</code> configurar valores para el <code>ID de instancia</code> (p.e. <code>sg</code>) y la contraseña de <code>root</code>. Seleccionar MySQL 8.0 como versión de MySQL.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Si aparece un mensaje indicando que no se ha habilitado la API de Cloud SQL y/o de Compute Engine, pulsar el botón <code>Habilitar API</code> para activarla. Esta acción habilita las API necesarias para crear y gestionar instancias Cloud SQL y máquinas virtuales de Compute Engine. Esta opción puede tardar unos minutos en completarse y sólo será necesario realizarla la primera vez que se cree una instancia Cloud SQL en el proyecto.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -569,16 +583,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Desplegar <code>Tipo de máquina y almacenamiento</code>. Como es para una prueba, en <code>Formas de máquinas</code> elegir una máquina estándar (<code>Núcleo exclusivo</code>) con 1 vCPU y 3.75 GB de RAM.</p>
+<p>Desplegar <code>Configuración de la máquina</code>. Como es para una prueba, elegir una máquina pequeña con 1 vCPU y 3.75 GB de RAM.</p>
 </li>
 <li>
-<p>En <code>Tipo de almacenamiento</code> dejar <code>SSD</code> con una capacidad de almacenamiento de <code>10 GB</code>.</p>
+<p>En <code>Almacenamiento</code> dejar <code>HDD</code> con una capacidad de almacenamiento de <code>10 GB</code>.</p>
 </li>
 <li>
-<p>Desactivar la opción <code>Habilitar los aumentos automáticos de almacenamiento</code> para evitar el creacimiento del almacenamiento.</p>
+<p>Desactivar la opción <code>Habilitar los aumentos de almacenamiento automáticos</code> para evitar el crecimiento del almacenamiento.</p>
 </li>
 <li>
-<p>Dejar las opciones predeterminadas de <code>Copias de seguridad, recuperación y alta disponibilidad</code>.</p>
+<p>Dejar las opciones predeterminadas de <code>Protección de datos</code>.</p>
 </li>
 <li>
 <p>Dejar las opciones predeterminadas de <code>Mantenimiento</code>.</p>
@@ -652,13 +666,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p>Pulsar sobre <code>Añadir red</code></p>
+<p>En <code>Redes</code>, pulsar sobre <code>Agregar una red</code></p>
 </li>
 <li>
 <p>Asignaremos un nombre descriptivo (p.e. <code>Internet</code>)</p>
 </li>
 <li>
 <p>Configurar la máscara de red a <code>0.0.0.0/0</code> que representa cualquier dirección IP.</p>
+</li>
+<li>
+<p>Lee los riesgos de seguridad asociados a esta configuración y confirma marcando la casilla de verificación.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/MySQLAnadirRed.png" alt="MySQLAnadirRed">
@@ -729,12 +746,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_almacenar_el_script_sql_en_cloud_storage">4.1. Almacenar el script SQL en Cloud Storage</h3>
 <div class="paragraph">
-<p>Cloud Storage proporciona almacenamiento de objetos, una forma de almacenar cualquier tipo de archivos a los que se proporciona una URL que permite su acceso universal. Los archivos son organizados en segmentos o <em>buckets</em>.</p>
+<p>Cloud Storage proporciona almacenamiento de objetos, una forma de almacenar cualquier tipo de archivos a los que se proporciona una URL que permite su acceso universal. Los archivos son organizados en depósitos o <em>buckets</em>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>En el menú <code>ALMACENAMIENTO</code> seleccionar <code>Storage</code>. Aparecerá el Navegador de Storage mostrando una lista vacía de segmentos (<em>buckets</em>)</p>
+<p>En el menú <code>Cloud Storage</code> seleccionar <code>Buckets</code>. Aparecerá el Navegador de Storage mostrando una lista vacía de <em>buckets</em></p>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageInicial.png" alt="StorageInicial">
@@ -742,32 +759,37 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p>Seleccionar <code>Crear Segmento</code>. En el cuadro de diálogo asignar un nombre al segmento. Debe tratarse de un nombre único ya que se usará para componer la URL de los objetos (archivos) que contenga. Revisar el resto de opciones y crear el segmento.</p>
+<p>Seleccionar <code>Crear bucket</code>. En el cuadro de diálogo asignar un nombre al bucket. Debe tratarse de un nombre único ya que se usará para componer la URL de los objetos (archivos) que contenga. Revisar el resto de opciones y crear el bucket.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageNombre.png" alt="StorageNombre">
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Aparecerá un cuadro de diálogo indicando el nivel de acceso al bucket. De forma predeterminada, el bucket no es público y sólo el propietario del proyecto podrá acceder a él. Por ahora dejaremos el bucket privado.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title">Subida de archivos al segmento</div>
+<div class="title">Subida de archivos al bucket</div>
 <div class="paragraph">
-<p>Se pueden subir archivos al segmento desde nuestro propio ordenador usando la interfaz web o desde una terminal donde esté instalada la API de Cloud Storage. Cloud Shell se inicializa con dicha API y se podrán copiar archivos desde Cloud Shell a un segmento de Cloud Storage. Previamente se habrán descargado los archivos a Cloud Shell.</p>
+<p>Se pueden subir archivos al bucket desde nuestro propio ordenador usando la interfaz web o desde una terminal donde esté instalada la API de Cloud Storage. Cloud Shell se inicializa con dicha API y se podrán copiar archivos desde Cloud Shell a un bucket de Cloud Storage. Previamente se habrán descargado los archivos a Cloud Shell.</p>
 </div>
 </div>
 </div>
 </li>
 <li>
-<p>Abrir Cloud Shell para descargar el script SQL y copiarlo al segmento.</p>
-</li>
-<li>
-<p>Descargar a Cloud Shell el <a href="https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql">script SQL de creación de la base de datos SG</a>.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44
-d7102d66077a393dad555585862f923/init.sql --output init.sql</code></pre>
-</div>
-</div>
+<p>Abrir Cloud Shell para descargar el script SQL y copiarlo al bucket.</p>
 </li>
 <li>
 <p>Google Cloud nos advierte que necesita incluir nuestras credenciales en Cloud Shell. Pulsaremos <code>Autorizar</code>.</p>
@@ -778,16 +800,24 @@ d7102d66077a393dad555585862f923/init.sql --output init.sql</code></pre>
 </div>
 </li>
 <li>
+<p>Descargar a Cloud Shell el <a href="https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql">script SQL de creación de la base de datos SG</a>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql --output init.sql</code></pre>
+</div>
+</div>
+</li>
+<li>
 <p>Copiar el archivo <code>init.sql</code> de Cloud Shell al segmento</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">gsutil cp init.sql gs://cloud-computing-mtorres/init.sql <b class="conum">(1)</b></code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">gsutil cp init.sql gs://cloud-computing-2026-mtorres/init.sql <b class="conum">(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <ol>
 <li>
-<p>Cambiar el nombre del segmento `cloud-computing-mtorres por el que hayas usado</p>
+<p>Cambiar el nombre del segmento `cloud-computing-2026-mtorres por el que hayas usado</p>
 </li>
 </ol>
 </div>
@@ -826,7 +856,7 @@ d7102d66077a393dad555585862f923/init.sql --output init.sql</code></pre>
 </div>
 </li>
 <li>
-<p>Seleccionar el archivo <code>init.sql</code> del segmento</p>
+<p>Seleccionar el bucket (p.e. <code>cloud-computing-2026-mtorres</code>) y el archivo <code>init.sql</code> del bucket</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/MySQLSeleccionarArchivo.png" alt="MySQLSeleccionarArchivo">
@@ -893,7 +923,7 @@ d7102d66077a393dad555585862f923/init.sql --output init.sql</code></pre>
 <div class="sect2">
 <h3 id="_creación_de_una_máquina_virtual">4.3. Creación de una máquina virtual</h3>
 <div class="paragraph">
-<p>Una opción más laboriosa y quizá menos justificada en este caso consiste en crear una máquina virtual en la que se instalará el cliente MySQL para la carga de datos e interacción con la base de datos.</p>
+<p>Una opción más laboriosa y quizá menos justificada en este caso consiste en crear una máquina virtual en la que se instalará el cliente MySQL para la carga de datos e interacción con el servidor MySQL creado previamente.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -938,14 +968,17 @@ d7102d66077a393dad555585862f923/init.sql --output init.sql</code></pre>
 <p>Serie N1</p>
 </li>
 <li>
-<p>Tipo de máquina <code>g1-small (1 vCPU y 1.7 GB RAM)</code></p>
+<p>Tipo de máquina <code>g1-small (1 vCPU y 1.7 GB RAM)</code> de núcleo compartido.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Si no se modificada nada en <code>SO y almacenamiento</code>, se usará un disco de 10 GB con Debian 12 bookworm como sistema operativo.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/InstanciasCrearBasica.png" alt="InstanciasCrearBasica">
 </div>
-</div>
-</li>
-</ul>
 </div>
 </li>
 <li>
@@ -953,29 +986,36 @@ d7102d66077a393dad555585862f923/init.sql --output init.sql</code></pre>
 <div class="paragraph">
 <p>Tras unos instantes, la máquina virtual estará creada y contará con una dirección IP a la que nos podríamos conectar mediante SSH descargando previamente el certificado.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/MySQLIP.png" alt="MySQLIP">
-</div>
-</div>
-<div class="paragraph">
-<p>No obstante, es más sencillo abrir directamente la consola SSH que ofrece Google Cloud y que se muestra a la derecha de cada instancia de la lista.</p>
+</li>
+</ol>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/InstanciaCreadaSSH.png" alt="InstanciaCreadaSSH">
+<img src="images/InstanciaCreada.png" alt="InstanciaCreada">
 </div>
 </div>
 <div class="paragraph">
-<p>Esto abrirá una sesión SSH en nuestro ordenador.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/InstanciaTerminal.png" alt="InstanciaTerminal">
-</div>
+<p>+
+No obstante, es más sencillo abrir directamente la consola SSH que ofrece Google Cloud y que se muestra a la derecha de cada instancia de la lista.</p>
 </div>
 <div class="paragraph">
-<p>En esa terminal instalaremos el cliente MySQL con estos comandos</p>
+<p>+
+image::images/InstanciaCreadaSSH.png[]</p>
+</div>
+<div class="paragraph">
+<p>+
+Esto abrirá una sesión SSH en el navegador.</p>
+</div>
+<div class="paragraph">
+<p>+
+image::images/InstanciaTerminal.png[]</p>
+</div>
+<div class="paragraph">
+<p>+
+En esa terminal instalaremos el cliente MySQL con estos comandos</p>
+</div>
+<div class="paragraph">
+<p>+</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -986,25 +1026,25 @@ sudo apt-get install default-mysql-client <b class="conum">(1)</b></code></pre>
 <div class="colist arabic">
 <ol>
 <li>
-<p>Debian Buster usa el paquete <code>default-mysql-client</code> como cliente MySQL</p>
-</li>
-</ol>
-</div>
+<p>Debian usa el paquete <code>default-mysql-client</code> como cliente MySQL</p>
 <div class="paragraph">
 <p>A continuación se siguen los mismos pasos que se siguieron para crear la base de datos desde Cloud Shell (descargar el script y ejecutarlo con el cliente MySQL).</p>
 </div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Descargar a la máquina virtual el <a href="https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql">script SQL de creación de la base de datos SG</a>.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44
-d7102d66077a393dad555585862f923/init.sql --output init.sql</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql --output init.sql</code></pre>
 </div>
 </div>
 </li>
 <li>
 <p>Ejecutar el script de creación de la base de datos SG en la instancia MySQL</p>
+</li>
+</ol>
+</div>
 </li>
 </ol>
 </div>
@@ -1114,7 +1154,7 @@ mysql&gt; select id, name <b class="conum">(4)</b>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-24 17:59:10 +0200
+Last updated 2025-10-20 14:47:34 +0200
 </div>
 </div>
 </body>

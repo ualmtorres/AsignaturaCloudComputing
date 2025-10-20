@@ -8,10 +8,9 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 :toc-title: Tabla de contenidos
 :doctype: book
 :linkattrs:
-
-
+:sectnums:
 :figure-caption: Fig.
-
+:chapter-label!:
 ////
 Nombre y título del trabajo
 ////

@@ -8,8 +8,8 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 :toc-title: Tabla de contenidos
 :doctype: book
 :linkattrs:
-
-
+:sectnums:
+:chapter-label!:
 :figure-caption: Fig.
 
 ////
