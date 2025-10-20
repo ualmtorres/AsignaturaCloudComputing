@@ -448,7 +448,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_resumen">Resumen</a></li>
 <li><a href="#_introducción">1. Introducción</a></li>
 <li><a href="#_descripción_del_escenario">2. Descripción del escenario</a></li>
-<li><a href="#_despliegue_en_openstack_di">3. Despliegue en OpenStack-DI</a>
+<li><a href="#_despliegue_en_cloud_privado_openstack">3. Despliegue en cloud privado OpenStack</a>
 <ul class="sectlevel2">
 <li><a href="#_requisitos_previos">3.1. Requisitos previos</a></li>
 <li><a href="#_crear_instancia_mysql">3.2. Crear instancia MySQL</a></li>
@@ -480,7 +480,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_resumen">Resumen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>En este tutorial se muestra uno de los ejemplos básicos y habituales de desarrollo de aplicaciones en entornos cloud. Se trata de crear una instancia dedicada a la base de datos y otra instancia dedicada a la aplicación. Se verá también la importancia del uso de variables de entorno y los ejemplos se ilustrarán en OpenStack-DI y Google Cloud.</p>
+<p>En este tutorial se muestra uno de los ejemplos básicos y habituales de desarrollo de aplicaciones en entornos cloud. Se trata de crear una instancia dedicada a la base de datos y otra instancia dedicada a la aplicación. Se verá también la importancia del uso de variables de entorno y los ejemplos se ilustrarán en un cloud privado OpenStack y Google Cloud.</p>
 </div>
 <div class="ulist">
 <div class="title">Objetivos</div>
@@ -538,20 +538,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_despliegue_en_openstack_di">3. Despliegue en OpenStack-DI</h2>
+<h2 id="_despliegue_en_cloud_privado_openstack">3. Despliegue en cloud privado OpenStack</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://openstack.di.ual.es/horizon">OpenStack-DI</a> ofrece Infraestructura como servicio dentro de la red de la UAL. Para conexiones desde el exterior es necesaria una conexión VPN.</p>
+<p>El cloud privado OpenStack ofrece Infraestructura como servicio dentro de la red de la UAL. Para conexiones desde el exterior es necesaria una conexión VPN.</p>
 </div>
 <div class="sect2">
 <h3 id="_requisitos_previos">3.1. Requisitos previos</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Cuenta creada en OpenStack-DI</p>
+<p>Cuenta creada en el cloud privado OpenStack usado en la asignatura.</p>
 </li>
 <li>
-<p>Proyecto OpenStack con la infraestructura básica de red configurada. <a href="https://ualmtorres.github.io/OpenStackSTIC/#truenetworking">(Tutorial Configuración de infraestructura básica de red</a>. En OpenStack-DI la red externa se denomina <code>externa</code>)</p>
+<p>Proyecto OpenStack con la infraestructura básica de red configurada. <a href="https://ualmtorres.github.io/OpenStackSTIC/#truenetworking">(Tutorial Configuración de infraestructura básica de red</a>. En el cloud privado la red externa se denomina <code>externa</code>, <code>public</code>, o similar.</p>
 </li>
 <li>
 <p>Disponer de un par de claves SSH. <a href="https://ualmtorres.github.io/OpenStackSTIC/#truegeneraci-n-de-claves-ssh">(Tutorial Generación de claves SSH)</a></p>
@@ -590,10 +590,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p>En el paso <code>Origen</code> se indica cuál es la imagen que se toma de base para crear la instancia o máquina virtual. En este ejemplo seleccionar en el desplegable <code>Seleccionar Origen de arranque</code> el valor <code>Imagen</code>. En la opción <code>Crear nuevo volumen</code> seleccionar <code>No</code>. Seleccionar la imagen <code>Ubuntu 16.04 LTS</code>. <strong>El script de instalación, configuración e inicialización de una base de datos que se proporciona está probado en Ubuntu 16.04 LTS</strong></p>
+<p>En el paso <code>Origen</code> se indica cuál es la imagen que se toma de base para crear la instancia o máquina virtual. En este ejemplo seleccionar en el desplegable <code>Seleccionar Origen de arranque</code> el valor <code>Imagen</code>. En la opción <code>Crear nuevo volumen</code> seleccionar <code>No</code>. Seleccionar la imagen de Ubuntu 24.04 que hayas disponible. <strong>El script de instalación, configuración e inicialización de una base de datos que se proporciona está probado en Ubuntu 24.04 LTS</strong></p>
 </li>
 <li>
-<p>En el paso <code>Sabor</code> se selecciona el tamaño que tendrá la instancia en términos de CPU, RAM y disco. Seleccionar el sabor <code>small</code>.</p>
+<p>En el paso <code>Sabor</code> se selecciona el tamaño que tendrá la instancia en términos de CPU, RAM y disco. Seleccionar el sabor <code>small</code> o <code>m1.small</code> que proporciona 1 vCPU, 2 GB de RAM y 20 GB de disco, que es suficiente para este ejemplo.</p>
 </li>
 <li>
 <p>En el paso <code>Redes</code> se establece la comunicación que tendrá la instancia con el exterior. Seleccionar la red del proyecto si no está seleccionada ya.</p>
@@ -618,48 +618,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 apt-get update <b class="conum">(1)</b>
 debconf-set-selections &lt;&lt;&lt; 'mysql-server mysql-server/root_password password secret' <b class="conum">(2)</b>
 debconf-set-selections &lt;&lt;&lt; 'mysql-server mysql-server/root_password_again password secret'
-apt-get -y install mysql-server <b class="conum">(3)</b>
+apt-get -y install mysql-server-8.0 <b class="conum">(3)</b>
 curl 'https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql' | mysql -u root -psecret <b class="conum">(4)</b>
-sed -i 's/bind-address/#bind-address/g' /etc/mysql/mysql.conf.d/mysqld.cnf <b class="conum">(5)</b>
+sed -i 's/^\(bind-address\s*=\s*127\.0\.0\.1\)/#\1/' /etc/mysql/mysql.conf.d/mysqld.cnf <b class="conum">(5)</b>
+sed -i 's/^\(mysqlx-bind-address\s*=\s*127\.0\.0\.1\)/#\1/' /etc/mysql/mysql.conf.d/mysqld.cnf
 service mysql restart <b class="conum">(6)</b>
-mysql -u root -psecret --execute="GRANT ALL ON SG.* TO root@'%' IDENTIFIED BY 'secret'; FLUSH PRIVILEGES"; <b class="conum">(7)</b></code></pre>
+mysql -u root -psecret --execute="CREATE USER IF NOT EXISTS 'root'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON SG.* TO 'root'@'%'; FLUSH PRIVILEGES;" <b class="conum">(7)</b>
+&lt;1&gt; Actualización del repositorio de paquetes
+&lt;2&gt; Paso de las contraseñas de instalación.
+&lt;3&gt; Instalación de MySQL
+&lt;4&gt; Descarga del script de inicialización de la base de datos SG y carga en MySQL
+&lt;5&gt; Modificación del archivo `mysqld.cnf` para permitir las conexiones remotas
+&lt;6&gt; Reinicio del servicio MySQL para aplicar los cambios
+&lt;7&gt; Permitir el acceso al usuario `root` a la base de datos SG desde cualquier sitio
+
+[NOTE]
+====
+Se está usando el password `secret`. Cambiarlo por cualquier otro.
+====</code></pre>
 </div>
-</div>
-<div class="colist arabic">
-<ol>
-<li>
-<p>Actualización del repositorio de paquetes</p>
-</li>
-<li>
-<p>Paso de las contraseñas de instalación.</p>
-</li>
-<li>
-<p>Instalación de MySQL</p>
-</li>
-<li>
-<p>Descarga del script de inicialización de la base de datos SG y carga en MySQL</p>
-</li>
-<li>
-<p>Modificación del archivo <code>mysqld.cnf</code> para permitir las conexiones remotas</p>
-</li>
-<li>
-<p>Permitir el acceso al usuario <code>root</code> a la base de datos SG desde cualquier sitio</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Se está usando el password <code>secret</code>. Cambiarlo por cualquier otro.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -710,8 +687,8 @@ mysql -u root -psecret --execute="GRANT ALL ON SG.* TO root@'%' IDENTIFIED BY 's
 <pre class="highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
 apt-get update <b class="conum">(1)</b>
 apt-get install -y apache2 <b class="conum">(2)</b>
-sudo apt-get install -y php libapache2-mod-php php-mysql php-mcrypt <b class="conum">(3)</b>
-sed -i 's/#extension=php_mysqli.dll/extension=php_mysqli.dll/g' /etc/php/7.0/apache2/php.ini <b class="conum">(4)</b>
+sudo apt-get install -y php8.3 libapache2-mod-php8.3 php8.3-mysql php8.3-mcrypt <b class="conum">(3)</b>
+sed -i 's/;extension=mysqli/extension=mysqli/g' /etc/php/8.3/apache2/php.ini <b class="conum">(4)</b>
 sudo chgrp -R www-data /var/www <b class="conum">(5)</b>
 sudo chmod -R 775 /var/www
 sudo chmod -R g+s /var/www
@@ -795,7 +772,7 @@ git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp <b class="
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Obtener la dirección IP fija de la máquina virtual <code>mysql</code>. En el ejemplo de la figura sería <code>10.0.0.17</code>. Lbasea comunicación entre la máquina virtual de la aplicación y la de la base de datos se realizará por la red del proyecto. No es necesario crear una IP pública para la máquina virtual de MySQL por este motivo.</p>
+<p>Obtener la dirección IP fija de la máquina virtual <code>mysql</code>. En el ejemplo de la figura sería <code>10.0.0.17</code>. La comunicación entre la máquina virtual de la aplicación y la de la base de datos se realizará por la red del proyecto. No es necesario crear una IP pública para la máquina virtual de MySQL por este motivo.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/SGAppDireccionesIP.png" alt="SGAppDireccionesIP">
@@ -904,10 +881,7 @@ export MYSQL_PASSWORD=secret</code></pre>
 <p>En la sección <code>Configuración de la máquina</code> seleccionar la <code>N1</code> en el desplegable <code>Serie</code> y <code>g1-small</code> (1 vCPU y 1.7 GB de RAM) en la lista desplegable <code>Tipo de máquina</code>.</p>
 </li>
 <li>
-<p>En la sección <code>Disco de arranque</code> cambiar la imagen a <code>Ubuntu 16.04 LTS</code> y mantener el disco en 10 GB de tamaño.</p>
-</li>
-<li>
-<p>En la sección <code>Cortafuegos</code> seleccionar la casilla de verificación <code>Permitir el tráfico HTTP</code>.</p>
+<p>En la sección <code>Disco de arranque</code> elegir una imagen Debian y mantener el disco en 10 GB de tamaño.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/GoogleCloudCrearSGApp.png" alt="GoogleCloudCrearSGApp">
@@ -915,20 +889,40 @@ export MYSQL_PASSWORD=secret</code></pre>
 </div>
 </li>
 <li>
-<p>Desplegar <code>Administración, seguridad, discos, redes, único propietario</code></p>
+<p>En el menú <code>Redes</code> seleccionar la casilla de verificación <code>Permitir el tráfico HTTP</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/GoogleCloudPermitirHTTP.png" alt="GoogleCloudPermitirHTTP">
+</div>
+</div>
 </li>
 <li>
-<p>En la pestaña <code>Administración</code>, en el apartado <code>Secuencia de comandos de inicio</code> incluir el script siguiente:</p>
+<p>En el menú <code>Avanzado</code>, en el apartado <code>Automatización</code> se puede pasar un script de inicialización que configure la instancia de forma automática tras su creación. En este caso hay que incluir el script siguiente:</p>
 </li>
 </ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A fecha de este tutorial la versión de PHP disponible en los repositorios de Debian es la 8.2. En el futuro puede que haya versiones más recientes.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
 apt-get update <b class="conum">(1)</b>
 apt-get install -y apache2 <b class="conum">(2)</b>
-sudo apt-get install -y php libapache2-mod-php php-mysql php-mcrypt <b class="conum">(3)</b>
-sed -i 's/#extension=php_mysqli.dll/extension=php_mysqli.dll/g' /etc/php/7.0/apache2/php.ini <b class="conum">(4)</b>
+apt-get install -y php8.2 libapache2-mod-php8.2 php8.2-mysql php8.2-mcrypt <b class="conum">(3)</b>
+sed -i 's/;extension=mysqli/extension=mysqli/g' /etc/php/8.2/apache2/php.ini <b class="conum">(4)</b>
+apt-get install -y git
 git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp <b class="conum">(5)</b></code></pre>
 </div>
 </div>
@@ -1018,7 +1012,7 @@ export MYSQL_PASSWORD=xxx</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-24 18:01:53 +0200
+Last updated 2025-10-20 19:18:03 +0200
 </div>
 </div>
 </body>

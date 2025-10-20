@@ -25,7 +25,7 @@ image::../Tema0/images/di.png[]
 
 [abstract]
 == Resumen
-En este tutorial se muestra uno de los ejemplos básicos y habituales de desarrollo de aplicaciones en entornos cloud. Se trata de crear una instancia dedicada a la base de datos y otra instancia dedicada a la aplicación. Se verá también la importancia del uso de variables de entorno y los ejemplos se ilustrarán en OpenStack-DI y Google Cloud.
+En este tutorial se muestra uno de los ejemplos básicos y habituales de desarrollo de aplicaciones en entornos cloud. Se trata de crear una instancia dedicada a la base de datos y otra instancia dedicada a la aplicación. Se verá también la importancia del uso de variables de entorno y los ejemplos se ilustrarán en un cloud privado OpenStack y Google Cloud.
 
 ////
 COLOCA A CONTINUACION LOS OBJETIVOS
@@ -54,14 +54,14 @@ En este tutorial se ilustra cómo crear una aplicación que muestra un listado d
 * Una máquina virtual con un servidor MySQL y una base de datos de ejemplo. La base de datos se inicializará a través de un script.
 * Una máquina virtual con un servidor Apache, intérprete PHP y la aplicación que muestra el listado de productos deportivos recuperados de la base de datos de la máquina virtual anterior.
 
-## Despliegue en OpenStack-DI
+## Despliegue en cloud privado OpenStack
 
-https://openstack.di.ual.es/horizon[OpenStack-DI] ofrece Infraestructura como servicio dentro de la red de la UAL. Para conexiones desde el exterior es necesaria una conexión VPN.
+El cloud privado OpenStack ofrece Infraestructura como servicio dentro de la red de la UAL. Para conexiones desde el exterior es necesaria una conexión VPN.
 
 ### Requisitos previos
 
-* Cuenta creada en OpenStack-DI
-* Proyecto OpenStack con la infraestructura básica de red configurada. https://ualmtorres.github.io/OpenStackSTIC/#truenetworking[(Tutorial Configuración de infraestructura básica de red]. En OpenStack-DI la red externa se denomina `externa`)
+* Cuenta creada en el cloud privado OpenStack usado en la asignatura.
+* Proyecto OpenStack con la infraestructura básica de red configurada. https://ualmtorres.github.io/OpenStackSTIC/#truenetworking[(Tutorial Configuración de infraestructura básica de red]. En el cloud privado la red externa se denomina `externa`, `public`, o similar.
 * Disponer de un par de claves SSH. https://ualmtorres.github.io/OpenStackSTIC/#truegeneraci-n-de-claves-ssh[(Tutorial Generación de claves SSH)]
 * Tener las claves SSH registradas en OpenStack. https://ualmtorres.github.io/OpenStackSTIC/#trueregistra-tus-claves-ssh[(Tutorial Registro de claves SSH en OpenStack)]
 * Tener las reglas de seguridad configuradas (puerto 22 para SSH, 80 para Apache). https://ualmtorres.github.io/OpenStackSTIC/#trueconfiguraci-n-de-las-reglas-de-seguridad[(Tutorial Configuración de las reglas de seguridad)]
@@ -79,8 +79,8 @@ Las zonas de disponibilidad en OpenStack permiten agrupar los servidores físico
 ====
 
 +
-. En el paso `Origen` se indica cuál es la imagen que se toma de base para crear la instancia o máquina virtual. En este ejemplo seleccionar en el desplegable `Seleccionar Origen de arranque` el valor `Imagen`. En la opción `Crear nuevo volumen` seleccionar `No`. Seleccionar la imagen `Ubuntu 16.04 LTS`. *El script de instalación, configuración e inicialización de una base de datos que se proporciona está probado en Ubuntu 16.04 LTS*
-. En el paso `Sabor` se selecciona el tamaño que tendrá la instancia en términos de CPU, RAM y disco. Seleccionar el sabor `small`.
+. En el paso `Origen` se indica cuál es la imagen que se toma de base para crear la instancia o máquina virtual. En este ejemplo seleccionar en el desplegable `Seleccionar Origen de arranque` el valor `Imagen`. En la opción `Crear nuevo volumen` seleccionar `No`. Seleccionar la imagen de Ubuntu 24.04 que hayas disponible. *El script de instalación, configuración e inicialización de una base de datos que se proporciona está probado en Ubuntu 24.04 LTS*
+. En el paso `Sabor` se selecciona el tamaño que tendrá la instancia en términos de CPU, RAM y disco. Seleccionar el sabor `small` o `m1.small` que proporciona 1 vCPU, 2 GB de RAM y 20 GB de disco, que es suficiente para este ejemplo.
 . En el paso `Redes` se establece la comunicación que tendrá la instancia con el exterior. Seleccionar la red del proyecto si no está seleccionada ya.
 . Saltar el paso `Network ports`.
 . En el paso `Grupos de seguridad` debe estar seleccionado `default`. Usaremos este grupo para definir las reglas de acceso a las máquinas virtuales creadas. Otra opción es tener grupos de seguridad diferentes para cada configuración de puertos de cada máquina virtual evitando tener abiertos puertos innecesarios y haciendo un control más fino.
@@ -93,21 +93,22 @@ Las zonas de disponibilidad en OpenStack permiten agrupar los servidores físico
 [source, bash]
 ----
 #!/bin/bash
-apt-get update <1> 
+apt-get update <1>
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password secret' <2>
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password secret'
-apt-get -y install mysql-server <3>
+apt-get -y install mysql-server-8.0 <3> 
 curl 'https://gist.githubusercontent.com/ualmtorres/eb328b653fcc5964f976b22c320dc10f/raw/448b00c44d7102d66077a393dad555585862f923/init.sql' | mysql -u root -psecret <4>
-sed -i 's/bind-address/#bind-address/g' /etc/mysql/mysql.conf.d/mysqld.cnf <5> 
-service mysql restart <6> 
-mysql -u root -psecret --execute="GRANT ALL ON SG.* TO root@'%' IDENTIFIED BY 'secret'; FLUSH PRIVILEGES"; <7>
-----
+sed -i 's/^\(bind-address\s*=\s*127\.0\.0\.1\)/#\1/' /etc/mysql/mysql.conf.d/mysqld.cnf <5>
+sed -i 's/^\(mysqlx-bind-address\s*=\s*127\.0\.0\.1\)/#\1/' /etc/mysql/mysql.conf.d/mysqld.cnf
+service mysql restart <6>
+mysql -u root -psecret --execute="CREATE USER IF NOT EXISTS 'root'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON SG.* TO 'root'@'%'; FLUSH PRIVILEGES;" <7>
 <1> Actualización del repositorio de paquetes
 <2> Paso de las contraseñas de instalación.
 <3> Instalación de MySQL
 <4> Descarga del script de inicialización de la base de datos SG y carga en MySQL
 <5> Modificación del archivo `mysqld.cnf` para permitir las conexiones remotas
-<6> Permitir el acceso al usuario `root` a la base de datos SG desde cualquier sitio
+<6> Reinicio del servicio MySQL para aplicar los cambios
+<7> Permitir el acceso al usuario `root` a la base de datos SG desde cualquier sitio
 
 [NOTE]
 ====
@@ -140,8 +141,8 @@ Comenzaremos creando una nueva instancia con los mismos requisitos previos y con
 #!/bin/bash
 apt-get update <1>
 apt-get install -y apache2 <2>
-sudo apt-get install -y php libapache2-mod-php php-mysql php-mcrypt <3>
-sed -i 's/#extension=php_mysqli.dll/extension=php_mysqli.dll/g' /etc/php/7.0/apache2/php.ini <4>
+sudo apt-get install -y php8.3 libapache2-mod-php8.3 php8.3-mysql php8.3-mcrypt <3>
+sed -i 's/;extension=mysqli/extension=mysqli/g' /etc/php/8.3/apache2/php.ini <4>
 sudo chgrp -R www-data /var/www <5>
 sudo chmod -R 775 /var/www
 sudo chmod -R g+s /var/www
@@ -181,7 +182,7 @@ Una forma de hacer esto es mediante el uso de variables de entorno. Así, los va
 
 Para configurar las variables de entorno en la máquina virtual de la aplicación (`sgapp`) hay que seguir los pasos siguientes:
 
-. Obtener la dirección IP fija de la máquina virtual `mysql`. En el ejemplo de la figura sería `10.0.0.17`. Lbasea comunicación entre la máquina virtual de la aplicación y la de la base de datos se realizará por la red del proyecto. No es necesario crear una IP pública para la máquina virtual de MySQL por este motivo.
+. Obtener la dirección IP fija de la máquina virtual `mysql`. En el ejemplo de la figura sería `10.0.0.17`. La comunicación entre la máquina virtual de la aplicación y la de la base de datos se realizará por la red del proyecto. No es necesario crear una IP pública para la máquina virtual de MySQL por este motivo.
 
 +
 image::images/SGAppDireccionesIP.png[]
@@ -241,23 +242,32 @@ En este apartado crearemos una máquina virtual configurada con lo necesario par
 . En la barra de herramientas pulsar sobre `Crear instancia`.
 . Asignarle el nombre `sg-app` dejando la región y la zona predeterminadas.
 . En la sección `Configuración de la máquina` seleccionar la `N1` en el desplegable `Serie` y `g1-small` (1 vCPU y 1.7 GB de RAM) en la lista desplegable `Tipo de máquina`.
-. En la sección `Disco de arranque` cambiar la imagen a `Ubuntu 16.04 LTS` y mantener el disco en 10 GB de tamaño.
-. En la sección `Cortafuegos` seleccionar la casilla de verificación `Permitir el tráfico HTTP`.
+. En la sección `Disco de arranque` elegir una imagen Debian y mantener el disco en 10 GB de tamaño.
 
 +
 image::images/GoogleCloudCrearSGApp.png[]
 
+. En el menú `Redes` seleccionar la casilla de verificación `Permitir el tráfico HTTP`.
 
-. Desplegar `Administración, seguridad, discos, redes, único propietario`
-. En la pestaña `Administración`, en el apartado `Secuencia de comandos de inicio` incluir el script siguiente:
++
+image::images/GoogleCloudPermitirHTTP.png[]
+
+
+. En el menú `Avanzado`, en el apartado `Automatización` se puede pasar un script de inicialización que configure la instancia de forma automática tras su creación. En este caso hay que incluir el script siguiente:
+
+[NOTE]
+====
+A fecha de este tutorial la versión de PHP disponible en los repositorios de Debian es la 8.2. En el futuro puede que haya versiones más recientes.
+====
 
 [source, bash]
 ----
 #!/bin/bash
 apt-get update <1>
 apt-get install -y apache2 <2>
-sudo apt-get install -y php libapache2-mod-php php-mysql php-mcrypt <3>
-sed -i 's/#extension=php_mysqli.dll/extension=php_mysqli.dll/g' /etc/php/7.0/apache2/php.ini <4>
+apt-get install -y php8.2 libapache2-mod-php8.2 php8.2-mysql php8.2-mcrypt <3>
+sed -i 's/;extension=mysqli/extension=mysqli/g' /etc/php/8.2/apache2/php.ini <4>
+apt-get install -y git
 git clone https://github.com/ualmtorres/SGApp.git /var/www/html/SGApp <5>
 ----
 <1> Actualización del repositorio de paquetes
