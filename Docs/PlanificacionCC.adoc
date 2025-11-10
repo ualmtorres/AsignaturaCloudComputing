@@ -81,8 +81,11 @@ image::Tema0/images/di.png[]
 *** link:../Labs/Lab01/index.html[Lab 01. Creación de máquinas virtuales en OpenStack-DI, windows=blank] 
 
 ** Metodología
-*** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos. 
-*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial. 
+*** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos
+*** Aprendizaje autónomo o autodirigido donde los estudiantes asumen el control de su proceso de aprendizaje y trabajan de forma independiente para adquirir conocimientos y habilidades.
+*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial.
+*** Estudio de casos prácticos de despliegue en modo IaaS donde los estudiantes trabajan con casos reales o ficticios para fomentar la toma de decisiones, el debate y la argumentación.
+*** Aprendizaje basado en competencias enfocado en el desarrollo de habilidades y destrezas prácticas, más que en la mera adquisición de contenidos teóricos.
 *** Actividades de laboratorio para realizar de forma autónoma en forma de proyecto.
 
 * Tema 3. Plataforma como servicio
@@ -102,7 +105,11 @@ image::Tema0/images/di.png[]
 
 ** Metodología
 *** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos.
-*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial. 
+*** Aprendizaje autónomo o autodirigido donde los estudiantes asumen el control de su proceso de aprendizaje y trabajan de forma independiente para adquirir conocimientos y habilidades.
+*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial.
+*** Estudio de casos prácticos de despliegue en modo PaaS donde los estudiantes trabajan con casos reales o ficticios para fomentar la toma de decisiones, el debate y la argumentación.
+*** Aprendizaje basado en competencias enfocado en el desarrollo de habilidades y destrezas prácticas, más que en la mera adquisición de contenidos teóricos.
+
 *** Actividades de laboratorio para realizar de forma autónoma en forma de proyecto.
 
 * Tema 4. Servicios de contenedores
@@ -124,7 +131,11 @@ image::Tema0/images/di.png[]
 
 ** Metodología
 *** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos. 
-*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial. 
+*** Aprendizaje autónomo o autodirigido donde los estudiantes asumen el control de su proceso de aprendizaje y trabajan de forma independiente para adquirir conocimientos y habilidades.
+*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial.
+*** Estudio de casos prácticos de despliegue con contenedores donde los estudiantes trabajan con casos reales o ficticios para fomentar la toma de decisiones, el debate y la argumentación.
+*** Aprendizaje basado en competencias enfocado en el desarrollo de habilidades y destrezas prácticas, más que en la mera adquisición de contenidos teóricos.
+
 *** Actividades de laboratorio para realizar de forma autónoma en forma de proyecto.
 
 * Tema 5. Infraestructura como código
@@ -168,12 +179,24 @@ image::Tema0/images/di.png[]
 
 ** Metodología
 *** Clases teórico-prácticas con presentaciones y tutoriales de casos prácticos.
-*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial. 
+*** Aprendizaje autónomo o autodirigido donde los estudiantes asumen el control de su proceso de aprendizaje y trabajan de forma independiente para adquirir conocimientos y habilidades.
+*** Tutoriales en modalidad de _flipped classroom_, donde los alumnos realizan la actividad de forma autónoma y se resuelven dudas en la clase presencial.
+*** Estudio de casos prácticos de despliegue en Kubernetes donde los estudiantes trabajan con casos reales o ficticios para fomentar la toma de decisiones, el debate y la argumentación.
+*** Aprendizaje basado en competencias enfocado en el desarrollo de habilidades y destrezas prácticas, más que en la mera adquisición de contenidos teóricos.
 *** Actividades de laboratorio para realizar de forma autónoma en forma de proyecto.
 
 ### Parte no presencial
 
 En la parte no presencial se propone la realización del  programa especializado _Cloud Engineer Learning Path_. Este programa ofrece una forma de completar de forma práctica y con tecnología globalmente aceptada en la industria los conocimientos en Cloud Computing. El programa consta de varios cursos que sientan las bases para la configuración, despliegue y mantenimiento de soluciones cloud con tolerancia a fallos y alta disponibilidad.
+
+Las metodologías de aprendizaje utilizadas en estos cursos son variadas e incluyen:
+
+*** _Aprender haciendo_, con una gran cantidad de laboratorios prácticos que permiten adquirir experiencia real en el uso de los servicios cloud.  
+*** _Gamificación_, donde los estudiantes obtienen puntos y logros a medida que completan los cursos y laboratorios, lo que fomenta la motivación y el compromiso con el aprendizaje.
+*** _Microlearning_, con contenidos breves y concisos que facilitan la asimilación de conceptos clave en poco tiempo.
+*** _Aprendizaje basado en el pensamiento crítico_, fomentando la reflexión y el análisis de casos prácticos para desarrollar habilidades de resolución de problemas en entornos cloud.
+
+Los cursos que componen el programa son los siguientes:
 
 * https://www.cloudskillsboost.google/paths/11/course_templates/60[Google Cloud Platform Fundamentals: Core Infrastructure]
 * https://www.cloudskillsboost.google/paths/11/course_templates/50[Essential Google Cloud Infrastructure: Foundation]
