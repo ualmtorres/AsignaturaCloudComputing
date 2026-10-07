@@ -26,7 +26,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 = Azure para Estudiantes: Tutoriales para la gestión de las suscripciones Azure para Estudiantes
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Cloud Computing - Máster en Ingeniería Informática
 José Joaquín Cañadas <jjcanada@ual.es> y Manuel Torres <mtorres@ual.es>
 
 . link:CrearSuscripcionAzureParaEstudiantes.html[Creación de la suscripción Azure para Estudiantes]

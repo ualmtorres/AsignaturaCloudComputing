@@ -13,7 +13,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Lab 01 Cloud Computing. Creación de máquinas virtuales en entornos cloud
-Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Máster en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
 
@@ -43,7 +43,7 @@ COLOCA A CONTINUACION LOS OBJETIVOS
 
 .Prerrequisitos
 ****
-* Acceso al proyecto personal en https://openstack.di.ual.es/horizon[OpenStack-DI]. Revisa los anuncios, los recursos complementarios y tu email en Aula virtual para conocer las credenciales de acceso.
+* Acceso al proyecto personal en OpenStack-TS. Revisa los anuncios y los recursos complementarios para crear la infraestructura básica y obtener las credenciales de acceso.
 * Cupón activado en Google Cloud Platform (GCP) y Microsoft Azure y con crédito disponible.
 * Los usuarios de Windows deben tener instalada una herramienta para acceso SSH (p.e. Git Bash, Putty). Los usuarios de Linux y Mac usarán la terminal y no tendrán que instalar nada.
 ****
@@ -125,7 +125,7 @@ Puedes consultar en cualquier momento el estado de la consola y el log de arranq
 #### Creación de una máquina virtual Ubuntu
 
 . Crear un par de claves SSH si no se dispone de una y subir la clave pública a la cuenta de OpenStack (Menú `Proyecto | Compute | Pares de claves | Importar par de claves`).
-. Lanzar una instancia (máquina virtual) seleccionando una imagen disponible de Ubuntu 18.04 LTS.
+. Lanzar una instancia (máquina virtual) seleccionando una imagen disponible de Ubuntu (p.e. `Ubuntu 24.04 LTS`).
 
 +
 [IMPORTANT]
@@ -138,7 +138,7 @@ En el paso del Asistente de OpenStack para la creación de una nueva instancia e
 . Seleccionar el _Sabor_ (Tamaño) de la instancia: `medium` (2 vCPU, 4 GB RAM y 40 GB de disco).
 . Asignar una IP flotante a la instancia creada.
 . Accedee a la instancia creada mediante una terminal indicando su IP flotante.
-. Editar el archivo `/home/ubuntu/.ssh/authorized_keys` y añadir la clave pública del profesor, disponible en el foro general de la asignatura en Aula virtual.
+. Editar el archivo `/home/ubuntu/.ssh/authorized_keys` y añadir la clave pública del profesor, disponible en la sección de Recursos complementarios de la asignatura en Aula virtual.
 . Adjuntar en la actividad disponible en Aula Virtual la dirección IP flotante de la instancia creada.
 
 #### Uso de volúmenes de almacenamiento de bloques

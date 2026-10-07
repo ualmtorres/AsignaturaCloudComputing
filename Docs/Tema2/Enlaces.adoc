@@ -11,7 +11,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Enlaces de interés sobre Infraestructura como servicio
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Cloud Computing - Máster en Ingeniería Informática
 Manuel Torres y Francisco José García <mtorres@ual.es> <Paco.Garcia@ual.es>
 
 

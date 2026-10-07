@@ -13,7 +13,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Lab 06 Cloud Computing. Despliegue automatizado con Terraform
-Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Máster en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
 

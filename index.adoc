@@ -8,6 +8,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 :toc-title: Tabla de contenidos
 :doctype: book
 :linkattrs:
+:imagesdir: .
 
 ////
 Nombre y título del trabajo
@@ -107,14 +108,13 @@ link:Docs/PlanificacionCC.html[Planificación de la asignatura]
 ## Horario de clase y de tutorías
 
 * Clases
-** Grupo docente: Aulario III - 12. Miércoles de 16h a 18h
-** Grupos de trabajo: Aulario V (Aulas de informática) - 1 y 11. Miércoles (Grupo A1) y Viernes (Grupo A2) de 18h a 20h
+** Grupo docente: Aulario V - 1. Miércoles de 18h a 20h
 * Sesiones presenciales (link:Docs/PlanificacionCC.html[Planificación de la asignatura])
 ** 8 sesiones presenciales = 16 horas.
 ** 7 sesiones no presenciales = 14 horas
 * Profesores 
 ** Manuel Torres Gil
-*** Tutorías: Martes y Miércoles de 10h a 13h. Cita previa y posibilidad de tutorías online a través de Google Meet
+*** Tutorías: Martes de 10h a 14h. Viernes de 18h a 20h. Cita previa y posibilidad de tutorías online a través de Google Meet
 *** Despacho: 2.19.5 CITE III (2a planta)
 *** email: mailto:mtorres@ual.es[mtorres@ual.es]
 *** https://www.ual.es/persona/505553515154565281[Enlace web de la UAL]

@@ -26,7 +26,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 = Azure Tips. Agregar administrador a suscripción
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Cloud Computing - Máster en Ingeniería Informática
 José Joaquín Cañadas <jjcanada@ual.es> y Manuel Torres <mtorres@ual.es>
 
 // Entrar en modo no numerado de apartados

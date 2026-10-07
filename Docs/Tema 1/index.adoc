@@ -13,7 +13,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 Nombre y título del trabajo
 ////
 # Primeros pasos del Associate Cloud Engineer Track ofrecido por Google Cloud
-Cloud Computing - Máster en Tecnologías y Aplicaciones en Ingeniería Informática
+Cloud Computing - Máster en Ingeniería Informática
 José Joaquín Cañadas y Manuel Torres <jjcanada@ual.es> <mtorres@ual.es>
 
 
